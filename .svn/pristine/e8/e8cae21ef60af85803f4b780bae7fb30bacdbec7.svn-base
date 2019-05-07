@@ -1,0 +1,171 @@
+Imports Wisej.Web
+Imports Wisej.Web.Ext.RibbonBar
+Imports System.Data.SqlClient
+
+Public Class Cat_Accesos
+    Dim oFunciones As New dllData
+    Dim nodoPadre As TreeNode
+    Dim oNodoHijo As TreeNode
+
+
+    Private Sub RibbonBar1_ButtonClick(sender As Object, e As RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+        Select Case e.Item.Text
+            Case "Salir"
+                Me.Close()
+            Case "Guardar"
+                guardar()
+
+        End Select
+    End Sub
+    Private Sub Cat_Accesos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TreeView1.CheckBoxes = True
+        'cargar_nodos()
+        oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_ROL_B", "CVE_ROL", "ROL", cbsRol)
+    End Sub
+
+    Private Sub TreeView1_Click(sender As Object, e As EventArgs) Handles TreeView1.Click
+
+    End Sub
+
+    Sub guardar()
+        If Not cbsRol.SelectedValue = "" Then
+            For Each Nodo As TreeNode In TreeView1.Nodes
+                PrintRecursive(Nodo)
+            Next
+            MessageBox.Show("Datos guardados correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+    End Sub
+
+
+    Private Sub PrintRecursive(ByVal n As TreeNode)
+
+        If n.Checked = True Then
+            ReDim oFunciones.ParametersX_Global(3)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_ROL", cbsRol.SelectedValue)
+            oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@CVE_ACCESO", n.Name)
+            oFunciones.fGuardar_O_EliminarXProcedure("pCAT_ACCESOS_MODULOS_ROL_G", "@PARAMETRO", oFunciones.ParametersX_Global)
+
+        Else
+            ReDim oFunciones.ParametersX_Global(3)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_ROL", cbsRol.SelectedValue)
+            oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@CVE_ACCESO", n.Name)
+            oFunciones.fGuardar_O_EliminarXProcedure("pCAT_ACCESOS_MODULOS_ROL_E", "@PARAMETRO", oFunciones.ParametersX_Global)
+
+        End If
+        Dim aNode As TreeNode
+        For Each aNode In n.Nodes
+            PrintRecursive(aNode)
+        Next
+    End Sub
+
+    Sub cargar_nodos()
+        TreeView1.Nodes.Clear()
+        Try
+            Dim sqlConnection1 As New SqlConnection(oFunciones.sConexion)
+            Dim cmd As New SqlCommand
+            Dim reader As SqlDataReader
+            cmd.CommandText = "pACCESOS_MODULOS_B"
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = sqlConnection1
+            sqlConnection1.Open()
+            reader = cmd.ExecuteReader()
+            Dim modulo As String
+            Dim submodulo As String
+            While reader.Read()
+                If (reader("Tipo") = "MODULO") Then
+                    nodoPadre = New TreeNode()
+                    nodoPadre.Text = reader("Descripcion")
+                    nodoPadre.Tag = reader("Cve_Acceso")
+                    nodoPadre.Name = reader("Cve_Acceso")
+                    TreeView1.Nodes.Add(nodoPadre)
+                    modulo = reader("Cve_Acceso")
+                End If
+                If (reader("tipo") = "SUBMODULO") Then
+                    If (Len(reader("Cve_Acceso")) = 6) Then
+                        oNodoHijo = New TreeNode()
+                        oNodoHijo.Text = reader("Descripcion")
+                        oNodoHijo.Tag = reader("Cve_Acceso")
+                        oNodoHijo.Name = reader("Cve_Acceso")
+                        TreeView1.Nodes(modulo).Nodes.Add(oNodoHijo)
+                        submodulo = reader("Cve_Acceso")
+                    End If
+                    If (Len(reader("Cve_Acceso")) = 9) Then
+                        oNodoHijo = New TreeNode()
+                        oNodoHijo.Text = reader("Descripcion")
+                        oNodoHijo.Tag = reader("Cve_Acceso")
+                        oNodoHijo.Name = reader("Cve_Acceso")
+                        TreeView1.Nodes(modulo).Nodes(submodulo).Nodes.Add(oNodoHijo)
+                    End If
+                End If
+            End While
+            sqlConnection1.Close()
+            cargar_seleccionado()
+            Cargar()
+        Catch ex As Exception
+            MessageBox.Show("error: " & ex.Message, "Inicio",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub cbsRol_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbsRol.SelectedIndexChanged
+        If Not cbsRol.SelectedValue = "" Then
+            cargar_nodos()
+        End If
+
+    End Sub
+
+    Sub Cargar()
+        Try
+            If Not cbsRol.SelectedValue = "" Then
+                DataSet_pCAT_OPERADORES_B1.Clear()
+                Dim myDA = New SqlClient.SqlDataAdapter("pCAT_OPERADORES_B", oFunciones.sConexion)
+                myDA.SelectCommand.CommandType = CommandType.StoredProcedure
+                myDA.SelectCommand.Parameters.AddWithValue("@Cve_Rol", cbsRol.SelectedValue)
+                myDA.SelectCommand.Parameters.AddWithValue("@PassphraseEnteredByUser", oFunciones.sConstante_KEY)
+                myDA.Fill(DataSet_pCAT_OPERADORES_B1.pCAT_OPERADORES_B)
+                myDA.Dispose()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Inicio", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Sub cargar_seleccionado()
+        Try
+            If Not cbsRol.SelectedValue = "" Then
+                Dim sqlConnection1 As New SqlConnection(oFunciones.sConexion)
+                Dim cmd As New SqlCommand
+                Dim reader As SqlDataReader
+                cmd.CommandText = "pACCESOS_MODULOS_ROL_B"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Add("@CVE_ROL", cbsRol.SelectedValue)
+                cmd.Connection = sqlConnection1
+                sqlConnection1.Open()
+                reader = cmd.ExecuteReader()
+
+                While reader.Read()
+
+                    If (Len(reader("Cve_Acceso")) = 3) Then
+                        TreeView1.Nodes(reader("Cve_Acceso")).checked = True
+                    End If
+
+                    If (Len(reader("Cve_Acceso")) = 6) Then
+                        Dim modulo As String = reader("Cve_Acceso").ToString.Substring(0, 3)
+                        TreeView1.Nodes(modulo).Nodes(reader("Cve_Acceso")).checked = True
+                    End If
+                    If (Len(reader("Cve_Acceso")) = 9) Then
+                        Dim modulo As String = reader("Cve_Acceso").ToString.Substring(0, 3)
+                        Dim submodulo As String = reader("Cve_Acceso").ToString.Substring(0, 6)
+                        TreeView1.Nodes(modulo).Nodes(submodulo).Nodes(reader("Cve_Acceso")).checked = True
+                    End If
+
+                End While
+                sqlConnection1.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("error: " & ex.Message, "Inicio",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+End Class

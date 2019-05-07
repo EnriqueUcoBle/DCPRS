@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.Notification</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.Notification.NamespaceDoc">
+            <summary>
+            <para>
+            Notification component. Adds desktop notification functionality using the notification API https://developer.mozilla.org/en-US/docs/Web/API/notification.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Notification.Notification">
+            <summary>
+            Adds support for the Notification API: https://developer.mozilla.org/en-US/docs/Web/API/notification.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Notification.Notification.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Ext.Notification" /> class.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Notification.Notification.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Ext.Notification" /> class together with the specified container.
+            </summary>
+            <param name="container">A <see cref="T:System.ComponentModel.IContainer" /> that represents the container for the component. </param>
+        </member>
+        <member name="E:Wisej.Web.Ext.Notification.Notification.Click">
+            <summary>
+            Fired when the user clicks on a desktop notification.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Notification.Notification.OnClick(Wisej.Web.Ext.Notification.NotificationClickEventArgs)">
+            <summary>
+            Fires the Click event.
+            </summary>
+            <param name="e">A <see cref="T:Wisej.Web.Ext.Notification.NotificationClickEventArgs" /> that contains the event data. </param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Notification.Notification.IsSupported">
+            <summary>
+            Returns whether the client browser supports desktop notifications.
+            </summary>
+            <returns>true if the browser supports the Notification API.</returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Notification.Notification.Show(System.String,System.String,System.Object,System.Boolean)">
+            <summary>
+            Displays a new desktop notification.
+            </summary>
+            <param name="title">The title of the notification.</param>
+            <param name="body">The optional body string of the notification.</param>
+            <param name="icon">The <see cref="T:System.Drawing.Image"/> or URL of the image used as an icon of the notification.</param>
+            <param name="showOnClick">Indicates whether to activate the browser when the user clicks the notification.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Notification.Notification.OnWebEvent(Wisej.Core.WisejEventArgs)">
+            <summary>
+            Processes the event from the client.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Notification.Notification.OnWebRender(System.Object)">
+            <summary>
+            Renders the client component.
+            </summary>
+            <param name="config">Dynamic configuration object.</param>
+        </member>
+        <member name="T:Wisej.Web.Ext.Notification.NotificationClickEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Wisej.Web.Ext.Notification.Notification.Click"/> event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Wisej.Web.Ext.Notification.NotificationClickEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Wisej.Web.Ext.Notification.Notification.Click"/> events.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Notification.NotificationClickEventArgs.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Wisej.Web.Ext.Notification.NotificationClickEventArgs" /> class.
+            </summary>
+             <param name="title">Title of the clicked notification.</param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Notification.NotificationClickEventArgs.Title">
+            <summary>
+            Returns the title of the notification that was clicked.
+            </summary>
+        </member>
+    </members>
+</doc>

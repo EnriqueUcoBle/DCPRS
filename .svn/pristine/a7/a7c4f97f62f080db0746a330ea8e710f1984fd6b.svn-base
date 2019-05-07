@@ -1,0 +1,239 @@
+﻿Imports Wisej.Web
+Imports System.Data.SqlClient
+Imports Wisej.Web.Ext.RibbonBar
+
+Public Class MyDesktop
+    Dim dicParametros As New Dictionary(Of String, String)
+    Dim oFunciones As New dllData
+    Dim sModulo As String
+
+    Dim ParametersX() As SqlClient.SqlParameter
+    Public alternateSucursal As String
+    Private Sub MyDesktop_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim sPath = ConfigurationManager.AppSettings("Images").ToString & "Fondo02.jpeg"
+        Me.Wallpaper = sPath
+        CargarDatos()
+        Application.LoadTheme(Application.Session("TEMA"))
+    End Sub
+    Private Sub GenerarReporte(ByVal sReportName As String, ByVal sProcedureName As String)
+        Dim MOSTRAR_ASP As New Mostrar_Asp
+        MOSTRAR_ASP.AspPageBox1.PageSource = Nothing
+        Application.Session("ReportName") = sReportName
+        Application.Session("ProcedureName") = sProcedureName
+        Application.Session("DicParametros") = dicParametros
+        Application.Session("DocumentCached") = Nothing
+        MOSTRAR_ASP.AspPageBox1.PageSource = "ReportView.aspx"
+        MOSTRAR_ASP.AspPageBox1.Update()
+        MOSTRAR_ASP.Show()
+    End Sub
+
+    Private Sub CargarDatos()
+        Try
+            Try
+                Dim sqlConnection1 As New SqlConnection(oFunciones.sConexion)
+                Dim cmd As New SqlCommand
+                Dim reader As SqlDataReader
+                cmd.CommandText = "pACCESOS_MODULOS_ACCESOS_MODULOS_ROL_B"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Add("@CVE_ROL", Application.Session("Cve_Rol"))
+                cmd.Parameters.Add("@TIPO", "MODULO")
+                cmd.Connection = sqlConnection1
+                sqlConnection1.Open()
+                reader = cmd.ExecuteReader()
+                While reader.Read()
+                    PopularMenu(reader("MODULO"), Grupo_Recepcion, "ADMIN", reader("MODULO"))
+                End While
+                sqlConnection1.Close()
+            Catch ex As Exception
+                MessageBox.Show("error: " & ex.Message, "Inicio",
+            MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End Try
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub LinkCerrar_Sesion_LinkClicked(ByVal sender As System.Object, ByVal e As Wisej.Web.LinkLabelLinkClickedEventArgs)
+        Application.Session.IsLoggedOn = False
+    End Sub
+
+    ''''''AKIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII CODIGO DE NUEVA APARIENCIA'''
+    Sub PopularMenu(ByVal sModulo As String, ByVal Control As Wisej.Web.Ext.RibbonBar.RibbonBarGroup, ByVal sCve_Operador As String, Optional ByVal sSubModulo As String = Nothing, Optional ByVal sCve_Acceso_PadreX As String = Nothing)
+        Dim sCve_Acceso_Padre As String
+
+        Dim SMenuItem, SsMenuItem As MenuItem
+
+        Dim BOTONDOWN As Ext.RibbonBar.RibbonBarItemButton
+        Dim CONT As ContextMenu
+        CONT = New ContextMenu
+        '  Dim aborto = New 
+        oFunciones.Conectar()
+        Dim cDataReader As Data.SqlClient.SqlDataReader
+        Try
+            oFunciones.cCommand = New SqlClient.SqlCommand("pACCESOS_MODULOS_OPERADOR", oFunciones.cConnect)
+            oFunciones.cCommand.CommandType = CommandType.StoredProcedure
+            oFunciones.cCommand.Parameters.AddWithValue("@Cve_Operador", sCve_Operador)
+            oFunciones.cCommand.Parameters.AddWithValue("@Modulo", sModulo)
+
+
+            If Trim(sSubModulo) <> Nothing Then
+                oFunciones.cCommand.Parameters.AddWithValue("@SubModulo", sSubModulo)
+            End If
+
+
+
+            cDataReader = oFunciones.cCommand.ExecuteReader(CommandBehavior.CloseConnection)
+            If cDataReader.HasRows Then
+                While (cDataReader.Read)
+
+                    If Trim(sCve_Acceso_Padre) <> cDataReader.Item("Cve_Acceso_Padre") Then
+                        If cDataReader.Item("Tipo") = "MODULO" Then
+
+                            'RibbonBarDropDownButtonItem
+                            'RibbonBarItemButton
+                            BOTONDOWN = New Ext.RibbonBar.RibbonBarItemButton
+                            BOTONDOWN.ImageSource = cDataReader.Item("icono")
+                            BOTONDOWN.Text = cDataReader.Item("descripcion")
+                            If cDataReader.Item("descripcion").Length < 7 Then
+                                BOTONDOWN.Text = "     " & cDataReader.Item("descripcion") & "     "
+
+                            Else
+                                BOTONDOWN.Text = "    " & cDataReader.Item("descripcion") & "    "
+
+                            End If
+                            Control.Items.Add(BOTONDOWN)
+
+                        End If
+                    End If
+
+                    If cDataReader.Item("Tipo") = "SUBMODULO" Then
+                        ' BOTONDOWN.Tag = "SI"
+                        If cDataReader.Item("boton") = "C" Then
+                            SMenuItem = New MenuItem
+                            SMenuItem.Index = 0
+                            SMenuItem.Text = cDataReader.Item("descripcion")
+                            SMenuItem.Visible = False
+                            If Trim("" & cDataReader.Item("Icono")) <> Nothing Then
+
+                            End If
+                            AddHandler SMenuItem.Click, AddressOf handlemenuclick2
+                            CONT.MenuItems.AddRange(New Wisej.Web.MenuItem() {SMenuItem})
+                            BOTONDOWN.MenuItems.Add(SMenuItem)
+
+                        ElseIf cDataReader.Item("boton") <> "SC" Then
+                            SMenuItem = New MenuItem
+                            SMenuItem.Index = 0
+                            SMenuItem.Text = cDataReader.Item("descripcion")
+                            SMenuItem.Tag = "" & cDataReader.Item("URL")
+                            If Trim("" & cDataReader.Item("Icono")) <> Nothing Then
+
+                            End If
+
+                            AddHandler SMenuItem.Click, AddressOf handlemenuclick2
+                            BOTONDOWN.MenuItems.Add(SMenuItem)
+
+                        End If
+
+                        If cDataReader.Item("boton") = "SC" Then
+                            SMenuItem.Visible = True
+                            SsMenuItem = New MenuItem
+                            SsMenuItem.Index = 0
+                            SsMenuItem.Text = cDataReader.Item("descripcion")
+                            SsMenuItem.Tag = "" & cDataReader.Item("URL")
+
+                            If Trim("" & cDataReader.Item("Icono")) <> Nothing Then
+
+                            End If
+
+                            AddHandler SsMenuItem.Click, AddressOf handlemenuclick11
+                            SMenuItem.MenuItems.Add(SsMenuItem)
+
+                        End If
+                    End If
+
+                End While
+            End If
+
+            'If BOTONDOWN.Tag <> "SI" Then
+            '    BOTONDOWN.Visible = False
+            'End If
+
+
+
+        Catch ex As SystemException
+            MessageBox.Show("Error: " & ex.Message, "Aviso")
+
+        Finally
+            If IsNothing(cDataReader) = False Then
+                If cDataReader.IsClosed = False Then cDataReader.Close()
+            End If
+            oFunciones.Desconectar()
+        End Try
+    End Sub
+
+    Private Sub handlemenuclick2(sender As Object, e As EventArgs)
+        Mostrar_Formulario(sender.tag)
+        'Throw New NotImplementedException()
+    End Sub
+
+    Private Sub handlemenuclick11(sender As Object, e As EventArgs)
+        Mostrar_Formulario(sender.tag)
+        '  Throw New NotImplementedException()
+    End Sub
+
+
+    Sub Mostrar_Formulario(ByVal cNodo As String)
+        Dim objcontrol As Object = Nothing
+
+        If cNodo = Nothing Then
+            Exit Sub
+        End If
+
+        '  VWGContext.Current.Session("name_modulo") = cNodo
+        Try
+            Dim wSTproyecto As String = System.Reflection.Assembly.GetExecutingAssembly.GetName.Name
+            Dim Formulario As String = cNodo
+            Dim ensamblado As System.Reflection.Assembly = System.Reflection.Assembly.GetExecutingAssembly()
+            Dim f As Form = ensamblado.CreateInstance(wSTproyecto + "." + Formulario, True)
+            f.Show()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+
+
+
+    Private Sub RibbonBar1_ItemClick(sender As Object, e As Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+        Select Case e.Item.Text
+            Case "Cambiar Contraseña"
+                Dim sPass As New Cambiar_Contrasena
+                sPass.Show()
+            Case "Salir"
+                'Application.MainPage = New Login
+                Application.Session.clear()
+                Application.Session.IsLoggedOn = False
+                Application.Exit()
+        End Select
+    End Sub
+
+
+    Private Sub RibbonBar1_MenuButtonItemClick(sender As Object, e As RibbonBarMenuItemEventArgs) Handles RibbonBar1.MenuButtonItemClick
+        If e.Item.Text = "Tema" Then
+            ReDim oFunciones.ParametersX_Global(1)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@Cve_Operador", Application.Session("Cve_Operador"))
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@SKIN", Application.Theme.Name)
+            Dim RESULSET = oFunciones.fGuardar_O_EliminarXProcedure("pACTUALIZA_SKIN", "@PARAM", oFunciones.ParametersX_Global, , False)
+            If RESULSET = 1 Then
+                oFunciones.AlertBox("ERROR AL GUARDAR EL TEMA", MessageBoxIcon.Information)
+            Else
+                oFunciones.AlertBox("TEMA GUARDADO: " & e.Item.Text, MessageBoxIcon.Information)
+                Application.LoadTheme(e.Item.Text)
+            End If
+
+        End If
+    End Sub
+
+
+End Class

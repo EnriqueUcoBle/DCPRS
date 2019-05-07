@@ -1,0 +1,271 @@
+Imports Wisej.Web.Ext.RibbonBar
+Imports Wisej.Web
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Configuracion_Consecutivos
+    Inherits Wisej.Web.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Visual WebGui Designer
+    Private Shadows components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Visual WebGui Designer
+    'It can be modified using the Visual WebGui Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle2 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
+        Dim ComponentTool2 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
+        Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
+        Me.RibbonBarPage1 = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
+        Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
+        Me.RBBACTUALIZAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.RBBSALIR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.DGVConsecutivos = New Wisej.Web.DataGridView()
+        Me.BindingSource1 = New Wisej.Web.BindingSource(Me.components)
+        Me.DataSet_pPARAMETROS_B = New DPCRS.DataSet_pPARAMETROS_B()
+        Me.BindingNavigator1 = New Wisej.Web.BindingNavigator(Me.components)
+        Me.Panel1 = New Wisej.Web.Panel()
+        Me.CBSColumna = New Wisej.Web.ComboBox()
+        Me.BTNLimpiar = New Wisej.Web.Button()
+        Me.BTNBuscar = New Wisej.Web.Button()
+        Me.Label1 = New Wisej.Web.Label()
+        Me.colCVE_ORDEN_VERIFICACION = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colCVE_GIRO = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colCVE_SCIAN = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colCVE_ESTABLECIMIENTO = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colCVE_TIPO_MUESTRA = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colCVE_ESTUDIOS = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colCVE_ESTUDIOS_SUB = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colCVE_ROL_CONSECUTIVO = New Wisej.Web.DataGridViewTextBoxColumn()
+        CType(Me.DGVConsecutivos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet_pPARAMETROS_B, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'RibbonBar1
+        '
+        Me.RibbonBar1.Dock = Wisej.Web.DockStyle.Top
+        Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonBar1.Name = "RibbonBar1"
+        Me.RibbonBar1.Pages.Add(Me.RibbonBarPage1)
+        Me.RibbonBar1.Size = New System.Drawing.Size(880, 145)
+        '
+        'RibbonBarPage1
+        '
+        Me.RibbonBarPage1.Groups.Add(Me.RibbonBarGroup1)
+        Me.RibbonBarPage1.Text = "Menú"
+        '
+        'RibbonBarGroup1
+        '
+        Me.RibbonBarGroup1.Items.Add(Me.RBBACTUALIZAR)
+        Me.RibbonBarGroup1.Items.Add(Me.RBBSALIR)
+        Me.RibbonBarGroup1.Text = "Opciones"
+        '
+        'RBBACTUALIZAR
+        '
+        Me.RBBACTUALIZAR.ImageSource = "icon-redo?color=#006EFF"
+        Me.RBBACTUALIZAR.Name = "RBBACTUALIZAR"
+        Me.RBBACTUALIZAR.Text = "Actualizar"
+        '
+        'RBBSALIR
+        '
+        Me.RBBSALIR.ImageSource = "Resources\Images\Menu\30\exit-sign-red.png"
+        Me.RBBSALIR.Name = "RBBSALIR"
+        Me.RBBSALIR.Text = "Salir"
+        '
+        'DGVConsecutivos
+        '
+        DataGridViewCellStyle2.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 7.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.FormatProvider = New System.Globalization.CultureInfo("es-MX")
+        DataGridViewCellStyle2.WrapMode = Wisej.Web.DataGridViewTriState.[True]
+        Me.DGVConsecutivos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DGVConsecutivos.ColumnHeadersHeight = 30
+        Me.DGVConsecutivos.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.colCVE_ORDEN_VERIFICACION, Me.colCVE_GIRO, Me.colCVE_SCIAN, Me.colCVE_ESTABLECIMIENTO, Me.colCVE_TIPO_MUESTRA, Me.colCVE_ESTUDIOS, Me.colCVE_ESTUDIOS_SUB, Me.colCVE_ROL_CONSECUTIVO})
+        Me.DGVConsecutivos.DataSource = Me.BindingSource1
+        Me.DGVConsecutivos.Dock = Wisej.Web.DockStyle.Fill
+        Me.DGVConsecutivos.Location = New System.Drawing.Point(0, 197)
+        Me.DGVConsecutivos.Name = "DGVConsecutivos"
+        Me.DGVConsecutivos.RowHeadersVisible = False
+        Me.DGVConsecutivos.SelectionMode = Wisej.Web.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVConsecutivos.Size = New System.Drawing.Size(880, 296)
+        Me.DGVConsecutivos.TabIndex = 1
+        '
+        'BindingSource1
+        '
+        Me.BindingSource1.DataMember = "pPARAMETROS_B"
+        Me.BindingSource1.DataSource = Me.DataSet_pPARAMETROS_B
+        '
+        'DataSet_pPARAMETROS_B
+        '
+        Me.DataSet_pPARAMETROS_B.DataSetName = "DataSet_pPARAMETROS_B"
+        Me.DataSet_pPARAMETROS_B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BindingNavigator1
+        '
+        Me.BindingNavigator1.BindingSource = Me.BindingSource1
+        Me.BindingNavigator1.Dock = Wisej.Web.DockStyle.Bottom
+        Me.BindingNavigator1.Location = New System.Drawing.Point(0, 493)
+        Me.BindingNavigator1.Name = "BindingNavigator1"
+        Me.BindingNavigator1.Size = New System.Drawing.Size(880, 28)
+        Me.BindingNavigator1.TabIndex = 2
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.CBSColumna)
+        Me.Panel1.Controls.Add(Me.BTNLimpiar)
+        Me.Panel1.Controls.Add(Me.BTNBuscar)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = Wisej.Web.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 145)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(880, 52)
+        Me.Panel1.TabIndex = 3
+        '
+        'CBSColumna
+        '
+        Me.CBSColumna.BackColor = System.Drawing.Color.Transparent
+        Me.CBSColumna.Cursor = Wisej.Web.Cursors.Hand
+        Me.CBSColumna.Location = New System.Drawing.Point(91, 15)
+        Me.CBSColumna.Name = "CBSColumna"
+        Me.CBSColumna.Size = New System.Drawing.Size(393, 22)
+        Me.CBSColumna.TabIndex = 4
+        ComponentTool2.ImageSource = "icon-close"
+        ComponentTool2.Name = "Borrar"
+        Me.CBSColumna.Tools.AddRange(New Wisej.Web.ComponentTool() {ComponentTool2})
+        Me.CBSColumna.Watermark = "Ingrese Texto (Enter)..."
+        '
+        'BTNLimpiar
+        '
+        Me.BTNLimpiar.BackgroundImageLayout = Wisej.Web.ImageLayout.Stretch
+        Me.BTNLimpiar.BackgroundImageSource = "BTNLimpiar.BackgroundImage"
+        Me.BTNLimpiar.ImageSource = "Resources\Images\Menu\18\trash.png"
+        Me.BTNLimpiar.Location = New System.Drawing.Point(529, 12)
+        Me.BTNLimpiar.Name = "BTNLimpiar"
+        Me.BTNLimpiar.Size = New System.Drawing.Size(27, 27)
+        Me.BTNLimpiar.TabIndex = 3
+        '
+        'BTNBuscar
+        '
+        Me.BTNBuscar.BackgroundImageLayout = Wisej.Web.ImageLayout.Stretch
+        Me.BTNBuscar.BackgroundImageSource = "BTNBuscar.BackgroundImage"
+        Me.BTNBuscar.ImageSource = "Resources\Images\Menu\18\044-search.png"
+        Me.BTNBuscar.Location = New System.Drawing.Point(496, 12)
+        Me.BTNBuscar.Name = "BTNBuscar"
+        Me.BTNBuscar.Size = New System.Drawing.Size(27, 27)
+        Me.BTNBuscar.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(40, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(61, 16)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Columna"
+        '
+        'colCVE_ORDEN_VERIFICACION
+        '
+        Me.colCVE_ORDEN_VERIFICACION.DataPropertyName = "CVE_ORDEN_VERIFICACION"
+        Me.colCVE_ORDEN_VERIFICACION.HeaderText = "CVE_ORDEN_VERIFICACION"
+        Me.colCVE_ORDEN_VERIFICACION.Name = "colCVE_ORDEN_VERIFICACION"
+        '
+        'colCVE_GIRO
+        '
+        Me.colCVE_GIRO.DataPropertyName = "CVE_GIRO"
+        Me.colCVE_GIRO.HeaderText = "CVE_GIRO"
+        Me.colCVE_GIRO.Name = "colCVE_GIRO"
+        '
+        'colCVE_SCIAN
+        '
+        Me.colCVE_SCIAN.DataPropertyName = "CVE_SCIAN"
+        Me.colCVE_SCIAN.HeaderText = "CVE_SCIAN"
+        Me.colCVE_SCIAN.Name = "colCVE_SCIAN"
+        '
+        'colCVE_ESTABLECIMIENTO
+        '
+        Me.colCVE_ESTABLECIMIENTO.DataPropertyName = "CVE_ESTABLECIMIENTO"
+        Me.colCVE_ESTABLECIMIENTO.HeaderText = "CVE_ESTABLECIMIENTO"
+        Me.colCVE_ESTABLECIMIENTO.Name = "colCVE_ESTABLECIMIENTO"
+        '
+        'colCVE_TIPO_MUESTRA
+        '
+        Me.colCVE_TIPO_MUESTRA.DataPropertyName = "CVE_TIPO_MUESTRA"
+        Me.colCVE_TIPO_MUESTRA.HeaderText = "CVE_TIPO_MUESTRA"
+        Me.colCVE_TIPO_MUESTRA.Name = "colCVE_TIPO_MUESTRA"
+        '
+        'colCVE_ESTUDIOS
+        '
+        Me.colCVE_ESTUDIOS.DataPropertyName = "CVE_ESTUDIOS"
+        Me.colCVE_ESTUDIOS.HeaderText = "CVE_ESTUDIOS"
+        Me.colCVE_ESTUDIOS.Name = "colCVE_ESTUDIOS"
+        '
+        'colCVE_ESTUDIOS_SUB
+        '
+        Me.colCVE_ESTUDIOS_SUB.DataPropertyName = "CVE_ESTUDIOS_SUB"
+        Me.colCVE_ESTUDIOS_SUB.HeaderText = "CVE_ESTUDIOS_SUB"
+        Me.colCVE_ESTUDIOS_SUB.Name = "colCVE_ESTUDIOS_SUB"
+        '
+        'colCVE_ROL_CONSECUTIVO
+        '
+        Me.colCVE_ROL_CONSECUTIVO.DataPropertyName = "CVE_ROL_CONSECUTIVO"
+        Me.colCVE_ROL_CONSECUTIVO.HeaderText = "CVE_ROL_CONSECUTIVO"
+        Me.colCVE_ROL_CONSECUTIVO.Name = "colCVE_ROL_CONSECUTIVO"
+        '
+        'Configuracion_Consecutivos
+        '
+        Me.ClientSize = New System.Drawing.Size(880, 521)
+        Me.Controls.Add(Me.DGVConsecutivos)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.BindingNavigator1)
+        Me.Controls.Add(Me.RibbonBar1)
+        Me.Name = "Configuracion_Consecutivos"
+        Me.Text = "Configuracion Consecutivos Parametros"
+        Me.WindowState = Wisej.Web.FormWindowState.Maximized
+        CType(Me.DGVConsecutivos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet_pPARAMETROS_B, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    Friend WithEvents RibbonBar1 As RibbonBar
+    Friend WithEvents DGVConsecutivos As Wisej.Web.DataGridView
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents DataSet_pPARAMETROS_B As DataSet_pPARAMETROS_B
+    Friend WithEvents BindingNavigator1 As BindingNavigator
+    Friend WithEvents RibbonBarPage1 As RibbonBarPage
+    Friend WithEvents RibbonBarGroup1 As RibbonBarGroup
+    Friend WithEvents RBBACTUALIZAR As RibbonBarItemButton
+    Friend WithEvents RBBSALIR As RibbonBarItemButton
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents BTNLimpiar As Button
+    Friend WithEvents BTNBuscar As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents CBSColumna As ComboBox
+    Friend WithEvents colCVE_ORDEN_VERIFICACION As DataGridViewTextBoxColumn
+    Friend WithEvents colCVE_GIRO As DataGridViewTextBoxColumn
+    Friend WithEvents colCVE_SCIAN As DataGridViewTextBoxColumn
+    Friend WithEvents colCVE_ESTABLECIMIENTO As DataGridViewTextBoxColumn
+    Friend WithEvents colCVE_TIPO_MUESTRA As DataGridViewTextBoxColumn
+    Friend WithEvents colCVE_ESTUDIOS As DataGridViewTextBoxColumn
+    Friend WithEvents colCVE_ESTUDIOS_SUB As DataGridViewTextBoxColumn
+    Friend WithEvents colCVE_ROL_CONSECUTIVO As DataGridViewTextBoxColumn
+End Class

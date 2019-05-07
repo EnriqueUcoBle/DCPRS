@@ -1,0 +1,281 @@
+Imports Wisej.Web
+Imports Wisej.Web.Form
+Imports Wisej.Web.Ext.RibbonBar
+
+
+Public Class Cat_Establecimientos
+    Dim oFunciones As New dllData
+    Dim filaActual As Integer = -1
+    Dim tablaCargado As Boolean = False
+    ' Dim Establecimiento_New As Cat_Establecimiento_New
+    Dim Establecimientos_New As Cat_Establecimiento_New
+    Dim Scian1 As Cat_Claves_Scian
+
+    Private Sub Cat_Establecimientos_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'Me.txtCodigo.Validator = New TextBoxValidation("", "", String.Concat(New String() {"0-9\\."}))
+        cargarTabla()
+        oFunciones.loadConfigDataGridView(DGVEstablecimientos)
+        oFunciones.ConfigurarBindingNavigator(BindingNavigator1, False, False, True, True)
+        FiltroGrillaSax1.meDatagrid = DGVEstablecimientos
+        filaActual = -1
+        ' txtClave.Text = "0"
+        DGVpropietario.Frozen = True
+
+    End Sub
+
+    Private Sub ribbonBar1_ItemClick(ByVal sender As Object, ByVal e As Wisej.Web.Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+        If DGVEstablecimientos.RowCount > 0 Then
+            filaActual = DGVEstablecimientos.CurrentRow.Index()
+        End If
+
+        Select Case e.Item.Text
+            Case "Nuevo"
+
+                Nuevo()
+                'limpiarFormulario()
+            Case "Actualizar"
+                cargarTabla()
+                '  limpiarFormulario()
+               ' recuperarEstado(True)
+            Case "Guardar"
+                'Guardar()
+            Case "Salir"
+                Me.Close()
+        End Select
+    End Sub
+    Sub n()
+        'Scian1 = New Cat_Claves_Scian
+        'Scian1.ShowDialog()
+    End Sub
+
+    Public Sub cargarTabla()
+        tablaCargado = False
+
+        Try
+            Me.DataSet_pCAT_ESTABLECIMIENTOS_B1.EnforceConstraints = False
+            Me.DataSet_pCAT_ESTABLECIMIENTOS_B1.pCAT_ESTABLECIMIENTOS_B.Clear()
+            Dim myDA = New SqlClient.SqlDataAdapter("pCAT_ESTABLECIMIENTOS_B", oFunciones.sConexion)
+            myDA.SelectCommand.Parameters.AddWithValue("@habilitado", RBHabilitado.Checked)
+            myDA.SelectCommand.Parameters.AddWithValue("@cve_municipio", Application.Session.Item("CVE_MUNICIPIO"))
+            myDA.SelectCommand.CommandType = CommandType.StoredProcedure
+            myDA.Fill(Me.DataSet_pCAT_ESTABLECIMIENTOS_B1.pCAT_ESTABLECIMIENTOS_B)
+            myDA.Dispose()
+            'oFunciones.AlternatingColors_Grilla(DGVEstablecimientos)
+
+            If DGVEstablecimientos.RowCount > 0 Then
+                DGVEstablecimientos.CurrentRow.Selected = False
+
+            End If
+        Catch ex As Exception
+
+            MessageBox.Show(ex.Message, "Cargar tabla", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+        
+        tablaCargado = True
+    End Sub
+
+    'Sub subLlenarCombos()
+    '    Try
+    '        oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_GIROS_B", "CVE_GIRO", "DESCRIPCIONX", CBSgiro)
+    '        oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_MUNICIPIOS_B", "CLAVE", "DESCRIPCIONX", CBSmunicipio)
+    '        oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_CLAVES_SCIAN_B", "CLAVE", "DESCRIPCIONX", CBSscian)
+
+    '        'oFunciones.Llenar_listbox("pCAT_GIROS_B", "CVE_GIRO", "DESCRIPCIONX", CBSgiro,, True)
+    '        'oFunciones.Llenar_listbox("pCAT_MUNICIPIOS_B", "CLAVE", "DESCRIPCIONX", CBSmunicipio,, True)
+    '        'oFunciones.Llenar_listbox("pCAT_CLAVES_SCIAN_B", "CLAVE", "DESCRIPCIONX", CBSscian,, True)
+    '    Catch ex As Exception
+    '        MessageBox.show("Error: " & ex.Message, "Cargar listas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    End Try
+    'End Sub
+    Private Sub actualizarEsta(claveEsta As String, posicion As Integer)
+        'Establecimientos_New = New Cat_Establecimientos_New
+        'If posicion = 0 Then Establecimientos_New.cargarTodo(claveEsta)
+        'Establecimientos_New.ReturnPosition(claveEsta)
+        'Establecimientos_New.hallarEstaBinding(claveEsta)
+        'Establecimientos_New.ShowDialog()
+        '.Text = "Editar"
+    End Sub
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVEstablecimientos.CellClick 'Click en celda
+        'Primer celda (0) = Eliminar
+        Try
+            'If DGVEstablecimientos.RowCount > 0 Then
+            '    filaActual = DGVEstablecimientos.CurrentRow.Index()
+            'End If
+            If e.RowIndex <> -1 Then
+                If e.ColumnIndex = 1 Then
+                    enviarDatos(e.RowIndex)
+                    'actualizarEsta(DGVEstablecimientos.Item("CVE_ESTABLECIMIENTO", e.RowIndex).Value, e.RowIndex)
+                End If
+                If e.ColumnIndex = 0 Then
+                    Dim result As MsgBoxResult =
+                    MessageBox.Show(
+                        "¿Esta seguro de desactivar/activar esta clave?" & vbCrLf & "Clave : " & DGVEstablecimientos.Item("CVE_ESTABLECIMIENTO", e.RowIndex).Value,
+                        "Confirmación",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information
+                    )
+                    If (result = MsgBoxResult.Yes) Then
+                        msgBoxHandler()
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.show(ex.Message, "Error en la tabla", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub DGVEstablecimientos_SelectionChanged(sender As Object, e As EventArgs) Handles DGVEstablecimientos.SelectionChanged 'Seleccion cambiada
+        'If (filaActual <> -1 And filaActual < DGVEstablecimientos.RowCount) And tablaCargado Then
+        '    enviarDatos(DGVEstablecimientos.CurrentRow.Index())
+        'End If
+    End Sub
+    Dim fic As String = HttpContext.Current.Request.MapPath("")
+    Private Sub enviarDatos(fila As Integer) 'Enviar columnas de fila al formulario
+        Try
+            If fila <> -1 And tablaCargado Then
+                Establecimientos_New = New Cat_Establecimiento_New
+                Establecimientos_New.txtClave.Text = DGVEstablecimientos.Item("CVE_ESTABLECIMIENTO", fila).Value
+                Establecimientos_New.datoGiro = DGVEstablecimientos.Item("DGVgiro", fila).Value
+                Establecimientos_New.datoSCIAN = DGVEstablecimientos.Item("DGVscian", fila).Value
+                Establecimientos_New.datoMunicipio = DGVEstablecimientos.Item("DGVmunicipio", fila).Value
+                Establecimientos_New.txtPropietario.Text = DGVEstablecimientos.Item("DGVpropietario", fila).Value
+                Establecimientos_New.txtTelefono.Text = DGVEstablecimientos.Item("DGVTELEFONO", fila).Value
+                Establecimientos_New.txtEmail.Text = DGVEstablecimientos.Item("DGVEMAIL", fila).Value
+                Establecimientos_New.txtRFC.Text = DGVEstablecimientos.Item("DGVrfc", fila).Value
+                Establecimientos_New.txtRazon_social.Text = DGVEstablecimientos.Item("DGVrazon_social", fila).Value
+
+                Establecimientos_New.txtDomicilio.Text = DGVEstablecimientos.Item("DGVdomicilio", fila).Value '
+                Establecimientos_New.txtCodigo.Text = DGVEstablecimientos.Item("DGVcodigo_postal", fila).Value
+                Establecimientos_New.txtVolumen.Text = DGVEstablecimientos.Item("DGVvolumen_produccion", fila).Value
+                Establecimientos_New.txtColonia.Text = DGVEstablecimientos.Item("DGVcolonia", fila).Value
+                Establecimientos_New.txtDias_Laborales.Text = DGVEstablecimientos.Item("colDIAS_LABORALES", fila).Value
+                Establecimientos_New.datoL = DGVEstablecimientos.Item("colDIAS_LABORALES", fila).Value.ToString
+                ' Establecimientos_New.datoFuncionamiento = DGVEstablecimientos.Item("DGVAVISO_FUNCIONAMIENTO", fila).Value
+                ' Establecimientos_New.datoLicencia = DGVEstablecimientos.Item("DGVLICENCIA_SANITARIA", fila).Value.ToString
+                Establecimientos_New.txtHoraInicio.Text = DGVEstablecimientos.Item("DGVHORA_INICIO_LABORES", fila).Value.ToString
+                Establecimientos_New.txtHoraFin.Text = DGVEstablecimientos.Item("colHORA_FIN_LABORES", fila).Value.ToString
+                Establecimientos_New.txtCargo.Text = DGVEstablecimientos.Item("DGVPropietario_Cargo", fila).Value
+                Establecimientos_New.datoIdentificacion = DGVEstablecimientos.Item("DGVPropietario_identificacion", fila).Value
+                '  Establecimientos_New.txt.Value = DGVEstablecimientos.Item("DGVTURNOS", fila).Value
+
+                'Establecimientos_New.Text = "Editar datos de Establecimiento"
+                AddHandler Establecimientos_New.Closed, AddressOf handleCargar
+                Establecimientos_New.ShowDialog()
+
+            End If
+        Catch ex As Exception
+            MessageBox.show("Error: " & ex.Message, "Enviar datos", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+
+    'Private Sub msgBoxHandler(ByVal sender As Object, ByVal e As EventArgs) 'Callback de messagebox eliminar
+    Private Sub msgBoxHandler() 'Callback de messagebox eliminar
+        Try
+            Dim siElimino As Boolean = False
+
+            ReDim oFunciones.ParametersX_Global(1)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@cve_establecimiento", DGVEstablecimientos.CurrentRow.Cells("CVE_ESTABLECIMIENTO").Value)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@habilitado", Not RBHabilitado.Checked)
+
+                    If oFunciones.fGuardar_O_EliminarXProcedure("pCAT_ESTABLECIMIENTOS_E", "@parametro", oFunciones.ParametersX_Global, False) Then
+                        siElimino = True
+                    End If
+
+                    If siElimino Then
+                        cargarTabla()
+                        recuperarEstado(True)
+                    Else
+                        MessageBox.Show("Datos no eliminados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub DGVEstablecimientos_Click(sender As Object, e As EventArgs) Handles DGVEstablecimientos.Click 'Click en la tabla
+        If DGVEstablecimientos.RowCount > 0 And filaActual = -1 Then
+            filaActual = 0
+        End If
+    End Sub
+
+    Private Sub recuperarEstado(Optional ByVal siEnviar As Boolean = False) 'Seleccionar filaactual despues de actualizar/guardar/eliminar
+        With DGVEstablecimientos
+            If .RowCount > 0 Then
+
+                If filaActual < 0 Then
+                    filaActual = filaActual + 1
+                ElseIf filaActual > .RowCount - 1 Then
+                    filaActual = filaActual - 1
+                End If
+
+                .CurrentRow.Selected = False
+                .Rows(filaActual).Selected = True
+                .CurrentCell = .Rows(filaActual).Cells(0)
+
+                If siEnviar Then
+                    enviarDatos(filaActual)
+                End If
+
+            End If
+        End With
+    End Sub
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Dim SCIAN As New Cat_Claves_Scian
+        SCIAN.Show()
+    End Sub
+
+    Private Sub RBHabilitado_CheckedChanged(sender As Object, e As EventArgs) Handles RBHabilitado.CheckedChanged
+        cargarTabla()
+    End Sub
+
+    'Private Sub CBSscian_ToolClick(sender As Object, e As ToolClickEventArgs)
+    '    If e.Tool.Name = "Borrar" Then
+    '        CBSscian.SelectedIndex = -1
+
+    '    End If
+    'End Sub
+
+    'Private Sub CBSmunicipio_ToolClick(sender As Object, e As ToolClickEventArgs)
+    '    If e.Tool.Name = "Borrar" Then
+    '        CBSmunicipio.SelectedIndex = -1
+    '    End If
+    'End Sub
+
+    'Private Sub CBSgiro_ToolClick(sender As Object, e As ToolClickEventArgs)
+    '    If e.Tool.Name = "Borrar" Then
+    '        CBSgiro.SelectedIndex = -1
+    '    End If
+    'End Sub
+
+    Private Sub RBNNUEVO_Click(sender As Object, e As EventArgs) Handles RBNNUEVO.Click
+
+
+
+    End Sub
+    Sub Nuevo()
+        'Dim dp As New DataTable
+        Establecimientos_New = New Cat_Establecimiento_New
+        ' Establecimientos_New.Text = "Registrar nuevo establecimiento"
+        AddHandler Establecimientos_New.Closed, AddressOf handleCargar
+        Establecimientos_New.RBBACTUALIZAR.Enabled = False
+        Establecimientos_New.ShowDialog()
+        'Establecimientos_New.Nuevo()
+        ' Establecimiento_New.Nuevo()
+    End Sub
+    Private Sub handleCargar(ByVal sender As Object, ByVal e As System.EventArgs)
+        If Establecimientos_New.isselected Then
+            Try
+                cargarTabla()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Try
+
+        End If
+    End Sub
+
+End Class
+
