@@ -49,6 +49,7 @@ Partial Class Cat_Lotes_Expedientes
         Me.RBNACTUALIZAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RBNGUARDAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RBNSALIR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.FiltroGrillaSax1 = New DPCRS.filtroGrillaSax()
         Me.RBHabilitado = New Wisej.Web.RadioButton()
         Me.RBDesactivado = New Wisej.Web.RadioButton()
         Me.Label3 = New Wisej.Web.Label()
@@ -69,8 +70,6 @@ Partial Class Cat_Lotes_Expedientes
         Me.buttonMoveLast = New Wisej.Web.Button()
         Me.separatorControl = New Wisej.Web.Line()
         Me.buttonDelete = New Wisej.Web.Button()
-        Me.RBNCANCELAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.FiltroGrillaSax1 = New DPCRS.filtroGrillaSax()
         CType(Me.DGVExpedientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_pCat_Lotes_Expedientes_B, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,13 +95,14 @@ Partial Class Cat_Lotes_Expedientes
         Me.DGVExpedientes.Location = New System.Drawing.Point(0, 252)
         Me.DGVExpedientes.Name = "DGVExpedientes"
         Me.DGVExpedientes.RowHeadersVisible = False
-        Me.DGVExpedientes.Size = New System.Drawing.Size(947, 235)
+        Me.DGVExpedientes.Size = New System.Drawing.Size(1019, 271)
         Me.DGVExpedientes.TabIndex = 4
         '
         'Eliminar
         '
         Me.Eliminar.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.NotSet
-        DataGridViewCellStyle2.BackgroundImageSource = "Resources/Images/Menu/30/trash.png"
+        DataGridViewCellStyle2.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackgroundImageSource = "Resources/Icons/Menu/delete-bin.png"
         Me.Eliminar.DefaultCellStyle = DataGridViewCellStyle2
         Me.Eliminar.HeaderText = " "
         Me.Eliminar.Name = "Eliminar"
@@ -113,8 +113,7 @@ Partial Class Cat_Lotes_Expedientes
         'Column0
         '
         Me.Column0.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.NotSet
-        Me.Column0.CellImageSource = ""
-        DataGridViewCellStyle3.BackgroundImageSource = "Resources/Images/Menu/30/file-4.png"
+        DataGridViewCellStyle3.BackgroundImageSource = "Resources/Icons/Menu/impresora.png?color=#0086FF"
         Me.Column0.DefaultCellStyle = DataGridViewCellStyle3
         Me.Column0.HeaderText = " "
         Me.Column0.Name = "Column0"
@@ -209,7 +208,7 @@ Partial Class Cat_Lotes_Expedientes
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.Menu)
-        Me.RibbonBar1.Size = New System.Drawing.Size(947, 145)
+        Me.RibbonBar1.Size = New System.Drawing.Size(1019, 145)
         '
         'Menu
         '
@@ -219,7 +218,6 @@ Partial Class Cat_Lotes_Expedientes
         'Opciones
         '
         Me.Opciones.Items.Add(Me.RBNNUEVO)
-        Me.Opciones.Items.Add(Me.RBNCANCELAR)
         Me.Opciones.Items.Add(Me.RBNACTUALIZAR)
         Me.Opciones.Items.Add(Me.RBNGUARDAR)
         Me.Opciones.Items.Add(Me.RBNSALIR)
@@ -242,7 +240,6 @@ Partial Class Cat_Lotes_Expedientes
         Me.RBNGUARDAR.ImageSource = "ribbon-save?color=#FF0000"
         Me.RBNGUARDAR.Name = "RBNGUARDAR"
         Me.RBNGUARDAR.Text = "Guardar"
-        Me.RBNGUARDAR.Visible = False
         '
         'RBNSALIR
         '
@@ -250,10 +247,29 @@ Partial Class Cat_Lotes_Expedientes
         Me.RBNSALIR.Name = "RBNSALIR"
         Me.RBNSALIR.Text = "Salir"
         '
+        'FiltroGrillaSax1
+        '
+        Me.FiltroGrillaSax1.AutoSize = True
+        Me.FiltroGrillaSax1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink
+        Me.FiltroGrillaSax1.BackColor = System.Drawing.Color.Transparent
+        Me.FiltroGrillaSax1.Dock = Wisej.Web.DockStyle.Top
+        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(0, 212)
+        Me.FiltroGrillaSax1.meBackcolorEtiquetas = System.Drawing.Color.AliceBlue
+        Me.FiltroGrillaSax1.meBorderStyleEtiquetas = Wisej.Web.BorderStyle.Solid
+        Me.FiltroGrillaSax1.meBorderWidthEtiquetas = 1
+        Me.FiltroGrillaSax1.meDatagrid = Nothing
+        Me.FiltroGrillaSax1.meFiltrarVacios = False
+        Me.FiltroGrillaSax1.meLanzarException = False
+        Me.FiltroGrillaSax1.meMarginEtiquetas = New Wisej.Web.Padding(1)
+        Me.FiltroGrillaSax1.mePaddingEtiquetas = New Wisej.Web.Padding(2)
+        Me.FiltroGrillaSax1.Name = "FiltroGrillaSax1"
+        Me.FiltroGrillaSax1.Size = New System.Drawing.Size(1019, 40)
+        Me.FiltroGrillaSax1.TabIndex = 3
+        '
         'RBHabilitado
         '
         Me.RBHabilitado.Checked = True
-        Me.RBHabilitado.Location = New System.Drawing.Point(273, 79)
+        Me.RBHabilitado.Location = New System.Drawing.Point(280, 106)
         Me.RBHabilitado.Name = "RBHabilitado"
         Me.RBHabilitado.Size = New System.Drawing.Size(85, 23)
         Me.RBHabilitado.TabIndex = 11
@@ -261,7 +277,7 @@ Partial Class Cat_Lotes_Expedientes
         '
         'RBDesactivado
         '
-        Me.RBDesactivado.Location = New System.Drawing.Point(379, 79)
+        Me.RBDesactivado.Location = New System.Drawing.Point(391, 106)
         Me.RBDesactivado.Name = "RBDesactivado"
         Me.RBDesactivado.Size = New System.Drawing.Size(100, 23)
         Me.RBDesactivado.TabIndex = 12
@@ -305,10 +321,9 @@ Partial Class Cat_Lotes_Expedientes
         Me.Panel1.Location = New System.Drawing.Point(0, 145)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.ShowCloseButton = True
-        Me.Panel1.Size = New System.Drawing.Size(947, 67)
+        Me.Panel1.Size = New System.Drawing.Size(1019, 67)
         Me.Panel1.TabIndex = 5
         Me.Panel1.Text = "Datos"
-        Me.Panel1.Visible = False
         '
         'CBSEstablecimiento
         '
@@ -346,14 +361,14 @@ Partial Class Cat_Lotes_Expedientes
         Me.BindingNavigator1.CountItem = Me.labelCount
         Me.BindingNavigator1.DeleteItem = Me.buttonDelete
         Me.BindingNavigator1.Dock = Wisej.Web.DockStyle.Bottom
-        Me.BindingNavigator1.Location = New System.Drawing.Point(0, 487)
+        Me.BindingNavigator1.Location = New System.Drawing.Point(0, 523)
         Me.BindingNavigator1.MoveFirstItem = Me.buttonMoveFirst
         Me.BindingNavigator1.MoveLastItem = Me.buttonMoveLast
         Me.BindingNavigator1.MoveNextItem = Me.buttonMoveNext
         Me.BindingNavigator1.MovePreviousItem = Me.buttonMovePrevious
         Me.BindingNavigator1.Name = "BindingNavigator1"
         Me.BindingNavigator1.PositionItem = Me.textBoxPosition
-        Me.BindingNavigator1.Size = New System.Drawing.Size(947, 33)
+        Me.BindingNavigator1.Size = New System.Drawing.Size(1019, 33)
         Me.BindingNavigator1.TabIndex = 6
         '
         'buttonAddNew
@@ -446,35 +461,9 @@ Partial Class Cat_Lotes_Expedientes
         Me.buttonDelete.Size = New System.Drawing.Size(37, 28)
         Me.buttonDelete.TabIndex = 5
         '
-        'RBNCANCELAR
-        '
-        Me.RBNCANCELAR.ImageSource = "ribbon-delete?color=#0000FF"
-        Me.RBNCANCELAR.Name = "RBNCANCELAR"
-        Me.RBNCANCELAR.Text = "Cancelar"
-        Me.RBNCANCELAR.Visible = False
-        '
-        'FiltroGrillaSax1
-        '
-        Me.FiltroGrillaSax1.AutoSize = True
-        Me.FiltroGrillaSax1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink
-        Me.FiltroGrillaSax1.BackColor = System.Drawing.Color.Transparent
-        Me.FiltroGrillaSax1.Dock = Wisej.Web.DockStyle.Top
-        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(0, 212)
-        Me.FiltroGrillaSax1.meBackcolorEtiquetas = System.Drawing.Color.AliceBlue
-        Me.FiltroGrillaSax1.meBorderStyleEtiquetas = Wisej.Web.BorderStyle.Solid
-        Me.FiltroGrillaSax1.meBorderWidthEtiquetas = 1
-        Me.FiltroGrillaSax1.meDatagrid = Nothing
-        Me.FiltroGrillaSax1.meFiltrarVacios = False
-        Me.FiltroGrillaSax1.meLanzarException = False
-        Me.FiltroGrillaSax1.meMarginEtiquetas = New Wisej.Web.Padding(1)
-        Me.FiltroGrillaSax1.mePaddingEtiquetas = New Wisej.Web.Padding(2)
-        Me.FiltroGrillaSax1.Name = "FiltroGrillaSax1"
-        Me.FiltroGrillaSax1.Size = New System.Drawing.Size(947, 40)
-        Me.FiltroGrillaSax1.TabIndex = 3
-        '
         'Cat_Lotes_Expedientes
         '
-        Me.ClientSize = New System.Drawing.Size(947, 520)
+        Me.ClientSize = New System.Drawing.Size(1019, 556)
         Me.Controls.Add(Me.DGVExpedientes)
         Me.Controls.Add(Me.BindingNavigator1)
         Me.Controls.Add(Me.RBHabilitado)
@@ -541,5 +530,4 @@ Partial Class Cat_Lotes_Expedientes
     Private WithEvents DGVGCLAVE As DataGridViewTextBoxColumn
     Private WithEvents colFECHA As DataGridViewDateTimePickerColumn
     Private WithEvents Column0 As DataGridViewImageColumn
-    Friend WithEvents RBNCANCELAR As RibbonBarItemButton
 End Class

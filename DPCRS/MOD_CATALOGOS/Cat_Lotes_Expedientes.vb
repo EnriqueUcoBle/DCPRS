@@ -24,26 +24,14 @@ Public Class Cat_Lotes_Expedientes
         Select Case e.Item.Text
             Case "Nuevo"
                 limpiarFormulario()
-                Panel1.Visible = True
-                RBNGUARDAR.Visible = True
-                RBNCANCELAR.Visible = True
             Case "Actualizar"
                 cargarTabla()
                 limpiarFormulario()
                 recuperarEstado(True)
             Case "Guardar"
                 guardar()
-                Panel1.Visible = False
-                RBNGUARDAR.Visible = False
-                RBNCANCELAR.Visible = False
-                cargarTabla()
             Case "Salir"
                 Close()
-
-            Case "Cancelar"
-                Panel1.Visible = False
-                RBNGUARDAR.Visible = False
-                RBNCANCELAR.Visible = False
         End Select
     End Sub
 
@@ -54,13 +42,8 @@ Public Class Cat_Lotes_Expedientes
         Try
             Me.DataSet_pCat_Lotes_Expedientes_B.pACTAS_VERIFICACION_LOTES_B.Clear()
             Dim myDA = New SqlClient.SqlDataAdapter("pACTAS_VERIFICACION_LOTES_B", oFunciones.sConexion)
-            If RBHabilitado.Checked Then
-                myDA.SelectCommand.Parameters.AddWithValue("@habilitado", True)
-            ElseIf RBDesactivado.Checked Then
-                myDA.SelectCommand.Parameters.AddWithValue("@habilitado", False)
-            End If
-
-            myDA.SelectCommand.Parameters.AddWithValue("@CVE_MUNICIPIO", Application.Session.Item("CVE_MUNICIPIO"))
+            'myDA.SelectCommand.Parameters.AddWithValue("@habilitado", RBHabilitado.Checked)
+            myDA.SelectCommand.Parameters.AddWithValue("@cve_municipio", Application.Session.Item("CVE_MUNICIPIO"))
             myDA.SelectCommand.CommandType = CommandType.StoredProcedure
             myDA.Fill(Me.DataSet_pCat_Lotes_Expedientes_B.pACTAS_VERIFICACION_LOTES_B)
             myDA.Dispose()
@@ -238,7 +221,6 @@ Public Class Cat_Lotes_Expedientes
     End Sub
 
     Private Sub RBHabilitado_CheckedChanged(sender As Object, e As EventArgs) Handles RBHabilitado.CheckedChanged
-
         cargarTabla()
     End Sub
 
