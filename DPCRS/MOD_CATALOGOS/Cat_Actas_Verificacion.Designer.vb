@@ -66,12 +66,13 @@ Partial Class Cat_Actas_Verificacion
         Me.separatorControl = New Wisej.Web.Line()
         Me.buttonDelete = New Wisej.Web.Button()
         Me.FiltroGrillaSax1 = New DPCRS.filtroGrillaSax()
+        Me.Panel1 = New Wisej.Web.Panel()
         CType(Me.DGV_Orden, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_pCAT_ACTAS_VERIFICACION_B, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.BindingNavigator1.SuspendLayout()
-        Me.SuspendLayout()
+        Me.BindingNavigator1.SuspendLayout
+        Me.SuspendLayout
         '
         'RibbonBar1
         '
@@ -79,7 +80,7 @@ Partial Class Cat_Actas_Verificacion
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.RibbonBarPage1)
-        Me.RibbonBar1.Size = New System.Drawing.Size(982, 139)
+        Me.RibbonBar1.Size = New System.Drawing.Size(982, 234)
         '
         'RibbonBarPage1
         '
@@ -124,10 +125,10 @@ Partial Class Cat_Actas_Verificacion
         Me.DGV_Orden.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.Editar, Me.Folio, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.cFechaVerificacion, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.DGV_Orden.DataSource = Me.BindingSource1
         Me.DGV_Orden.Dock = Wisej.Web.DockStyle.Fill
-        Me.DGV_Orden.Location = New System.Drawing.Point(0, 179)
+        Me.DGV_Orden.Location = New System.Drawing.Point(0, 274)
         Me.DGV_Orden.Name = "DGV_Orden"
         Me.DGV_Orden.RowHeadersVisible = False
-        Me.DGV_Orden.Size = New System.Drawing.Size(982, 352)
+        Me.DGV_Orden.Size = New System.Drawing.Size(982, 257)
         Me.DGV_Orden.TabIndex = 1
         '
         'Editar
@@ -409,7 +410,7 @@ Partial Class Cat_Actas_Verificacion
         Me.FiltroGrillaSax1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink
         Me.FiltroGrillaSax1.BackColor = System.Drawing.Color.Transparent
         Me.FiltroGrillaSax1.Dock = Wisej.Web.DockStyle.Top
-        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(0, 139)
+        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(0, 234)
         Me.FiltroGrillaSax1.meBackcolorEtiquetas = System.Drawing.Color.AliceBlue
         Me.FiltroGrillaSax1.meBorderStyleEtiquetas = Wisej.Web.BorderStyle.Solid
         Me.FiltroGrillaSax1.meBorderWidthEtiquetas = 1
@@ -422,9 +423,17 @@ Partial Class Cat_Actas_Verificacion
         Me.FiltroGrillaSax1.Size = New System.Drawing.Size(982, 40)
         Me.FiltroGrillaSax1.TabIndex = 3
         '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(780, 188)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 100)
+        Me.Panel1.TabIndex = 6
+        '
         'Cat_Actas_Verificacion
         '
         Me.ClientSize = New System.Drawing.Size(982, 565)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DGV_Orden)
         Me.Controls.Add(Me.BindingNavigator1)
         Me.Controls.Add(Me.FiltroGrillaSax1)
@@ -438,7 +447,7 @@ Partial Class Cat_Actas_Verificacion
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.PerformLayout
 
     End Sub
 
@@ -484,4 +493,5 @@ Partial Class Cat_Actas_Verificacion
     Private WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Private WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Private WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel1 As Panel
 End Class

@@ -12,7 +12,7 @@ Public Class Cat_Actas_Verificacion
     Private Sub ribbonBar1_ItemClick(ByVal sender As Object, ByVal e As Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
         Select Case e.Item.Text
             Case "Nuevo"
-                Nuevo()
+                oFunciones.Mostrar_Formulario("Acta_Capturar")
             Case "Actualizar"
                 cargarTabla()
             Case "Salir"
