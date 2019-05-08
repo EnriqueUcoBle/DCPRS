@@ -21,6 +21,9 @@ Public Class Cat_Actas_Verificacion
     End Sub
     Private Sub cargarTabla()
         Try
+
+
+
             Me.DataSet_pCAT_ACTAS_VERIFICACION_B.pCAT_ACTAS_VERIFICACION_B.Clear()
             Dim myDA = New SqlClient.SqlDataAdapter("pCAT_ACTAS_VERIFICACION_B", oFunciones.sConexion)
             myDA.SelectCommand.CommandType = CommandType.StoredProcedure
