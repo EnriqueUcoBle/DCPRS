@@ -6087,20 +6087,7 @@ CryptoStreamMode.Read)
 #End Region
 
 #Region "DPCRS"
-    Public Function Mostrar_Formulario(ByVal cNodo As String)
-        Dim objcontrol As Object = Nothing
-        If cNodo = Nothing Then
-            Exit Function
-        End If
-        Try
-            Dim wSTproyecto As String = System.Reflection.Assembly.GetExecutingAssembly.GetName.Name
-            Dim ensamblado As System.Reflection.Assembly = System.Reflection.Assembly.GetExecutingAssembly()
-            Dim f As Form = ensamblado.CreateInstance(wSTproyecto + "." + cNodo, True)
-            f.Show()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Function
+
     Public Function ValidarPanel(ByVal panel As Control, ByVal ErrorProvider As ErrorProvider) As Boolean
         ValidarPanel = True
         For Each c As Control In panel.Controls
@@ -6216,6 +6203,24 @@ CryptoStreamMode.Read)
                 '    DirectCast(c, RadioButton).Checked = False
             End If
         Next
+    End Function
+    Public Function Mostrar_Formulario(ByVal cNodo As String)
+        Dim objcontrol As Object = Nothing
+
+        If cNodo = Nothing Then
+            Exit Function
+        End If
+
+        '  VWGContext.Current.Session("name_modulo") = cNodo
+        Try
+            Dim wSTproyecto As String = System.Reflection.Assembly.GetExecutingAssembly.GetName.Name
+            Dim Formulario As String = cNodo
+            Dim ensamblado As System.Reflection.Assembly = System.Reflection.Assembly.GetExecutingAssembly()
+            Dim f As Form = ensamblado.CreateInstance(wSTproyecto + "." + Formulario, True)
+            f.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Function
 
     Public Function LimpiarPanelProviders(ByVal gb As Control, ByVal Tag As Object, ByVal ErrorProvider As ErrorProvider)

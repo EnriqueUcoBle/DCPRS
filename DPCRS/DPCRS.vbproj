@@ -786,6 +786,12 @@
     <Compile Include="MOD_DICTAMEN\Dictamen_Capturar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MOD_ESTADISTICA\Estadisticas_Establecimiento.Designer.vb">
+      <DependentUpon>Estadisticas_Establecimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_ESTADISTICA\Estadisticas_Establecimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MOD_ESTADISTICA\Estadistica_Capturar_Cifras.Designer.vb">
       <DependentUpon>Estadistica_Capturar_Cifras.vb</DependentUpon>
     </Compile>
@@ -1031,6 +1037,9 @@
     <EmbeddedResource Include="MOD_DICTAMEN\Dictamen_Capturar.resx">
       <DependentUpon>Dictamen_Capturar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MOD_ESTADISTICA\Estadisticas_Establecimiento.resx">
+      <DependentUpon>Estadisticas_Establecimiento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MOD_ESTADISTICA\Estadistica_Capturar_Cifras.resx">
       <DependentUpon>Estadistica_Capturar_Cifras.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1052,6 +1061,7 @@
     <EmbeddedResource Include="Mostrar_Asp.resx">
       <DependentUpon>Mostrar_Asp.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

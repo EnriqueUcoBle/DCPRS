@@ -311,7 +311,7 @@ Public Class Acta_Capturar
         'GenerarReporte("R_Acta_Registro_Lotes", "pACTAS_VERIFICACION_LOTES_B")
         dicParametros.Clear()
         'dicParametros.Add("cve_acta", CBSOrden.Text)
-        dicParametros.Add("cve_acta", "ACTII-001")
+        dicParametros.Add("cve_acta", CBSOrden.SelectedValue)
         oFunciones.GenerarReporte("R_ACTA_GENERAL", "pCAT_ACTAS_VERIFICACION_TEST_B", dicParametros)
 
 

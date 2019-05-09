@@ -41,6 +41,10 @@ Partial Public Class R_ACTA_GENERAL
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.ReportHeaderBand1 = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrPictureBox2 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.Title = New DevExpress.XtraReports.UI.XRControlStyle()
@@ -57,15 +61,11 @@ Partial Public Class R_ACTA_GENERAL
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.cve_acta = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
-        Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.texto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrRichText2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrRichText1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -266,6 +266,37 @@ Partial Public Class R_ACTA_GENERAL
         Me.ReportHeaderBand1.HeightF = 87.50003!
         Me.ReportHeaderBand1.Name = "ReportHeaderBand1"
         '
+        'XrTable1
+        '
+        Me.XrTable1.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(367.7083!, 62.50003!)
+        Me.XrTable1.Name = "XrTable1"
+        Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(452.2914!, 25.0!)
+        Me.XrTable1.StylePriority.UseFont = False
+        '
+        'XrTableRow1
+        '
+        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2})
+        Me.XrTableRow1.Name = "XrTableRow1"
+        Me.XrTableRow1.Weight = 1.0R
+        '
+        'XrTableCell1
+        '
+        Me.XrTableCell1.Name = "XrTableCell1"
+        Me.XrTableCell1.StylePriority.UseTextAlignment = False
+        Me.XrTableCell1.Text = "Acta de Verificación Sanitaria No."
+        Me.XrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        Me.XrTableCell1.Weight = 1.5861122530270149R
+        '
+        'XrTableCell2
+        '
+        Me.XrTableCell2.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.XrTableCell2.Name = "XrTableCell2"
+        Me.XrTableCell2.StylePriority.UseFont = False
+        Me.XrTableCell2.Text = "[CVE_ACTA]"
+        Me.XrTableCell2.Weight = 1.5369812227801951R
+        '
         'XrPictureBox2
         '
         Me.XrPictureBox2.Image = CType(resources.GetObject("XrPictureBox2.Image"), System.Drawing.Image)
@@ -288,7 +319,7 @@ Partial Public Class R_ACTA_GENERAL
         Me.Title.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.Title.BorderWidth = 1.0!
         Me.Title.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Title.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Title.ForeColor = System.Drawing.Color.FromArgb(75, 75, 75)
         Me.Title.Name = "Title"
         '
         'DetailCaption3
@@ -296,7 +327,7 @@ Partial Public Class R_ACTA_GENERAL
         Me.DetailCaption3.BackColor = System.Drawing.Color.Transparent
         Me.DetailCaption3.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.DetailCaption3.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.DetailCaption3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.DetailCaption3.ForeColor = System.Drawing.Color.FromArgb(75, 75, 75)
         Me.DetailCaption3.Name = "DetailCaption3"
         Me.DetailCaption3.Padding = New DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100.0!)
         Me.DetailCaption3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
@@ -311,7 +342,7 @@ Partial Public Class R_ACTA_GENERAL
         '
         'DetailData3_Odd
         '
-        Me.DetailData3_Odd.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(231, Byte), Integer))
+        Me.DetailData3_Odd.BackColor = System.Drawing.Color.FromArgb(231, 231, 231)
         Me.DetailData3_Odd.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.DetailData3_Odd.BorderWidth = 1.0!
         Me.DetailData3_Odd.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
@@ -330,13 +361,14 @@ Partial Public Class R_ACTA_GENERAL
         'PageInfo
         '
         Me.PageInfo.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PageInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.PageInfo.ForeColor = System.Drawing.Color.FromArgb(75, 75, 75)
         Me.PageInfo.Name = "PageInfo"
         Me.PageInfo.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         '
         'DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1
         '
         Me.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1.DataSetName = "DataSet_pCAT_ACTAS_VERIFICACION_TEST_B"
+        Me.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1.EnforceConstraints = False
         Me.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PCAT_ACTAS_VERIFICACION_TEST_BTableAdapter
@@ -395,38 +427,8 @@ Partial Public Class R_ACTA_GENERAL
         'cve_acta
         '
         Me.cve_acta.Name = "cve_acta"
+        Me.cve_acta.ValueInfo = "-99"
         Me.cve_acta.Visible = False
-        '
-        'XrTable1
-        '
-        Me.XrTable1.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(367.7083!, 62.50003!)
-        Me.XrTable1.Name = "XrTable1"
-        Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(452.2914!, 25.0!)
-        Me.XrTable1.StylePriority.UseFont = False
-        '
-        'XrTableRow1
-        '
-        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2})
-        Me.XrTableRow1.Name = "XrTableRow1"
-        Me.XrTableRow1.Weight = 1.0R
-        '
-        'XrTableCell1
-        '
-        Me.XrTableCell1.Name = "XrTableCell1"
-        Me.XrTableCell1.StylePriority.UseTextAlignment = False
-        Me.XrTableCell1.Text = "Acta de Verificación Sanitaria No."
-        Me.XrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        Me.XrTableCell1.Weight = 1.5861122530270149R
-        '
-        'XrTableCell2
-        '
-        Me.XrTableCell2.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.XrTableCell2.Name = "XrTableCell2"
-        Me.XrTableCell2.StylePriority.UseFont = False
-        Me.XrTableCell2.Text = "[CVE_ACTA]"
-        Me.XrTableCell2.Weight = 1.5369812227801951R
         '
         'R_ACTA_GENERAL
         '
@@ -444,8 +446,8 @@ Partial Public Class R_ACTA_GENERAL
         CType(Me.texto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrRichText2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrRichText1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

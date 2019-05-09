@@ -634,3 +634,5 @@ C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Microso
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Microsoft.VisualStudio.Shell.Immutable.12.0.xml
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Microsoft.VisualStudio.ImageCatalog.xml
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Microsoft.VisualStudio.CoreUtility.xml
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Estadisticas_Establecimiento.resources
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.dll.licenses
