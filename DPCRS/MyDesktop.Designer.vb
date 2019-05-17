@@ -25,9 +25,6 @@ Partial Class MyDesktop
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ComponentTool1 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
-        Dim ComponentTool2 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
-        Dim ComponentTool3 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
         Me.MenuItem2 = New Wisej.Web.MenuItem()
         Me.MenuItem3 = New Wisej.Web.MenuItem()
         Me.MenuItem5 = New Wisej.Web.MenuItem()
@@ -96,11 +93,7 @@ Partial Class MyDesktop
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.pgADMIN)
         Me.RibbonBar1.Pages.Add(Me.pgSOPORTE)
-        Me.RibbonBar1.Size = New System.Drawing.Size(1477, 145)
-        ComponentTool1.ImageSource = "menu-overflow"
-        ComponentTool2.ImageSource = "menu-overflow"
-        ComponentTool3.ImageSource = "menu-overflow"
-        Me.RibbonBar1.Tools.AddRange(New Wisej.Web.ComponentTool() {ComponentTool1, ComponentTool2, ComponentTool3})
+        Me.RibbonBar1.Size = New System.Drawing.Size(1475, 145)
         '
         'pgADMIN
         '
@@ -173,7 +166,7 @@ Partial Class MyDesktop
         Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
         Me.Controls.Add(Me.RibbonBar1)
         Me.Name = "MyDesktop"
-        Me.Size = New System.Drawing.Size(1477, 636)
+        Me.Size = New System.Drawing.Size(1475, 834)
         Me.ResumeLayout(False)
 
     End Sub

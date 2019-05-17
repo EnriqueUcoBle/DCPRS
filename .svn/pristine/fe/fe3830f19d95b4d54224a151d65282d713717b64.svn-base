@@ -489,17 +489,6 @@
     <Content Include="Datasets\DataSet_pDICTAMEN_B.xsc">
       <DependentUpon>DataSet_pDICTAMEN_B.xsd</DependentUpon>
     </Content>
-    <Content Include="Datasets\DataSet_pCAT_QUEJAS_P.xsc">
-      <DependentUpon>DataSet_pCAT_QUEJAS_P.xsd</DependentUpon>
-    </Content>
-    <None Include="Datasets\DataSet_pCAT_QUEJAS_P.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet_pCAT_QUEJAS_P.Designer.vb</LastGenOutput>
-    </None>
-    <Content Include="Datasets\DataSet_pCAT_QUEJAS_P.xss">
-      <DependentUpon>DataSet_pCAT_QUEJAS_P.xsd</DependentUpon>
-    </Content>
     <None Include="Datasets\DataSet_pDICTAMEN_B.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet_pDICTAMEN_B.Designer.vb</LastGenOutput>
@@ -649,11 +638,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_pCAT_ORDENES_VERIFICACION_B.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Datasets\DataSet_pCAT_QUEJAS_P.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_pCAT_QUEJAS_P.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\DataSet_pCAT_ROL_B.Designer.vb">
       <DependentUpon>DataSet_pCAT_ROL_B.xsd</DependentUpon>
@@ -844,12 +828,6 @@
     <Compile Include="MOD_RECEPCION\Capturar_Resultados.aspx.vb">
       <DependentUpon>Capturar_Resultados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MOD_RECEPCION\Estado_de_Quejas.Designer.vb">
-      <DependentUpon>Estado_de_Quejas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MOD_RECEPCION\Estado_de_Quejas.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MOD_RECEPCION\Gestion_Orden_Verificacion.Designer.vb">
       <DependentUpon>Gestion_Orden_Verificacion.vb</DependentUpon>
@@ -1097,9 +1075,6 @@
     <EmbeddedResource Include="MOD_RECEPCION\Acta_Registro_Lotes.resx">
       <DependentUpon>Acta_Registro_Lotes.vb</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MOD_RECEPCION\Estado_de_Quejas.resx">
-      <DependentUpon>Estado_de_Quejas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MOD_RECEPCION\Gestion_Orden_Verificacion.resx">
       <DependentUpon>Gestion_Orden_Verificacion.vb</DependentUpon>

@@ -250,32 +250,32 @@ Partial Class Acta_Capturar
         '
         'RBBNUEVO
         '
-        Me.RBBNUEVO.ColumnBreak = True
         Me.RBBNUEVO.ImageSource = "ribbon-document?color=#FF0000"
+        Me.RBBNUEVO.Name = "RBBNUEVO"
         Me.RBBNUEVO.Text = "Nuevo"
         '
         'RBBGUARDAR
         '
-        Me.RBBGUARDAR.ColumnBreak = True
         Me.RBBGUARDAR.ImageSource = "ribbon-save?color=#FF0000"
+        Me.RBBGUARDAR.Name = "RBBGUARDAR"
         Me.RBBGUARDAR.Text = "Guardar"
         '
         'RBNBUSCAR
         '
-        Me.RBNBUSCAR.ColumnBreak = True
         Me.RBNBUSCAR.ImageSource = "icon-search?color=#006EFF"
+        Me.RBNBUSCAR.Name = "RBNBUSCAR"
         Me.RBNBUSCAR.Text = "Buscar"
         '
         'RBNIMPRIMIR
         '
-        Me.RBNIMPRIMIR.ColumnBreak = True
         Me.RBNIMPRIMIR.ImageSource = "ribbon-print"
+        Me.RBNIMPRIMIR.Name = "RBNIMPRIMIR"
         Me.RBNIMPRIMIR.Text = "Imprimir"
         '
         'RBBSALIR
         '
-        Me.RBBSALIR.ColumnBreak = True
-        Me.RBBSALIR.ImageSource = "Resources\Images\Menu\30\exit-sign-red.png?color=#0000FF"
+        Me.RBBSALIR.ImageSource = "Resources\Images\Menu\30\exit-sign-red.png?color=#0000FF<<<"
+        Me.RBBSALIR.Name = "RBBSALIR"
         Me.RBBSALIR.Text = "Salir"
         '
         'ErrorProvider1
@@ -1064,7 +1064,7 @@ Partial Class Acta_Capturar
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label27.Location = New System.Drawing.Point(162, 164)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(123, 16)
+        Me.Label27.Size = New System.Drawing.Size(122, 16)
         Me.Label27.TabIndex = 4
         Me.Label27.Text = "Horario de labores"
         '
@@ -1074,7 +1074,7 @@ Partial Class Acta_Capturar
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label24.Location = New System.Drawing.Point(21, 31)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(237, 16)
+        Me.Label24.Size = New System.Drawing.Size(236, 16)
         Me.Label24.TabIndex = 2
         Me.Label24.Text = "Cuenta con aviso de funcionamiento:"
         '
@@ -1457,7 +1457,7 @@ Partial Class Acta_Capturar
         Me.Label38.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label38.Location = New System.Drawing.Point(511, 118)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(152, 16)
+        Me.Label38.Size = New System.Drawing.Size(151, 16)
         Me.Label38.TabIndex = 8
         Me.Label38.Text = "5.1 Número de anexos:"
         Me.Label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1468,7 +1468,7 @@ Partial Class Acta_Capturar
         Me.Label37.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label37.Location = New System.Drawing.Point(511, 86)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(184, 16)
+        Me.Label37.Size = New System.Drawing.Size(183, 16)
         Me.Label37.TabIndex = 7
         Me.Label37.Text = "5. Se anexa documentación:"
         Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1479,7 +1479,7 @@ Partial Class Acta_Capturar
         Me.Label36.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label36.Location = New System.Drawing.Point(511, 57)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(283, 16)
+        Me.Label36.Size = New System.Drawing.Size(282, 16)
         Me.Label36.TabIndex = 6
         Me.Label36.Text = "4.1 Número de folio de sello(s) reubicado(s):"
         Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1490,7 +1490,7 @@ Partial Class Acta_Capturar
         Me.Label35.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label35.Location = New System.Drawing.Point(511, 26)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(163, 16)
+        Me.Label35.Size = New System.Drawing.Size(162, 16)
         Me.Label35.TabIndex = 5
         Me.Label35.Text = "4. Reubicación de sellos:"
         Me.Label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1501,7 +1501,7 @@ Partial Class Acta_Capturar
         Me.Label34.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label34.Location = New System.Drawing.Point(39, 146)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(308, 16)
+        Me.Label34.Size = New System.Drawing.Size(306, 16)
         Me.Label34.TabIndex = 4
         Me.Label34.Text = "3.1 Número de folio de los sellos de suspención:"
         Me.Label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1512,7 +1512,7 @@ Partial Class Acta_Capturar
         Me.Label33.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label33.Location = New System.Drawing.Point(39, 124)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(243, 16)
+        Me.Label33.Size = New System.Drawing.Size(242, 16)
         Me.Label33.TabIndex = 3
         Me.Label33.Text = "3. Suspención de trabajos o servicios:"
         Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1523,7 +1523,7 @@ Partial Class Acta_Capturar
         Me.Label32.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label32.Location = New System.Drawing.Point(39, 77)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(329, 16)
+        Me.Label32.Size = New System.Drawing.Size(327, 16)
         Me.Label32.TabIndex = 2
         Me.Label32.Text = "2.1 Número de folio de los sellos de aseguramiento:"
         Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1534,7 +1534,7 @@ Partial Class Acta_Capturar
         Me.Label31.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label31.Location = New System.Drawing.Point(39, 55)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(265, 16)
+        Me.Label31.Size = New System.Drawing.Size(264, 16)
         Me.Label31.TabIndex = 1
         Me.Label31.Text = "2. Aseguramiento de productos u objetos:"
         Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1545,7 +1545,7 @@ Partial Class Acta_Capturar
         Me.Label30.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label30.Location = New System.Drawing.Point(39, 33)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(221, 16)
+        Me.Label30.Size = New System.Drawing.Size(219, 16)
         Me.Label30.TabIndex = 0
         Me.Label30.Text = "1. Se aplica medida de Seguridad:"
         Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1815,7 +1815,7 @@ Partial Class Acta_Capturar
         Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(439, 70)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 13)
+        Me.Label5.Size = New System.Drawing.Size(71, 13)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Jurisdicción:"
         '

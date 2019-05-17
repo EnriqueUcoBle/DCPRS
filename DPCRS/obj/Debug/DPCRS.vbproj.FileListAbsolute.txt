@@ -636,3 +636,7 @@ C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Microso
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Microsoft.VisualStudio.CoreUtility.xml
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Estadisticas_Establecimiento.resources
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.dll.licenses
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Gestion_Orden_Verificacion.resources
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Seguimiento_Ordenes_Verificacion.resources
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Reportar_Queja.resources
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Estado_de_Quejas.resources
