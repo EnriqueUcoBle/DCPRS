@@ -364,6 +364,10 @@ Public Class Acta_Capturar
         oFunciones.ToolClick(sender, e)
     End Sub
 
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+
+    End Sub
+
     Private Function validar() As Boolean
         validar = True
         If CBSOrden.SelectedIndex = -1 Or CBSEstablecimiento.SelectedIndex = -1 Then

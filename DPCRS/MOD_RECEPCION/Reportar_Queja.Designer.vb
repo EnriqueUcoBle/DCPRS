@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Reportar_Queja
     Inherits Wisej.Web.Form
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -41,6 +41,8 @@ Partial Class Reportar_Queja
         Me.TextBoxID = New Wisej.Web.TextBox()
         Me.ComboBoxMUNICIPIO = New Wisej.Web.ComboBox()
         Me.Panel1 = New Wisej.Web.Panel()
+        Me.CBestatus = New Wisej.Web.ComboBox()
+        Me.Label11 = New Wisej.Web.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -114,45 +116,50 @@ Partial Class Reportar_Queja
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label1.Location = New System.Drawing.Point(14, 86)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 16)
+        Me.Label1.Size = New System.Drawing.Size(85, 16)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Jurisdiccion:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label8.Location = New System.Drawing.Point(14, 129)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(128, 16)
+        Me.Label8.Size = New System.Drawing.Size(132, 16)
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Nombre Propietario:"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label9.Location = New System.Drawing.Point(14, 219)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(67, 16)
+        Me.Label9.Size = New System.Drawing.Size(70, 16)
         Me.Label9.TabIndex = 24
         Me.Label9.Text = "Direccion:"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label10.Location = New System.Drawing.Point(14, 171)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(37, 16)
+        Me.Label10.Size = New System.Drawing.Size(38, 16)
         Me.Label10.TabIndex = 25
         Me.Label10.Text = "Giro:"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("default, Arial Black", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label12.Location = New System.Drawing.Point(14, 328)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(143, 16)
+        Me.Label12.Size = New System.Drawing.Size(148, 16)
         Me.Label12.TabIndex = 27
         Me.Label12.Text = "Observaciones(queja):"
         '
@@ -166,9 +173,10 @@ Partial Class Reportar_Queja
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.Label13.Location = New System.Drawing.Point(14, 46)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(25, 16)
+        Me.Label13.Size = New System.Drawing.Size(26, 16)
         Me.Label13.TabIndex = 31
         Me.Label13.Text = "ID:"
         '
@@ -190,6 +198,8 @@ Partial Class Reportar_Queja
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromName("@scrollBar")
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.CBestatus)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label8)
@@ -207,6 +217,24 @@ Partial Class Reportar_Queja
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(685, 562)
         Me.Panel1.TabIndex = 35
+        '
+        'CBestatus
+        '
+        Me.CBestatus.Items.AddRange(New Object() {"PENDIENTE", "VERIFICADO", "SIN ACCION"})
+        Me.CBestatus.Location = New System.Drawing.Point(196, 507)
+        Me.CBestatus.Name = "CBestatus"
+        Me.CBestatus.Size = New System.Drawing.Size(366, 22)
+        Me.CBestatus.TabIndex = 35
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("default, Arial Black", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label11.Location = New System.Drawing.Point(14, 511)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(38, 16)
+        Me.Label11.TabIndex = 36
+        Me.Label11.Text = "Giro:"
         '
         'Reportar_Queja
         '
@@ -251,4 +279,6 @@ Partial Class Reportar_Queja
     Friend WithEvents TextBoxID As Wisej.Web.TextBox
     Friend WithEvents ComboBoxMUNICIPIO As Wisej.Web.ComboBox
     Friend WithEvents Panel1 As Wisej.Web.Panel
+    Friend WithEvents Label11 As Wisej.Web.Label
+    Friend WithEvents CBestatus As Wisej.Web.ComboBox
 End Class

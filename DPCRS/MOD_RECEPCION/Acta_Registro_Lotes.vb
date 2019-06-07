@@ -59,9 +59,6 @@ Public Class Acta_Registro_Lotes
 
             myDA.Dispose()
 
-            'Dim x As DataView = Me.DataSet_pACTAS_VERIFICACION_LOTES_B.Tables(0).DefaultView
-            'DGVExpedientes.DataSource = x.ToTable
-            'oFunciones.AlternatingColors_Grilla(DGVGiros)
 
 
             If DGVExpedientes.RowCount > 0 Then
@@ -129,18 +126,6 @@ Public Class Acta_Registro_Lotes
                 dr("MUNICIPIO") = Application.Session("MUNICIPIO")
                 dr("ESTATUS") = "ENVIADO"
                 dt.Rows.Add(dr)
-
-
-                'Dim datos() As String = {
-                '            Nothing,
-                '            Nothing,
-                '            TXTClaveActa.Text.ToUpper,
-                '            oFunciones.obTener_Descripcion4(CBSEstablecimiento, "RAZON_SOCIAL"),
-                '            oFunciones.obTener_Descripcion4(CBSEstablecimiento, "NOM_PROPIETARIO"),
-                '            oFunciones.obTener_Descripcion4(CBSEstablecimiento, "DOMICILIO"),
-                '            oFunciones.obTener_Descripcion4(CBSEstablecimiento, "CVE_ESTABLECIMIENTO")
-                '        }
-                'DGVExpedientes.Rows.Add(datos)
                 consecutivo()
                 Dim UltimaFila = DGVExpedientes.RowCount - 1
                 DGVExpedientes.Item("BD", UltimaFila).Value = True

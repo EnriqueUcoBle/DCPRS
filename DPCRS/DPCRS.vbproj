@@ -155,10 +155,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Ext.ChartJS.dll</HintPath>
     </Reference>
-    <Reference Include="Wisej.Web.Ext.FullCalendar, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Ext.FullCalendar.dll</HintPath>
-    </Reference>
+    <Reference Include="Wisej.Web.Ext.FullCalendar, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Wisej.Web.Ext.Notification, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Ext.Notification.dll</HintPath>
@@ -845,28 +842,16 @@
       <DependentUpon>Capturar_Resultados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MOD_RECEPCION\Estado_de_Quejas.Designer.vb">
-      <DependentUpon>Estado_de_Quejas.vb</DependentUpon>
+    <Compile Include="MOD_RECEPCION\Generar_Orden_Verficacion.Designer.vb">
+      <DependentUpon>Generar_Orden_Verficacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="MOD_RECEPCION\Estado_de_Quejas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MOD_RECEPCION\Gestion_Orden_Verificacion.Designer.vb">
-      <DependentUpon>Gestion_Orden_Verificacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MOD_RECEPCION\Gestion_Orden_Verificacion.vb">
+    <Compile Include="MOD_RECEPCION\Generar_Orden_Verficacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MOD_RECEPCION\Reportar_Queja.Designer.vb">
       <DependentUpon>Reportar_Queja.vb</DependentUpon>
     </Compile>
     <Compile Include="MOD_RECEPCION\Reportar_Queja.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MOD_RECEPCION\Seguimiento_Ordenes_Verificacion.Designer.vb">
-      <DependentUpon>Seguimiento_Ordenes_Verificacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MOD_RECEPCION\Seguimiento_Ordenes_Verificacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mostrar_Asp.Designer.vb">
@@ -1098,17 +1083,11 @@
       <DependentUpon>Acta_Registro_Lotes.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MOD_RECEPCION\Estado_de_Quejas.resx">
-      <DependentUpon>Estado_de_Quejas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MOD_RECEPCION\Gestion_Orden_Verificacion.resx">
-      <DependentUpon>Gestion_Orden_Verificacion.vb</DependentUpon>
+    <EmbeddedResource Include="MOD_RECEPCION\Generar_Orden_Verficacion.resx">
+      <DependentUpon>Generar_Orden_Verficacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MOD_RECEPCION\Reportar_Queja.resx">
       <DependentUpon>Reportar_Queja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MOD_RECEPCION\Seguimiento_Ordenes_Verificacion.resx">
-      <DependentUpon>Seguimiento_Ordenes_Verificacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mostrar_Asp.resx">
       <DependentUpon>Mostrar_Asp.vb</DependentUpon>

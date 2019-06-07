@@ -246,7 +246,7 @@ Partial Class Index
         Me.PictureBox1.Dock = Wisej.Web.DockStyle.Fill
         Me.PictureBox1.Location = New System.Drawing.Point(0, 169)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1477, 467)
+        Me.PictureBox1.Size = New System.Drawing.Size(1477, 386)
         Me.PictureBox1.TabIndex = 5
         '
         'Index
@@ -256,7 +256,7 @@ Partial Class Index
         Me.Controls.Add(Me.RibbonBar1)
         Me.Controls.Add(Me.pnlDatosUsuarios)
         Me.Name = "Index"
-        Me.Size = New System.Drawing.Size(1477, 636)
+        Me.Size = New System.Drawing.Size(1477, 555)
         Me.Text = "DPCRS"
         Me.pnlDatosUsuarios.ResumeLayout(False)
         CType(Me.picUser, System.ComponentModel.ISupportInitialize).EndInit()

@@ -38,10 +38,6 @@ Partial Class MyDesktop
         Me.MenuItem1 = New Wisej.Web.MenuItem()
         Me.MenuItem4 = New Wisej.Web.MenuItem()
         Me.Salir = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.pgSOPORTE = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
-        Me.Group_Resultado = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
-        Me.rbn_Ayuda = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.rbn_Soporte = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.SuspendLayout()
         '
         'MenuItem2
@@ -92,7 +88,6 @@ Partial Class MyDesktop
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.pgADMIN)
-        Me.RibbonBar1.Pages.Add(Me.pgSOPORTE)
         Me.RibbonBar1.Size = New System.Drawing.Size(1475, 145)
         '
         'pgADMIN
@@ -135,31 +130,6 @@ Partial Class MyDesktop
         Me.Salir.Name = "Salir"
         Me.Salir.Text = "Cerrar Sesion"
         '
-        'pgSOPORTE
-        '
-        Me.pgSOPORTE.Groups.Add(Me.Group_Resultado)
-        Me.pgSOPORTE.TabBackColor = System.Drawing.Color.FromArgb(40, 180, 99)
-        Me.pgSOPORTE.TabForeColor = System.Drawing.Color.FromArgb(255, 255, 255)
-        Me.pgSOPORTE.Text = "Soporte"
-        '
-        'Group_Resultado
-        '
-        Me.Group_Resultado.Items.Add(Me.rbn_Ayuda)
-        Me.Group_Resultado.Items.Add(Me.rbn_Soporte)
-        Me.Group_Resultado.Text = "Soporte"
-        '
-        'rbn_Ayuda
-        '
-        Me.rbn_Ayuda.ImageSource = "icon-help?color=#006EFF"
-        Me.rbn_Ayuda.Name = "rbn_Ayuda"
-        Me.rbn_Ayuda.Text = "Ayuda"
-        '
-        'rbn_Soporte
-        '
-        Me.rbn_Soporte.ImageSource = "ribbon-settings"
-        Me.rbn_Soporte.Name = "rbn_Soporte"
-        Me.rbn_Soporte.Text = "Soporte Técnico"
-        '
         'MyDesktop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -180,19 +150,10 @@ Partial Class MyDesktop
     Friend WithEvents RibbonBar1 As RibbonBar
     'Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents pgADMIN As RibbonBarPage
-    Friend WithEvents pgSOPORTE As RibbonBarPage
     Friend WithEvents GroupOpciones As RibbonBarGroup
-    Friend WithEvents Group_Resultado As RibbonBarGroup
     Friend WithEvents Tema As RibbonBarItemButton
     'Friend WithEvents bCaja As RibbonBarItemButton
     Friend WithEvents Salir As RibbonBarItemButton
-    'Friend WithEvents Label1 As Label
-    'Friend WithEvents lblUsuario As Label
-    'Friend WithEvents picUser As PictureBox
-    'Friend WithEvents lblSucursal As Label
-    'Friend WithEvents RBBLICENSE As RibbonBarItemButton
-    Friend WithEvents rbn_Ayuda As RibbonBarItemButton
-    Friend WithEvents rbn_Soporte As RibbonBarItemButton
     Friend WithEvents MenuItem1 As MenuItem
     Friend WithEvents MenuItem4 As MenuItem
 End Class

@@ -16,18 +16,20 @@ Public Class Reportar_Queja
                 EnviarQueja()
             Case "Cancelar"
                 Me.Close()
+
         End Select
     End Sub
     Private Function EnviarQueja()
         Try
             If ValidarCampos() Then
-                ReDim oFunciones.ParametersX_Global(5)
+                ReDim oFunciones.ParametersX_Global(6)
                 oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@JURISDICCION", ComboBoxMUNICIPIO.Text)
                 oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@NOMBRE", TextBoxNOMBRE.Text)
                 oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@GIRO", ComboBoxGIRO.Text)
                 oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@DIRECCION", TextBoxDIRECCION.Text)
                 oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@OBSERVACIONES", TextBoxQUEJAS.Text)
                 oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@ID", TextBoxID.Text)
+                oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@ESTATUS", CBestatus.Text)
 
                 If oFunciones.fGuardar_O_EliminarXProcedure("pCAT_QUEJAS_G", "@PARAM", oFunciones.ParametersX_Global, False, False) Then
                     MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -69,4 +71,8 @@ Public Class Reportar_Queja
         ComboBoxGIRO.Text = ""
         TextBoxID.Text = ""
     End Function
+
+    Private Sub Panel1_PanelCollapsed(sender As Object, e As EventArgs) Handles Panel1.PanelCollapsed
+
+    End Sub
 End Class
