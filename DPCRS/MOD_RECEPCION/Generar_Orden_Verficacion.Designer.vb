@@ -22,7 +22,6 @@ Partial Class Generar_Orden_Verficacion
     'Do not modify it using the code editor.
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Generar_Orden_Verficacion))
         Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
         Me.RibbonBarPage1 = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
         Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
@@ -45,6 +44,8 @@ Partial Class Generar_Orden_Verficacion
         Me.TextBoxCARGO = New Wisej.Web.TextBox()
         Me.Label11 = New Wisej.Web.Label()
         Me.Panel2 = New Wisej.Web.Panel()
+        Me.ESTABLECIMIENTO = New DPCRS.Combosax_B()
+        Me.COLONIA_ESTABLECIMIENTOS = New DPCRS.Combosax_B()
         Me.Label51 = New Wisej.Web.Label()
         Me.MUNICIPIOS_ESTABLECIMIENTOS = New Wisej.Web.ComboBox()
         Me.Label50 = New Wisej.Web.Label()
@@ -66,6 +67,7 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel3 = New Wisej.Web.Panel()
         Me.Label44 = New Wisej.Web.Label()
         Me.ULTIMOS_PAQUETES = New Wisej.Web.ComboBox()
+        Me.PAQUETES_ACTAS = New DPCRS.Combosax_B()
         Me.AddPaquete = New Wisej.Web.Button()
         Me.Jurisdiccion_LOTE = New Wisej.Web.TextBox()
         Me.Label17 = New Wisej.Web.Label()
@@ -80,6 +82,17 @@ Partial Class Generar_Orden_Verficacion
         Me.sig_pag1 = New Wisej.Web.Button()
         Me.TabPage2 = New Wisej.Web.TabPage()
         Me.Panel8 = New Wisej.Web.Panel()
+        Me.DataGridView2 = New Wisej.Web.DataGridView()
+        Me.cenum = New Wisej.Web.DataGridViewImageColumn()
+        Me.CVE_TIPO_MUESTRA = New Wisej.Web.DataGridViewColumn()
+        Me.CVE_TIPO_ANALISIS = New Wisej.Web.DataGridViewColumn()
+        Me.DESCRIPCION = New Wisej.Web.DataGridViewColumn()
+        Me.CLAVE_VS = New Wisej.Web.DataGridViewColumn()
+        Me.MARCA = New Wisej.Web.DataGridViewColumn()
+        Me.LOTE = New Wisej.Web.DataGridViewColumn()
+        Me.FECHA = New Wisej.Web.DataGridViewColumn()
+        Me.CANTIDAD = New Wisej.Web.DataGridViewColumn()
+        Me.Button1 = New Wisej.Web.Button()
         Me.Label27 = New Wisej.Web.Label()
         Me.Label26 = New Wisej.Web.Label()
         Me.JURISDICCION_VERIFICADORES = New Wisej.Web.ComboBox()
@@ -91,26 +104,24 @@ Partial Class Generar_Orden_Verficacion
         Me.Sexo = New Wisej.Web.DataGridViewColumn()
         Me.Clave_Trabajador = New Wisej.Web.DataGridViewColumn()
         Me.AddVerificador = New Wisej.Web.Button()
+        Me.VERIFICADORES = New DPCRS.Combosax_B()
         Me.sig_pag2 = New Wisej.Web.Button()
         Me.ant_pag2 = New Wisej.Web.Button()
         Me.TabPage3 = New Wisej.Web.TabPage()
-        Me.Panel15 = New Wisej.Web.Panel()
-        Me.AddTipoVerificacion = New Wisej.Web.Button()
-        Me.Label7 = New Wisej.Web.Label()
-        Me.FOLIO_ACTA_VERIFICACION = New Wisej.Web.TextBox()
-        Me.Label39 = New Wisej.Web.Label()
-        Me.txtDescribir = New Wisej.Web.TextBox()
-        Me.ComboBoxPROGRAMA = New Wisej.Web.ComboBox()
-        Me.Label23 = New Wisej.Web.Label()
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE = New Wisej.Web.DateTimePicker()
-        Me.Label22 = New Wisej.Web.Label()
-        Me.FECHA_ORDEN = New Wisej.Web.DateTimePicker()
-        Me.Label21 = New Wisej.Web.Label()
-        Me.ComboBoxTIPO_VERIFCACION = New Wisej.Web.ComboBox()
-        Me.Label20 = New Wisej.Web.Label()
-        Me.Label19 = New Wisej.Web.Label()
-        Me.FOLIO_ORDEN = New Wisej.Web.TextBox()
         Me.Panel9 = New Wisej.Web.Panel()
+        Me.id_testigo1 = New Wisej.Web.ComboBox()
+        Me.txtTestigo_Domicilio1 = New Wisej.Web.TextBox()
+        Me.txtTestigo1 = New Wisej.Web.TextBox()
+        Me.id_testigo2 = New Wisej.Web.ComboBox()
+        Me.txtTestigo_Domicilio2 = New Wisej.Web.TextBox()
+        Me.txtTestigo2 = New Wisej.Web.TextBox()
+        Me.Label55 = New Wisej.Web.Label()
+        Me.OBSERVACIONES_MUESTRAS = New Wisej.Web.TextBox()
+        Me.Label54 = New Wisej.Web.Label()
+        Me.MUESTRA_RESPONSABILIDAD = New Wisej.Web.ComboBox()
+        Me.TIPO_OBJETIVO = New DPCRS.Combosax_B()
+        Me.Label29 = New Wisej.Web.Label()
+        Me.AddObjetivoVerificacion = New Wisej.Web.Button()
         Me.Label40 = New Wisej.Web.Label()
         Me.TextBox1 = New Wisej.Web.TextBox()
         Me.Panel10 = New Wisej.Web.Panel()
@@ -143,40 +154,34 @@ Partial Class Generar_Orden_Verficacion
         Me.sig_pag3 = New Wisej.Web.Button()
         Me.ant_pag3 = New Wisej.Web.Button()
         Me.TabPage4 = New Wisej.Web.TabPage()
-        Me.ProgressBar1 = New Wisej.Web.ProgressBar()
         Me.finalizar = New Wisej.Web.Button()
         Me.ant_pag4 = New Wisej.Web.Button()
-        Me.Upload1 = New Wisej.Web.Upload()
-        Me.PdfViewer1 = New Wisej.Web.PdfViewer()
         Me.ErrorProvider1 = New Wisej.Web.ErrorProvider(Me.components)
-        Me.DataGridView2 = New Wisej.Web.DataGridView()
-        Me.CVE_TIPO_MUESTRA = New Wisej.Web.DataGridViewColumn()
-        Me.CVE_TIPO_ANALISIS = New Wisej.Web.DataGridViewColumn()
-        Me.DESCRIPCION = New Wisej.Web.DataGridViewColumn()
-        Me.CLAVE_VS = New Wisej.Web.DataGridViewColumn()
-        Me.MARCA = New Wisej.Web.DataGridViewColumn()
-        Me.LOTE = New Wisej.Web.DataGridViewColumn()
-        Me.FECHA = New Wisej.Web.DataGridViewColumn()
-        Me.CANTIDAD = New Wisej.Web.DataGridViewColumn()
-        Me.Label55 = New Wisej.Web.Label()
-        Me.OBSERVACIONES_MUESTRAS = New Wisej.Web.TextBox()
-        Me.Label54 = New Wisej.Web.Label()
-        Me.MUESTRA_RESPONSABILIDAD = New Wisej.Web.ComboBox()
-        Me.Label29 = New Wisej.Web.Label()
-        Me.AddObjetivoVerificacion = New Wisej.Web.Button()
-        Me.id_testigo2 = New Wisej.Web.ComboBox()
-        Me.txtTestigo_Domicilio2 = New Wisej.Web.TextBox()
-        Me.txtTestigo2 = New Wisej.Web.TextBox()
-        Me.id_testigo1 = New Wisej.Web.ComboBox()
-        Me.txtTestigo_Domicilio1 = New Wisej.Web.TextBox()
-        Me.txtTestigo1 = New Wisej.Web.TextBox()
-        Me.Button1 = New Wisej.Web.Button()
-        Me.ESTABLECIMIENTO = New DPCRS.Combosax_B()
-        Me.COLONIA_ESTABLECIMIENTOS = New DPCRS.Combosax_B()
-        Me.PAQUETES_ACTAS = New DPCRS.Combosax_B()
-        Me.VERIFICADORES = New DPCRS.Combosax_B()
-        Me.TIPO_OBJETIVO = New DPCRS.Combosax_B()
-        Me.cenum = New Wisej.Web.DataGridViewImageColumn()
+        Me.Panel15 = New Wisej.Web.Panel()
+        Me.AddTipoVerificacion = New Wisej.Web.Button()
+        Me.Label7 = New Wisej.Web.Label()
+        Me.FOLIO_ACTA_VERIFICACION = New Wisej.Web.TextBox()
+        Me.Label39 = New Wisej.Web.Label()
+        Me.txtDescribir = New Wisej.Web.TextBox()
+        Me.ComboBoxPROGRAMA = New Wisej.Web.ComboBox()
+        Me.Label23 = New Wisej.Web.Label()
+        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE = New Wisej.Web.DateTimePicker()
+        Me.Label22 = New Wisej.Web.Label()
+        Me.FECHA_ORDEN = New Wisej.Web.DateTimePicker()
+        Me.Label21 = New Wisej.Web.Label()
+        Me.ComboBoxTIPO_VERIFCACION = New Wisej.Web.ComboBox()
+        Me.Label20 = New Wisej.Web.Label()
+        Me.Label19 = New Wisej.Web.Label()
+        Me.FOLIO_ORDEN = New Wisej.Web.TextBox()
+        Me.Label12 = New Wisej.Web.Label()
+        Me.IDENTIDAD_ENCARGADO = New Wisej.Web.ComboBox()
+        Me.DETALLE_DOMICILIO_ENCARGADO = New Wisej.Web.TextBox()
+        Me.NOMBRE_ENCARGADO = New Wisej.Web.TextBox()
+        Me.Label18 = New Wisej.Web.Label()
+        Me.CARGO_PUESTO = New Wisej.Web.TextBox()
+        Me.CheckBox1 = New Wisej.Web.CheckBox()
+        Me.CheckBox2 = New Wisej.Web.CheckBox()
+        Me.GroupBox1 = New Wisej.Web.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -185,9 +190,10 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridView2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
-        Me.Panel15.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -195,8 +201,8 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel13.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DataGridView2.SuspendLayout()
+        Me.Panel15.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'RibbonBar1
@@ -429,6 +435,60 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel2.TabIndex = 8
         Me.Panel2.Text = "Verifique o Actualice Datos del Establecimiento"
         '
+        'ESTABLECIMIENTO
+        '
+        Me.ESTABLECIMIENTO.amarillo = False
+        Me.ESTABLECIMIENTO.Ancho = Nothing
+        Me.ESTABLECIMIENTO.BackColor = System.Drawing.Color.FromName("@window")
+        Me.ESTABLECIMIENTO.ColorAtras = System.Drawing.Color.Empty
+        Me.ESTABLECIMIENTO.Count = 0
+        Me.ESTABLECIMIENTO.DataSource = Nothing
+        Me.ESTABLECIMIENTO.DataSourceSelect = Nothing
+        Me.ESTABLECIMIENTO.gris = False
+        Me.ESTABLECIMIENTO.Letra = Nothing
+        Me.ESTABLECIMIENTO.Limitar = False
+        Me.ESTABLECIMIENTO.Location = New System.Drawing.Point(24, 28)
+        Me.ESTABLECIMIENTO.MensajeAgua = Nothing
+        Me.ESTABLECIMIENTO.mostrarMensaje = False
+        Me.ESTABLECIMIENTO.Name = "ESTABLECIMIENTO"
+        Me.ESTABLECIMIENTO.Negritas = False
+        Me.ESTABLECIMIENTO.OBTENERLISTLLENADO = Nothing
+        Me.ESTABLECIMIENTO.procedure = Nothing
+        Me.ESTABLECIMIENTO.SelectedIndex = -1
+        Me.ESTABLECIMIENTO.SelectedItem = ""
+        Me.ESTABLECIMIENTO.SelectedValue = Nothing
+        Me.ESTABLECIMIENTO.Size = New System.Drawing.Size(316, 22)
+        Me.ESTABLECIMIENTO.TabIndex = 26
+        Me.ESTABLECIMIENTO.TODOSS = False
+        Me.ESTABLECIMIENTO.Watermark = Nothing
+        '
+        'COLONIA_ESTABLECIMIENTOS
+        '
+        Me.COLONIA_ESTABLECIMIENTOS.amarillo = False
+        Me.COLONIA_ESTABLECIMIENTOS.Ancho = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.BackColor = System.Drawing.Color.FromName("@window")
+        Me.COLONIA_ESTABLECIMIENTOS.ColorAtras = System.Drawing.Color.Empty
+        Me.COLONIA_ESTABLECIMIENTOS.Count = 0
+        Me.COLONIA_ESTABLECIMIENTOS.DataSource = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.DataSourceSelect = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.gris = False
+        Me.COLONIA_ESTABLECIMIENTOS.Letra = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.Limitar = False
+        Me.COLONIA_ESTABLECIMIENTOS.Location = New System.Drawing.Point(24, 361)
+        Me.COLONIA_ESTABLECIMIENTOS.MensajeAgua = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.mostrarMensaje = False
+        Me.COLONIA_ESTABLECIMIENTOS.Name = "COLONIA_ESTABLECIMIENTOS"
+        Me.COLONIA_ESTABLECIMIENTOS.Negritas = False
+        Me.COLONIA_ESTABLECIMIENTOS.OBTENERLISTLLENADO = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.procedure = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.SelectedIndex = -1
+        Me.COLONIA_ESTABLECIMIENTOS.SelectedItem = ""
+        Me.COLONIA_ESTABLECIMIENTOS.SelectedValue = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.Size = New System.Drawing.Size(277, 22)
+        Me.COLONIA_ESTABLECIMIENTOS.TabIndex = 25
+        Me.COLONIA_ESTABLECIMIENTOS.TODOSS = False
+        Me.COLONIA_ESTABLECIMIENTOS.Watermark = Nothing
+        '
         'Label51
         '
         Me.Label51.AutoSize = True
@@ -651,6 +711,33 @@ Partial Class Generar_Orden_Verficacion
         Me.ULTIMOS_PAQUETES.Size = New System.Drawing.Size(200, 22)
         Me.ULTIMOS_PAQUETES.TabIndex = 10
         '
+        'PAQUETES_ACTAS
+        '
+        Me.PAQUETES_ACTAS.amarillo = False
+        Me.PAQUETES_ACTAS.Ancho = Nothing
+        Me.PAQUETES_ACTAS.BackColor = System.Drawing.Color.FromName("@window")
+        Me.PAQUETES_ACTAS.ColorAtras = System.Drawing.Color.Empty
+        Me.PAQUETES_ACTAS.Count = 0
+        Me.PAQUETES_ACTAS.DataSource = Nothing
+        Me.PAQUETES_ACTAS.DataSourceSelect = Nothing
+        Me.PAQUETES_ACTAS.gris = False
+        Me.PAQUETES_ACTAS.Letra = Nothing
+        Me.PAQUETES_ACTAS.Limitar = False
+        Me.PAQUETES_ACTAS.Location = New System.Drawing.Point(13, 56)
+        Me.PAQUETES_ACTAS.MensajeAgua = Nothing
+        Me.PAQUETES_ACTAS.mostrarMensaje = False
+        Me.PAQUETES_ACTAS.Name = "PAQUETES_ACTAS"
+        Me.PAQUETES_ACTAS.Negritas = False
+        Me.PAQUETES_ACTAS.OBTENERLISTLLENADO = Nothing
+        Me.PAQUETES_ACTAS.procedure = Nothing
+        Me.PAQUETES_ACTAS.SelectedIndex = -1
+        Me.PAQUETES_ACTAS.SelectedItem = ""
+        Me.PAQUETES_ACTAS.SelectedValue = Nothing
+        Me.PAQUETES_ACTAS.Size = New System.Drawing.Size(293, 22)
+        Me.PAQUETES_ACTAS.TabIndex = 9
+        Me.PAQUETES_ACTAS.TODOSS = False
+        Me.PAQUETES_ACTAS.Watermark = Nothing
+        '
         'AddPaquete
         '
         Me.AddPaquete.AutoSize = True
@@ -777,7 +864,7 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage2.ImageSource = "Resources\Images\Menu\64\certificate .png"
         Me.TabPage2.Location = New System.Drawing.Point(1, 35)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Text = "Visita Sanitaria"
+        Me.TabPage2.Text = "Verificadores & Muestreo"
         '
         'Panel8
         '
@@ -796,6 +883,81 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel8.Size = New System.Drawing.Size(1172, 537)
         Me.Panel8.TabIndex = 61
         Me.Panel8.Text = "Recoleccion de Muestras & Verificadores"
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.cenum, Me.CVE_TIPO_MUESTRA, Me.CVE_TIPO_ANALISIS, Me.DESCRIPCION, Me.CLAVE_VS, Me.MARCA, Me.LOTE, Me.FECHA, Me.CANTIDAD})
+        Me.DataGridView2.Controls.Add(Me.Button1)
+        Me.DataGridView2.Location = New System.Drawing.Point(18, 285)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(1138, 203)
+        Me.DataGridView2.TabIndex = 99
+        '
+        'cenum
+        '
+        Me.cenum.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter
+        Me.cenum.CellImageSource = "Resources\Icons\Menu\error_color.png"
+        Me.cenum.Name = "cenum"
+        Me.cenum.Width = 30
+        '
+        'CVE_TIPO_MUESTRA
+        '
+        Me.CVE_TIPO_MUESTRA.HeaderText = "CVE_TIPO_MUESTRA"
+        Me.CVE_TIPO_MUESTRA.Name = "CVE_TIPO_MUESTRA"
+        Me.CVE_TIPO_MUESTRA.Visible = False
+        '
+        'CVE_TIPO_ANALISIS
+        '
+        Me.CVE_TIPO_ANALISIS.HeaderText = "CVE_TIPO_ANALISIS"
+        Me.CVE_TIPO_ANALISIS.Name = "CVE_TIPO_ANALISIS"
+        Me.CVE_TIPO_ANALISIS.Visible = False
+        '
+        'DESCRIPCION
+        '
+        Me.DESCRIPCION.HeaderText = "DESCRIPCION"
+        Me.DESCRIPCION.Name = "DESCRIPCION"
+        Me.DESCRIPCION.Width = 250
+        '
+        'CLAVE_VS
+        '
+        Me.CLAVE_VS.HeaderText = "CLAVE VS"
+        Me.CLAVE_VS.Name = "CLAVE_VS"
+        '
+        'MARCA
+        '
+        Me.MARCA.HeaderText = "MARCA"
+        Me.MARCA.Name = "MARCA"
+        Me.MARCA.Width = 150
+        '
+        'LOTE
+        '
+        Me.LOTE.HeaderText = "LOTE"
+        Me.LOTE.Name = "LOTE"
+        Me.LOTE.Width = 150
+        '
+        'FECHA
+        '
+        Me.FECHA.HeaderText = "CADUCIDAD"
+        Me.FECHA.Name = "FECHA"
+        Me.FECHA.Width = 200
+        '
+        'CANTIDAD
+        '
+        Me.CANTIDAD.HeaderText = "CANTIDAD"
+        Me.CANTIDAD.Name = "CANTIDAD"
+        Me.CANTIDAD.Width = 200
+        '
+        'Button1
+        '
+        Me.Button1.Dock = Wisej.Web.DockStyle.Top
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.ImageSource = "Resources\Icons\Menu\add.png"
+        Me.Button1.Location = New System.Drawing.Point(0, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(1136, 27)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Añadir Muestras"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label27
         '
@@ -885,6 +1047,33 @@ Partial Class Generar_Orden_Verficacion
         Me.AddVerificador.TabIndex = 64
         Me.AddVerificador.Text = "Nuevo Verificador"
         '
+        'VERIFICADORES
+        '
+        Me.VERIFICADORES.amarillo = False
+        Me.VERIFICADORES.Ancho = Nothing
+        Me.VERIFICADORES.BackColor = System.Drawing.Color.FromName("@window")
+        Me.VERIFICADORES.ColorAtras = System.Drawing.Color.Empty
+        Me.VERIFICADORES.Count = 0
+        Me.VERIFICADORES.DataSource = Nothing
+        Me.VERIFICADORES.DataSourceSelect = Nothing
+        Me.VERIFICADORES.gris = False
+        Me.VERIFICADORES.Letra = Nothing
+        Me.VERIFICADORES.Limitar = False
+        Me.VERIFICADORES.Location = New System.Drawing.Point(329, 25)
+        Me.VERIFICADORES.MensajeAgua = Nothing
+        Me.VERIFICADORES.mostrarMensaje = False
+        Me.VERIFICADORES.Name = "VERIFICADORES"
+        Me.VERIFICADORES.Negritas = False
+        Me.VERIFICADORES.OBTENERLISTLLENADO = Nothing
+        Me.VERIFICADORES.procedure = Nothing
+        Me.VERIFICADORES.SelectedIndex = -1
+        Me.VERIFICADORES.SelectedItem = ""
+        Me.VERIFICADORES.SelectedValue = Nothing
+        Me.VERIFICADORES.Size = New System.Drawing.Size(301, 22)
+        Me.VERIFICADORES.TabIndex = 0
+        Me.VERIFICADORES.TODOSS = False
+        Me.VERIFICADORES.Watermark = Nothing
+        '
         'sig_pag2
         '
         Me.sig_pag2.Location = New System.Drawing.Point(1072, 565)
@@ -903,14 +1092,535 @@ Partial Class Generar_Orden_Verficacion
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.Panel15)
         Me.TabPage3.Controls.Add(Me.Panel9)
         Me.TabPage3.Controls.Add(Me.sig_pag3)
         Me.TabPage3.Controls.Add(Me.ant_pag3)
         Me.TabPage3.ImageSource = "Resources\Images\Menu\64\learning .png"
         Me.TabPage3.Location = New System.Drawing.Point(1, 35)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Text = "Observaciones, Muestreo & Datos extra"
+        Me.TabPage3.Text = "Datos del Acta"
+        '
+        'Panel9
+        '
+        Me.Panel9.BorderStyle = Wisej.Web.BorderStyle.Solid
+        Me.Panel9.Controls.Add(Me.GroupBox1)
+        Me.Panel9.Controls.Add(Me.CARGO_PUESTO)
+        Me.Panel9.Controls.Add(Me.Label18)
+        Me.Panel9.Controls.Add(Me.IDENTIDAD_ENCARGADO)
+        Me.Panel9.Controls.Add(Me.DETALLE_DOMICILIO_ENCARGADO)
+        Me.Panel9.Controls.Add(Me.NOMBRE_ENCARGADO)
+        Me.Panel9.Controls.Add(Me.Label12)
+        Me.Panel9.Controls.Add(Me.id_testigo1)
+        Me.Panel9.Controls.Add(Me.txtTestigo_Domicilio1)
+        Me.Panel9.Controls.Add(Me.txtTestigo1)
+        Me.Panel9.Controls.Add(Me.id_testigo2)
+        Me.Panel9.Controls.Add(Me.txtTestigo_Domicilio2)
+        Me.Panel9.Controls.Add(Me.txtTestigo2)
+        Me.Panel9.Controls.Add(Me.Label55)
+        Me.Panel9.Controls.Add(Me.OBSERVACIONES_MUESTRAS)
+        Me.Panel9.Controls.Add(Me.Label54)
+        Me.Panel9.Controls.Add(Me.MUESTRA_RESPONSABILIDAD)
+        Me.Panel9.Controls.Add(Me.TIPO_OBJETIVO)
+        Me.Panel9.Controls.Add(Me.Label29)
+        Me.Panel9.Controls.Add(Me.AddObjetivoVerificacion)
+        Me.Panel9.Controls.Add(Me.Label40)
+        Me.Panel9.Controls.Add(Me.TextBox1)
+        Me.Panel9.Controls.Add(Me.Panel10)
+        Me.Panel9.Controls.Add(Me.Panel11)
+        Me.Panel9.Controls.Add(Me.Panel12)
+        Me.Panel9.Controls.Add(Me.Panel13)
+        Me.Panel9.Controls.Add(Me.RB_medidas_seguridad_no)
+        Me.Panel9.Controls.Add(Me.RB_medidas_seguridad_si)
+        Me.Panel9.Controls.Add(Me.txtNumeroAnexos)
+        Me.Panel9.Controls.Add(Me.txtSellosReubicados)
+        Me.Panel9.Controls.Add(Me.txtSellosSuspendidos)
+        Me.Panel9.Controls.Add(Me.txtSellosAsegurados)
+        Me.Panel9.Controls.Add(Me.Label38)
+        Me.Panel9.Controls.Add(Me.Label37)
+        Me.Panel9.Controls.Add(Me.Label36)
+        Me.Panel9.Controls.Add(Me.Label35)
+        Me.Panel9.Controls.Add(Me.Label34)
+        Me.Panel9.Controls.Add(Me.Label33)
+        Me.Panel9.Controls.Add(Me.Label32)
+        Me.Panel9.Controls.Add(Me.Label31)
+        Me.Panel9.Controls.Add(Me.Label30)
+        Me.Panel9.Location = New System.Drawing.Point(3, 3)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.ShowCloseButton = False
+        Me.Panel9.ShowHeader = True
+        Me.Panel9.Size = New System.Drawing.Size(1169, 556)
+        Me.Panel9.TabIndex = 2
+        Me.Panel9.Text = "Observaciones"
+        '
+        'id_testigo1
+        '
+        Me.id_testigo1.Enabled = False
+        Me.id_testigo1.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
+        Me.id_testigo1.Location = New System.Drawing.Point(792, 95)
+        Me.id_testigo1.Name = "id_testigo1"
+        Me.id_testigo1.ReadOnly = True
+        Me.id_testigo1.Size = New System.Drawing.Size(356, 22)
+        Me.id_testigo1.TabIndex = 111
+        Me.id_testigo1.Watermark = "Doc con el que valida su identidad"
+        '
+        'txtTestigo_Domicilio1
+        '
+        Me.txtTestigo_Domicilio1.Location = New System.Drawing.Point(792, 63)
+        Me.txtTestigo_Domicilio1.Name = "txtTestigo_Domicilio1"
+        Me.txtTestigo_Domicilio1.Size = New System.Drawing.Size(356, 22)
+        Me.txtTestigo_Domicilio1.TabIndex = 110
+        Me.txtTestigo_Domicilio1.Watermark = "Descripcion del domicilio"
+        '
+        'txtTestigo1
+        '
+        Me.txtTestigo1.Location = New System.Drawing.Point(792, 35)
+        Me.txtTestigo1.Name = "txtTestigo1"
+        Me.txtTestigo1.Size = New System.Drawing.Size(356, 22)
+        Me.txtTestigo1.TabIndex = 109
+        Me.txtTestigo1.Watermark = "Nombre Completo de el 1 Testigo"
+        '
+        'id_testigo2
+        '
+        Me.id_testigo2.Enabled = False
+        Me.id_testigo2.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
+        Me.id_testigo2.Location = New System.Drawing.Point(792, 201)
+        Me.id_testigo2.Name = "id_testigo2"
+        Me.id_testigo2.ReadOnly = True
+        Me.id_testigo2.Size = New System.Drawing.Size(356, 22)
+        Me.id_testigo2.TabIndex = 108
+        Me.id_testigo2.Watermark = "Doc con el que valida su identidad"
+        '
+        'txtTestigo_Domicilio2
+        '
+        Me.txtTestigo_Domicilio2.Location = New System.Drawing.Point(792, 173)
+        Me.txtTestigo_Domicilio2.Name = "txtTestigo_Domicilio2"
+        Me.txtTestigo_Domicilio2.Size = New System.Drawing.Size(356, 22)
+        Me.txtTestigo_Domicilio2.TabIndex = 107
+        Me.txtTestigo_Domicilio2.Watermark = "Descripcion del domicilio"
+        '
+        'txtTestigo2
+        '
+        Me.txtTestigo2.Location = New System.Drawing.Point(792, 141)
+        Me.txtTestigo2.Name = "txtTestigo2"
+        Me.txtTestigo2.Size = New System.Drawing.Size(356, 22)
+        Me.txtTestigo2.TabIndex = 106
+        Me.txtTestigo2.Watermark = "Nombre Completo de el 2 Testigo"
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label55.Location = New System.Drawing.Point(382, 279)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(221, 16)
+        Me.Label55.TabIndex = 105
+        Me.Label55.Text = "Observaciones sobre las Muestras"
+        '
+        'OBSERVACIONES_MUESTRAS
+        '
+        Me.OBSERVACIONES_MUESTRAS.AutoSize = False
+        Me.OBSERVACIONES_MUESTRAS.Location = New System.Drawing.Point(382, 301)
+        Me.OBSERVACIONES_MUESTRAS.Multiline = True
+        Me.OBSERVACIONES_MUESTRAS.Name = "OBSERVACIONES_MUESTRAS"
+        Me.OBSERVACIONES_MUESTRAS.Size = New System.Drawing.Size(327, 72)
+        Me.OBSERVACIONES_MUESTRAS.TabIndex = 104
+        Me.OBSERVACIONES_MUESTRAS.Watermark = "Observaciones que se dieron durante el muestreo"
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label54.Location = New System.Drawing.Point(382, 232)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(344, 16)
+        Me.Label54.TabIndex = 103
+        Me.Label54.Text = "Gastos y Analisis de la Muestreo Se Responsabilisa a:"
+        '
+        'MUESTRA_RESPONSABILIDAD
+        '
+        Me.MUESTRA_RESPONSABILIDAD.Items.AddRange(New Object() {"Autoridad Sanitaria", "Interesado (Propietario)"})
+        Me.MUESTRA_RESPONSABILIDAD.Location = New System.Drawing.Point(382, 254)
+        Me.MUESTRA_RESPONSABILIDAD.Name = "MUESTRA_RESPONSABILIDAD"
+        Me.MUESTRA_RESPONSABILIDAD.Size = New System.Drawing.Size(327, 22)
+        Me.MUESTRA_RESPONSABILIDAD.TabIndex = 102
+        '
+        'TIPO_OBJETIVO
+        '
+        Me.TIPO_OBJETIVO.amarillo = False
+        Me.TIPO_OBJETIVO.Ancho = Nothing
+        Me.TIPO_OBJETIVO.BackColor = System.Drawing.Color.FromName("@window")
+        Me.TIPO_OBJETIVO.ColorAtras = System.Drawing.Color.Empty
+        Me.TIPO_OBJETIVO.Count = 0
+        Me.TIPO_OBJETIVO.DataSource = Nothing
+        Me.TIPO_OBJETIVO.DataSourceSelect = Nothing
+        Me.TIPO_OBJETIVO.gris = False
+        Me.TIPO_OBJETIVO.Letra = Nothing
+        Me.TIPO_OBJETIVO.Limitar = False
+        Me.TIPO_OBJETIVO.Location = New System.Drawing.Point(382, 204)
+        Me.TIPO_OBJETIVO.MensajeAgua = Nothing
+        Me.TIPO_OBJETIVO.mostrarMensaje = False
+        Me.TIPO_OBJETIVO.Name = "TIPO_OBJETIVO"
+        Me.TIPO_OBJETIVO.Negritas = False
+        Me.TIPO_OBJETIVO.OBTENERLISTLLENADO = Nothing
+        Me.TIPO_OBJETIVO.procedure = Nothing
+        Me.TIPO_OBJETIVO.SelectedIndex = -1
+        Me.TIPO_OBJETIVO.SelectedItem = ""
+        Me.TIPO_OBJETIVO.SelectedValue = Nothing
+        Me.TIPO_OBJETIVO.Size = New System.Drawing.Size(266, 22)
+        Me.TIPO_OBJETIVO.TabIndex = 101
+        Me.TIPO_OBJETIVO.TODOSS = False
+        Me.TIPO_OBJETIVO.Watermark = Nothing
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label29.ForeColor = System.Drawing.Color.FromName("@windowText")
+        Me.Label29.Location = New System.Drawing.Point(382, 182)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(169, 16)
+        Me.Label29.TabIndex = 100
+        Me.Label29.Text = "Objetivo de la Verificacion"
+        '
+        'AddObjetivoVerificacion
+        '
+        Me.AddObjetivoVerificacion.AutoSize = True
+        Me.AddObjetivoVerificacion.ImageSource = "Resources\Icons\Menu\add.png"
+        Me.AddObjetivoVerificacion.Location = New System.Drawing.Point(654, 199)
+        Me.AddObjetivoVerificacion.Name = "AddObjetivoVerificacion"
+        Me.AddObjetivoVerificacion.Size = New System.Drawing.Size(51, 27)
+        Me.AddObjetivoVerificacion.TabIndex = 99
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label40.Location = New System.Drawing.Point(382, 117)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(248, 16)
+        Me.Label40.TabIndex = 50
+        Me.Label40.Text = "Objeto y Alcance de la orden Sanitaria:"
+        Me.Label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.TextBox1.Location = New System.Drawing.Point(382, 139)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(301, 24)
+        Me.TextBox1.TabIndex = 51
+        Me.TextBox1.Watermark = "(TRANSCRIBIR)"
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.RB_anexa_doc_no)
+        Me.Panel10.Controls.Add(Me.RB_anexa_doc_si)
+        Me.Panel10.Location = New System.Drawing.Point(395, 35)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(118, 29)
+        Me.Panel10.TabIndex = 49
+        '
+        'RB_anexa_doc_no
+        '
+        Me.RB_anexa_doc_no.Checked = True
+        Me.RB_anexa_doc_no.Location = New System.Drawing.Point(53, 3)
+        Me.RB_anexa_doc_no.Name = "RB_anexa_doc_no"
+        Me.RB_anexa_doc_no.Size = New System.Drawing.Size(43, 23)
+        Me.RB_anexa_doc_no.TabIndex = 20
+        Me.RB_anexa_doc_no.Text = "No"
+        '
+        'RB_anexa_doc_si
+        '
+        Me.RB_anexa_doc_si.Location = New System.Drawing.Point(3, 3)
+        Me.RB_anexa_doc_si.Name = "RB_anexa_doc_si"
+        Me.RB_anexa_doc_si.Size = New System.Drawing.Size(38, 23)
+        Me.RB_anexa_doc_si.TabIndex = 19
+        Me.RB_anexa_doc_si.TabStop = False
+        Me.RB_anexa_doc_si.Text = "Si"
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.RB_reubicacion_sellos_no)
+        Me.Panel11.Controls.Add(Me.RB_reubicacion_sellos_si)
+        Me.Panel11.Location = New System.Drawing.Point(26, 287)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(118, 29)
+        Me.Panel11.TabIndex = 48
+        '
+        'RB_reubicacion_sellos_no
+        '
+        Me.RB_reubicacion_sellos_no.Checked = True
+        Me.RB_reubicacion_sellos_no.Location = New System.Drawing.Point(53, 3)
+        Me.RB_reubicacion_sellos_no.Name = "RB_reubicacion_sellos_no"
+        Me.RB_reubicacion_sellos_no.Size = New System.Drawing.Size(43, 23)
+        Me.RB_reubicacion_sellos_no.TabIndex = 20
+        Me.RB_reubicacion_sellos_no.Text = "No"
+        '
+        'RB_reubicacion_sellos_si
+        '
+        Me.RB_reubicacion_sellos_si.Location = New System.Drawing.Point(3, 3)
+        Me.RB_reubicacion_sellos_si.Name = "RB_reubicacion_sellos_si"
+        Me.RB_reubicacion_sellos_si.Size = New System.Drawing.Size(38, 23)
+        Me.RB_reubicacion_sellos_si.TabIndex = 19
+        Me.RB_reubicacion_sellos_si.TabStop = False
+        Me.RB_reubicacion_sellos_si.Text = "Si"
+        '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.RB_suspencion_trabajo_no)
+        Me.Panel12.Controls.Add(Me.RB_suspencion_trabajo_si)
+        Me.Panel12.Location = New System.Drawing.Point(26, 182)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(118, 29)
+        Me.Panel12.TabIndex = 47
+        '
+        'RB_suspencion_trabajo_no
+        '
+        Me.RB_suspencion_trabajo_no.Checked = True
+        Me.RB_suspencion_trabajo_no.Location = New System.Drawing.Point(53, 3)
+        Me.RB_suspencion_trabajo_no.Name = "RB_suspencion_trabajo_no"
+        Me.RB_suspencion_trabajo_no.Size = New System.Drawing.Size(43, 23)
+        Me.RB_suspencion_trabajo_no.TabIndex = 20
+        Me.RB_suspencion_trabajo_no.Text = "No"
+        '
+        'RB_suspencion_trabajo_si
+        '
+        Me.RB_suspencion_trabajo_si.Location = New System.Drawing.Point(3, 3)
+        Me.RB_suspencion_trabajo_si.Name = "RB_suspencion_trabajo_si"
+        Me.RB_suspencion_trabajo_si.Size = New System.Drawing.Size(38, 23)
+        Me.RB_suspencion_trabajo_si.TabIndex = 19
+        Me.RB_suspencion_trabajo_si.TabStop = False
+        Me.RB_suspencion_trabajo_si.Text = "Si"
+        '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.RB_aseguramiento_objetos_no)
+        Me.Panel13.Controls.Add(Me.RB_aseguramiento_objetos_si)
+        Me.Panel13.Location = New System.Drawing.Point(26, 86)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(118, 29)
+        Me.Panel13.TabIndex = 46
+        '
+        'RB_aseguramiento_objetos_no
+        '
+        Me.RB_aseguramiento_objetos_no.Checked = True
+        Me.RB_aseguramiento_objetos_no.Location = New System.Drawing.Point(53, 3)
+        Me.RB_aseguramiento_objetos_no.Name = "RB_aseguramiento_objetos_no"
+        Me.RB_aseguramiento_objetos_no.Size = New System.Drawing.Size(43, 23)
+        Me.RB_aseguramiento_objetos_no.TabIndex = 20
+        Me.RB_aseguramiento_objetos_no.Text = "No"
+        '
+        'RB_aseguramiento_objetos_si
+        '
+        Me.RB_aseguramiento_objetos_si.Location = New System.Drawing.Point(3, 3)
+        Me.RB_aseguramiento_objetos_si.Name = "RB_aseguramiento_objetos_si"
+        Me.RB_aseguramiento_objetos_si.Size = New System.Drawing.Size(38, 23)
+        Me.RB_aseguramiento_objetos_si.TabIndex = 19
+        Me.RB_aseguramiento_objetos_si.TabStop = False
+        Me.RB_aseguramiento_objetos_si.Text = "Si"
+        '
+        'RB_medidas_seguridad_no
+        '
+        Me.RB_medidas_seguridad_no.Checked = True
+        Me.RB_medidas_seguridad_no.Location = New System.Drawing.Point(67, 34)
+        Me.RB_medidas_seguridad_no.Name = "RB_medidas_seguridad_no"
+        Me.RB_medidas_seguridad_no.Size = New System.Drawing.Size(43, 23)
+        Me.RB_medidas_seguridad_no.TabIndex = 45
+        Me.RB_medidas_seguridad_no.Text = "No"
+        '
+        'RB_medidas_seguridad_si
+        '
+        Me.RB_medidas_seguridad_si.Location = New System.Drawing.Point(23, 34)
+        Me.RB_medidas_seguridad_si.Name = "RB_medidas_seguridad_si"
+        Me.RB_medidas_seguridad_si.Size = New System.Drawing.Size(38, 23)
+        Me.RB_medidas_seguridad_si.TabIndex = 44
+        Me.RB_medidas_seguridad_si.TabStop = False
+        Me.RB_medidas_seguridad_si.Text = "Si"
+        '
+        'txtNumeroAnexos
+        '
+        Me.txtNumeroAnexos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtNumeroAnexos.Location = New System.Drawing.Point(417, 89)
+        Me.txtNumeroAnexos.Name = "txtNumeroAnexos"
+        Me.txtNumeroAnexos.Size = New System.Drawing.Size(270, 22)
+        Me.txtNumeroAnexos.TabIndex = 42
+        Me.txtNumeroAnexos.Watermark = "Cantidad de Anexos"
+        '
+        'txtSellosReubicados
+        '
+        Me.txtSellosReubicados.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtSellosReubicados.Location = New System.Drawing.Point(48, 344)
+        Me.txtSellosReubicados.Name = "txtSellosReubicados"
+        Me.txtSellosReubicados.Size = New System.Drawing.Size(301, 22)
+        Me.txtSellosReubicados.TabIndex = 41
+        Me.txtSellosReubicados.Watermark = "R-46SG56DF"
+        '
+        'txtSellosSuspendidos
+        '
+        Me.txtSellosSuspendidos.Enabled = False
+        Me.txtSellosSuspendidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtSellosSuspendidos.Location = New System.Drawing.Point(48, 240)
+        Me.txtSellosSuspendidos.Name = "txtSellosSuspendidos"
+        Me.txtSellosSuspendidos.Size = New System.Drawing.Size(301, 22)
+        Me.txtSellosSuspendidos.TabIndex = 40
+        Me.txtSellosSuspendidos.Watermark = "R-46SG56DF"
+        '
+        'txtSellosAsegurados
+        '
+        Me.txtSellosAsegurados.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.txtSellosAsegurados.Location = New System.Drawing.Point(48, 140)
+        Me.txtSellosAsegurados.Name = "txtSellosAsegurados"
+        Me.txtSellosAsegurados.Size = New System.Drawing.Size(301, 22)
+        Me.txtSellosAsegurados.TabIndex = 39
+        Me.txtSellosAsegurados.Watermark = "R-46SG56DF"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label38.Location = New System.Drawing.Point(395, 67)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(151, 16)
+        Me.Label38.TabIndex = 37
+        Me.Label38.Text = "5.1 Número de anexos:"
+        Me.Label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label37.Location = New System.Drawing.Point(382, 13)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(183, 16)
+        Me.Label37.TabIndex = 36
+        Me.Label37.Text = "5. Se anexa documentación:"
+        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label36.Location = New System.Drawing.Point(26, 322)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(282, 16)
+        Me.Label36.TabIndex = 35
+        Me.Label36.Text = "4.1 Número de folio de sello(s) reubicado(s):"
+        Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label35.Location = New System.Drawing.Point(13, 268)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(162, 16)
+        Me.Label35.TabIndex = 34
+        Me.Label35.Text = "4. Reubicación de sellos:"
+        Me.Label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label34.Location = New System.Drawing.Point(26, 218)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(306, 16)
+        Me.Label34.TabIndex = 33
+        Me.Label34.Text = "3.1 Número de folio de los sellos de suspención:"
+        Me.Label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label33.Location = New System.Drawing.Point(13, 168)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(242, 16)
+        Me.Label33.TabIndex = 32
+        Me.Label33.Text = "3. Suspención de trabajos o servicios:"
+        Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label32.Location = New System.Drawing.Point(26, 121)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(327, 16)
+        Me.Label32.TabIndex = 31
+        Me.Label32.Text = "2.1 Número de folio de los sellos de aseguramiento:"
+        Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label31.Location = New System.Drawing.Point(13, 63)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(264, 16)
+        Me.Label31.TabIndex = 30
+        Me.Label31.Text = "2. Aseguramiento de productos u objetos:"
+        Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label30.Location = New System.Drawing.Point(13, 13)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(219, 16)
+        Me.Label30.TabIndex = 29
+        Me.Label30.Text = "1. Se aplica medida de Seguridad:"
+        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'sig_pag3
+        '
+        Me.sig_pag3.Location = New System.Drawing.Point(1072, 565)
+        Me.sig_pag3.Name = "sig_pag3"
+        Me.sig_pag3.Size = New System.Drawing.Size(100, 27)
+        Me.sig_pag3.TabIndex = 1
+        Me.sig_pag3.Text = "Siguiente"
+        '
+        'ant_pag3
+        '
+        Me.ant_pag3.Location = New System.Drawing.Point(3, 565)
+        Me.ant_pag3.Name = "ant_pag3"
+        Me.ant_pag3.Size = New System.Drawing.Size(100, 27)
+        Me.ant_pag3.TabIndex = 0
+        Me.ant_pag3.Text = "Anterior"
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.Panel15)
+        Me.TabPage4.Controls.Add(Me.finalizar)
+        Me.TabPage4.Controls.Add(Me.ant_pag4)
+        Me.TabPage4.ImageSource = "Resources\Icons\Menu\PDF.png"
+        Me.TabPage4.Location = New System.Drawing.Point(1, 35)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Text = "Acta Escaneada"
+        '
+        'finalizar
+        '
+        Me.finalizar.AutoSize = True
+        Me.finalizar.ImageSource = "Resources\Icons\Menu\018-checked.png"
+        Me.finalizar.Location = New System.Drawing.Point(1002, 565)
+        Me.finalizar.Name = "finalizar"
+        Me.finalizar.Size = New System.Drawing.Size(160, 27)
+        Me.finalizar.TabIndex = 3
+        Me.finalizar.Text = "Finalizar & Guardar"
+        '
+        'ant_pag4
+        '
+        Me.ant_pag4.Location = New System.Drawing.Point(3, 565)
+        Me.ant_pag4.Name = "ant_pag4"
+        Me.ant_pag4.Size = New System.Drawing.Size(100, 27)
+        Me.ant_pag4.TabIndex = 2
+        Me.ant_pag4.Text = "Anterior"
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'Panel15
         '
@@ -930,12 +1640,12 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel15.Controls.Add(Me.Label20)
         Me.Panel15.Controls.Add(Me.Label19)
         Me.Panel15.Controls.Add(Me.FOLIO_ORDEN)
-        Me.Panel15.Location = New System.Drawing.Point(764, 3)
+        Me.Panel15.Location = New System.Drawing.Point(3, 3)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.ShowCloseButton = False
         Me.Panel15.ShowHeader = True
         Me.Panel15.Size = New System.Drawing.Size(399, 556)
-        Me.Panel15.TabIndex = 4
+        Me.Panel15.TabIndex = 5
         Me.Panel15.Text = "Datos del Acta"
         '
         'AddTipoVerificacion
@@ -1088,726 +1798,86 @@ Partial Class Generar_Orden_Verficacion
         Me.FOLIO_ORDEN.TabIndex = 22
         Me.FOLIO_ORDEN.Watermark = "R-46SG56DF"
         '
-        'Panel9
-        '
-        Me.Panel9.BorderStyle = Wisej.Web.BorderStyle.Solid
-        Me.Panel9.Controls.Add(Me.id_testigo1)
-        Me.Panel9.Controls.Add(Me.txtTestigo_Domicilio1)
-        Me.Panel9.Controls.Add(Me.txtTestigo1)
-        Me.Panel9.Controls.Add(Me.id_testigo2)
-        Me.Panel9.Controls.Add(Me.txtTestigo_Domicilio2)
-        Me.Panel9.Controls.Add(Me.txtTestigo2)
-        Me.Panel9.Controls.Add(Me.Label55)
-        Me.Panel9.Controls.Add(Me.OBSERVACIONES_MUESTRAS)
-        Me.Panel9.Controls.Add(Me.Label54)
-        Me.Panel9.Controls.Add(Me.MUESTRA_RESPONSABILIDAD)
-        Me.Panel9.Controls.Add(Me.TIPO_OBJETIVO)
-        Me.Panel9.Controls.Add(Me.Label29)
-        Me.Panel9.Controls.Add(Me.AddObjetivoVerificacion)
-        Me.Panel9.Controls.Add(Me.Label40)
-        Me.Panel9.Controls.Add(Me.TextBox1)
-        Me.Panel9.Controls.Add(Me.Panel10)
-        Me.Panel9.Controls.Add(Me.Panel11)
-        Me.Panel9.Controls.Add(Me.Panel12)
-        Me.Panel9.Controls.Add(Me.Panel13)
-        Me.Panel9.Controls.Add(Me.RB_medidas_seguridad_no)
-        Me.Panel9.Controls.Add(Me.RB_medidas_seguridad_si)
-        Me.Panel9.Controls.Add(Me.txtNumeroAnexos)
-        Me.Panel9.Controls.Add(Me.txtSellosReubicados)
-        Me.Panel9.Controls.Add(Me.txtSellosSuspendidos)
-        Me.Panel9.Controls.Add(Me.txtSellosAsegurados)
-        Me.Panel9.Controls.Add(Me.Label38)
-        Me.Panel9.Controls.Add(Me.Label37)
-        Me.Panel9.Controls.Add(Me.Label36)
-        Me.Panel9.Controls.Add(Me.Label35)
-        Me.Panel9.Controls.Add(Me.Label34)
-        Me.Panel9.Controls.Add(Me.Label33)
-        Me.Panel9.Controls.Add(Me.Label32)
-        Me.Panel9.Controls.Add(Me.Label31)
-        Me.Panel9.Controls.Add(Me.Label30)
-        Me.Panel9.Location = New System.Drawing.Point(3, 3)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.ShowCloseButton = False
-        Me.Panel9.ShowHeader = True
-        Me.Panel9.Size = New System.Drawing.Size(755, 556)
-        Me.Panel9.TabIndex = 2
-        Me.Panel9.Text = "Observaciones"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label40.Location = New System.Drawing.Point(412, 225)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(248, 16)
-        Me.Label40.TabIndex = 50
-        Me.Label40.Text = "Objeto y Alcance de la orden Sanitaria:"
-        Me.Label40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.TextBox1.Location = New System.Drawing.Point(412, 247)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(301, 24)
-        Me.TextBox1.TabIndex = 51
-        Me.TextBox1.Watermark = "(TRANSCRIBIR)"
-        '
-        'Panel10
-        '
-        Me.Panel10.Controls.Add(Me.RB_anexa_doc_no)
-        Me.Panel10.Controls.Add(Me.RB_anexa_doc_si)
-        Me.Panel10.Location = New System.Drawing.Point(425, 143)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(118, 29)
-        Me.Panel10.TabIndex = 49
-        '
-        'RB_anexa_doc_no
-        '
-        Me.RB_anexa_doc_no.Checked = True
-        Me.RB_anexa_doc_no.Location = New System.Drawing.Point(53, 3)
-        Me.RB_anexa_doc_no.Name = "RB_anexa_doc_no"
-        Me.RB_anexa_doc_no.Size = New System.Drawing.Size(43, 23)
-        Me.RB_anexa_doc_no.TabIndex = 20
-        Me.RB_anexa_doc_no.Text = "No"
-        '
-        'RB_anexa_doc_si
-        '
-        Me.RB_anexa_doc_si.Location = New System.Drawing.Point(3, 3)
-        Me.RB_anexa_doc_si.Name = "RB_anexa_doc_si"
-        Me.RB_anexa_doc_si.Size = New System.Drawing.Size(38, 23)
-        Me.RB_anexa_doc_si.TabIndex = 19
-        Me.RB_anexa_doc_si.TabStop = False
-        Me.RB_anexa_doc_si.Text = "Si"
-        '
-        'Panel11
-        '
-        Me.Panel11.Controls.Add(Me.RB_reubicacion_sellos_no)
-        Me.Panel11.Controls.Add(Me.RB_reubicacion_sellos_si)
-        Me.Panel11.Location = New System.Drawing.Point(425, 32)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(118, 29)
-        Me.Panel11.TabIndex = 48
-        '
-        'RB_reubicacion_sellos_no
-        '
-        Me.RB_reubicacion_sellos_no.Checked = True
-        Me.RB_reubicacion_sellos_no.Location = New System.Drawing.Point(53, 3)
-        Me.RB_reubicacion_sellos_no.Name = "RB_reubicacion_sellos_no"
-        Me.RB_reubicacion_sellos_no.Size = New System.Drawing.Size(43, 23)
-        Me.RB_reubicacion_sellos_no.TabIndex = 20
-        Me.RB_reubicacion_sellos_no.Text = "No"
-        '
-        'RB_reubicacion_sellos_si
-        '
-        Me.RB_reubicacion_sellos_si.Location = New System.Drawing.Point(3, 3)
-        Me.RB_reubicacion_sellos_si.Name = "RB_reubicacion_sellos_si"
-        Me.RB_reubicacion_sellos_si.Size = New System.Drawing.Size(38, 23)
-        Me.RB_reubicacion_sellos_si.TabIndex = 19
-        Me.RB_reubicacion_sellos_si.TabStop = False
-        Me.RB_reubicacion_sellos_si.Text = "Si"
-        '
-        'Panel12
-        '
-        Me.Panel12.Controls.Add(Me.RB_suspencion_trabajo_no)
-        Me.Panel12.Controls.Add(Me.RB_suspencion_trabajo_si)
-        Me.Panel12.Location = New System.Drawing.Point(26, 182)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(118, 29)
-        Me.Panel12.TabIndex = 47
-        '
-        'RB_suspencion_trabajo_no
-        '
-        Me.RB_suspencion_trabajo_no.Checked = True
-        Me.RB_suspencion_trabajo_no.Location = New System.Drawing.Point(53, 3)
-        Me.RB_suspencion_trabajo_no.Name = "RB_suspencion_trabajo_no"
-        Me.RB_suspencion_trabajo_no.Size = New System.Drawing.Size(43, 23)
-        Me.RB_suspencion_trabajo_no.TabIndex = 20
-        Me.RB_suspencion_trabajo_no.Text = "No"
-        '
-        'RB_suspencion_trabajo_si
-        '
-        Me.RB_suspencion_trabajo_si.Location = New System.Drawing.Point(3, 3)
-        Me.RB_suspencion_trabajo_si.Name = "RB_suspencion_trabajo_si"
-        Me.RB_suspencion_trabajo_si.Size = New System.Drawing.Size(38, 23)
-        Me.RB_suspencion_trabajo_si.TabIndex = 19
-        Me.RB_suspencion_trabajo_si.TabStop = False
-        Me.RB_suspencion_trabajo_si.Text = "Si"
-        '
-        'Panel13
-        '
-        Me.Panel13.Controls.Add(Me.RB_aseguramiento_objetos_no)
-        Me.Panel13.Controls.Add(Me.RB_aseguramiento_objetos_si)
-        Me.Panel13.Location = New System.Drawing.Point(26, 86)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(118, 29)
-        Me.Panel13.TabIndex = 46
-        '
-        'RB_aseguramiento_objetos_no
-        '
-        Me.RB_aseguramiento_objetos_no.Checked = True
-        Me.RB_aseguramiento_objetos_no.Location = New System.Drawing.Point(53, 3)
-        Me.RB_aseguramiento_objetos_no.Name = "RB_aseguramiento_objetos_no"
-        Me.RB_aseguramiento_objetos_no.Size = New System.Drawing.Size(43, 23)
-        Me.RB_aseguramiento_objetos_no.TabIndex = 20
-        Me.RB_aseguramiento_objetos_no.Text = "No"
-        '
-        'RB_aseguramiento_objetos_si
-        '
-        Me.RB_aseguramiento_objetos_si.Location = New System.Drawing.Point(3, 3)
-        Me.RB_aseguramiento_objetos_si.Name = "RB_aseguramiento_objetos_si"
-        Me.RB_aseguramiento_objetos_si.Size = New System.Drawing.Size(38, 23)
-        Me.RB_aseguramiento_objetos_si.TabIndex = 19
-        Me.RB_aseguramiento_objetos_si.TabStop = False
-        Me.RB_aseguramiento_objetos_si.Text = "Si"
-        '
-        'RB_medidas_seguridad_no
-        '
-        Me.RB_medidas_seguridad_no.Checked = True
-        Me.RB_medidas_seguridad_no.Location = New System.Drawing.Point(67, 34)
-        Me.RB_medidas_seguridad_no.Name = "RB_medidas_seguridad_no"
-        Me.RB_medidas_seguridad_no.Size = New System.Drawing.Size(43, 23)
-        Me.RB_medidas_seguridad_no.TabIndex = 45
-        Me.RB_medidas_seguridad_no.Text = "No"
-        '
-        'RB_medidas_seguridad_si
-        '
-        Me.RB_medidas_seguridad_si.Location = New System.Drawing.Point(23, 34)
-        Me.RB_medidas_seguridad_si.Name = "RB_medidas_seguridad_si"
-        Me.RB_medidas_seguridad_si.Size = New System.Drawing.Size(38, 23)
-        Me.RB_medidas_seguridad_si.TabIndex = 44
-        Me.RB_medidas_seguridad_si.TabStop = False
-        Me.RB_medidas_seguridad_si.Text = "Si"
-        '
-        'txtNumeroAnexos
-        '
-        Me.txtNumeroAnexos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtNumeroAnexos.Location = New System.Drawing.Point(447, 197)
-        Me.txtNumeroAnexos.Name = "txtNumeroAnexos"
-        Me.txtNumeroAnexos.Size = New System.Drawing.Size(270, 22)
-        Me.txtNumeroAnexos.TabIndex = 42
-        Me.txtNumeroAnexos.Watermark = "Cantidad de Anexos"
-        '
-        'txtSellosReubicados
-        '
-        Me.txtSellosReubicados.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtSellosReubicados.Location = New System.Drawing.Point(447, 89)
-        Me.txtSellosReubicados.Name = "txtSellosReubicados"
-        Me.txtSellosReubicados.Size = New System.Drawing.Size(301, 22)
-        Me.txtSellosReubicados.TabIndex = 41
-        Me.txtSellosReubicados.Watermark = "R-46SG56DF"
-        '
-        'txtSellosSuspendidos
-        '
-        Me.txtSellosSuspendidos.Enabled = False
-        Me.txtSellosSuspendidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtSellosSuspendidos.Location = New System.Drawing.Point(48, 240)
-        Me.txtSellosSuspendidos.Name = "txtSellosSuspendidos"
-        Me.txtSellosSuspendidos.Size = New System.Drawing.Size(301, 22)
-        Me.txtSellosSuspendidos.TabIndex = 40
-        Me.txtSellosSuspendidos.Watermark = "R-46SG56DF"
-        '
-        'txtSellosAsegurados
-        '
-        Me.txtSellosAsegurados.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtSellosAsegurados.Location = New System.Drawing.Point(48, 140)
-        Me.txtSellosAsegurados.Name = "txtSellosAsegurados"
-        Me.txtSellosAsegurados.Size = New System.Drawing.Size(301, 22)
-        Me.txtSellosAsegurados.TabIndex = 39
-        Me.txtSellosAsegurados.Watermark = "R-46SG56DF"
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label38.Location = New System.Drawing.Point(425, 175)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(151, 16)
-        Me.Label38.TabIndex = 37
-        Me.Label38.Text = "5.1 Número de anexos:"
-        Me.Label38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label37.Location = New System.Drawing.Point(412, 121)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(183, 16)
-        Me.Label37.TabIndex = 36
-        Me.Label37.Text = "5. Se anexa documentación:"
-        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label36.Location = New System.Drawing.Point(425, 67)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(282, 16)
-        Me.Label36.TabIndex = 35
-        Me.Label36.Text = "4.1 Número de folio de sello(s) reubicado(s):"
-        Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label35.Location = New System.Drawing.Point(412, 13)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(162, 16)
-        Me.Label35.TabIndex = 34
-        Me.Label35.Text = "4. Reubicación de sellos:"
-        Me.Label35.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label34.Location = New System.Drawing.Point(26, 218)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(306, 16)
-        Me.Label34.TabIndex = 33
-        Me.Label34.Text = "3.1 Número de folio de los sellos de suspención:"
-        Me.Label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label33.Location = New System.Drawing.Point(13, 168)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(242, 16)
-        Me.Label33.TabIndex = 32
-        Me.Label33.Text = "3. Suspención de trabajos o servicios:"
-        Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label32.Location = New System.Drawing.Point(26, 121)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(327, 16)
-        Me.Label32.TabIndex = 31
-        Me.Label32.Text = "2.1 Número de folio de los sellos de aseguramiento:"
-        Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label31.Location = New System.Drawing.Point(13, 63)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(264, 16)
-        Me.Label31.TabIndex = 30
-        Me.Label31.Text = "2. Aseguramiento de productos u objetos:"
-        Me.Label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label30.Location = New System.Drawing.Point(13, 13)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(219, 16)
-        Me.Label30.TabIndex = 29
-        Me.Label30.Text = "1. Se aplica medida de Seguridad:"
-        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'sig_pag3
-        '
-        Me.sig_pag3.Location = New System.Drawing.Point(1072, 565)
-        Me.sig_pag3.Name = "sig_pag3"
-        Me.sig_pag3.Size = New System.Drawing.Size(100, 27)
-        Me.sig_pag3.TabIndex = 1
-        Me.sig_pag3.Text = "Siguiente"
-        '
-        'ant_pag3
-        '
-        Me.ant_pag3.Location = New System.Drawing.Point(3, 565)
-        Me.ant_pag3.Name = "ant_pag3"
-        Me.ant_pag3.Size = New System.Drawing.Size(100, 27)
-        Me.ant_pag3.TabIndex = 0
-        Me.ant_pag3.Text = "Anterior"
-        '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.ProgressBar1)
-        Me.TabPage4.Controls.Add(Me.finalizar)
-        Me.TabPage4.Controls.Add(Me.ant_pag4)
-        Me.TabPage4.Controls.Add(Me.Upload1)
-        Me.TabPage4.Controls.Add(Me.PdfViewer1)
-        Me.TabPage4.ImageSource = "Resources\Icons\Menu\PDF.png"
-        Me.TabPage4.Location = New System.Drawing.Point(1, 35)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Text = "Acta Escaneada"
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(14, 519)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(1146, 24)
-        Me.ProgressBar1.TabIndex = 4
-        Me.ProgressBar1.Text = "Carga de Archivo a la Plataforma"
-        '
-        'finalizar
-        '
-        Me.finalizar.AutoSize = True
-        Me.finalizar.ImageSource = "Resources\Icons\Menu\018-checked.png"
-        Me.finalizar.Location = New System.Drawing.Point(1012, 568)
-        Me.finalizar.Name = "finalizar"
-        Me.finalizar.Size = New System.Drawing.Size(160, 27)
-        Me.finalizar.TabIndex = 3
-        Me.finalizar.Text = "Finalizar & Guardar"
-        '
-        'ant_pag4
-        '
-        Me.ant_pag4.Location = New System.Drawing.Point(3, 565)
-        Me.ant_pag4.Name = "ant_pag4"
-        Me.ant_pag4.Size = New System.Drawing.Size(100, 27)
-        Me.ant_pag4.TabIndex = 2
-        Me.ant_pag4.Text = "Anterior"
-        '
-        'Upload1
-        '
-        Me.Upload1.ButtonPosition = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Upload1.HideValue = True
-        Me.Upload1.Location = New System.Drawing.Point(403, 350)
-        Me.Upload1.Name = "Upload1"
-        Me.Upload1.Size = New System.Drawing.Size(342, 135)
-        Me.Upload1.TabIndex = 1
-        Me.Upload1.Text = "Seleccionar Acta Escaneada"
-        '
-        'PdfViewer1
-        '
-        Me.PdfViewer1.Location = New System.Drawing.Point(3, 3)
-        Me.PdfViewer1.Name = "PdfViewer1"
-        Me.PdfViewer1.Size = New System.Drawing.Size(1173, 510)
-        Me.PdfViewer1.TabIndex = 0
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.cenum, Me.CVE_TIPO_MUESTRA, Me.CVE_TIPO_ANALISIS, Me.DESCRIPCION, Me.CLAVE_VS, Me.MARCA, Me.LOTE, Me.FECHA, Me.CANTIDAD})
-        Me.DataGridView2.Controls.Add(Me.Button1)
-        Me.DataGridView2.Location = New System.Drawing.Point(18, 285)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1138, 203)
-        Me.DataGridView2.TabIndex = 99
-        '
-        'CVE_TIPO_MUESTRA
-        '
-        Me.CVE_TIPO_MUESTRA.HeaderText = "CVE_TIPO_MUESTRA"
-        Me.CVE_TIPO_MUESTRA.Name = "CVE_TIPO_MUESTRA"
-        Me.CVE_TIPO_MUESTRA.Visible = False
-        '
-        'CVE_TIPO_ANALISIS
-        '
-        Me.CVE_TIPO_ANALISIS.HeaderText = "CVE_TIPO_ANALISIS"
-        Me.CVE_TIPO_ANALISIS.Name = "CVE_TIPO_ANALISIS"
-        Me.CVE_TIPO_ANALISIS.Visible = False
-        '
-        'DESCRIPCION
-        '
-        Me.DESCRIPCION.HeaderText = "DESCRIPCION"
-        Me.DESCRIPCION.Name = "DESCRIPCION"
-        Me.DESCRIPCION.Width = 250
-        '
-        'CLAVE_VS
-        '
-        Me.CLAVE_VS.HeaderText = "CLAVE VS"
-        Me.CLAVE_VS.Name = "CLAVE_VS"
-        '
-        'MARCA
-        '
-        Me.MARCA.HeaderText = "MARCA"
-        Me.MARCA.Name = "MARCA"
-        Me.MARCA.Width = 150
-        '
-        'LOTE
-        '
-        Me.LOTE.HeaderText = "LOTE"
-        Me.LOTE.Name = "LOTE"
-        Me.LOTE.Width = 150
-        '
-        'FECHA
-        '
-        Me.FECHA.HeaderText = "CADUCIDAD"
-        Me.FECHA.Name = "FECHA"
-        Me.FECHA.Width = 200
-        '
-        'CANTIDAD
-        '
-        Me.CANTIDAD.HeaderText = "CANTIDAD"
-        Me.CANTIDAD.Name = "CANTIDAD"
-        Me.CANTIDAD.Width = 200
-        '
-        'Label55
-        '
-        Me.Label55.AutoSize = True
-        Me.Label55.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label55.Location = New System.Drawing.Point(26, 393)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(221, 16)
-        Me.Label55.TabIndex = 105
-        Me.Label55.Text = "Observaciones sobre las Muestras"
-        '
-        'OBSERVACIONES_MUESTRAS
-        '
-        Me.OBSERVACIONES_MUESTRAS.AutoSize = False
-        Me.OBSERVACIONES_MUESTRAS.Location = New System.Drawing.Point(26, 415)
-        Me.OBSERVACIONES_MUESTRAS.Multiline = True
-        Me.OBSERVACIONES_MUESTRAS.Name = "OBSERVACIONES_MUESTRAS"
-        Me.OBSERVACIONES_MUESTRAS.Size = New System.Drawing.Size(327, 72)
-        Me.OBSERVACIONES_MUESTRAS.TabIndex = 104
-        Me.OBSERVACIONES_MUESTRAS.Watermark = "Observaciones que se dieron durante el muestreo"
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label54.Location = New System.Drawing.Point(26, 346)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(344, 16)
-        Me.Label54.TabIndex = 103
-        Me.Label54.Text = "Gastos y Analisis de la Muestreo Se Responsabilisa a:"
-        '
-        'MUESTRA_RESPONSABILIDAD
-        '
-        Me.MUESTRA_RESPONSABILIDAD.Items.AddRange(New Object() {"Autoridad Sanitaria", "Interesado (Propietario)"})
-        Me.MUESTRA_RESPONSABILIDAD.Location = New System.Drawing.Point(26, 368)
-        Me.MUESTRA_RESPONSABILIDAD.Name = "MUESTRA_RESPONSABILIDAD"
-        Me.MUESTRA_RESPONSABILIDAD.Size = New System.Drawing.Size(327, 22)
-        Me.MUESTRA_RESPONSABILIDAD.TabIndex = 102
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label29.ForeColor = System.Drawing.Color.FromName("@windowText")
-        Me.Label29.Location = New System.Drawing.Point(26, 296)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(169, 16)
-        Me.Label29.TabIndex = 100
-        Me.Label29.Text = "Objetivo de la Verificacion"
-        '
-        'AddObjetivoVerificacion
-        '
-        Me.AddObjetivoVerificacion.AutoSize = True
-        Me.AddObjetivoVerificacion.ImageSource = "Resources\Icons\Menu\add.png"
-        Me.AddObjetivoVerificacion.Location = New System.Drawing.Point(298, 313)
-        Me.AddObjetivoVerificacion.Name = "AddObjetivoVerificacion"
-        Me.AddObjetivoVerificacion.Size = New System.Drawing.Size(51, 27)
-        Me.AddObjetivoVerificacion.TabIndex = 99
-        '
-        'id_testigo2
-        '
-        Me.id_testigo2.Enabled = False
-        Me.id_testigo2.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
-        Me.id_testigo2.Location = New System.Drawing.Point(412, 356)
-        Me.id_testigo2.Name = "id_testigo2"
-        Me.id_testigo2.ReadOnly = True
-        Me.id_testigo2.Size = New System.Drawing.Size(316, 22)
-        Me.id_testigo2.TabIndex = 108
-        Me.id_testigo2.Watermark = "Doc con el que valida su identidad"
-        '
-        'txtTestigo_Domicilio2
-        '
-        Me.txtTestigo_Domicilio2.Location = New System.Drawing.Point(412, 328)
-        Me.txtTestigo_Domicilio2.Name = "txtTestigo_Domicilio2"
-        Me.txtTestigo_Domicilio2.Size = New System.Drawing.Size(316, 22)
-        Me.txtTestigo_Domicilio2.TabIndex = 107
-        Me.txtTestigo_Domicilio2.Watermark = "Descripcion del domicilio"
-        '
-        'txtTestigo2
-        '
-        Me.txtTestigo2.Location = New System.Drawing.Point(412, 296)
-        Me.txtTestigo2.Name = "txtTestigo2"
-        Me.txtTestigo2.Size = New System.Drawing.Size(316, 22)
-        Me.txtTestigo2.TabIndex = 106
-        Me.txtTestigo2.Watermark = "Nombre Completo de el 1 Testigo"
-        '
-        'id_testigo1
-        '
-        Me.id_testigo1.Enabled = False
-        Me.id_testigo1.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
-        Me.id_testigo1.Location = New System.Drawing.Point(412, 465)
-        Me.id_testigo1.Name = "id_testigo1"
-        Me.id_testigo1.ReadOnly = True
-        Me.id_testigo1.Size = New System.Drawing.Size(316, 22)
-        Me.id_testigo1.TabIndex = 111
-        Me.id_testigo1.Watermark = "Doc con el que valida su identidad"
-        '
-        'txtTestigo_Domicilio1
-        '
-        Me.txtTestigo_Domicilio1.Location = New System.Drawing.Point(412, 433)
-        Me.txtTestigo_Domicilio1.Name = "txtTestigo_Domicilio1"
-        Me.txtTestigo_Domicilio1.Size = New System.Drawing.Size(316, 22)
-        Me.txtTestigo_Domicilio1.TabIndex = 110
-        Me.txtTestigo_Domicilio1.Watermark = "Descripcion del domicilio"
-        '
-        'txtTestigo1
-        '
-        Me.txtTestigo1.Location = New System.Drawing.Point(412, 405)
-        Me.txtTestigo1.Name = "txtTestigo1"
-        Me.txtTestigo1.Size = New System.Drawing.Size(316, 22)
-        Me.txtTestigo1.TabIndex = 109
-        Me.txtTestigo1.Watermark = "Nombre Completo de el 2 Testigo"
-        '
-        'Button1
-        '
-        Me.Button1.Dock = Wisej.Web.DockStyle.Top
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.ImageSource = "Resources\Icons\Menu\add.png"
-        Me.Button1.Location = New System.Drawing.Point(0, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(1136, 27)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Añadir Muestras"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ESTABLECIMIENTO
-        '
-        Me.ESTABLECIMIENTO.amarillo = False
-        Me.ESTABLECIMIENTO.Ancho = Nothing
-        Me.ESTABLECIMIENTO.BackColor = System.Drawing.Color.FromName("@window")
-        Me.ESTABLECIMIENTO.ColorAtras = System.Drawing.Color.Empty
-        Me.ESTABLECIMIENTO.Count = 0
-        Me.ESTABLECIMIENTO.DataSourceSelect = Nothing
-        Me.ESTABLECIMIENTO.gris = False
-        Me.ESTABLECIMIENTO.Letra = Nothing
-        Me.ESTABLECIMIENTO.Limitar = False
-        Me.ESTABLECIMIENTO.Location = New System.Drawing.Point(24, 28)
-        Me.ESTABLECIMIENTO.MensajeAgua = Nothing
-        Me.ESTABLECIMIENTO.mostrarMensaje = False
-        Me.ESTABLECIMIENTO.Name = "ESTABLECIMIENTO"
-        Me.ESTABLECIMIENTO.Negritas = False
-        Me.ESTABLECIMIENTO.OBTENERLISTLLENADO = Nothing
-        Me.ESTABLECIMIENTO.procedure = Nothing
-        Me.ESTABLECIMIENTO.SelectedIndex = -1
-        Me.ESTABLECIMIENTO.SelectedItem = ""
-        Me.ESTABLECIMIENTO.SelectedValue = Nothing
-        Me.ESTABLECIMIENTO.Size = New System.Drawing.Size(316, 22)
-        Me.ESTABLECIMIENTO.TabIndex = 26
-        Me.ESTABLECIMIENTO.TODOSS = False
-        Me.ESTABLECIMIENTO.Watermark = Nothing
-        '
-        'COLONIA_ESTABLECIMIENTOS
-        '
-        Me.COLONIA_ESTABLECIMIENTOS.amarillo = False
-        Me.COLONIA_ESTABLECIMIENTOS.Ancho = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.BackColor = System.Drawing.Color.FromName("@window")
-        Me.COLONIA_ESTABLECIMIENTOS.ColorAtras = System.Drawing.Color.Empty
-        Me.COLONIA_ESTABLECIMIENTOS.Count = 0
-        Me.COLONIA_ESTABLECIMIENTOS.DataSourceSelect = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.gris = False
-        Me.COLONIA_ESTABLECIMIENTOS.Letra = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.Limitar = False
-        Me.COLONIA_ESTABLECIMIENTOS.Location = New System.Drawing.Point(24, 361)
-        Me.COLONIA_ESTABLECIMIENTOS.MensajeAgua = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.mostrarMensaje = False
-        Me.COLONIA_ESTABLECIMIENTOS.Name = "COLONIA_ESTABLECIMIENTOS"
-        Me.COLONIA_ESTABLECIMIENTOS.Negritas = False
-        Me.COLONIA_ESTABLECIMIENTOS.OBTENERLISTLLENADO = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.procedure = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.SelectedIndex = -1
-        Me.COLONIA_ESTABLECIMIENTOS.SelectedItem = ""
-        Me.COLONIA_ESTABLECIMIENTOS.SelectedValue = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.Size = New System.Drawing.Size(277, 22)
-        Me.COLONIA_ESTABLECIMIENTOS.TabIndex = 25
-        Me.COLONIA_ESTABLECIMIENTOS.TODOSS = False
-        Me.COLONIA_ESTABLECIMIENTOS.Watermark = Nothing
-        '
-        'PAQUETES_ACTAS
-        '
-        Me.PAQUETES_ACTAS.amarillo = False
-        Me.PAQUETES_ACTAS.Ancho = Nothing
-        Me.PAQUETES_ACTAS.BackColor = System.Drawing.Color.FromName("@window")
-        Me.PAQUETES_ACTAS.ColorAtras = System.Drawing.Color.Empty
-        Me.PAQUETES_ACTAS.Count = 0
-        Me.PAQUETES_ACTAS.DataSourceSelect = Nothing
-        Me.PAQUETES_ACTAS.gris = False
-        Me.PAQUETES_ACTAS.Letra = Nothing
-        Me.PAQUETES_ACTAS.Limitar = False
-        Me.PAQUETES_ACTAS.Location = New System.Drawing.Point(13, 56)
-        Me.PAQUETES_ACTAS.MensajeAgua = Nothing
-        Me.PAQUETES_ACTAS.mostrarMensaje = False
-        Me.PAQUETES_ACTAS.Name = "PAQUETES_ACTAS"
-        Me.PAQUETES_ACTAS.Negritas = False
-        Me.PAQUETES_ACTAS.OBTENERLISTLLENADO = Nothing
-        Me.PAQUETES_ACTAS.procedure = Nothing
-        Me.PAQUETES_ACTAS.SelectedIndex = -1
-        Me.PAQUETES_ACTAS.SelectedItem = ""
-        Me.PAQUETES_ACTAS.SelectedValue = Nothing
-        Me.PAQUETES_ACTAS.Size = New System.Drawing.Size(293, 22)
-        Me.PAQUETES_ACTAS.TabIndex = 9
-        Me.PAQUETES_ACTAS.TODOSS = False
-        Me.PAQUETES_ACTAS.Watermark = Nothing
-        '
-        'VERIFICADORES
-        '
-        Me.VERIFICADORES.amarillo = False
-        Me.VERIFICADORES.Ancho = Nothing
-        Me.VERIFICADORES.BackColor = System.Drawing.Color.FromName("@window")
-        Me.VERIFICADORES.ColorAtras = System.Drawing.Color.Empty
-        Me.VERIFICADORES.Count = 0
-        Me.VERIFICADORES.DataSource = Nothing
-        Me.VERIFICADORES.DataSourceSelect = Nothing
-        Me.VERIFICADORES.gris = False
-        Me.VERIFICADORES.Letra = Nothing
-        Me.VERIFICADORES.Limitar = False
-        Me.VERIFICADORES.Location = New System.Drawing.Point(329, 25)
-        Me.VERIFICADORES.MensajeAgua = Nothing
-        Me.VERIFICADORES.mostrarMensaje = False
-        Me.VERIFICADORES.Name = "VERIFICADORES"
-        Me.VERIFICADORES.Negritas = False
-        Me.VERIFICADORES.OBTENERLISTLLENADO = Nothing
-        Me.VERIFICADORES.procedure = Nothing
-        Me.VERIFICADORES.SelectedIndex = -1
-        Me.VERIFICADORES.SelectedItem = ""
-        Me.VERIFICADORES.SelectedValue = Nothing
-        Me.VERIFICADORES.Size = New System.Drawing.Size(301, 22)
-        Me.VERIFICADORES.TabIndex = 0
-        Me.VERIFICADORES.TODOSS = False
-        Me.VERIFICADORES.Watermark = Nothing
-        '
-        'TIPO_OBJETIVO
-        '
-        Me.TIPO_OBJETIVO.amarillo = False
-        Me.TIPO_OBJETIVO.Ancho = Nothing
-        Me.TIPO_OBJETIVO.BackColor = System.Drawing.Color.FromName("@window")
-        Me.TIPO_OBJETIVO.ColorAtras = System.Drawing.Color.Empty
-        Me.TIPO_OBJETIVO.Count = 0
-        Me.TIPO_OBJETIVO.DataSourceSelect = Nothing
-        Me.TIPO_OBJETIVO.gris = False
-        Me.TIPO_OBJETIVO.Letra = Nothing
-        Me.TIPO_OBJETIVO.Limitar = False
-        Me.TIPO_OBJETIVO.Location = New System.Drawing.Point(26, 318)
-        Me.TIPO_OBJETIVO.MensajeAgua = Nothing
-        Me.TIPO_OBJETIVO.mostrarMensaje = False
-        Me.TIPO_OBJETIVO.Name = "TIPO_OBJETIVO"
-        Me.TIPO_OBJETIVO.Negritas = False
-        Me.TIPO_OBJETIVO.OBTENERLISTLLENADO = Nothing
-        Me.TIPO_OBJETIVO.procedure = Nothing
-        Me.TIPO_OBJETIVO.SelectedIndex = -1
-        Me.TIPO_OBJETIVO.SelectedItem = ""
-        Me.TIPO_OBJETIVO.SelectedValue = Nothing
-        Me.TIPO_OBJETIVO.Size = New System.Drawing.Size(229, 22)
-        Me.TIPO_OBJETIVO.TabIndex = 101
-        Me.TIPO_OBJETIVO.TODOSS = False
-        Me.TIPO_OBJETIVO.Watermark = Nothing
-        '
-        'cenum
-        '
-        Me.cenum.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter
-        Me.cenum.CellImageSource = "Resources\Icons\Menu\error_color.png"
-        Me.cenum.Name = "cenum"
-        Me.cenum.Width = 30
+        'Label12
+        '
+        Me.Label12.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label12.Location = New System.Drawing.Point(792, 13)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(183, 16)
+        Me.Label12.TabIndex = 112
+        Me.Label12.Text = "Testigos:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'IDENTIDAD_ENCARGADO
+        '
+        Me.IDENTIDAD_ENCARGADO.Enabled = False
+        Me.IDENTIDAD_ENCARGADO.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
+        Me.IDENTIDAD_ENCARGADO.Location = New System.Drawing.Point(792, 404)
+        Me.IDENTIDAD_ENCARGADO.Name = "IDENTIDAD_ENCARGADO"
+        Me.IDENTIDAD_ENCARGADO.ReadOnly = True
+        Me.IDENTIDAD_ENCARGADO.Size = New System.Drawing.Size(356, 22)
+        Me.IDENTIDAD_ENCARGADO.TabIndex = 115
+        Me.IDENTIDAD_ENCARGADO.Watermark = "Doc con el que valida su identidad"
+        '
+        'DETALLE_DOMICILIO_ENCARGADO
+        '
+        Me.DETALLE_DOMICILIO_ENCARGADO.Location = New System.Drawing.Point(792, 376)
+        Me.DETALLE_DOMICILIO_ENCARGADO.Name = "DETALLE_DOMICILIO_ENCARGADO"
+        Me.DETALLE_DOMICILIO_ENCARGADO.Size = New System.Drawing.Size(356, 22)
+        Me.DETALLE_DOMICILIO_ENCARGADO.TabIndex = 114
+        Me.DETALLE_DOMICILIO_ENCARGADO.Watermark = "Descripcion del domicilio"
+        '
+        'NOMBRE_ENCARGADO
+        '
+        Me.NOMBRE_ENCARGADO.Location = New System.Drawing.Point(792, 344)
+        Me.NOMBRE_ENCARGADO.Name = "NOMBRE_ENCARGADO"
+        Me.NOMBRE_ENCARGADO.Size = New System.Drawing.Size(356, 22)
+        Me.NOMBRE_ENCARGADO.TabIndex = 113
+        Me.NOMBRE_ENCARGADO.Watermark = "Nombre completo del encargado"
+        '
+        'Label18
+        '
+        Me.Label18.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label18.Location = New System.Drawing.Point(792, 322)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(227, 16)
+        Me.Label18.TabIndex = 116
+        Me.Label18.Text = "Encargado del esteblecimiento"
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CARGO_PUESTO
+        '
+        Me.CARGO_PUESTO.Location = New System.Drawing.Point(792, 432)
+        Me.CARGO_PUESTO.Name = "CARGO_PUESTO"
+        Me.CARGO_PUESTO.Size = New System.Drawing.Size(356, 22)
+        Me.CARGO_PUESTO.TabIndex = 117
+        Me.CARGO_PUESTO.Watermark = "Cargo o Puesto del encargado"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Location = New System.Drawing.Point(6, 21)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(38, 23)
+        Me.CheckBox1.TabIndex = 0
+        Me.CheckBox1.Text = "Si"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.Location = New System.Drawing.Point(50, 21)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(43, 23)
+        Me.CheckBox2.TabIndex = 1
+        Me.CheckBox2.Text = "No"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.CheckBox2)
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
+        Me.GroupBox1.Location = New System.Drawing.Point(792, 232)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(200, 63)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.Text = "¿El dueño es quien recibio a los Verificadores?"
         '
         'Generar_Orden_Verficacion
         '
@@ -1835,10 +1905,10 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage2.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DataGridView2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel15.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.Panel10.ResumeLayout(False)
@@ -1852,8 +1922,10 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DataGridView2.ResumeLayout(False)
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1909,8 +1981,6 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents TabPage4 As Wisej.Web.TabPage
     Friend WithEvents finalizar As Wisej.Web.Button
     Friend WithEvents ant_pag4 As Wisej.Web.Button
-    Friend WithEvents Upload1 As Wisej.Web.Upload
-    Friend WithEvents PdfViewer1 As Wisej.Web.PdfViewer
     Friend WithEvents Panel9 As Wisej.Web.Panel
     Friend WithEvents Panel10 As Wisej.Web.Panel
     Friend WithEvents RB_anexa_doc_no As Wisej.Web.RadioButton
@@ -1939,19 +2009,6 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents Label32 As Wisej.Web.Label
     Friend WithEvents Label31 As Wisej.Web.Label
     Friend WithEvents Label30 As Wisej.Web.Label
-    Friend WithEvents Panel15 As Wisej.Web.Panel
-    Friend WithEvents Label39 As Wisej.Web.Label
-    Friend WithEvents txtDescribir As Wisej.Web.TextBox
-    Friend WithEvents ComboBoxPROGRAMA As Wisej.Web.ComboBox
-    Friend WithEvents Label23 As Wisej.Web.Label
-    Friend WithEvents DateTimePickerFECHA_CAPTURA_EXPEDIENTE As Wisej.Web.DateTimePicker
-    Friend WithEvents Label22 As Wisej.Web.Label
-    Friend WithEvents FECHA_ORDEN As Wisej.Web.DateTimePicker
-    Friend WithEvents Label21 As Wisej.Web.Label
-    Friend WithEvents ComboBoxTIPO_VERIFCACION As Wisej.Web.ComboBox
-    Friend WithEvents Label20 As Wisej.Web.Label
-    Friend WithEvents Label19 As Wisej.Web.Label
-    Friend WithEvents FOLIO_ORDEN As Wisej.Web.TextBox
     Friend WithEvents Label48 As Wisej.Web.Label
     Friend WithEvents TextBoxNOMBRE As Wisej.Web.TextBox
     Friend WithEvents Label11 As Wisej.Web.Label
@@ -1967,7 +2024,6 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents MUNICIPIOS_ESTABLECIMIENTOS As Wisej.Web.ComboBox
     Friend WithEvents COLONIA_ESTABLECIMIENTOS As Combosax_B
     Friend WithEvents ESTABLECIMIENTO As Combosax_B
-    Friend WithEvents ProgressBar1 As Wisej.Web.ProgressBar
     Friend WithEvents Label24 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents VERIFICADORES As Combosax_B
@@ -1977,9 +2033,6 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents Label27 As Wisej.Web.Label
     Friend WithEvents Label26 As Wisej.Web.Label
     Friend WithEvents ErrorProvider1 As Wisej.Web.ErrorProvider
-    Friend WithEvents AddTipoVerificacion As Wisej.Web.Button
-    Friend WithEvents Label7 As Wisej.Web.Label
-    Friend WithEvents FOLIO_ACTA_VERIFICACION As Wisej.Web.TextBox
     Friend WithEvents TextBox1 As Wisej.Web.TextBox
     Friend WithEvents Eliminar As Wisej.Web.DataGridViewImageColumn
     Friend WithEvents Nombre As Wisej.Web.DataGridViewColumn
@@ -2014,4 +2067,29 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents Label29 As Wisej.Web.Label
     Friend WithEvents AddObjetivoVerificacion As Wisej.Web.Button
     Friend WithEvents cenum As Wisej.Web.DataGridViewImageColumn
+    Friend WithEvents CARGO_PUESTO As Wisej.Web.TextBox
+    Friend WithEvents Label18 As Wisej.Web.Label
+    Friend WithEvents IDENTIDAD_ENCARGADO As Wisej.Web.ComboBox
+    Friend WithEvents DETALLE_DOMICILIO_ENCARGADO As Wisej.Web.TextBox
+    Friend WithEvents NOMBRE_ENCARGADO As Wisej.Web.TextBox
+    Friend WithEvents Label12 As Wisej.Web.Label
+    Friend WithEvents Panel15 As Wisej.Web.Panel
+    Friend WithEvents AddTipoVerificacion As Wisej.Web.Button
+    Friend WithEvents Label7 As Wisej.Web.Label
+    Friend WithEvents FOLIO_ACTA_VERIFICACION As Wisej.Web.TextBox
+    Friend WithEvents Label39 As Wisej.Web.Label
+    Friend WithEvents txtDescribir As Wisej.Web.TextBox
+    Friend WithEvents ComboBoxPROGRAMA As Wisej.Web.ComboBox
+    Friend WithEvents Label23 As Wisej.Web.Label
+    Friend WithEvents DateTimePickerFECHA_CAPTURA_EXPEDIENTE As Wisej.Web.DateTimePicker
+    Friend WithEvents Label22 As Wisej.Web.Label
+    Friend WithEvents FECHA_ORDEN As Wisej.Web.DateTimePicker
+    Friend WithEvents Label21 As Wisej.Web.Label
+    Friend WithEvents ComboBoxTIPO_VERIFCACION As Wisej.Web.ComboBox
+    Friend WithEvents Label20 As Wisej.Web.Label
+    Friend WithEvents Label19 As Wisej.Web.Label
+    Friend WithEvents FOLIO_ORDEN As Wisej.Web.TextBox
+    Friend WithEvents GroupBox1 As Wisej.Web.GroupBox
+    Friend WithEvents CheckBox2 As Wisej.Web.CheckBox
+    Friend WithEvents CheckBox1 As Wisej.Web.CheckBox
 End Class

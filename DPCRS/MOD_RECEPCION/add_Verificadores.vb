@@ -9,24 +9,7 @@ Public Class add_Verificadores
         oFunciones.Llenar_CatalogosXprocedureYParams2("pCAT_JURISDICCION_B", "JURISDICCION", "CVE_JURISDICCION", JURISDICCION)
     End Sub
 
-    Private Sub RibbonBar1_ItemClick(sender As Object, e As RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
-        Select Case e.Item.Name
-            Case "RRBnuevo"
 
-            Case "RRBguardar"
-                If FormHasError() Then
-                    GuardarVericador()
-
-                End If
-            Case "RRBcancelar"
-
-                oFunciones.AlertBox("Listas Actualizadas ", Wisej.Web.MessageBoxIcon.Information)
-
-            Case "RRBsalir"
-
-                Me.Close()
-        End Select
-    End Sub
     Private Sub GuardarVericador()
         Try
             ReDim oFunciones.ParametersX_Global(9)
@@ -60,27 +43,42 @@ Public Class add_Verificadores
     Private Function FormHasError() As Boolean
 
         Dim errores As Integer = 0
-        ErrorProvider1.SetError(NOMBRE, String.Empty)
-        ErrorProvider1.SetError(APELLIDOS, String.Empty)
-        ErrorProvider1.SetError(NACIMIENTO, String.Empty)
-        ErrorProvider1.SetError(SEXO, String.Empty)
-        ErrorProvider1.SetError(JURISDICCION, String.Empty)
-
+        Dim MSJ As String = "campo requeridos "
         If NOMBRE.Text.Trim = String.Empty Then
-            ErrorProvider1.SetError(NOMBRE, "campo requerido")
+            ErrorProvider1.SetError(NOMBRE, MSJ)
             errores = errores + 1
-        ElseIf APELLIDOS.Text.Trim = String.Empty Then
-            ErrorProvider1.SetError(APELLIDOS, "campo nesesario")
-            errores = errores + 1
-        ElseIf NACIMIENTO.Text.Trim = String.Empty Then
-            ErrorProvider1.SetError(NACIMIENTO, "campo nesesario")
-            errores = errores + 1
-        ElseIf SEXO.Text.Trim = String.Empty Then
-            ErrorProvider1.SetError(SEXO, "campo nesesario")
-            errores = errores + 1
-        ElseIf JURISDICCION.Text.Trim = String.Empty Then
-
+        Else
+            ErrorProvider1.SetError(NOMBRE, Nothing)
         End If
+
+        If APELLIDOS.Text.Trim = String.Empty Then
+            ErrorProvider1.SetError(APELLIDOS, MSJ)
+            errores = errores + 1
+        Else
+            ErrorProvider1.SetError(APELLIDOS, Nothing)
+        End If
+        If NACIMIENTO.Text.Trim = String.Empty Then
+            ErrorProvider1.SetError(NACIMIENTO, MSJ)
+            errores = errores + 1
+        Else
+            ErrorProvider1.SetError(NACIMIENTO, Nothing)
+        End If
+
+        If SEXO.Text.Trim = String.Empty Then
+            ErrorProvider1.SetError(SEXO, MSJ)
+            errores = errores + 1
+        Else
+            ErrorProvider1.SetError(SEXO, Nothing)
+        End If
+
+
+        If JURISDICCION.Text.Trim = String.Empty Then
+            ErrorProvider1.SetError(JURISDICCION, MSJ)
+            errores = errores + 1
+        Else
+            ErrorProvider1.SetError(JURISDICCION, Nothing)
+        End If
+
 
         If errores = 0 Then
             Return True
@@ -88,8 +86,37 @@ Public Class add_Verificadores
             Return False
         End If
     End Function
+    Private Sub limpiar()
+        NOMBRE.Text = ""
+        APELLIDOS.Text = ""
+        CLAVE_TRABAJADOR.Text = ""
+        GRADO.SelectedIndex = -1
+        CORREO.Text = ""
+        TELEFONO.Text = ""
+        NACIMIENTO.Value = Nothing
+        SEXO.SelectedIndex = -1
+        JURISDICCION.SelectedIndex = -1
+        GUARDAR.Enabled = False
+
+    End Sub
 
     Private Sub add_Verificadores_Load(sender As Object, e As EventArgs) Handles Me.Load
         oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_JURISDICCION_B", "CVE_JURISDICCION", "JURISDICCION", JURISDICCION)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles GUARDAR.Click
+
+        If FormHasError() Then
+            GuardarVericador()
+            limpiar()
+
+
+        End If
+    End Sub
+
+    Private Sub NUEVO_Click(sender As Object, e As EventArgs) Handles NUEVO.Click
+        limpiar()
+        GUARDAR.Enabled = True
+
     End Sub
 End Class

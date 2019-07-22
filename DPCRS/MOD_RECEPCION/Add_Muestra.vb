@@ -44,18 +44,13 @@ Public Class Add_Muestra
 
 
 
-    Private Function _Validar() As Boolean
-        Dim cont As Integer = 0
+    Public Function _Validar() As Boolean
+        Dim errores As Integer = 0
 
-        If DESCRIPCION.Text.Length >= 10 Then
-            ErrorProvider1.SetError(DESCRIPCION, "debe contener una descripcion")
-            cont = cont + 1
-        Else
-            ErrorProvider1.SetError(DESCRIPCION, Nothing)
-        End If
+
         If TIPO_MUESTRA.SelectedIndex = -1 Then
             ErrorProvider1.SetError(TIPO_MUESTRA, "debe seleccionar un tipo de muestra")
-            cont = cont + 1
+            errores = errores + 1
 
         Else
             ErrorProvider1.SetError(TIPO_MUESTRA, Nothing)
@@ -63,14 +58,24 @@ Public Class Add_Muestra
         End If
         If TIPO_ANALISIS.SelectedIndex = -1 Then
             ErrorProvider1.SetError(TIPO_ANALISIS, "debe seleccionar un tipo de analisis")
-            cont = cont + 1
+            errores = errores + 1
         Else
             ErrorProvider1.SetError(TIPO_ANALISIS, Nothing)
         End If
+        If DESCRIPCION.Text.Length = 0 Then
+            ErrorProvider1.SetError(DESCRIPCION, "debe contener una breve descripcion")
+            errores = errores + 1
+        Else
+            ErrorProvider1.SetError(DESCRIPCION, Nothing)
+        End If
+        If CANTIDAD.Value = 0 Then
+            ErrorProvider1.SetError(CANTIDAD, "debe tener al menos uno como valor")
+            errores = errores + 1
+        Else
+            ErrorProvider1.SetError(CANTIDAD, Nothing)
+        End If
 
-
-
-        If cont = 0 Then
+        If errores = 0 Then
 
             Return True
         Else
@@ -81,7 +86,7 @@ Public Class Add_Muestra
 
     End Function
 
-    Private Sub limpiar()
+    Public Sub limpiar()
         TIPO_ANALISIS.SelectedIndex = -1
         TIPO_ANALISIS.Enabled = False
         TIPO_MUESTRA.SelectedIndex = -1
@@ -100,10 +105,10 @@ Public Class Add_Muestra
         LOTE.Enabled = False
         CANTIDAD.Value = 0
         CANTIDAD.Enabled = False
-        FECHA_CADUCIDAD.Value = ""
+        FECHA_CADUCIDAD.Value = Nothing
         FECHA_CADUCIDAD.Enabled = False
     End Sub
-    Private Sub habilitar()
+    Public Sub habilitar()
         TIPO_ANALISIS.SelectedIndex = -1
         TIPO_ANALISIS.Enabled = True
         TIPO_MUESTRA.SelectedIndex = -1
@@ -122,12 +127,13 @@ Public Class Add_Muestra
         LOTE.Enabled = True
         CANTIDAD.Value = 0
         CANTIDAD.Enabled = True
-        FECHA_CADUCIDAD.Value = "01/01/1999"
+        FECHA_CADUCIDAD.Value = Nothing
         FECHA_CADUCIDAD.Enabled = True
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         habilitar()
+        AÑADIR_ITEM.Enabled = True
 
     End Sub
 End Class

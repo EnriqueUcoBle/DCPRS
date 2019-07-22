@@ -1931,6 +1931,12 @@
     <Compile Include="MOD_RECEPCION\Add_Muestras_Tipo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Objetivos+vb.Designer.vb">
+      <DependentUpon>Add_Objetivos+vb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Objetivos+vb.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MOD_RECEPCION\Add_Paquestes_Actas.Designer.vb">
       <DependentUpon>Add_Paquestes_Actas.vb</DependentUpon>
     </Compile>
@@ -2210,6 +2216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MOD_RECEPCION\Add_Muestras_Tipo.resx">
       <DependentUpon>Add_Muestras_Tipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Add_Objetivos+vb.resx">
+      <DependentUpon>Add_Objetivos+vb.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MOD_RECEPCION\Add_Paquestes_Actas.resx">
       <DependentUpon>Add_Paquestes_Actas.vb</DependentUpon>

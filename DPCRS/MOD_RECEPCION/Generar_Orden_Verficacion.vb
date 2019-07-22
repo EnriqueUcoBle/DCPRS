@@ -434,8 +434,11 @@ Public Class Generar_Orden_Verficacion
 
     Private Sub TablaVerifacadores_CellClick(sender As Object, e As Wisej.Web.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.ColumnIndex = 0 Then
-            DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
 
+            If (Wisej.Web.MessageBox.Show("¿Esta segur@ de eliminar el Verficador seleccionado?", "Eliminar", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
+
+                DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            End If
         ElseIf e.ColumnIndex = 1 Then
 
 
@@ -459,7 +462,13 @@ Public Class Generar_Orden_Verficacion
 
     Private Sub añadir_item(sender As Object, e As EventArgs)
         Dim form As Add_Muestra = sender.Parent.Parent
-        Add_Muestra_On_TABLA_MUESTRAS(form.TIPO_MUESTRA.SelectedValue, form.TIPO_ANALISIS.SelectedValue, form.DESCRIPCION.Text, form.CLAVE_VS.Text, form.LOTE.Text, form.MARCA.Text, form.FECHA_CADUCIDAD.Value, form.CANTIDAD.Value)
+        If form._Validar = True Then
+            Add_Muestra_On_TABLA_MUESTRAS(form.TIPO_MUESTRA.SelectedValue, form.TIPO_ANALISIS.SelectedValue, form.DESCRIPCION.Text, form.CLAVE_VS.Text, form.LOTE.Text, form.MARCA.Text, form.FECHA_CADUCIDAD.Value, form.CANTIDAD.Value)
+            form.limpiar()
+            form.AÑADIR_ITEM.Enabled = False
+
+        End If
+
 
     End Sub
 
@@ -467,5 +476,28 @@ Public Class Generar_Orden_Verficacion
         Dim form = New Add_Muestra
         form.Show()
         AddHandler form.AÑADIR_ITEM.Click, AddressOf añadir_item
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As Wisej.Web.DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+        If e.ColumnIndex = 0 Then
+
+            If (Wisej.Web.MessageBox.Show("¿Esta segur@ de eliminar la muestra seleccionada?", "Eliminar", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
+
+                DataGridView2.Rows.Remove(DataGridView2.CurrentRow)
+            End If
+        ElseIf e.ColumnIndex = 1 Then
+
+
+        End If
+    End Sub
+
+    Private Sub AddObjetivoVerificacion_Click(sender As Object, e As EventArgs) Handles AddObjetivoVerificacion.Click
+        Dim form = New Add_Objetivos_vb
+        form.Visible = True
+        AddHandler form.FormClosed, AddressOf llenarCombos
+    End Sub
+
+    Private Sub Panel9_PanelCollapsed(sender As Object, e As EventArgs) Handles Panel9.PanelCollapsed
+
     End Sub
 End Class

@@ -22,13 +22,6 @@ Partial Class add_Verificadores
     'Do not modify it using the code editor.
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
-        Me.RibbonBarPage1 = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
-        Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
-        Me.RRBnuevo = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.RRBguardar = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.RRBcancelar = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.RRBsalir = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.Panel1 = New Wisej.Web.Panel()
         Me.Label9 = New Wisej.Web.Label()
         Me.JURISDICCION = New Wisej.Web.ComboBox()
@@ -50,56 +43,17 @@ Partial Class add_Verificadores
         Me.Label1 = New Wisej.Web.Label()
         Me.ErrorProvider1 = New Wisej.Web.ErrorProvider(Me.components)
         Me.CVE_PERSONA = New Wisej.Web.TextBox()
+        Me.GUARDAR = New Wisej.Web.Button()
+        Me.NUEVO = New Wisej.Web.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'RibbonBar1
-        '
-        Me.RibbonBar1.Dock = Wisej.Web.DockStyle.Top
-        Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonBar1.Name = "RibbonBar1"
-        Me.RibbonBar1.Pages.Add(Me.RibbonBarPage1)
-        Me.RibbonBar1.Size = New System.Drawing.Size(591, 137)
-        '
-        'RibbonBarPage1
-        '
-        Me.RibbonBarPage1.Groups.Add(Me.RibbonBarGroup1)
-        Me.RibbonBarPage1.Text = "Acciones"
-        '
-        'RibbonBarGroup1
-        '
-        Me.RibbonBarGroup1.Items.Add(Me.RRBnuevo)
-        Me.RibbonBarGroup1.Items.Add(Me.RRBguardar)
-        Me.RibbonBarGroup1.Items.Add(Me.RRBcancelar)
-        Me.RibbonBarGroup1.Items.Add(Me.RRBsalir)
-        '
-        'RRBnuevo
-        '
-        Me.RRBnuevo.ImageSource = "Resources\Images\Menu\64\user-40 .png"
-        Me.RRBnuevo.Name = "RRBnuevo"
-        Me.RRBnuevo.Text = "Nuevo"
-        '
-        'RRBguardar
-        '
-        Me.RRBguardar.ImageSource = "Resources\Images\Menu\64\user-43 .png"
-        Me.RRBguardar.Name = "RRBguardar"
-        Me.RRBguardar.Text = "Guardar"
-        '
-        'RRBcancelar
-        '
-        Me.RRBcancelar.ImageSource = "Resources\Icons\Menu\error_blue.png"
-        Me.RRBcancelar.Name = "RRBcancelar"
-        Me.RRBcancelar.Text = "Cancelar"
-        '
-        'RRBsalir
-        '
-        Me.RRBsalir.ImageSource = "Resources\Icons\Menu\exit-sign.png"
-        Me.RRBsalir.Name = "RRBsalir"
-        Me.RRBsalir.Text = "Salir"
-        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.NUEVO)
+        Me.Panel1.Controls.Add(Me.GUARDAR)
+        Me.Panel1.Controls.Add(Me.CVE_PERSONA)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.JURISDICCION)
         Me.Panel1.Controls.Add(Me.GRADO)
@@ -118,16 +72,17 @@ Partial Class add_Verificadores
         Me.Panel1.Controls.Add(Me.SEXO)
         Me.Panel1.Controls.Add(Me.NOMBRE)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(3, 110)
+        Me.Panel1.Dock = Wisej.Web.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(559, 440)
+        Me.Panel1.Size = New System.Drawing.Size(591, 497)
         Me.Panel1.TabIndex = 2
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label9.Location = New System.Drawing.Point(26, 397)
+        Me.Label9.Location = New System.Drawing.Point(42, 397)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(85, 16)
         Me.Label9.TabIndex = 17
@@ -136,7 +91,7 @@ Partial Class add_Verificadores
         'JURISDICCION
         '
         Me.JURISDICCION.AutoSize = False
-        Me.JURISDICCION.Location = New System.Drawing.Point(134, 393)
+        Me.JURISDICCION.Location = New System.Drawing.Point(150, 393)
         Me.JURISDICCION.Name = "JURISDICCION"
         Me.JURISDICCION.Size = New System.Drawing.Size(384, 22)
         Me.JURISDICCION.TabIndex = 16
@@ -145,7 +100,7 @@ Partial Class add_Verificadores
         '
         Me.GRADO.AutoSize = False
         Me.GRADO.Items.AddRange(New Object() {"Nivel inicial (PREESCOLAR)", "Nivel Basico (PRIMARIA & SECUNDARIA)", "Nivel Medio Superior(CARRERA TECNICA y/o BACHILLERATO)", "Nivel Superior (LICENCIATURA, DOCTORADO, MAESTRIA, ETC)"})
-        Me.GRADO.Location = New System.Drawing.Point(134, 168)
+        Me.GRADO.Location = New System.Drawing.Point(150, 168)
         Me.GRADO.Name = "GRADO"
         Me.GRADO.Size = New System.Drawing.Size(384, 22)
         Me.GRADO.TabIndex = 15
@@ -153,7 +108,7 @@ Partial Class add_Verificadores
         'Label8
         '
         Me.Label8.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label8.Location = New System.Drawing.Point(26, 168)
+        Me.Label8.Location = New System.Drawing.Point(42, 168)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(142, 39)
         Me.Label8.TabIndex = 14
@@ -163,7 +118,7 @@ Partial Class add_Verificadores
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label7.Location = New System.Drawing.Point(26, 352)
+        Me.Label7.Location = New System.Drawing.Point(42, 352)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 16)
         Me.Label7.TabIndex = 13
@@ -173,7 +128,7 @@ Partial Class add_Verificadores
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label6.Location = New System.Drawing.Point(26, 310)
+        Me.Label6.Location = New System.Drawing.Point(42, 310)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(82, 16)
         Me.Label6.TabIndex = 12
@@ -181,7 +136,7 @@ Partial Class add_Verificadores
         '
         'NACIMIENTO
         '
-        Me.NACIMIENTO.Location = New System.Drawing.Point(134, 304)
+        Me.NACIMIENTO.Location = New System.Drawing.Point(150, 304)
         Me.NACIMIENTO.Name = "NACIMIENTO"
         Me.NACIMIENTO.Size = New System.Drawing.Size(384, 22)
         Me.NACIMIENTO.TabIndex = 11
@@ -190,7 +145,7 @@ Partial Class add_Verificadores
         '
         'TELEFONO
         '
-        Me.TELEFONO.Location = New System.Drawing.Point(134, 262)
+        Me.TELEFONO.Location = New System.Drawing.Point(150, 262)
         Me.TELEFONO.Name = "TELEFONO"
         Me.TELEFONO.Size = New System.Drawing.Size(384, 22)
         Me.TELEFONO.TabIndex = 10
@@ -200,7 +155,7 @@ Partial Class add_Verificadores
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label5.Location = New System.Drawing.Point(26, 265)
+        Me.Label5.Location = New System.Drawing.Point(42, 265)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(66, 16)
         Me.Label5.TabIndex = 9
@@ -208,7 +163,7 @@ Partial Class add_Verificadores
         '
         'CORREO
         '
-        Me.CORREO.Location = New System.Drawing.Point(134, 216)
+        Me.CORREO.Location = New System.Drawing.Point(150, 216)
         Me.CORREO.Name = "CORREO"
         Me.CORREO.Size = New System.Drawing.Size(384, 22)
         Me.CORREO.TabIndex = 8
@@ -218,7 +173,7 @@ Partial Class add_Verificadores
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label4.Location = New System.Drawing.Point(26, 219)
+        Me.Label4.Location = New System.Drawing.Point(42, 219)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(54, 16)
         Me.Label4.TabIndex = 7
@@ -226,7 +181,7 @@ Partial Class add_Verificadores
         '
         'CLAVE_TRABAJADOR
         '
-        Me.CLAVE_TRABAJADOR.Location = New System.Drawing.Point(134, 122)
+        Me.CLAVE_TRABAJADOR.Location = New System.Drawing.Point(150, 122)
         Me.CLAVE_TRABAJADOR.Name = "CLAVE_TRABAJADOR"
         Me.CLAVE_TRABAJADOR.Size = New System.Drawing.Size(384, 22)
         Me.CLAVE_TRABAJADOR.TabIndex = 6
@@ -236,7 +191,7 @@ Partial Class add_Verificadores
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label3.Location = New System.Drawing.Point(26, 125)
+        Me.Label3.Location = New System.Drawing.Point(42, 125)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(111, 16)
         Me.Label3.TabIndex = 5
@@ -244,7 +199,7 @@ Partial Class add_Verificadores
         '
         'APELLIDOS
         '
-        Me.APELLIDOS.Location = New System.Drawing.Point(134, 70)
+        Me.APELLIDOS.Location = New System.Drawing.Point(150, 70)
         Me.APELLIDOS.Name = "APELLIDOS"
         Me.APELLIDOS.Size = New System.Drawing.Size(384, 22)
         Me.APELLIDOS.TabIndex = 4
@@ -254,7 +209,7 @@ Partial Class add_Verificadores
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label2.Location = New System.Drawing.Point(26, 73)
+        Me.Label2.Location = New System.Drawing.Point(42, 73)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 16)
         Me.Label2.TabIndex = 3
@@ -264,14 +219,14 @@ Partial Class add_Verificadores
         '
         Me.SEXO.AutoSize = False
         Me.SEXO.Items.AddRange(New Object() {"Masculino", "Femenino"})
-        Me.SEXO.Location = New System.Drawing.Point(134, 348)
+        Me.SEXO.Location = New System.Drawing.Point(150, 348)
         Me.SEXO.Name = "SEXO"
         Me.SEXO.Size = New System.Drawing.Size(384, 22)
         Me.SEXO.TabIndex = 2
         '
         'NOMBRE
         '
-        Me.NOMBRE.Location = New System.Drawing.Point(134, 19)
+        Me.NOMBRE.Location = New System.Drawing.Point(150, 19)
         Me.NOMBRE.Name = "NOMBRE"
         Me.NOMBRE.Size = New System.Drawing.Size(384, 22)
         Me.NOMBRE.TabIndex = 1
@@ -281,7 +236,7 @@ Partial Class add_Verificadores
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label1.Location = New System.Drawing.Point(26, 22)
+        Me.Label1.Location = New System.Drawing.Point(42, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 16)
         Me.Label1.TabIndex = 0
@@ -293,38 +248,47 @@ Partial Class add_Verificadores
         '
         'CVE_PERSONA
         '
-        Me.CVE_PERSONA.Location = New System.Drawing.Point(326, 51)
+        Me.CVE_PERSONA.Location = New System.Drawing.Point(540, 19)
         Me.CVE_PERSONA.Name = "CVE_PERSONA"
-        Me.CVE_PERSONA.Size = New System.Drawing.Size(100, 22)
+        Me.CVE_PERSONA.Size = New System.Drawing.Size(21, 22)
         Me.CVE_PERSONA.TabIndex = 4
         Me.CVE_PERSONA.Visible = False
+        '
+        'GUARDAR
+        '
+        Me.GUARDAR.ImageSource = "Resources\Images\Menu\64\002-diskette .png"
+        Me.GUARDAR.Location = New System.Drawing.Point(42, 452)
+        Me.GUARDAR.Name = "GUARDAR"
+        Me.GUARDAR.Size = New System.Drawing.Size(100, 27)
+        Me.GUARDAR.TabIndex = 18
+        Me.GUARDAR.Text = "Guardar"
+        '
+        'NUEVO
+        '
+        Me.NUEVO.ImageSource = "Resources\Icons\Menu\add.png"
+        Me.NUEVO.Location = New System.Drawing.Point(434, 452)
+        Me.NUEVO.Name = "NUEVO"
+        Me.NUEVO.Size = New System.Drawing.Size(100, 27)
+        Me.NUEVO.TabIndex = 19
+        Me.NUEVO.Text = "Nuevo"
         '
         'add_Verificadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(591, 553)
-        Me.Controls.Add(Me.CVE_PERSONA)
+        Me.ClientSize = New System.Drawing.Size(591, 497)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.RibbonBar1)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(603, 541)
+        Me.MinimumSize = New System.Drawing.Size(603, 541)
         Me.Name = "add_Verificadores"
         Me.Text = "Alta Verificadores"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents RibbonBar1 As Wisej.Web.Ext.RibbonBar.RibbonBar
-    Friend WithEvents RibbonBarPage1 As Wisej.Web.Ext.RibbonBar.RibbonBarPage
-    Friend WithEvents RibbonBarGroup1 As Wisej.Web.Ext.RibbonBar.RibbonBarGroup
-    Friend WithEvents RRBnuevo As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
-    Friend WithEvents RRBguardar As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
-    Friend WithEvents RRBcancelar As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
-    Friend WithEvents RRBsalir As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents Panel1 As Wisej.Web.Panel
     Friend WithEvents GRADO As Wisej.Web.ComboBox
     Friend WithEvents Label8 As Wisej.Web.Label
@@ -346,4 +310,6 @@ Partial Class add_Verificadores
     Friend WithEvents JURISDICCION As Wisej.Web.ComboBox
     Friend WithEvents ErrorProvider1 As Wisej.Web.ErrorProvider
     Friend WithEvents CVE_PERSONA As Wisej.Web.TextBox
+    Friend WithEvents NUEVO As Wisej.Web.Button
+    Friend WithEvents GUARDAR As Wisej.Web.Button
 End Class

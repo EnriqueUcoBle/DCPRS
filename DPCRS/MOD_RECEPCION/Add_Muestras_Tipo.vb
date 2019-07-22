@@ -40,7 +40,7 @@ Public Class Add_Muestras_Tipo
                     Return True
                 End If
             Catch ex As Exception
-                Wisej.Web.MessageBox.Show("ERROR: " & ex.Message, "Guardar Exception", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+                Wisej.Web.MessageBox.Show("ERROR: " & ex.Message, "Guardar :Exception:", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
                 Return False
             End Try
         Else
