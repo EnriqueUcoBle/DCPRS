@@ -1,0 +1,220 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class ADD_LOTES
+    Inherits Wisej.Web.Form
+
+    'UserControl overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Wisej Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Wisej Designer
+    'It can be modified using the Wisej Designer.  
+    'Do not modify it using the code editor.
+    Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ADD_LOTES))
+        Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
+        Me.RibbonBarPage1 = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
+        Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
+        Me.NUEVO = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.GUARDAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.SALIR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.Label1 = New Wisej.Web.Label()
+        Me.DateTimeFECHA = New Wisej.Web.DateTimePicker()
+        Me.Label2 = New Wisej.Web.Label()
+        Me.Panel1 = New Wisej.Web.Panel()
+        Me.Label4 = New Wisej.Web.Label()
+        Me.TextBoxCLAVE = New Wisej.Web.TextBox()
+        Me.CombosaxJURISDICCIONES = New DPCRS.Combosax_B()
+        Me.TextBoxOPERADOR = New Wisej.Web.TextBox()
+        Me.Label3 = New Wisej.Web.Label()
+        Me.Panel1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'RibbonBar1
+        '
+        Me.RibbonBar1.Dock = Wisej.Web.DockStyle.Top
+        Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonBar1.Name = "RibbonBar1"
+        Me.RibbonBar1.Pages.Add(Me.RibbonBarPage1)
+        Me.RibbonBar1.Size = New System.Drawing.Size(612, 112)
+        '
+        'RibbonBarPage1
+        '
+        Me.RibbonBarPage1.Groups.Add(Me.RibbonBarGroup1)
+        Me.RibbonBarPage1.Text = "Acciones"
+        '
+        'RibbonBarGroup1
+        '
+        Me.RibbonBarGroup1.Items.Add(Me.NUEVO)
+        Me.RibbonBarGroup1.Items.Add(Me.GUARDAR)
+        Me.RibbonBarGroup1.Items.Add(Me.SALIR)
+        Me.RibbonBarGroup1.Text = "Lotes"
+        '
+        'NUEVO
+        '
+        Me.NUEVO.ImageSource = "ribbon-add-folder"
+        Me.NUEVO.Name = "NUEVO"
+        Me.NUEVO.Text = "Nuevo"
+        Me.NUEVO.Visible = False
+        '
+        'GUARDAR
+        '
+        Me.GUARDAR.ImageSource = "ribbon-save"
+        Me.GUARDAR.Name = "GUARDAR"
+        Me.GUARDAR.Text = "Guardar"
+        '
+        'SALIR
+        '
+        Me.SALIR.ImageSource = "Resources\Images\Menu\30\exit-sign-red.png"
+        Me.SALIR.Name = "SALIR"
+        Me.SALIR.Text = "Salir"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("default, Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label1.Location = New System.Drawing.Point(93, 65)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(360, 17)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Jurisdiccion de Donde Proviene el Paquete de Actas:"
+        '
+        'DateTimeFECHA
+        '
+        Me.DateTimeFECHA.Location = New System.Drawing.Point(146, 151)
+        Me.DateTimeFECHA.Name = "DateTimeFECHA"
+        Me.DateTimeFECHA.Size = New System.Drawing.Size(243, 22)
+        Me.DateTimeFECHA.TabIndex = 6
+        Me.DateTimeFECHA.Value = New Date(2019, 6, 10, 13, 54, 26, 548)
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("default, Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label2.Location = New System.Drawing.Point(191, 128)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(149, 17)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Fecha de Recepcion:"
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = Wisej.Web.BorderStyle.Solid
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.TextBoxOPERADOR)
+        Me.Panel1.Controls.Add(Me.CombosaxJURISDICCIONES)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.TextBoxCLAVE)
+        Me.Panel1.Controls.Add(Me.DateTimeFECHA)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(22, 118)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.ShowCloseButton = False
+        Me.Panel1.ShowHeader = True
+        Me.Panel1.Size = New System.Drawing.Size(557, 286)
+        Me.Panel1.TabIndex = 8
+        Me.Panel1.Text = "Alta de Lote o Paquetes:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("default, Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label4.Location = New System.Drawing.Point(182, 14)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(179, 17)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Consecutivo del Paquete:"
+        '
+        'TextBoxCLAVE
+        '
+        Me.TextBoxCLAVE.Enabled = False
+        Me.TextBoxCLAVE.Location = New System.Drawing.Point(146, 37)
+        Me.TextBoxCLAVE.Name = "TextBoxCLAVE"
+        Me.TextBoxCLAVE.ReadOnly = True
+        Me.TextBoxCLAVE.Size = New System.Drawing.Size(243, 22)
+        Me.TextBoxCLAVE.TabIndex = 9
+        '
+        'CombosaxJURISDICCIONES
+        '
+        Me.CombosaxJURISDICCIONES.amarillo = False
+        Me.CombosaxJURISDICCIONES.Ancho = Nothing
+        Me.CombosaxJURISDICCIONES.BackColor = System.Drawing.Color.FromName("@window")
+        Me.CombosaxJURISDICCIONES.ColorAtras = System.Drawing.Color.Empty
+        Me.CombosaxJURISDICCIONES.Count = 0
+        Me.CombosaxJURISDICCIONES.DataSourceSelect = Nothing
+        Me.CombosaxJURISDICCIONES.gris = False
+        Me.CombosaxJURISDICCIONES.Letra = Nothing
+        Me.CombosaxJURISDICCIONES.Limitar = False
+        Me.CombosaxJURISDICCIONES.Location = New System.Drawing.Point(127, 88)
+        Me.CombosaxJURISDICCIONES.MensajeAgua = Nothing
+        Me.CombosaxJURISDICCIONES.mostrarMensaje = False
+        Me.CombosaxJURISDICCIONES.Name = "CombosaxJURISDICCIONES"
+        Me.CombosaxJURISDICCIONES.Negritas = False
+        Me.CombosaxJURISDICCIONES.OBTENERLISTLLENADO = Nothing
+        Me.CombosaxJURISDICCIONES.procedure = Nothing
+        Me.CombosaxJURISDICCIONES.SelectedIndex = -1
+        Me.CombosaxJURISDICCIONES.SelectedItem = ""
+        Me.CombosaxJURISDICCIONES.SelectedValue = Nothing
+        Me.CombosaxJURISDICCIONES.Size = New System.Drawing.Size(277, 22)
+        Me.CombosaxJURISDICCIONES.TabIndex = 11
+        Me.CombosaxJURISDICCIONES.TODOSS = False
+        '
+        'TextBoxOPERADOR
+        '
+        Me.TextBoxOPERADOR.Location = New System.Drawing.Point(127, 216)
+        Me.TextBoxOPERADOR.Name = "TextBoxOPERADOR"
+        Me.TextBoxOPERADOR.Size = New System.Drawing.Size(262, 22)
+        Me.TextBoxOPERADOR.TabIndex = 10
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("default, Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label3.Location = New System.Drawing.Point(191, 193)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(182, 17)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Operador / Recepcionista:"
+        '
+        'ADD_LOTES
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(612, 513)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.RibbonBar1)
+        Me.Name = "ADD_LOTES"
+        Me.Text = "Agregar Lotes"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    Friend WithEvents RibbonBar1 As Wisej.Web.Ext.RibbonBar.RibbonBar
+    Friend WithEvents RibbonBarPage1 As Wisej.Web.Ext.RibbonBar.RibbonBarPage
+    Friend WithEvents RibbonBarGroup1 As Wisej.Web.Ext.RibbonBar.RibbonBarGroup
+    Friend WithEvents NUEVO As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
+    Friend WithEvents GUARDAR As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
+    Friend WithEvents SALIR As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
+    Friend WithEvents Label1 As Wisej.Web.Label
+    Friend WithEvents DateTimeFECHA As Wisej.Web.DateTimePicker
+    Friend WithEvents Label2 As Wisej.Web.Label
+    Friend WithEvents Panel1 As Wisej.Web.Panel
+    Friend WithEvents Label4 As Wisej.Web.Label
+    Friend WithEvents TextBoxCLAVE As Wisej.Web.TextBox
+    Friend WithEvents TextBoxOPERADOR As Wisej.Web.TextBox
+    Friend WithEvents CombosaxJURISDICCIONES As Combosax_B
+    Friend WithEvents Label3 As Wisej.Web.Label
+End Class

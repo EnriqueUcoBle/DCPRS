@@ -1,0 +1,182 @@
+Imports Wisej.Web
+Imports Wisej.Web.Form
+Imports Wisej.Web.Ext.RibbonBar
+Public Class Cat_Establecimientos
+    Dim oFunciones As New dllData
+    Dim filaActual As Integer = -1
+    Dim tablaCargado As Boolean = False
+    Dim Establecimientos_New As Cat_Establecimientos_New
+    Dim Scian1 As Cat_Claves_Scian
+
+    Private Sub Cat_Establecimientos_Load(sender As Object, e As EventArgs) Handles Me.Load
+        cargarTabla()
+
+    End Sub
+
+    Private Sub ribbonBar1_ItemClick(ByVal sender As Object, ByVal e As Wisej.Web.Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+        If DataGridView2.RowCount > 0 Then
+            filaActual = DataGridView2.CurrentRow.Index()
+        End If
+
+        Select Case e.Item.Text
+            Case "Nuevo"
+                Dim nuevo = New Cat_Establecimientos_New
+                nuevo.Show()
+                AddHandler nuevo.FormClosed, AddressOf cargarTabla
+
+
+
+            Case "Actualizar"
+                cargarTabla()
+
+            Case "Guardar"
+
+            Case "Salir"
+                Me.Close()
+        End Select
+    End Sub
+    Public Sub cargarTabla()
+        tablaCargado = False
+        Try
+            Me.DataSet_ESTABLECIMIENTOS.EnforceConstraints = False
+            Me.DataSet_ESTABLECIMIENTOS.pCAT_ESTABLECIMIENTOS_B.Clear()
+            Dim myDA = New SqlClient.SqlDataAdapter("pCAT_ESTABLECIMIENTOS_B", oFunciones.sConexion)
+
+            myDA.SelectCommand.CommandType = CommandType.StoredProcedure
+            myDA.Fill(Me.DataSet_ESTABLECIMIENTOS.pCAT_ESTABLECIMIENTOS_B)
+            myDA.Dispose()
+            If DataGridView2.RowCount > 0 Then
+                DataGridView2.CurrentRow.Selected = False
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Cargar tabla", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+        tablaCargado = True
+    End Sub
+
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs)  'Click en celda
+        Try
+            If e.RowIndex <> -1 Then
+                If e.ColumnIndex = 1 Then
+                    enviarDatos(e.RowIndex)
+                End If
+                If e.ColumnIndex = 0 Then
+                    Dim result As MsgBoxResult =
+                    MessageBox.Show(
+                        "¿Esta seguro de desactivar/activar esta clave?" & vbCrLf & "Clave : " & DataGridView2.Item("CVE_ESTABLECIMIENTO", e.RowIndex).Value,
+                        "Confirmación",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information
+                    )
+                    If (result = MsgBoxResult.Yes) Then
+                        msgBoxHandler()
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error en la tabla", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub DGVEstablecimientos_SelectionChanged(sender As Object, e As EventArgs)  'Seleccion cambiada
+
+    End Sub
+    Dim fic As String = HttpContext.Current.Request.MapPath("")
+    Private Sub enviarDatos(fila As Integer)
+        Try
+            If fila <> -1 And tablaCargado Then
+                'Establecimientos_New = New Cat_Establecimientos_New
+                'Establecimientos_New.txtClave.Text = DGVEstablecimientos.Item("CVE_ESTABLECIMIENTO", fila).Value
+                'Establecimientos_New.datoGiro = DGVEstablecimientos.Item("DGVgiro", fila).Value
+                'Establecimientos_New.datoSCIAN = DGVEstablecimientos.Item("DGVscian", fila).Value
+                'Establecimientos_New.datoMunicipio = DGVEstablecimientos.Item("DGVmunicipio", fila).Value
+                'Establecimientos_New.txtPropietario.Text = DGVEstablecimientos.Item("DGVpropietario", fila).Value
+                'Establecimientos_New.txtTelefono.Text = DGVEstablecimientos.Item("DGVTELEFONO", fila).Value
+                'Establecimientos_New.txtEmail.Text = DGVEstablecimientos.Item("DGVEMAIL", fila).Value
+                'Establecimientos_New.txtRFC.Text = DGVEstablecimientos.Item("DGVrfc", fila).Value
+                'Establecimientos_New.txtRazon_social.Text = DGVEstablecimientos.Item("DGVrazon_social", fila).Value
+                'Establecimientos_New.txtDomicilio.Text = DGVEstablecimientos.Item("DGVdomicilio", fila).Value '
+                'Establecimientos_New.txtCodigo.Text = DGVEstablecimientos.Item("DGVcodigo_postal", fila).Value
+                'Establecimientos_New.txtVolumen.Text = DGVEstablecimientos.Item("DGVvolumen_produccion", fila).Value
+                'Establecimientos_New.txtColonia.Text = DGVEstablecimientos.Item("DGVcolonia", fila).Value
+                'Establecimientos_New.txtDias_Laborales.Text = DGVEstablecimientos.Item("colDIAS_LABORALES", fila).Value
+                'Establecimientos_New.datoL = DGVEstablecimientos.Item("colDIAS_LABORALES", fila).Value.ToString
+                'Establecimientos_New.txtHoraInicio.Text = DGVEstablecimientos.Item("DGVHORA_INICIO_LABORES", fila).Value.ToString
+                'Establecimientos_New.txtHoraFin.Text = DGVEstablecimientos.Item("colHORA_FIN_LABORES", fila).Value.ToString
+                'Establecimientos_New.txtCargo.Text = DGVEstablecimientos.Item("DGVPropietario_Cargo", fila).Value
+                'Establecimientos_New.datoIdentificacion = DGVEstablecimientos.Item("DGVPropietario_identificacion", fila).Value
+                'Establecimientos_New.ShowDialog()
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Enviar datos", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub msgBoxHandler()
+        Try
+            Dim siElimino As Boolean = False
+
+            ReDim oFunciones.ParametersX_Global(1)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@cve_establecimiento", DataGridView2.CurrentRow.Cells("CVE_ESTABLECIMIENTO").Value)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@habilitado", Not RBHabilitado.Checked)
+
+            If oFunciones.fGuardar_O_EliminarXProcedure("pCAT_ESTABLECIMIENTOS_E", "@parametro", oFunciones.ParametersX_Global, False) Then
+                siElimino = True
+            End If
+
+            If siElimino Then
+                cargarTabla()
+                recuperarEstado(True)
+            Else
+                MessageBox.Show("Datos no eliminados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub DGVEstablecimientos_Click(sender As Object, e As EventArgs)
+        If DataGridView2.RowCount > 0 And filaActual = -1 Then
+            filaActual = 0
+        End If
+    End Sub
+
+    Private Sub recuperarEstado(Optional ByVal siEnviar As Boolean = False)
+        With DataGridView2
+            If .RowCount > 0 Then
+
+                If filaActual < 0 Then
+                    filaActual = filaActual + 1
+                ElseIf filaActual > .RowCount - 1 Then
+                    filaActual = filaActual - 1
+                End If
+
+                .CurrentRow.Selected = False
+                .Rows(filaActual).Selected = True
+                .CurrentCell = .Rows(filaActual).Cells(0)
+
+                If siEnviar Then
+                    enviarDatos(filaActual)
+                End If
+
+            End If
+        End With
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Dim SCIAN As New Cat_Claves_Scian
+        SCIAN.Show()
+    End Sub
+
+    Private Sub RBHabilitado_CheckedChanged(sender As Object, e As EventArgs) Handles RBHabilitado.CheckedChanged
+        cargarTabla()
+    End Sub
+
+    Private Sub DataGridView2_Click(sender As Object, e As EventArgs) Handles DataGridView2.Click
+
+    End Sub
+End Class
+

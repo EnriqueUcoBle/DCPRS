@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="js/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="js/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styling plus plugins -->
+    <link href="css/custom.css" rel="stylesheet">
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>SISCOL</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Desarrollador Web</span>
+                <h2>Francisco Gabriel Alvarez Alcaraz</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+              <div class="menu_section">
+
+                <h3>Men&uacute</h3>
+                <ul class="nav side-menu">
+
+                  <li><a><img src="images/Menu/Colegio.png" />&nbsp&nbspInstitución<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a><img src="images/Menu/Socios.png" />&nbsp&nbspPadrón<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="#"><img src="images/Menu/Contacto.png" />&nbsp&nbspAgremiados</a></li>
+                          <li><a href="#"><img src="images/Menu/Contacto.png" />&nbsp&nbspClientes</a></li>
+                        </ul>
+                      </li>
+
+                        <li><a href="#"><img src="images/Menu/Contacto.png" />&nbsp&nbspConsejo Directosssssssssssssssssss</a>
+
+                        <li><a href="#"><img src="images/Menu/Contacto.png" />&nbsp&nbspPersonal Administrativo</a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <img src="images/Menu/Contacto.png" />&nbsp&nbspReportes
+                      <span class="label label-success pull-right">Nuevo</span></a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+
+
+          </div>
+        </div>
+
+
+        <div class="top_nav">
+
+          <div class="nav_menu">
+            <nav class="" role="navigation">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+
+              </div>
+              <h2 style="position: absolute top: 10px left: 300px"><strong>Colegio de Ingenieros Civiles de Chiapas A.C.</strong></h2>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">Frank
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:">  Perfil</a>
+                    </li>
+                    <li>
+                      <a href="javascript:">Cambiar Contraseña</a>
+                    </li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+
+        <div class="right_col" role="main">
+          <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br>   <br>  <br>   <br>  <br>  <br>
+          <br>   <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br>
+          <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br>   <br>  <br>  <br>  <br>      <br>
+
+        </div>
+
+          <footer>
+            <div class="pull-right">
+
+              Copyright © 2016 Todos los derechos reservados.
+              <a target="_blank" href="http://www.saxsoft.com.mx/">Saxsoft</a>
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+
+      </div>
+    </div>
+   
+
+        
+    <!-- jQuery -->
+    <script src="js/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="js/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="js/vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="js/custom.js"></script>
+
+
+  </body>
+
+</html>

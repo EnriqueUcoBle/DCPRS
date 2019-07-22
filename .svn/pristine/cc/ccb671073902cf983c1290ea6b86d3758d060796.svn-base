@@ -1,0 +1,67 @@
+﻿Imports System
+Imports Wisej.Web
+
+Public Class ADD_LOTES
+    Dim oFunciones As New dllData
+    Private Sub ADD_LOTES_Load(sender As Object, e As EventArgs) Handles Me.Load
+        llenarCombos()
+    End Sub
+    Private Sub RibbonBar1_ButtonClick(ByVal sender As Object, ByVal e As Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+
+        Select Case e.Item.Name
+            Case "NUEVO"
+                limpiar()
+                NUEVO.Visible = False
+            Case "GUARDAR"
+                Save_lote()
+                NUEVO.Visible = True
+            Case "SALIR"
+                Dim agregar = New Generar_Orden_Verficacion
+                agregar.llenarCombos()
+                Me.Close()
+
+
+        End Select
+
+    End Sub
+    Private Sub limpiar()
+        text_NOMBRE.Text = ""
+        COMBO_JURISDICCION.Text = ""
+        DateTimeFECHA.Value = "01 / 01 / 2019"
+
+    End Sub
+    Private Function llenarCombos()
+        Try
+            ReDim oFunciones.ParametersX_Global(0)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "TABASCO")
+            oFunciones.Llenar_CatalogosXprocedureYParams("MUNICIPIOS_B", "MUNICIPIO", "DESCRIPCIONX", COMBO_JURISDICCION)
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Cargar listas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Function
+
+    Private Function Save_lote()
+        Try
+            ReDim oFunciones.ParametersX_Global(4)
+            oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@cve_lote", TextBoxCLAVE.Text)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@fecha", DateTimeFECHA.Value)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@cve_operador", Application.Session("Cve_Operador"))
+            oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@cve_municipio", COMBO_JURISDICCION.SelectedValue)
+            oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@nombre", text_NOMBRE.Text)
+
+            Dim parametro = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pACTAS_VERIFICACION_LOTES_G", "@parametro", oFunciones.ParametersX_Global, False, SqlDbType.Int, 50)
+
+            If Not parametro Is Nothing Then
+                MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Datos no guardados", "Guardar Orden", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Function
+
+
+End Class

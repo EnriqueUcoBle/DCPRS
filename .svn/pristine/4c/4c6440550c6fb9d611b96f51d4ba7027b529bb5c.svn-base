@@ -1,0 +1,148 @@
+﻿Imports Wisej.Web.Ext.RibbonBar
+Imports Wisej.Web
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class MyDesktop
+    Inherits Wisej.Web.Desktop
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Wisej Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Wisej Form Designer
+    'It can be modified using the Wisej Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
+        Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
+        Me.pgADMIN = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
+        Me.Usuario = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
+        Me.Datos = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.session = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.Modificar = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
+        Me.Cskin = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.Cpass = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.Cfondo = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.RibbonBarItemButton1 = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.RibbonBarItemButton2 = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.RibbonBarItemButton3 = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.SuspendLayout()
+        '
+        'RibbonBar1
+        '
+        Me.RibbonBar1.Dock = Wisej.Web.DockStyle.Top
+        Me.RibbonBar1.Font = New System.Drawing.Font("default, Arial", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonBar1.Name = "RibbonBar1"
+        Me.RibbonBar1.Pages.Add(Me.pgADMIN)
+        Me.RibbonBar1.Size = New System.Drawing.Size(1237, 158)
+        '
+        'pgADMIN
+        '
+        Me.pgADMIN.Groups.Add(Me.Usuario)
+        Me.pgADMIN.Groups.Add(Me.Modificar)
+        Me.pgADMIN.TabBackColor = System.Drawing.Color.FromArgb(183, 183, 183)
+        Me.pgADMIN.Text = "Inicio"
+        '
+        'Usuario
+        '
+        Me.Usuario.Items.Add(Me.Datos)
+        Me.Usuario.Items.Add(Me.session)
+        Me.Usuario.Text = "Session & Usuario"
+        '
+        'Datos
+        '
+        Me.Datos.ImageSource = "Resources\Images\Menu\64\person.png"
+        Me.Datos.Name = "Datos"
+        Me.Datos.Text = "Inf. de Usuario"
+        '
+        'session
+        '
+        Me.session.ImageSource = "Resources\Images\Menu\logout.png"
+        Me.session.Name = "session"
+        Me.session.Text = "Cerrar Sesion"
+        '
+        'Modificar
+        '
+        Me.Modificar.Items.Add(Me.Cskin)
+        Me.Modificar.Items.Add(Me.Cpass)
+        Me.Modificar.Items.Add(Me.Cfondo)
+        Me.Modificar.Text = "Modificar"
+        '
+        'Cskin
+        '
+        Me.Cskin.ImageSource = "Resources\Images\Menu\64\colores.png"
+        Me.Cskin.Name = "Cskin"
+        Me.Cskin.Pushed = True
+        Me.Cskin.Text = "Temas"
+        '
+        'Cpass
+        '
+        Me.Cpass.ImageSource = "Resources\Images\Menu\64\seguridad3.png"
+        Me.Cpass.Name = "Cpass"
+        Me.Cpass.Text = "Cambiar Contraseña"
+        '
+        'Cfondo
+        '
+        Me.Cfondo.ImageSource = "Resources\Images\Menu\64\pantalla.png"
+        Me.Cfondo.Name = "Cfondo"
+        Me.Cfondo.Text = "Cambiar Fondo Pantalla"
+        '
+        'RibbonBarItemButton1
+        '
+        Me.RibbonBarItemButton1.ImageSource = "Resources\Images\Menu\64\layers.png"
+        Me.RibbonBarItemButton1.Name = "RibbonBarItemButton1"
+        Me.RibbonBarItemButton1.Orientation = Wisej.Web.Orientation.Horizontal
+        Me.RibbonBarItemButton1.Text = "Cambiar Skin"
+        '
+        'RibbonBarItemButton2
+        '
+        Me.RibbonBarItemButton2.ImageSource = "Resources\Images\Menu\64\layers.png"
+        Me.RibbonBarItemButton2.Name = "RibbonBarItemButton2"
+        Me.RibbonBarItemButton2.Orientation = Wisej.Web.Orientation.Horizontal
+        Me.RibbonBarItemButton2.Text = "Cambiar Skin"
+        '
+        'RibbonBarItemButton3
+        '
+        Me.RibbonBarItemButton3.ImageSource = "Resources\Images\Menu\64\layers.png"
+        Me.RibbonBarItemButton3.Name = "RibbonBarItemButton3"
+        Me.RibbonBarItemButton3.Orientation = Wisej.Web.Orientation.Horizontal
+        Me.RibbonBarItemButton3.Text = "Cambiar Skin"
+        '
+        'MyDesktop
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
+        Me.Controls.Add(Me.RibbonBar1)
+        Me.ForeColor = System.Drawing.Color.FromName("@appWorkspace")
+        Me.Name = "MyDesktop"
+        Me.Size = New System.Drawing.Size(1237, 628)
+        Me.Text = "..."
+        Me.ResumeLayout(False)
+
+    End Sub
+    'Friend WithEvents pnlDatosUsuarios As Panel
+    Friend WithEvents RibbonBar1 As RibbonBar
+    Public WithEvents pgADMIN As RibbonBarPage
+    Friend WithEvents Modificar As RibbonBarGroup
+    Friend WithEvents Cskin As RibbonBarItemButton
+    Friend WithEvents Cpass As RibbonBarItemButton
+    Friend WithEvents Usuario As RibbonBarGroup
+    Friend WithEvents RibbonBarItemButton1 As RibbonBarItemButton
+    Friend WithEvents RibbonBarItemButton2 As RibbonBarItemButton
+    Friend WithEvents RibbonBarItemButton3 As RibbonBarItemButton
+    Friend WithEvents Datos As RibbonBarItemButton
+    Friend WithEvents session As RibbonBarItemButton
+    Friend WithEvents Cfondo As RibbonBarItemButton
+End Class

@@ -1,0 +1,421 @@
+﻿Imports System
+Imports System.Windows.Forms
+Imports Wisej.Web
+Public Class Generar_Orden_Verficacion
+    Dim oFunciones As New dllData
+    Dim ELEGIDOestablecimeinto As Boolean = False
+    Dim loetes As Boolean = False
+    Dim HabiliadoPorCP As Boolean = False
+    Dim CONTROL As Integer = 0
+    Private Sub RibbonBar1_ButtonClick(ByVal sender As Object, ByVal e As Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+        Select Case e.Item.Name
+            Case "NUEVO"
+                Limpiar()
+            Case "GUARDAR"
+                guardar_acta()
+            Case "ACTUALIZAR"
+                llenarCombos()
+                oFunciones.AlertBox("Listas Actualizadas ", Wisej.Web.MessageBoxIcon.Information)
+
+            Case "SALIR"
+
+                Me.Close()
+        End Select
+
+    End Sub
+    Public Sub llenarCombos()
+        Try
+
+            oFunciones.Llenar_listbox("pCAT_PAQUETES_ACTAS_B", "CVE_PAQUETE", "NOMBRE", ComboBoxLOTE)
+            oFunciones.Llenar_listbox("pCAT_OBJETIVOS_VERIFICACION_B", "CVE_OBJETIVO", "INFO", TIPO_OBJETIVO)
+            oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_VERIFICADORES_B", "CVE_JURISDICCION", "JURISDICCION", JURISDICCION_VERIFICADORES)
+            ReDim oFunciones.ParametersX_Global(0)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "TABASCO")
+            oFunciones.Llenar_CatalogosXprocedureYParams("MUNICIPIOS_B", "MUNICIPIO", "MUNICIPIO", ComboBoxMUNICIPIO)
+
+        Catch ex As Exception
+            oFunciones.AlertBox("error al precargar la informacion: " & ex.Message, Wisej.Web.MessageBoxIcon.Information)
+        End Try
+    End Sub
+    Private Sub Generar_Orden_Verficacion_Load(sender As Object, e As EventArgs) Handles Me.Load
+        llenarCombos()
+        ComboBoxLOTE.SelectedIndex = -1
+        CombosaxESTABLECIMIENTO.SelectedIndex = -1
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim agregar = New ADD_LOTES
+        agregar.Show()
+        AddHandler agregar.FormClosed, AddressOf llenarCombos
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim establecimiento_new = New Cat_Establecimientos_New
+        establecimiento_new.Show()
+        AddHandler establecimiento_new.FormClosed, AddressOf llenarCombos
+    End Sub
+
+    Private Sub ComboBoxESTABLECIMIENTO_SelectedIndexChanged(sender As Object, e As EventArgs)
+        If ELEGIDOestablecimeinto <> True Then
+            ELEGIDOestablecimeinto = True
+            Exit Sub
+        Else
+            If CombosaxESTABLECIMIENTO.SelectedIndex = -1 Then Exit Sub
+            Try
+                If (CombosaxESTABLECIMIENTO.SelectedIndex <> -1) Then
+                    TextBoxRAZON_SOCIAL.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "RAZON_SOCIAL")
+                    TextBoxNOMBRE.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "NOMBRE_PROPIETARIO")
+                    TextBoxMUNICIPIO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "JURISDICCION")
+                    ComboBoxMUNICIPIO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "JURISDICCION")
+                    TextBoxGIRO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "GIRO")
+                    TextBoxRFC.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "RFC")
+                    TextBoxDOMICILIO_PROPIETARIO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "DOMICILIO_PROPIETARIO")
+                    TextBoxDIRECCION.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "DOMICILIO")
+                    ComboBoxCOLONIA.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "COLONIA")
+                    TextBoxCARGO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "CARGO")
+                    TextBoxCP.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "CODIGO_POSTAL")
+                    ComboBoxIDENTIFIACION.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "IDENTIFICACION")
+                    TextBoxPROGRAMA.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "PROGRAMA")
+                    ELEGIDOestablecimeinto = True
+                End If
+            Catch ex As Exception
+                Wisej.Web.MessageBox.Show("rellenar la informacion, ERROR: " & ex.Message, "llenar datos del establecimiento", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+            End Try
+        End If
+
+    End Sub
+
+
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CambiarPropietario.CheckedChanged
+
+        If CambiarPropietario.Checked Then
+            TextBoxRFC.ReadOnly = False
+            TextBoxNOMBRE.ReadOnly = False
+            TextBoxCARGO.ReadOnly = False
+            TextBoxDOMICILIO_PROPIETARIO.ReadOnly = False
+        Else
+            TextBoxRFC.ReadOnly = True
+            TextBoxNOMBRE.ReadOnly = True
+            TextBoxCARGO.ReadOnly = True
+            TextBoxDOMICILIO_PROPIETARIO.ReadOnly = True
+
+        End If
+    End Sub
+
+    Private Sub Limpiar()
+        Fecha_creacion_LOTE.Text = ""
+        Jurisdiccion_LOTE.Text = ""
+        Operador_LOTE.Text = ""
+        TextBoxRFC.Text = ""
+        TextBoxNOMBRE.Text = ""
+        TextBoxCARGO.Text = ""
+        TextBoxDOMICILIO_PROPIETARIO.Text = ""
+        ComboBoxIDENTIFIACION.Text = ""
+        TextBoxMUNICIPIO.Text = ""
+        TextBoxRAZON_SOCIAL.Text = ""
+        TextBoxGIRO.Text = ""
+        TextBoxDIRECCION.Text = ""
+        ComboBoxPROGRAMA.Text = ""
+
+    End Sub
+    '------------------------------------> Funciones para guardar y actulizar datos <-------------------------------------------
+    Private Sub guardar_acta()
+
+        If CambiarPropietario.Checked Or CheckBoxEDITAR_DIRECCION.Checked Then
+            If actualizarPropietario() Then
+                If (Wisej.Web.MessageBox.Show("Los datos del propietario estan a punto de ser modifacados, si no desea modificar el propietario desmarque la casilla de editar propietario.", "¿Desea modificar al propietario?", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
+                    Try
+                        ReDim oFunciones.ParametersX_Global(29)
+                        oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@folio_orden", FOLIO_ORDEN.Text)
+                        oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@cve_establecimiento", CombosaxESTABLECIMIENTO.SelectedValue)
+                        oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@tipo_verificacion", ComboBoxTIPO_VERIFCACION.SelectedValue)
+                        oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@fecha_verificacion", FECHA_ORDEN.Value.ToString)
+                        oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@hora_verificacion", FOLIO_ORDEN.Text)
+                        oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@fecha_ingreso_expediente", DateTimePickerFECHA_CAPTURA_EXPEDIENTE.Value.ToString)
+                        oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@programa", ComboBoxPROGRAMA.SelectedValue)
+                        'oFunciones.ParametersX_Global(7) = New SqlClient.SqlParameter("@fecha_reporte_LSP", DateTimePickerREPORTE.Value)
+                        'oFunciones.ParametersX_Global(8) = New SqlClient.SqlParameter("@estatus", ComboBoxESTATUS.SelectedValue)
+                        oFunciones.ParametersX_Global(9) = New SqlClient.SqlParameter("@testigo1", txtTestigo1.Text)
+                        oFunciones.ParametersX_Global(10) = New SqlClient.SqlParameter("@testigo2", txtTestigo2.Text)
+                        oFunciones.ParametersX_Global(11) = New SqlClient.SqlParameter("@testigo_domicilio1", txtTestigo_Domicilio1.Text)
+                        oFunciones.ParametersX_Global(12) = New SqlClient.SqlParameter("@testigo_domicilio2", txtTestigo_Domicilio2.Text)
+                        oFunciones.ParametersX_Global(13) = New SqlClient.SqlParameter("@testigo_identificacion1", id_testigo1.SelectedValue)
+                        oFunciones.ParametersX_Global(14) = New SqlClient.SqlParameter("@testigo_identificacion2", id_testigo2.SelectedValue)
+                        oFunciones.ParametersX_Global(15) = New SqlClient.SqlParameter("@observaciones", TIPO_MUESTRAS.SelectedItem)
+                        oFunciones.ParametersX_Global(16) = New SqlClient.SqlParameter("@municiopio", ComboBoxMUNICIPIO.SelectedText)
+                        oFunciones.ParametersX_Global(17) = New SqlClient.SqlParameter("@colonia", ComboBoxCOLONIA.Text)
+                        oFunciones.ParametersX_Global(18) = New SqlClient.SqlParameter("@medida_seguridad", RB_medidas_seguridad_si.Checked)
+                        oFunciones.ParametersX_Global(19) = New SqlClient.SqlParameter("@folio_aseguramiento", txtSellosAsegurados.Text)
+                        oFunciones.ParametersX_Global(20) = New SqlClient.SqlParameter("@folio_suspencion", txtSellosSuspendidos.Text)
+                        oFunciones.ParametersX_Global(21) = New SqlClient.SqlParameter("@folio_reubicacion", txtSellosReubicados.Text)
+                        oFunciones.ParametersX_Global(22) = New SqlClient.SqlParameter("@anexa_documentacion", RB_anexa_doc_si.Checked)
+                        oFunciones.ParametersX_Global(23) = New SqlClient.SqlParameter("@numero_anexos", txtNumeroAnexos.Text)
+                        oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@describir", txtDescribir.Text)
+                        'oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@firma", RBNAcuerdo.Checked)
+                        oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@cve_lote", ComboBoxLOTE.SelectedValue)
+
+
+                        Dim result = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ACTAS_VERIFICACION_G", "@parametro", oFunciones.ParametersX_Global, False, SqlDbType.VarChar, 50)
+                        If result <> Nothing Then
+
+                            Wisej.Web.MessageBox.Show("Acta con folio : " & result & "ha sido almacenada correctamente", "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Information)
+                        End If
+
+                    Catch ex As Exception
+                        Wisej.Web.MessageBox.Show("Error al guardar, ERROR: " & ex.Message, "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+                    End Try
+                End If
+
+
+            End If
+        End If
+    End Sub
+
+    Private Function actualizarPropietario() As Boolean
+        Dim result As Boolean
+
+        Try
+            ReDim oFunciones.ParametersX_Global(5)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@cve_establecimiento", CombosaxESTABLECIMIENTO.SelectedValue)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@rfc", TextBoxRFC.Text)
+            oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@nombre", TextBoxNOMBRE.Text)
+            oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@identifacion", ComboBoxIDENTIFIACION.SelectedValue)
+            oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@domicilio", TextBoxDOMICILIO_PROPIETARIO.Text)
+            oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@cargo", TextBoxCARGO.Text)
+            oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@colonia", ComboBoxCOLONIA.Text)
+            oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@codigo_postal", TextBoxCP.Text)
+            Dim resultado = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pACTUALIZAR_PROPIETARIO_ESTABLECIMIENTO_G", "@param", oFunciones.ParametersX_Global, False, SqlDbType.Int)
+            If resultado <> Nothing Then
+                result = True
+            End If
+
+        Catch ex As Exception
+            result = False
+        End Try
+
+
+
+        actualizarPropietario = result
+    End Function
+    Private Function validardatos() As Boolean
+        Dim valido As Boolean
+
+
+
+
+
+        Return valido
+    End Function
+    '------------------------------------> Funciones para guardar y actulizar datos <-------------------------------------------
+
+
+
+
+
+
+    '------------------------------------> CAMBIO DE TAB <-------------------------------------------
+    Private Sub sig_pag2_Click(sender As Object, e As EventArgs) Handles sig_pag2.Click
+        TabControl1.SelectedTab = TabPage3
+    End Sub
+
+    Private Sub ant_pag2_Click(sender As Object, e As EventArgs) Handles ant_pag2.Click
+        TabControl1.SelectedTab = TabPage1
+    End Sub
+
+    Private Sub sig_pag1_Click(sender As Object, e As EventArgs) Handles sig_pag1.Click
+        TabControl1.SelectedTab = TabPage2
+    End Sub
+    Private Sub ant_pag3_Click(sender As Object, e As EventArgs) Handles ant_pag3.Click
+        TabControl1.SelectedTab = TabPage2
+    End Sub
+
+    Private Sub sig_pag3_Click(sender As Object, e As EventArgs) Handles sig_pag3.Click
+        TabControl1.SelectedTab = TabPage4
+    End Sub
+
+    Private Sub ant_pag4_Click(sender As Object, e As EventArgs) Handles ant_pag4.Click
+        TabControl1.SelectedTab = TabPage3
+    End Sub
+
+    Private Sub finalizar_Click(sender As Object, e As EventArgs) Handles finalizar.Click
+        guardar_acta()
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
+        actualizarPropietario()
+    End Sub
+
+    Private Sub ComboBoxMUNICIPIO_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxMUNICIPIO.SelectedIndexChanged
+        CONTROL = CONTROL + 1
+        If ComboBoxMUNICIPIO.SelectedIndex = -1 Then Exit Sub
+        If CONTROL <= 1 Then Exit Sub
+        Try
+            ReDim oFunciones.ParametersX_Global(0)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@MUNICIPIO", ComboBoxMUNICIPIO.SelectedValue)
+            oFunciones.Llenar_listbox("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", ComboBoxCOLONIA, oFunciones.ParametersX_Global)
+            CONTROL = 1
+        Catch ex As Exception
+            Wisej.Web.MessageBox.Show("al rellenar los datos, ERROR: " & ex.Message, "Error:", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+        End Try
+
+
+
+
+
+
+
+    End Sub
+    '------------------------------------> CAMBIO DE TAB <-------------------------------------------
+
+
+
+    Private Sub ContextMenu4_Popup(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ComboBoxCOLONIA_SelectedIndexChanged(sender As Object, e As EventArgs)
+        If ComboBoxCOLONIA.SelectedIndex = -1 Then Exit Sub
+        If HabiliadoPorCP Then
+            TextBoxCP.Text = oFunciones.obetenerDescripcion4(ComboBoxCOLONIA, "CP")
+        End If
+
+
+    End Sub
+    Private Sub TextBoxCP_KeyUp(sender As Object, e As Wisej.Web.KeyEventArgs) Handles TextBoxCP.KeyUp
+
+        Try
+            If e.KeyCode = Windows.Forms.Keys.Enter Then
+                ReDim oFunciones.ParametersX_Global(0)
+                ComboBoxCOLONIA.Clear()
+                oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CP", TextBoxCP.Text)
+                oFunciones.Llenar_listbox("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", ComboBoxCOLONIA, oFunciones.ParametersX_Global)
+                If ComboBoxCOLONIA.Count <= 0 Then
+                    Wisej.Web.MessageBox.Show("No Existe el codigo postal, favor de verificar CP : " & TextBoxCP.Text, "ATENCION", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+                    Exit Sub
+                End If
+                ComboBoxCOLONIA.SelectedIndex = 0
+
+                Dim Text = oFunciones.obetenerDescripcion4(ComboBoxCOLONIA, "MUNICIPIO")
+
+                ComboBoxMUNICIPIO.SelectedValue = Text
+                CONTROL = True
+            End If
+        Catch ex As Exception
+            Wisej.Web.MessageBox.Show("al rellenar los datos, ERROR: " & ex.Message, "Error:", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+        End Try
+
+    End Sub
+
+    Private Sub CheckBoxEDITAR_DIRECCION_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxEDITAR_DIRECCION.CheckedChanged
+        If CheckBoxEDITAR_DIRECCION.Checked Then
+            ComboBoxMUNICIPIO.Enabled = True
+            ComboBoxCOLONIA.Enabled = True
+            TextBoxCP.Enabled = True
+            TextBoxDIRECCION.Enabled = True
+        Else
+            ComboBoxMUNICIPIO.Enabled = False
+            ComboBoxCOLONIA.Enabled = False
+            TextBoxCP.Enabled = False
+            TextBoxDIRECCION.Enabled = False
+        End If
+    End Sub
+
+
+    Private Sub ComboBoxLOTE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxLOTE.SelectedIndexChanged
+        If ComboBoxLOTE.SelectedIndex = -1 Then Exit Sub
+
+        Try
+            If loetes <> True Then
+                loetes = True
+                Exit Sub
+            Else
+                Fecha_creacion_LOTE.Text = oFunciones.obetenerDescripcion4(ComboBoxLOTE, "FECHA_EXPEDICION")
+                Operador_LOTE.Text = oFunciones.obetenerDescripcion4(ComboBoxLOTE, "NOMPRE_OPERADOR")
+                Jurisdiccion_LOTE.Text = oFunciones.obetenerDescripcion4(ComboBoxLOTE, "JURISDICCION")
+            End If
+        Catch ex As Exception
+            Wisej.Web.MessageBox.Show("cargar datos de los paquetes , ERROR: " & ex.Message, "llenar datos de los paquetes de actas", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub Label52_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Combosax_B1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CombosaxESTABLECIMIENTO.SelectedIndexChanged
+        If ELEGIDOestablecimeinto <> True Then
+            ELEGIDOestablecimeinto = True
+            Exit Sub
+        Else
+            If CombosaxESTABLECIMIENTO.SelectedIndex = -1 Then Exit Sub
+            Try
+                If (CombosaxESTABLECIMIENTO.SelectedIndex <> -1) Then
+                    TextBoxRAZON_SOCIAL.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "RAZON_SOCIAL")
+                    TextBoxNOMBRE.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "NOMBRE_PROPIETARIO")
+                    TextBoxMUNICIPIO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "JURISDICCION")
+                    ComboBoxMUNICIPIO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "JURISDICCION")
+                    TextBoxGIRO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "GIRO")
+                    TextBoxRFC.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "RFC")
+                    TextBoxDOMICILIO_PROPIETARIO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "DOMICILIO_PROPIETARIO")
+                    TextBoxDIRECCION.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "DOMICILIO")
+                    ComboBoxCOLONIA.SelectedItem = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "COLONIA")
+                    TextBoxCARGO.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "CARGO")
+                    TextBoxCP.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "CODIGO_POSTAL")
+                    ComboBoxIDENTIFIACION.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "IDENTIFICACION")
+                    TextBoxPROGRAMA.Text = oFunciones.obetenerDescripcion4(CombosaxESTABLECIMIENTO, "PROGRAMA")
+                    ELEGIDOestablecimeinto = True
+                End If
+            Catch ex As Exception
+                Wisej.Web.MessageBox.Show("rellenar la informacion, ERROR: " & ex.Message, "llenar datos del establecimiento", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+            End Try
+        End If
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim form_verficadores = New add_Verificadores
+        form_verficadores.Visible = True
+        AddHandler form_verficadores.FormClosed, AddressOf llenarCombos
+    End Sub
+
+    Private Sub JURISDICCION_VERIFICADORES_SelectedIndexChanged(sender As Object, e As EventArgs) Handles JURISDICCION_VERIFICADORES.SelectedIndexChanged
+        If JURISDICCION_VERIFICADORES.SelectedIndex = -1 Then Exit Sub
+        llenarVerificadores()
+
+
+    End Sub
+    Private Sub llenarVerificadores()
+
+        ReDim oFunciones.ParametersX_Global(0)
+
+        oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_JURISDICCION", JURISDICCION_VERIFICADORES.SelectedValue)
+        oFunciones.Llenar_listbox("pCAT_VERIFICADORES_B", "CVE_VERIFICADOR", "NOMB", VERIFICADORES)
+    End Sub
+
+    Private Sub RB_muestra_si_CheckedChanged(sender As Object, e As EventArgs) Handles RB_muestra_si.CheckedChanged
+
+    End Sub
+
+    Private Sub Panel8_PanelCollapsed(sender As Object, e As EventArgs) Handles Panel8.PanelCollapsed
+
+    End Sub
+
+    Private Sub RB_suspencion_trabajo_si_CheckedChanged(sender As Object, e As EventArgs) Handles RB_suspencion_trabajo_si.CheckedChanged
+        txtSellosSuspendidos.Enabled = True
+
+    End Sub
+
+    Private Sub RB_aseguramiento_objetos_si_CheckedChanged(sender As Object, e As EventArgs) Handles RB_aseguramiento_objetos_si.CheckedChanged
+        txtSellosAsegurados.Enabled = True
+    End Sub
+
+    Private Sub RB_reubicacion_sellos_si_CheckedChanged(sender As Object, e As EventArgs) Handles RB_reubicacion_sellos_si.CheckedChanged
+        txtSellosReubicados.Enabled = True
+    End Sub
+
+    Private Sub Panel9_PanelCollapsed(sender As Object, e As EventArgs) Handles Panel9.PanelCollapsed
+
+    End Sub
+End Class

@@ -1,0 +1,304 @@
+﻿Imports Wisej.Web
+Imports System.Drawing
+Imports Wisej.Web.Form
+Imports System.Data
+Imports System.Threading
+Public Class Cat_Establecimientos_New
+    Dim oFunciones As New dllData
+    Public isselected As Boolean = False
+    Dim Establecimiento_New As Cat_Establecimientos_New
+    Dim Establecimientos As Cat_Establecimientos
+    'Dim ss As DP
+    Public bGuardo = False, habilitados = True, loaded As Boolean
+    Public datoSCIAN As String
+    Public datoMunicipio As String
+    Public datoGiro As String
+    Public datoIdentificacion As String
+    Public datoFuncionamiento As Boolean
+
+    Dim seleccionado As String
+    Dim horaActual As Date
+    Dim POSICION As String = ""
+    Public Sub actulizarlistas()
+
+        Dim formulario = New Generar_Orden_Verficacion
+            formulario.llenarCombos()
+
+        End Sub
+
+    Private Sub Cat_Establecimientos_New_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        Nuevo()
+
+        Establecimientos = New Cat_Establecimientos
+        Establecimientos.cargarTabla()
+        subLlenarCombos()
+        txtClave.Enabled = False
+        If txtClave.Text <> Nothing Then
+            txtClave.Text = txtClave.Text
+        Else
+            txtClave.Text = "0"
+        End If
+
+        Establecimiento_New = New Cat_Establecimientos_New
+        '  Establecimiento_New.Text = "Registrar nuevo establecimiento"
+        Dim tool As New ToolTip
+        tool.SetToolTip(Me.BTNaddscian, "Agregar SCIAN")
+        CBscian.Text = datoSCIAN
+        CBmunicipio.Text = datoMunicipio
+        CBSgiro.Text = datoGiro
+
+
+
+
+        txtHoraInicio.ShowUpDown = True
+        txtHoraInicio.ShowCalendar = False
+        txtHoraFin.ShowUpDown = True
+        txtHoraFin.ShowCalendar = False
+
+
+
+    End Sub
+
+
+
+    Private Sub RibbonBar1_ItemClick(sender As Object, e As Wisej.Web.Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+        Select Case e.Item.Text
+            Case "Nuevo"
+                oFunciones.LimpiarPanel(GroupBoxFORM, Me.Tag)
+                oFunciones.LimpiarPanel(GroupBox2, Me.Tag)
+                txtClave.Text = "0"
+
+                NoCheck()
+                'Nuevo()
+
+            Case "Actualizar"
+            Case "Guardar"
+                Guardar()
+            Case "Salir"
+                actulizarlistas()
+                Me.Close()
+        End Select
+    End Sub
+
+
+    Private Sub Guardar()
+        Try
+            addEstablecimiento()
+
+        Catch ex As Exception
+            MessageBox.Show("error duerante el almacenamiento de datos, ERROR: " & ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+
+    Private Function addEstablecimiento() As Integer
+        Dim cve_establecimiento As Integer
+        Try
+            ReDim oFunciones.ParametersX_Global(27)
+
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@cve_establecimiento", TBcve_establecimiento.Text)
+            oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@cve_giro", CBSgiro.SelectedValue)
+            oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@cve_clave_scian", CBscian.SelectedValue)
+            oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@razon_social", txtRazon_social.Text)
+            oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@volumen_produccion", txtVolumen.Text)
+            oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@licencia", RBNOlicencia.Checked)
+            oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@funcionamiento", RBSIfuncionamiento.Checked)
+            oFunciones.ParametersX_Global(7) = New SqlClient.SqlParameter("@turnos", txtTurnos.Text)
+            oFunciones.ParametersX_Global(8) = New SqlClient.SqlParameter("@hora_inicio", txtHoraInicio.Value)
+            oFunciones.ParametersX_Global(9) = New SqlClient.SqlParameter("@hora_salida", txtHoraFin.Value)
+            oFunciones.ParametersX_Global(23) = New SqlClient.SqlParameter("@estatus", "registrado")
+            oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@domicilio_detalle", TBdomicilio_establecimiento.Text)
+            oFunciones.ParametersX_Global(10) = New SqlClient.SqlParameter("@lunes", lunes.Checked)
+            oFunciones.ParametersX_Global(11) = New SqlClient.SqlParameter("@martes", martes.Checked)
+            oFunciones.ParametersX_Global(12) = New SqlClient.SqlParameter("@miercoles", miercoles.Checked)
+            oFunciones.ParametersX_Global(13) = New SqlClient.SqlParameter("@jueves", jueves.Checked)
+            oFunciones.ParametersX_Global(14) = New SqlClient.SqlParameter("@viernes", viernes.Checked)
+            oFunciones.ParametersX_Global(15) = New SqlClient.SqlParameter("@sabado", sabado.Checked)
+            oFunciones.ParametersX_Global(16) = New SqlClient.SqlParameter("@domingo", domingo.Checked)
+            oFunciones.ParametersX_Global(18) = New SqlClient.SqlParameter("@nombre_propietario", TBnombre_propietario.Text)
+            oFunciones.ParametersX_Global(19) = New SqlClient.SqlParameter("@domicilio_detalle_p", TBdomicilio_propietario.Text)
+            oFunciones.ParametersX_Global(20) = New SqlClient.SqlParameter("@rfc", TBrfc.Text)
+            oFunciones.ParametersX_Global(21) = New SqlClient.SqlParameter("@cargo", TBcargo.Text)
+            oFunciones.ParametersX_Global(22) = New SqlClient.SqlParameter("@identificacion", CBidenficacion.Text)
+            oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@cve_domicilio_establecimiento", CBcolonia.SelectedValue)
+            oFunciones.ParametersX_Global(27) = New SqlClient.SqlParameter("@cve_domicilio_propietario", CBcolonia_propietario.SelectedValue)
+
+
+
+
+            cve_establecimiento = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ESTABLECIMIENTOS_G", "@param", oFunciones.ParametersX_Global, False, SqlDbType.Int)
+
+            If cve_establecimiento <> Nothing Then
+                MessageBox.Show("Establecimiento almacenado con exito", "GUARDAR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ElseIf cve_establecimiento = Nothing Then
+                MessageBox.Show("No se ha podido guardar los datos correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+        Return cve_establecimiento
+    End Function
+
+
+
+
+    Sub Nuevo()
+        dllData.quitarProvider(Me.ErrorProvider1, Me)
+        'If Not Me.Text = "NuevoE" Then
+        '    Me.Text = "NuevoE"
+        '    'POSICION = DirectCast(BindingSourceEstablecimientos.Current, DataRowView).Item("CVE_ESTABLECIMIENTO")
+        '    'BindingSourceEstablecimientos.AddNew()
+        '    'BindingSourceEstablecimientos.SuspendBinding()
+        '    'navigator()
+
+        'End If
+        ''oFunciones.LimpiarPanel(GroupBoxFORM, Me.Tag)
+        ''oFunciones.LimpiarPanel(GroupBox2, Me.Tag)
+        ''txtClave.Text = "0"
+        ''txtOtroIdentificacion.Text = ""
+        ''NoCheck()
+    End Sub
+
+    'Public Shared Sub CHECK(dias As CheckBox, ByVal c1 As Control)
+    '    For Each c As Control In c1.Controls
+
+    '    Next
+    'End Sub
+    'Public Shared Sub quitarProvider(provider As ErrorProvider, ByVal c1 As Control)
+    '    For Each c As Control In c1.Controls
+    '        provider.SetError(c, Nothing)
+    '        quitarProvider(provider, c)
+    '    Next
+    'End Sub
+    Sub subLlenarCombos()
+        Try
+
+            oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_CLAVES_SCIAN_B", "CVE_CLAVE_SCIAN", "NOMBRE", CBscian)
+            oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_GIROS_B", "CVE_GIRO", "NOMBRE", CBSgiro)
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Cargar listas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Sub
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BTNaddscian.Click
+        Dim Vscian As New Cat_Claves_Scian
+        Vscian.Show()
+    End Sub
+
+
+
+    'Function FuncionamientoF() As Boolean
+    '    If RBSIfuncionamiento.Checked = True Then
+    '        Return True
+    '    End If
+    '    If RBNOfuncionamiento.Checked = True Then
+    '        Return False
+    '    End If
+    'End Function
+    'Function LicenciaF() As Boolean
+
+    '    If RBSIlicencia.Checked = True Then
+    '        Return True
+    '    End If
+    '    If RBNOlicencia.Checked = True Then
+    '        Return False
+    '    End If
+
+    'End Function
+
+
+
+
+    'Private Sub GroupBoxFORM_Enter(sender As Object, e As EventArgs) Handles GroupBoxFORM.Enter
+
+    'End Sub
+
+    'Private Sub CBSscian_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBscian.SelectedIndexChanged
+
+    'End Sub
+
+    'Private Sub lunes_CheckedChanged(sender As Object, e As EventArgs) Handles lunes.CheckedChanged, martes.CheckedChanged, miercoles.CheckedChanged, jueves.CheckedChanged, viernes.CheckedChanged, sabado.CheckedChanged, domingo.CheckedChanged
+
+    '    Dim msg As String = ""
+    '    If lunes.Checked = True Then
+    '        msg = msg & lunes.Text & " "
+    '    End If
+    '    If martes.Checked = True Then
+    '        msg = msg & martes.Text & " "
+    '    End If
+    '    If miercoles.Checked = True Then
+    '        msg = msg & miercoles.Text & " "
+    '    End If
+    '    If jueves.Checked = True Then
+    '        msg = msg & jueves.Text & " "
+    '    End If
+    '    If viernes.Checked = True Then
+    '        msg = msg & viernes.Text & " "
+    '    End If
+    '    If sabado.Checked = True Then
+    '        msg = msg & sabado.Text & " "
+    '    End If
+    '    If domingo.Checked = True Then
+    '        msg = msg & domingo.Text & ""
+    '    End If
+    '    GroupBoxDias.Text = msg
+
+
+    'End Sub
+    Sub NoCheck()
+
+        txtHoraInicio.Text = "08:00:00"
+        txtHoraFin.Text = "17:00:00"
+        txtTurnos.Value = "0"
+        txtClave.Text = "0"
+    End Sub
+
+
+
+    Private Sub CBmunicipio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBmunicipio.SelectedIndexChanged
+        If CBmunicipio.SelectedIndex = -1 Then Exit Sub
+        ReDim oFunciones.ParametersX_Global(1)
+        oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "TABASCO")
+        oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@MUNICIPIO", CBmunicipio.Text)
+        oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", CBcolonia, oFunciones.ParametersX_Global)
+    End Sub
+
+    Private Sub CBcolonia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBcolonia.SelectedIndexChanged
+        If CBcolonia.SelectedIndex = -1 Then Exit Sub
+        TBcodigo_postal.Text = oFunciones.obetenerDescripcion3(CBcolonia, "CP")
+    End Sub
+
+    Private Sub CBmunicipio_propietario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBmunicipio_propietario.SelectedIndexChanged
+        If CBmunicipio_propietario.SelectedIndex = -1 Then Exit Sub
+        ReDim oFunciones.ParametersX_Global(1)
+        oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "TABASCO")
+        oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@MUNICIPIO", CBmunicipio_propietario.Text)
+        oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", CBcolonia_propietario, oFunciones.ParametersX_Global)
+    End Sub
+
+    Private Sub CBcolonia_propietario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBcolonia_propietario.SelectedIndexChanged
+        If CBcolonia_propietario.SelectedIndex = -1 Then Exit Sub
+        TBcodigo_postal_propietario.Text = oFunciones.obetenerDescripcion3(CBcolonia_propietario, "CP")
+    End Sub
+
+    Private Sub Cat_Establecimientos_New_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        actulizarlistas()
+
+    End Sub
+
+    'Private Sub TBcodigo_postal_KeyUp(sender As Object, e As KeyEventArgs) Handles TBcodigo_postal.KeyUp
+    '    If e.KeyCode = Keys.Enter Then
+    '        ReDim oFunciones.ParametersX_Global(1)
+    '        oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@ESTADO", TBcodigo_postal.Text)
+
+
+    '    End If
+    'End Sub
+End Class

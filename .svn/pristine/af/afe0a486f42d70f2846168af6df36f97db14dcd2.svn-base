@@ -1,8 +1,0 @@
-﻿Imports System
-Imports Wisej.Web
-
-Public Class Gestion_Orden_Verificacion
-    Private Sub Gestion_Actas_Verificacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-End Class

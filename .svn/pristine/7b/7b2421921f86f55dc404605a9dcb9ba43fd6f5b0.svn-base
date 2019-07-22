@@ -1,0 +1,178 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Prueba
+    Inherits Wisej.Web.Form
+
+    'UserControl overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Wisej Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Wisej Designer
+    'It can be modified using the Wisej Designer.  
+    'Do not modify it using the code editor.
+    Private Sub InitializeComponent()
+        Dim ComponentTool1 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
+
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Prueba))
+
+        Me.CBSMunicipio = New Wisej.Web.ComboBox()
+        Me.Button1 = New Wisej.Web.Button()
+        Me.TextBox1 = New Wisej.Web.TextBox()
+        Me.Button2 = New Wisej.Web.Button()
+
+        Me.Combosax_B1 = New DPCRS.Combosax_B()
+        Me.Combosax_B2 = New DPCRS.Combosax_B()
+
+        Me.SuspendLayout()
+        '
+        'CBSMunicipio
+        '
+        Me.CBSMunicipio.BackColor = System.Drawing.Color.Transparent
+        Me.CBSMunicipio.Cursor = Wisej.Web.Cursors.Hand
+        Me.CBSMunicipio.Location = New System.Drawing.Point(72, 24)
+        Me.CBSMunicipio.Name = "CBSMunicipio"
+        Me.CBSMunicipio.Size = New System.Drawing.Size(182, 22)
+        Me.CBSMunicipio.TabIndex = 12
+        ComponentTool1.ImageSource = "icon-close"
+        ComponentTool1.Name = "Borrar"
+        Me.CBSMunicipio.Tools.AddRange(New Wisej.Web.ComponentTool() {ComponentTool1})
+        Me.CBSMunicipio.Watermark = "Ingrese Texto (Enter)..."
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(760, 22)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 22)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Cargar"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(286, 74)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(366, 22)
+        Me.TextBox1.TabIndex = 15
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(760, 74)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 27)
+        Me.Button2.TabIndex = 16
+        Me.Button2.Text = "Button2"
+        '
+        'ChartJS1
+        '
+        'Me.ChartJS1.Location = New System.Drawing.Point(301, 207)
+        'Me.ChartJS1.Name = "ChartJS1"
+        'Me.ChartJS1.Options = LineOptions1
+        'Me.ChartJS1.Size = New System.Drawing.Size(404, 100)
+        'Me.ChartJS1.TabIndex = 18
+        'Me.ChartJS1.Text = "ChartJS1"
+        ''
+        'Combosax_B1
+        '
+        Me.Combosax_B1.amarillo = False
+        Me.Combosax_B1.Ancho = Nothing
+        Me.Combosax_B1.BackColor = System.Drawing.Color.FromName("@window")
+        Me.Combosax_B1.ColorAtras = System.Drawing.Color.Empty
+        Me.Combosax_B1.Count = 0
+        Me.Combosax_B1.DataSourceSelect = Nothing
+        Me.Combosax_B1.gris = False
+        Me.Combosax_B1.Letra = Nothing
+        Me.Combosax_B1.Limitar = False
+        Me.Combosax_B1.Location = New System.Drawing.Point(286, 114)
+        Me.Combosax_B1.MensajeAgua = Nothing
+        Me.Combosax_B1.mostrarMensaje = False
+        Me.Combosax_B1.Name = "Combosax_B1"
+        Me.Combosax_B1.Negritas = False
+        Me.Combosax_B1.OBTENERLISTLLENADO = Nothing
+        Me.Combosax_B1.procedure = Nothing
+        Me.Combosax_B1.SelectedIndex = -1
+        Me.Combosax_B1.SelectedItem = ""
+        Me.Combosax_B1.SelectedValue = Nothing
+        Me.Combosax_B1.Size = New System.Drawing.Size(277, 22)
+        Me.Combosax_B1.TabIndex = 17
+        Me.Combosax_B1.TODOSS = False
+        '
+        'Combosax_B2
+        '
+        Me.Combosax_B2.amarillo = False
+        Me.Combosax_B2.Ancho = Nothing
+        Me.Combosax_B2.BackColor = System.Drawing.Color.FromName("@window")
+        Me.Combosax_B2.ColorAtras = System.Drawing.Color.Empty
+        Me.Combosax_B2.Count = 0
+        Me.Combosax_B2.DataSourceSelect = Nothing
+        Me.Combosax_B2.gris = False
+        Me.Combosax_B2.Letra = Nothing
+        Me.Combosax_B2.Limitar = False
+        Me.Combosax_B2.Location = New System.Drawing.Point(286, 25)
+        Me.Combosax_B2.MensajeAgua = Nothing
+        Me.Combosax_B2.mostrarMensaje = False
+        Me.Combosax_B2.Name = "Combosax_B2"
+        Me.Combosax_B2.Negritas = False
+        Me.Combosax_B2.OBTENERLISTLLENADO = Nothing
+        Me.Combosax_B2.procedure = Nothing
+        Me.Combosax_B2.SelectedIndex = -1
+        Me.Combosax_B2.SelectedItem = ""
+        Me.Combosax_B2.SelectedValue = Nothing
+        Me.Combosax_B2.Size = New System.Drawing.Size(366, 21)
+        Me.Combosax_B2.TabIndex = 13
+        Me.Combosax_B2.TODOSS = False
+        '
+        'ChartJS2
+        ''
+        'Me.ChartJS2.Location = New System.Drawing.Point(775, 207)
+        'Me.ChartJS2.Name = "ChartJS2"
+        'Me.ChartJS2.Options = LineOptions2
+        'Me.ChartJS2.Size = New System.Drawing.Size(201, 100)
+        'Me.ChartJS2.TabIndex = 19
+        'Me.ChartJS2.Text = "ChartJS2"
+        ''
+        ''ChartJS3
+        ''
+        'Me.ChartJS3.Location = New System.Drawing.Point(3, 207)
+        'Me.ChartJS3.Name = "ChartJS3"
+        'Me.ChartJS3.Options = LineOptions3
+        'Me.ChartJS3.Size = New System.Drawing.Size(212, 100)
+        'Me.ChartJS3.TabIndex = 20
+        'Me.ChartJS3.Text = "ChartJS3"
+        ''
+        'Prueba
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1020, 480)
+        'Me.Controls.Add(Me.ChartJS3)
+        'Me.Controls.Add(Me.ChartJS2)
+        'Me.Controls.Add(Me.ChartJS1)
+        Me.Controls.Add(Me.Combosax_B1)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Combosax_B2)
+        Me.Controls.Add(Me.CBSMunicipio)
+        Me.Name = "Prueba"
+        Me.Text = "|"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents CBSMunicipio As Wisej.Web.ComboBox
+    Friend WithEvents Combosax_B2 As Combosax_B
+    Friend WithEvents Button1 As Wisej.Web.Button
+    Friend WithEvents TextBox1 As Wisej.Web.TextBox
+    Friend WithEvents Button2 As Wisej.Web.Button
+    Friend WithEvents Combosax_B1 As Combosax_B
+
+End Class

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.BingWallpaper</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.BingWallpaper.BingWallpaper">
+            <summary>
+            Changes the background image of the <see cref="T:Wisej.Web.Desktop"/> or any target 
+            <see cref="P:Wisej.Web.Ext.BingWallpaper.BingWallpaper.Control"/> Bing's images of the day.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.BingWallpaper.BingWallpaper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Web.Ext.BingWallpaper" /> class.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.BingWallpaper.BingWallpaper.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Web.Ext.BingWallpaper" /> class together with the specified container.
+            </summary>
+            <param name="container">A <see cref="T:System.ComponentModel.IContainer" /> that represents the container for the component. </param>
+        </member>
+        <member name="P:Wisej.Web.Ext.BingWallpaper.BingWallpaper.EnableAnimation">
+            <summary>
+            Enables or disables a simple zoom animation when rotating images.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.BingWallpaper.BingWallpaper.FadeTime">
+            <summary>
+            Returns or sets the fade in/out time in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.BingWallpaper.BingWallpaper.RotationInterval">
+            <summary>
+            Returns or sets the rotation interval in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.BingWallpaper.BingWallpaper.MaxImages">
+            <summary>
+            Returns or sets the number of images to rotate.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.BingWallpaper.BingWallpaper.Control">
+            <summary>
+            Returns or sets the control that will receive the background images. If left to null it will
+            automatically use the current Desktop.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.BingWallpaper.BingWallpaper.Dispose(System.Boolean)">
+            <summary>
+            When the reference count goes down to zero, kill also the static timer.
+            </summary>
+            <param name="disposing">true when this method is called by the application rather than a finalizer.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.BingWallpaper.BingWallpaper.OnAddReferences(System.Collections.IList)">
+            <summary>
+            Returns a collection of referenced components or collection of components.
+            </summary>
+            <param name="list">List of referenced components or collection of components.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.BingWallpaper.BingWallpaper.OnWebRender(System.Object)">
+            <summary>
+            Renders the client component.
+            </summary>
+            <param name="config">Dynamic configuration object.</param>
+        </member>
+        <member name="T:Wisej.Web.Ext.BingWallpaper.NamespaceDoc">
+            <summary>
+            <para>
+            BingWallpaper component. Uses fresh Bing images as the wallpaper of the <see cref="T:Wisej.Web.Desktop"/> component.
+            </para>
+            </summary>
+        </member>
+    </members>
+</doc>
