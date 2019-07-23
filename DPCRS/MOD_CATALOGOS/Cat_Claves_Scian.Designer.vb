@@ -45,6 +45,8 @@ Partial Class Cat_Claves_Scian
         Me.DGVCSCOFEPRIS = New Wisej.Web.DataGridViewCheckBoxColumn()
         Me.DGVCSLICENCIA = New Wisej.Web.DataGridViewCheckBoxColumn()
         Me.DGVCSHABILITADO = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.DataSetpCATCLAVESSCIANB1BindingSource = New Wisej.Web.BindingSource(Me.components)
+        Me.DataSet_pCAT_CLAVES_SCIAN_B1 = New DPCRS.DataSet_pCAT_CLAVES_SCIAN_B()
         Me.BindingSource1 = New Wisej.Web.BindingSource(Me.components)
         Me.Combosax1 = New Wisej.Web.ComboBox()
         Me.Label3 = New Wisej.Web.Label()
@@ -72,17 +74,15 @@ Partial Class Cat_Claves_Scian
         Me.separatorControl = New Wisej.Web.Line()
         Me.buttonDelete = New Wisej.Web.Button()
         Me.GroupBox1 = New Wisej.Web.GroupBox()
-        Me.DataSet_pCAT_CLAVES_SCIAN_B1 = New DPCRS.DataSet_pCAT_CLAVES_SCIAN_B()
-        Me.DataSetpCATCLAVESSCIANB1BindingSource = New Wisej.Web.BindingSource(Me.components)
         Me.FiltroGrillaSax1 = New DPCRS.filtroGrillaSax()
         CType(Me.DGVScian, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetpCATCLAVESSCIANB1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet_pCAT_CLAVES_SCIAN_B1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataSet_pCAT_CLAVES_SCIAN_B1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSetpCATCLAVESSCIANB1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonBar1
@@ -91,7 +91,7 @@ Partial Class Cat_Claves_Scian
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.RibbonBarPage1)
-        Me.RibbonBar1.Size = New System.Drawing.Size(997, 145)
+        Me.RibbonBar1.Size = New System.Drawing.Size(997, 112)
         '
         'RibbonBarPage1
         '
@@ -135,7 +135,7 @@ Partial Class Cat_Claves_Scian
         Me.txtAviso.AutoSize = True
         Me.txtAviso.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtAviso.ForeColor = System.Drawing.Color.Green
-        Me.txtAviso.Location = New System.Drawing.Point(388, 66)
+        Me.txtAviso.Location = New System.Drawing.Point(389, 26)
         Me.txtAviso.Name = "txtAviso"
         Me.txtAviso.Size = New System.Drawing.Size(197, 17)
         Me.txtAviso.TabIndex = 4
@@ -144,7 +144,7 @@ Partial Class Cat_Claves_Scian
         '
         'RBDesactivado
         '
-        Me.RBDesactivado.Location = New System.Drawing.Point(465, 105)
+        Me.RBDesactivado.Location = New System.Drawing.Point(477, 60)
         Me.RBDesactivado.Name = "RBDesactivado"
         Me.RBDesactivado.Size = New System.Drawing.Size(100, 23)
         Me.RBDesactivado.TabIndex = 12
@@ -154,7 +154,7 @@ Partial Class Cat_Claves_Scian
         'RBHabilitado
         '
         Me.RBHabilitado.Checked = True
-        Me.RBHabilitado.Location = New System.Drawing.Point(356, 105)
+        Me.RBHabilitado.Location = New System.Drawing.Point(379, 60)
         Me.RBHabilitado.Name = "RBHabilitado"
         Me.RBHabilitado.Size = New System.Drawing.Size(85, 23)
         Me.RBHabilitado.TabIndex = 11
@@ -174,11 +174,11 @@ Partial Class Cat_Claves_Scian
         Me.DGVScian.DataMember = "pCAT_CLAVES_SCIAN_B"
         Me.DGVScian.DataSource = Me.DataSetpCATCLAVESSCIANB1BindingSource
         Me.DGVScian.Dock = Wisej.Web.DockStyle.Fill
-        Me.DGVScian.Location = New System.Drawing.Point(0, 323)
+        Me.DGVScian.Location = New System.Drawing.Point(0, 290)
         Me.DGVScian.Name = "DGVScian"
         Me.DGVScian.RowHeadersVisible = False
         Me.DGVScian.ScrollBars = Wisej.Web.ScrollBars.None
-        Me.DGVScian.Size = New System.Drawing.Size(997, 176)
+        Me.DGVScian.Size = New System.Drawing.Size(997, 209)
         Me.DGVScian.TabIndex = 10
         '
         'DGVELIMINAR
@@ -260,6 +260,16 @@ Partial Class Cat_Claves_Scian
         Me.DGVCSHABILITADO.ReadOnly = True
         Me.DGVCSHABILITADO.SortMode = Wisej.Web.DataGridViewColumnSortMode.NotSortable
         Me.DGVCSHABILITADO.Visible = False
+        '
+        'DataSetpCATCLAVESSCIANB1BindingSource
+        '
+        Me.DataSetpCATCLAVESSCIANB1BindingSource.DataSource = Me.DataSet_pCAT_CLAVES_SCIAN_B1
+        Me.DataSetpCATCLAVESSCIANB1BindingSource.Position = 0
+        '
+        'DataSet_pCAT_CLAVES_SCIAN_B1
+        '
+        Me.DataSet_pCAT_CLAVES_SCIAN_B1.DataSetName = "DataSet_pCAT_CLAVES_SCIAN_B"
+        Me.DataSet_pCAT_CLAVES_SCIAN_B1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Combosax1
         '
@@ -504,22 +514,12 @@ Partial Class Cat_Claves_Scian
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.TXTArea)
         Me.GroupBox1.Dock = Wisej.Web.DockStyle.Top
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 145)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 112)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.ShowCloseButton = True
         Me.GroupBox1.Size = New System.Drawing.Size(997, 138)
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.Text = "-"
-        '
-        'DataSet_pCAT_CLAVES_SCIAN_B1
-        '
-        Me.DataSet_pCAT_CLAVES_SCIAN_B1.DataSetName = "DataSet_pCAT_CLAVES_SCIAN_B"
-        Me.DataSet_pCAT_CLAVES_SCIAN_B1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataSetpCATCLAVESSCIANB1BindingSource
-        '
-        Me.DataSetpCATCLAVESSCIANB1BindingSource.DataSource = Me.DataSet_pCAT_CLAVES_SCIAN_B1
-        Me.DataSetpCATCLAVESSCIANB1BindingSource.Position = 0
         '
         'FiltroGrillaSax1
         '
@@ -527,7 +527,7 @@ Partial Class Cat_Claves_Scian
         Me.FiltroGrillaSax1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink
         Me.FiltroGrillaSax1.BackColor = System.Drawing.Color.Transparent
         Me.FiltroGrillaSax1.Dock = Wisej.Web.DockStyle.Top
-        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(0, 283)
+        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(0, 250)
         Me.FiltroGrillaSax1.meBackcolorEtiquetas = System.Drawing.Color.AliceBlue
         Me.FiltroGrillaSax1.meBorderStyleEtiquetas = Wisej.Web.BorderStyle.Solid
         Me.FiltroGrillaSax1.meBorderWidthEtiquetas = 1
@@ -556,14 +556,14 @@ Partial Class Cat_Claves_Scian
         Me.Text = "Claves SCIAN"
         Me.WindowState = Wisej.Web.FormWindowState.Maximized
         CType(Me.DGVScian, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetpCATCLAVESSCIANB1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet_pCAT_CLAVES_SCIAN_B1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataSet_pCAT_CLAVES_SCIAN_B1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSetpCATCLAVESSCIANB1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -24,8 +24,8 @@ Partial Class Cat_Establecimientos_New
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ComponentTool2 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
-        Dim ComponentTool1 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cat_Establecimientos_New))
+        Dim ComponentTool1 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
         Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
         Me.RBBEstablecimientoNew = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
         Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
@@ -36,6 +36,7 @@ Partial Class Cat_Establecimientos_New
         Me.ErrorProvider1 = New Wisej.Web.ErrorProvider(Me.components)
         Me.GroupBoxDPropietario = New Wisej.Web.GroupBox()
         Me.Label3 = New Wisej.Web.Label()
+        Me.CBcolonia_propietario = New DPCRS.Combosax_B()
         Me.CBmunicipio_propietario = New Wisej.Web.ComboBox()
         Me.TBcodigo_postal_propietario = New Wisej.Web.TextBox()
         Me.Label9 = New Wisej.Web.Label()
@@ -54,6 +55,8 @@ Partial Class Cat_Establecimientos_New
         Me.Label5 = New Wisej.Web.Label()
         Me.Label13 = New Wisej.Web.Label()
         Me.GroupBoxDEstablecimiento = New Wisej.Web.GroupBox()
+        Me.CBSgiro = New DPCRS.Combosax_B()
+        Me.CBscian = New DPCRS.Combosax_B()
         Me.GroupDias = New Wisej.Web.GroupBox()
         Me.domingo = New Wisej.Web.CheckBox()
         Me.martes = New Wisej.Web.CheckBox()
@@ -81,10 +84,10 @@ Partial Class Cat_Establecimientos_New
         Me.txtVolumen = New Wisej.Web.TextBox()
         Me.Label10 = New Wisej.Web.Label()
         Me.Label2 = New Wisej.Web.Label()
-        Me.Label1 = New Wisej.Web.Label()
         Me.txtClave = New Wisej.Web.TextBox()
         Me.PanelFORM = New Wisej.Web.Panel()
         Me.GroupBoxUbicacionE = New Wisej.Web.GroupBox()
+        Me.CBcolonia = New DPCRS.Combosax_B()
         Me.CBXJurisdiccion = New Wisej.Web.ComboBox()
         Me.TBdomicilio_establecimiento = New Wisej.Web.TextBox()
         Me.Label21 = New Wisej.Web.Label()
@@ -98,10 +101,6 @@ Partial Class Cat_Establecimientos_New
         Me.BindingSource1 = New Wisej.Web.BindingSource(Me.components)
         Me.CAT_ESTABLECIMIENTOS_B1TableAdapter = New DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.CAT_ESTABLECIMIENTOS_B1TableAdapter()
         Me.Timer1 = New Wisej.Web.Timer(Me.components)
-        Me.CBcolonia = New DPCRS.Combosax_B()
-        Me.CBcolonia_propietario = New DPCRS.Combosax_B()
-        Me.CBSgiro = New DPCRS.Combosax_B()
-        Me.CBscian = New DPCRS.Combosax_B()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxDPropietario.SuspendLayout()
         Me.GroupBoxDEstablecimiento.SuspendLayout()
@@ -185,7 +184,7 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxDPropietario.Controls.Add(Me.TBnombre_propietario)
         Me.GroupBoxDPropietario.Controls.Add(Me.Label5)
         Me.GroupBoxDPropietario.Dock = Wisej.Web.DockStyle.Top
-        Me.GroupBoxDPropietario.Location = New System.Drawing.Point(0, 269)
+        Me.GroupBoxDPropietario.Location = New System.Drawing.Point(0, 247)
         Me.GroupBoxDPropietario.Name = "GroupBoxDPropietario"
         Me.GroupBoxDPropietario.ShowCloseButton = True
         Me.GroupBoxDPropietario.Size = New System.Drawing.Size(684, 212)
@@ -200,6 +199,32 @@ Partial Class Cat_Establecimientos_New
         Me.Label3.Size = New System.Drawing.Size(64, 16)
         Me.Label3.TabIndex = 33
         Me.Label3.Text = "Municipio"
+        '
+        'CBcolonia_propietario
+        '
+        Me.CBcolonia_propietario.amarillo = False
+        Me.CBcolonia_propietario.Ancho = Nothing
+        Me.CBcolonia_propietario.BackColor = System.Drawing.Color.FromName("@window")
+        Me.CBcolonia_propietario.ColorAtras = System.Drawing.Color.Empty
+        Me.CBcolonia_propietario.Count = 0
+        Me.CBcolonia_propietario.DataSourceSelect = Nothing
+        Me.CBcolonia_propietario.gris = False
+        Me.CBcolonia_propietario.Letra = Nothing
+        Me.CBcolonia_propietario.Limitar = False
+        Me.CBcolonia_propietario.Location = New System.Drawing.Point(120, 168)
+        Me.CBcolonia_propietario.MensajeAgua = Nothing
+        Me.CBcolonia_propietario.mostrarMensaje = False
+        Me.CBcolonia_propietario.Name = "CBcolonia_propietario"
+        Me.CBcolonia_propietario.Negritas = False
+        Me.CBcolonia_propietario.OBTENERLISTLLENADO = Nothing
+        Me.CBcolonia_propietario.procedure = Nothing
+        Me.CBcolonia_propietario.SelectedIndex = -1
+        Me.CBcolonia_propietario.SelectedItem = ""
+        Me.CBcolonia_propietario.SelectedValue = Nothing
+        Me.CBcolonia_propietario.Size = New System.Drawing.Size(192, 22)
+        Me.CBcolonia_propietario.TabIndex = 31
+        Me.CBcolonia_propietario.TODOSS = False
+        Me.CBcolonia_propietario.Watermark = Nothing
         '
         'CBmunicipio_propietario
         '
@@ -363,15 +388,67 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxDEstablecimiento.Controls.Add(Me.txtVolumen)
         Me.GroupBoxDEstablecimiento.Controls.Add(Me.Label10)
         Me.GroupBoxDEstablecimiento.Controls.Add(Me.Label2)
-        Me.GroupBoxDEstablecimiento.Controls.Add(Me.Label1)
-        Me.GroupBoxDEstablecimiento.Controls.Add(Me.txtClave)
         Me.GroupBoxDEstablecimiento.Dock = Wisej.Web.DockStyle.Top
         Me.GroupBoxDEstablecimiento.Location = New System.Drawing.Point(0, 0)
         Me.GroupBoxDEstablecimiento.Name = "GroupBoxDEstablecimiento"
         Me.GroupBoxDEstablecimiento.ShowCloseButton = True
-        Me.GroupBoxDEstablecimiento.Size = New System.Drawing.Size(684, 269)
+        Me.GroupBoxDEstablecimiento.Size = New System.Drawing.Size(684, 247)
         Me.GroupBoxDEstablecimiento.TabIndex = 1
         Me.GroupBoxDEstablecimiento.Text = "Datos Establecimiento"
+        '
+        'CBSgiro
+        '
+        Me.CBSgiro.amarillo = False
+        Me.CBSgiro.Ancho = Nothing
+        Me.CBSgiro.BackColor = System.Drawing.Color.FromName("@window")
+        Me.CBSgiro.ColorAtras = System.Drawing.Color.Empty
+        Me.CBSgiro.Count = 0
+        Me.CBSgiro.DataSource = Nothing
+        Me.CBSgiro.DataSourceSelect = Nothing
+        Me.CBSgiro.gris = False
+        Me.CBSgiro.Letra = Nothing
+        Me.CBSgiro.Limitar = False
+        Me.CBSgiro.Location = New System.Drawing.Point(441, 73)
+        Me.CBSgiro.MensajeAgua = Nothing
+        Me.CBSgiro.mostrarMensaje = False
+        Me.CBSgiro.Name = "CBSgiro"
+        Me.CBSgiro.Negritas = False
+        Me.CBSgiro.OBTENERLISTLLENADO = Nothing
+        Me.CBSgiro.procedure = Nothing
+        Me.CBSgiro.SelectedIndex = -1
+        Me.CBSgiro.SelectedItem = ""
+        Me.CBSgiro.SelectedValue = Nothing
+        Me.CBSgiro.Size = New System.Drawing.Size(226, 22)
+        Me.CBSgiro.TabIndex = 32
+        Me.CBSgiro.TODOSS = False
+        Me.CBSgiro.Watermark = Nothing
+        '
+        'CBscian
+        '
+        Me.CBscian.amarillo = False
+        Me.CBscian.Ancho = Nothing
+        Me.CBscian.BackColor = System.Drawing.Color.FromName("@window")
+        Me.CBscian.ColorAtras = System.Drawing.Color.Empty
+        Me.CBscian.Count = 0
+        Me.CBscian.DataSource = Nothing
+        Me.CBscian.DataSourceSelect = Nothing
+        Me.CBscian.gris = False
+        Me.CBscian.Letra = Nothing
+        Me.CBscian.Limitar = False
+        Me.CBscian.Location = New System.Drawing.Point(441, 27)
+        Me.CBscian.MensajeAgua = Nothing
+        Me.CBscian.mostrarMensaje = False
+        Me.CBscian.Name = "CBscian"
+        Me.CBscian.Negritas = False
+        Me.CBscian.OBTENERLISTLLENADO = Nothing
+        Me.CBscian.procedure = Nothing
+        Me.CBscian.SelectedIndex = -1
+        Me.CBscian.SelectedItem = ""
+        Me.CBscian.SelectedValue = Nothing
+        Me.CBscian.Size = New System.Drawing.Size(192, 22)
+        Me.CBscian.TabIndex = 31
+        Me.CBscian.TODOSS = False
+        Me.CBscian.Watermark = Nothing
         '
         'GroupDias
         '
@@ -383,7 +460,7 @@ Partial Class Cat_Establecimientos_New
         Me.GroupDias.Controls.Add(Me.jueves)
         Me.GroupDias.Controls.Add(Me.lunes)
         Me.GroupDias.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.GroupDias.Location = New System.Drawing.Point(350, 81)
+        Me.GroupDias.Location = New System.Drawing.Point(353, 118)
         Me.GroupDias.Name = "GroupDias"
         Me.GroupDias.Size = New System.Drawing.Size(314, 62)
         Me.GroupDias.TabIndex = 30
@@ -450,7 +527,7 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBox3.Controls.Add(Me.RBNOlicencia)
         Me.GroupBox3.Controls.Add(Me.RBSIlicencia)
         Me.GroupBox3.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.GroupBox3.Location = New System.Drawing.Point(350, 205)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 186)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(314, 50)
         Me.GroupBox3.TabIndex = 27
@@ -481,7 +558,7 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBox1.Controls.Add(Me.RBNOfuncionamiento)
         Me.GroupBox1.Controls.Add(Me.RBSIfuncionamiento)
         Me.GroupBox1.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.GroupBox1.Location = New System.Drawing.Point(350, 149)
+        Me.GroupBox1.Location = New System.Drawing.Point(353, 186)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(314, 50)
         Me.GroupBox1.TabIndex = 26
@@ -510,7 +587,7 @@ Partial Class Cat_Establecimientos_New
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(9, 179)
+        Me.Label14.Location = New System.Drawing.Point(27, 149)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(50, 16)
         Me.Label14.TabIndex = 25
@@ -518,7 +595,7 @@ Partial Class Cat_Establecimientos_New
         '
         'txtTurnos
         '
-        Me.txtTurnos.Location = New System.Drawing.Point(132, 176)
+        Me.txtTurnos.Location = New System.Drawing.Point(150, 146)
         Me.txtTurnos.Name = "txtTurnos"
         Me.txtTurnos.Size = New System.Drawing.Size(165, 22)
         Me.txtTurnos.TabIndex = 24
@@ -527,7 +604,7 @@ Partial Class Cat_Establecimientos_New
         '
         Me.txtHoraFin.CustomFormat = "hh:mm tt"
         Me.txtHoraFin.Format = Wisej.Web.DateTimePickerFormat.Time
-        Me.txtHoraFin.Location = New System.Drawing.Point(132, 148)
+        Me.txtHoraFin.Location = New System.Drawing.Point(150, 118)
         Me.txtHoraFin.Name = "txtHoraFin"
         Me.txtHoraFin.Size = New System.Drawing.Size(165, 22)
         Me.txtHoraFin.TabIndex = 8
@@ -537,7 +614,7 @@ Partial Class Cat_Establecimientos_New
         '
         Me.txtHoraInicio.CustomFormat = "hh:mm tt"
         Me.txtHoraInicio.Format = Wisej.Web.DateTimePickerFormat.Time
-        Me.txtHoraInicio.Location = New System.Drawing.Point(132, 119)
+        Me.txtHoraInicio.Location = New System.Drawing.Point(150, 89)
         Me.txtHoraInicio.Name = "txtHoraInicio"
         Me.txtHoraInicio.Size = New System.Drawing.Size(165, 22)
         Me.txtHoraInicio.TabIndex = 7
@@ -547,7 +624,7 @@ Partial Class Cat_Establecimientos_New
         '
         Me.BTNaddscian.BackgroundImageLayout = Wisej.Web.ImageLayout.Stretch
         Me.BTNaddscian.BackgroundImageSource = "Resources/Icons/Menu/add.png"
-        Me.BTNaddscian.Location = New System.Drawing.Point(639, 24)
+        Me.BTNaddscian.Location = New System.Drawing.Point(639, 27)
         Me.BTNaddscian.Name = "BTNaddscian"
         Me.BTNaddscian.Size = New System.Drawing.Size(25, 25)
         Me.BTNaddscian.TabIndex = 22
@@ -555,7 +632,7 @@ Partial Class Cat_Establecimientos_New
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(9, 154)
+        Me.Label19.Location = New System.Drawing.Point(27, 124)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(65, 16)
         Me.Label19.TabIndex = 17
@@ -564,7 +641,7 @@ Partial Class Cat_Establecimientos_New
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(9, 125)
+        Me.Label18.Location = New System.Drawing.Point(27, 95)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(87, 16)
         Me.Label18.TabIndex = 16
@@ -572,7 +649,7 @@ Partial Class Cat_Establecimientos_New
         '
         'txtRazon_social
         '
-        Me.txtRazon_social.Location = New System.Drawing.Point(132, 57)
+        Me.txtRazon_social.Location = New System.Drawing.Point(150, 27)
         Me.txtRazon_social.Name = "txtRazon_social"
         Me.txtRazon_social.Size = New System.Drawing.Size(165, 22)
         Me.txtRazon_social.TabIndex = 13
@@ -580,7 +657,7 @@ Partial Class Cat_Establecimientos_New
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(9, 63)
+        Me.Label7.Location = New System.Drawing.Point(27, 33)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(87, 16)
         Me.Label7.TabIndex = 12
@@ -589,7 +666,7 @@ Partial Class Cat_Establecimientos_New
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(391, 53)
+        Me.Label4.Location = New System.Drawing.Point(353, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(33, 16)
         Me.Label4.TabIndex = 6
@@ -597,7 +674,7 @@ Partial Class Cat_Establecimientos_New
         '
         'txtVolumen
         '
-        Me.txtVolumen.Location = New System.Drawing.Point(132, 91)
+        Me.txtVolumen.Location = New System.Drawing.Point(150, 61)
         Me.txtVolumen.Name = "txtVolumen"
         Me.txtVolumen.Size = New System.Drawing.Size(165, 22)
         Me.txtVolumen.TabIndex = 6
@@ -605,7 +682,7 @@ Partial Class Cat_Establecimientos_New
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(9, 94)
+        Me.Label10.Location = New System.Drawing.Point(27, 64)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(130, 16)
         Me.Label10.TabIndex = 1
@@ -614,24 +691,15 @@ Partial Class Cat_Establecimientos_New
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(337, 29)
+        Me.Label2.Location = New System.Drawing.Point(353, 33)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(87, 16)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Clave SCIAN"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 31)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 16)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Clave"
-        '
         'txtClave
         '
-        Me.txtClave.Location = New System.Drawing.Point(132, 26)
+        Me.txtClave.Location = New System.Drawing.Point(319, 61)
         Me.txtClave.Name = "txtClave"
         Me.txtClave.Size = New System.Drawing.Size(165, 22)
         Me.txtClave.TabIndex = 0
@@ -661,12 +729,38 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxUbicacionE.Controls.Add(Me.Label25)
         Me.GroupBoxUbicacionE.Controls.Add(Me.Label13)
         Me.GroupBoxUbicacionE.Dock = Wisej.Web.DockStyle.Top
-        Me.GroupBoxUbicacionE.Location = New System.Drawing.Point(0, 481)
+        Me.GroupBoxUbicacionE.Location = New System.Drawing.Point(0, 459)
         Me.GroupBoxUbicacionE.Name = "GroupBoxUbicacionE"
         Me.GroupBoxUbicacionE.ShowCloseButton = True
         Me.GroupBoxUbicacionE.Size = New System.Drawing.Size(684, 162)
         Me.GroupBoxUbicacionE.TabIndex = 4
         Me.GroupBoxUbicacionE.Text = "Ubicacion del Establecimiento"
+        '
+        'CBcolonia
+        '
+        Me.CBcolonia.amarillo = False
+        Me.CBcolonia.Ancho = Nothing
+        Me.CBcolonia.BackColor = System.Drawing.Color.FromName("@window")
+        Me.CBcolonia.ColorAtras = System.Drawing.Color.Empty
+        Me.CBcolonia.Count = 0
+        Me.CBcolonia.DataSourceSelect = Nothing
+        Me.CBcolonia.gris = False
+        Me.CBcolonia.Letra = Nothing
+        Me.CBcolonia.Limitar = False
+        Me.CBcolonia.Location = New System.Drawing.Point(120, 77)
+        Me.CBcolonia.MensajeAgua = Nothing
+        Me.CBcolonia.mostrarMensaje = False
+        Me.CBcolonia.Name = "CBcolonia"
+        Me.CBcolonia.Negritas = False
+        Me.CBcolonia.OBTENERLISTLLENADO = Nothing
+        Me.CBcolonia.procedure = Nothing
+        Me.CBcolonia.SelectedIndex = -1
+        Me.CBcolonia.SelectedItem = ""
+        Me.CBcolonia.SelectedValue = Nothing
+        Me.CBcolonia.Size = New System.Drawing.Size(192, 22)
+        Me.CBcolonia.TabIndex = 31
+        Me.CBcolonia.TODOSS = False
+        Me.CBcolonia.Watermark = Nothing
         '
         'CBXJurisdiccion
         '
@@ -750,110 +844,6 @@ Partial Class Cat_Establecimientos_New
         '
         Me.CAT_ESTABLECIMIENTOS_B1TableAdapter.ClearBeforeFill = True
         '
-        'CBcolonia
-        '
-        Me.CBcolonia.amarillo = False
-        Me.CBcolonia.Ancho = Nothing
-        Me.CBcolonia.BackColor = System.Drawing.Color.FromName("@window")
-        Me.CBcolonia.ColorAtras = System.Drawing.Color.Empty
-        Me.CBcolonia.Count = 0
-        Me.CBcolonia.DataSourceSelect = Nothing
-        Me.CBcolonia.gris = False
-        Me.CBcolonia.Letra = Nothing
-        Me.CBcolonia.Limitar = False
-        Me.CBcolonia.Location = New System.Drawing.Point(120, 77)
-        Me.CBcolonia.MensajeAgua = Nothing
-        Me.CBcolonia.mostrarMensaje = False
-        Me.CBcolonia.Name = "CBcolonia"
-        Me.CBcolonia.Negritas = False
-        Me.CBcolonia.OBTENERLISTLLENADO = Nothing
-        Me.CBcolonia.procedure = Nothing
-        Me.CBcolonia.SelectedIndex = -1
-        Me.CBcolonia.SelectedItem = ""
-        Me.CBcolonia.SelectedValue = Nothing
-        Me.CBcolonia.Size = New System.Drawing.Size(192, 22)
-        Me.CBcolonia.TabIndex = 31
-        Me.CBcolonia.TODOSS = False
-        Me.CBcolonia.Watermark = Nothing
-        '
-        'CBcolonia_propietario
-        '
-        Me.CBcolonia_propietario.amarillo = False
-        Me.CBcolonia_propietario.Ancho = Nothing
-        Me.CBcolonia_propietario.BackColor = System.Drawing.Color.FromName("@window")
-        Me.CBcolonia_propietario.ColorAtras = System.Drawing.Color.Empty
-        Me.CBcolonia_propietario.Count = 0
-        Me.CBcolonia_propietario.DataSourceSelect = Nothing
-        Me.CBcolonia_propietario.gris = False
-        Me.CBcolonia_propietario.Letra = Nothing
-        Me.CBcolonia_propietario.Limitar = False
-        Me.CBcolonia_propietario.Location = New System.Drawing.Point(120, 168)
-        Me.CBcolonia_propietario.MensajeAgua = Nothing
-        Me.CBcolonia_propietario.mostrarMensaje = False
-        Me.CBcolonia_propietario.Name = "CBcolonia_propietario"
-        Me.CBcolonia_propietario.Negritas = False
-        Me.CBcolonia_propietario.OBTENERLISTLLENADO = Nothing
-        Me.CBcolonia_propietario.procedure = Nothing
-        Me.CBcolonia_propietario.SelectedIndex = -1
-        Me.CBcolonia_propietario.SelectedItem = ""
-        Me.CBcolonia_propietario.SelectedValue = Nothing
-        Me.CBcolonia_propietario.Size = New System.Drawing.Size(192, 22)
-        Me.CBcolonia_propietario.TabIndex = 31
-        Me.CBcolonia_propietario.TODOSS = False
-        Me.CBcolonia_propietario.Watermark = Nothing
-        '
-        'CBSgiro
-        '
-        Me.CBSgiro.amarillo = False
-        Me.CBSgiro.Ancho = Nothing
-        Me.CBSgiro.BackColor = System.Drawing.Color.FromName("@window")
-        Me.CBSgiro.ColorAtras = System.Drawing.Color.Empty
-        Me.CBSgiro.Count = 0
-        Me.CBSgiro.DataSourceSelect = Nothing
-        Me.CBSgiro.gris = False
-        Me.CBSgiro.Letra = Nothing
-        Me.CBSgiro.Limitar = False
-        Me.CBSgiro.Location = New System.Drawing.Point(430, 53)
-        Me.CBSgiro.MensajeAgua = Nothing
-        Me.CBSgiro.mostrarMensaje = False
-        Me.CBSgiro.Name = "CBSgiro"
-        Me.CBSgiro.Negritas = False
-        Me.CBSgiro.OBTENERLISTLLENADO = Nothing
-        Me.CBSgiro.procedure = Nothing
-        Me.CBSgiro.SelectedIndex = -1
-        Me.CBSgiro.SelectedItem = ""
-        Me.CBSgiro.SelectedValue = Nothing
-        Me.CBSgiro.Size = New System.Drawing.Size(192, 22)
-        Me.CBSgiro.TabIndex = 32
-        Me.CBSgiro.TODOSS = False
-        Me.CBSgiro.Watermark = Nothing
-        '
-        'CBscian
-        '
-        Me.CBscian.amarillo = False
-        Me.CBscian.Ancho = Nothing
-        Me.CBscian.BackColor = System.Drawing.Color.FromName("@window")
-        Me.CBscian.ColorAtras = System.Drawing.Color.Empty
-        Me.CBscian.Count = 0
-        Me.CBscian.DataSourceSelect = Nothing
-        Me.CBscian.gris = False
-        Me.CBscian.Letra = Nothing
-        Me.CBscian.Limitar = False
-        Me.CBscian.Location = New System.Drawing.Point(430, 24)
-        Me.CBscian.MensajeAgua = Nothing
-        Me.CBscian.mostrarMensaje = False
-        Me.CBscian.Name = "CBscian"
-        Me.CBscian.Negritas = False
-        Me.CBscian.OBTENERLISTLLENADO = Nothing
-        Me.CBscian.procedure = Nothing
-        Me.CBscian.SelectedIndex = -1
-        Me.CBscian.SelectedItem = ""
-        Me.CBscian.SelectedValue = Nothing
-        Me.CBscian.Size = New System.Drawing.Size(192, 22)
-        Me.CBscian.TabIndex = 31
-        Me.CBscian.TODOSS = False
-        Me.CBscian.Watermark = Nothing
-        '
         'Cat_Establecimientos_New
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -861,7 +851,12 @@ Partial Class Cat_Establecimientos_New
         Me.ClientSize = New System.Drawing.Size(684, 788)
         Me.Controls.Add(Me.PanelFORM)
         Me.Controls.Add(Me.RibbonBar1)
+        Me.Controls.Add(Me.txtClave)
         Me.Margin = New Wisej.Web.Padding(9, 0, 9, 0)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(696, 832)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(696, 832)
         Me.Name = "Cat_Establecimientos_New"
         Me.StartPosition = Wisej.Web.FormStartPosition.CenterScreen
         Me.Text = "Datos del Establecimiento"
@@ -882,6 +877,7 @@ Partial Class Cat_Establecimientos_New
         CType(Me.DataSet_CAT_ESTABLECIMIENTOS_B1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -904,7 +900,6 @@ Partial Class Cat_Establecimientos_New
     Friend WithEvents txtVolumen As Wisej.Web.TextBox
     Friend WithEvents Label10 As Wisej.Web.Label
     Friend WithEvents Label2 As Wisej.Web.Label
-    Friend WithEvents Label1 As Wisej.Web.Label
     Friend WithEvents txtClave As Wisej.Web.TextBox
     Friend WithEvents GroupBoxDPropietario As Wisej.Web.GroupBox
     Friend WithEvents TBdomicilio_propietario As Wisej.Web.TextBox

@@ -107,6 +107,11 @@ Public Class Add_Muestra
         CANTIDAD.Enabled = False
         FECHA_CADUCIDAD.Value = Nothing
         FECHA_CADUCIDAD.Enabled = False
+        oFunciones.AlertBox("Muestra Agregada al Acta, Verifique los datos en la tabla de Muestras ", MessageBoxIcon.Information)
+        If (Wisej.Web.MessageBox.Show("Muestra Agregada, Si es la ultima muestra capturada", "¿Desea cerrar el formulario de muestras sanitarias?", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
+            Me.Close()
+
+        End If
     End Sub
     Public Sub habilitar()
         TIPO_ANALISIS.SelectedIndex = -1

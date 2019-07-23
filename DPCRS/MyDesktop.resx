@@ -142,6 +142,9 @@
   <data name="Cpass.Text" xml:space="preserve">
     <value>Cambiar Contraseña</value>
   </data>
+  <data name="&gt;&gt;Modificar.Name" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
   <data name="session.ImageSource" xml:space="preserve">
     <value>Resources\Images\Menu\logout.png</value>
   </data>
@@ -254,8 +257,8 @@
   <data name="&gt;&gt;DesktopTaskBarItemControl2.Name" xml:space="preserve">
     <value>DesktopTaskBarItemControl2</value>
   </data>
-  <data name="&gt;&gt;Modificar.Name" xml:space="preserve">
-    <value>Modificar</value>
+  <data name="&gt;&gt;dat.Type" xml:space="preserve">
+    <value>Wisej.Web.DesktopTaskBarItem, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
   </data>
   <data name="&gt;&gt;RibbonBarItemButton2.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
@@ -293,9 +296,6 @@
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>1237, 628</value>
-  </data>
-  <data name="&gt;&gt;dat.Type" xml:space="preserve">
-    <value>Wisej.Web.DesktopTaskBarItem, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
   </data>
   <data name="&gt;&gt;DesktopTaskBarItem1.Type" xml:space="preserve">
     <value>Wisej.Web.DesktopTaskBarItem, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>

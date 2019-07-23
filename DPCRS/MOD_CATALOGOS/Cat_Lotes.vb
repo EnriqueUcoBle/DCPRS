@@ -39,11 +39,14 @@ Public Class Cat_Lotes
                 'MessageBox.Show("AVENTO LOBA")
                 Me.DataSet_pCAT_ACTAS_VERIFICACION_B.pCAT_ACTAS_VERIFICACION_B.Clear()
                 Dim myDA = New SqlClient.SqlDataAdapter("pCAT_ACTAS_VERIFICACION_B", oFunciones.sConexion)
-                myDA.SelectCommand.Parameters.AddWithValue("@CVE_PAC_ACTA", DGVLotes.Item("CVE_PAQUETE", e.RowIndex).Value)
+                myDA.SelectCommand.Parameters.AddWithValue("@CVE_PAQUETES", DGVLotes.Item("CVE_PAQUETE", e.RowIndex).Value)
                 'MessageBox.Show(DGVLotes.Item("CVE_PAQUETE", e.RowIndex).Value)
                 myDA.SelectCommand.CommandType = CommandType.StoredProcedure
                 myDA.Fill(Me.DataSet_pCAT_ACTAS_VERIFICACION_B.pCAT_ACTAS_VERIFICACION_B)
                 myDA.Dispose()
+                If DGVActas.Rows.Count = 0 Then
+                    MessageBox.Show("Este paquete no contiene actas aun...", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
 
             End If
 

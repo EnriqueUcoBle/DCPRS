@@ -101,7 +101,6 @@ Partial Class Login
         Me.cUsuario.Name = "cUsuario"
         Me.cUsuario.Size = New System.Drawing.Size(218, 22)
         Me.cUsuario.TabIndex = 1
-        Me.cUsuario.Text = "Admin"
         Me.cUsuario.Watermark = "Ingrese usuario"
         '
         'cContrasena
@@ -115,7 +114,6 @@ Partial Class Login
         Me.cContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.cContrasena.Size = New System.Drawing.Size(218, 22)
         Me.cContrasena.TabIndex = 2
-        Me.cContrasena.Text = "Saxsoft"
         Me.cContrasena.Watermark = "Ingrese contraseña"
         '
         'Label4

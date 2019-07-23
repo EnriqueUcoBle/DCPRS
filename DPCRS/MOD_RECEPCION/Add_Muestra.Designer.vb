@@ -23,6 +23,7 @@ Partial Class Add_Muestra
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New Wisej.Web.Panel()
+        Me.Button1 = New Wisej.Web.Button()
         Me.AÑADIR_ITEM = New Wisej.Web.Button()
         Me.FECHA_CADUCIDAD = New Wisej.Web.DateTimePicker()
         Me.CANTIDAD = New Wisej.Web.NumericUpDown()
@@ -47,7 +48,6 @@ Partial Class Add_Muestra
         Me.Label2 = New Wisej.Web.Label()
         Me.TIPO_MUESTRA = New DPCRS.Combosax_B()
         Me.ErrorProvider1 = New Wisej.Web.ErrorProvider(Me.components)
-        Me.Button1 = New Wisej.Web.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.CANTIDAD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +85,15 @@ Partial Class Add_Muestra
         Me.Panel1.Size = New System.Drawing.Size(534, 557)
         Me.Panel1.TabIndex = 0
         '
+        'Button1
+        '
+        Me.Button1.ImageSource = "Resources\Images\Menu\64\chemistry .png"
+        Me.Button1.Location = New System.Drawing.Point(351, 485)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 27)
+        Me.Button1.TabIndex = 31
+        Me.Button1.Text = "Nueva Muestra"
+        '
         'AÑADIR_ITEM
         '
         Me.AÑADIR_ITEM.ImageSource = "Resources\Icons\Menu\add.png"
@@ -96,6 +105,8 @@ Partial Class Add_Muestra
         '
         'FECHA_CADUCIDAD
         '
+        Me.FECHA_CADUCIDAD.CustomFormat = "aaaa-MMMM-dddd"
+        Me.FECHA_CADUCIDAD.Format = Wisej.Web.DateTimePickerFormat.[Short]
         Me.FECHA_CADUCIDAD.Location = New System.Drawing.Point(205, 412)
         Me.FECHA_CADUCIDAD.MinDate = New Date(1999, 1, 1, 0, 0, 0, 0)
         Me.FECHA_CADUCIDAD.Name = "FECHA_CADUCIDAD"
@@ -317,15 +328,6 @@ Partial Class Add_Muestra
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
-        '
-        'Button1
-        '
-        Me.Button1.ImageSource = "Resources\Images\Menu\64\chemistry .png"
-        Me.Button1.Location = New System.Drawing.Point(351, 485)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(131, 27)
-        Me.Button1.TabIndex = 31
-        Me.Button1.Text = "Nueva Muestra"
         '
         'Add_Muestra
         '
