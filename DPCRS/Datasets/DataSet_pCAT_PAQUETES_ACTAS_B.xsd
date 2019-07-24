@@ -25,11 +25,8 @@
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="CVE_OPERADOR" DataSetColumn="CVE_OPERADOR" />
               <Mapping SourceColumn="CVE_PAQUETE" DataSetColumn="CVE_PAQUETE" />
               <Mapping SourceColumn="FECHA_EXPEDICION" DataSetColumn="FECHA_EXPEDICION" />
-              <Mapping SourceColumn="FECHA_DICTAMINADO" DataSetColumn="FECHA_DICTAMINADO" />
-              <Mapping SourceColumn="FECHA_RETORNO" DataSetColumn="FECHA_RETORNO" />
               <Mapping SourceColumn="HABILITADO" DataSetColumn="HABILITADO" />
               <Mapping SourceColumn="JURISDICCION" DataSetColumn="JURISDICCION" />
               <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
@@ -48,23 +45,20 @@
         <xs:element name="pCAT_PAQUETES_ACTAS_B" msprop:Generator_TableClassName="pCAT_PAQUETES_ACTAS_BDataTable" msprop:Generator_TableVarName="tablepCAT_PAQUETES_ACTAS_B" msprop:Generator_TablePropName="pCAT_PAQUETES_ACTAS_B" msprop:Generator_RowDeletingName="pCAT_PAQUETES_ACTAS_BRowDeleting" msprop:Generator_RowChangingName="pCAT_PAQUETES_ACTAS_BRowChanging" msprop:Generator_RowEvHandlerName="pCAT_PAQUETES_ACTAS_BRowChangeEventHandler" msprop:Generator_RowDeletedName="pCAT_PAQUETES_ACTAS_BRowDeleted" msprop:Generator_UserTableName="pCAT_PAQUETES_ACTAS_B" msprop:Generator_RowChangedName="pCAT_PAQUETES_ACTAS_BRowChanged" msprop:Generator_RowEvArgName="pCAT_PAQUETES_ACTAS_BRowChangeEvent" msprop:Generator_RowClassName="pCAT_PAQUETES_ACTAS_BRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CVE_OPERADOR" msprop:Generator_ColumnVarNameInTable="columnCVE_OPERADOR" msprop:Generator_ColumnPropNameInRow="CVE_OPERADOR" msprop:Generator_ColumnPropNameInTable="CVE_OPERADORColumn" msprop:Generator_UserColumnName="CVE_OPERADOR" type="xs:int" minOccurs="0" />
               <xs:element name="CVE_PAQUETE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCVE_PAQUETE" msprop:Generator_ColumnPropNameInRow="CVE_PAQUETE" msprop:Generator_ColumnPropNameInTable="CVE_PAQUETEColumn" msprop:Generator_UserColumnName="CVE_PAQUETE" type="xs:int" />
               <xs:element name="FECHA_EXPEDICION" msprop:Generator_ColumnVarNameInTable="columnFECHA_EXPEDICION" msprop:Generator_ColumnPropNameInRow="FECHA_EXPEDICION" msprop:Generator_ColumnPropNameInTable="FECHA_EXPEDICIONColumn" msprop:Generator_UserColumnName="FECHA_EXPEDICION" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="FECHA_DICTAMINADO" msprop:Generator_ColumnVarNameInTable="columnFECHA_DICTAMINADO" msprop:Generator_ColumnPropNameInRow="FECHA_DICTAMINADO" msprop:Generator_ColumnPropNameInTable="FECHA_DICTAMINADOColumn" msprop:Generator_UserColumnName="FECHA_DICTAMINADO" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="FECHA_RETORNO" msprop:Generator_ColumnVarNameInTable="columnFECHA_RETORNO" msprop:Generator_ColumnPropNameInRow="FECHA_RETORNO" msprop:Generator_ColumnPropNameInTable="FECHA_RETORNOColumn" msprop:Generator_UserColumnName="FECHA_RETORNO" type="xs:dateTime" minOccurs="0" />
               <xs:element name="HABILITADO" msprop:Generator_ColumnVarNameInTable="columnHABILITADO" msprop:Generator_ColumnPropNameInRow="HABILITADO" msprop:Generator_ColumnPropNameInTable="HABILITADOColumn" msprop:Generator_UserColumnName="HABILITADO" type="xs:boolean" minOccurs="0" />
               <xs:element name="JURISDICCION" msprop:Generator_ColumnVarNameInTable="columnJURISDICCION" msprop:Generator_ColumnPropNameInRow="JURISDICCION" msprop:Generator_ColumnPropNameInTable="JURISDICCIONColumn" msprop:Generator_UserColumnName="JURISDICCION" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="45" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NOMBRE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="63" />
+                    <xs:maxLength value="68" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

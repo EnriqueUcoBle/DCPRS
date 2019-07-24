@@ -1,0 +1,2138 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DPCRS
+</name>
+</assembly>
+<members>
+<member name="T:DPCRS.DataSetOPERADOR_DATOS">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSetOPERADOR_DATOS.pCAT_OPERADORES_B_DATOSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSetOPERADOR_DATOS.pCAT_OPERADORES_B_DATOSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSetOPERADOR_DATOS.pCAT_OPERADORES_B_DATOSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSetOPERADOR_DATOSTableAdapters.pCAT_OPERADORES_B_DATOSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSetOPERADOR_DATOS,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSetOPERADOR_DATOS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSetOPERADOR_DATOS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSetOPERADOR_DATOS)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSetOPERADOR_DATOSTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1.CAT_ESTABLECIMIENTOS_B1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1.CAT_ESTABLECIMIENTOS_B1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1.CAT_ESTABLECIMIENTOS_B1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.CAT_ESTABLECIMIENTOS_B1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_CAT_ESTABLECIMIENTOS_B1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOS">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOS.pCAT_ESTABLECIMIENTOS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOS.pCAT_ESTABLECIMIENTOS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOS.pCAT_ESTABLECIMIENTOS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.pCAT_ESTABLECIMIENTOS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_ESTABLECIMIENTOS,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_ESTABLECIMIENTOS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_ESTABLECIMIENTOS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_ESTABLECIMIENTOS)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ESTABLECIMIENTOSTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCION">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCION.pCAT_JURISDICCION_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCION.pCAT_JURISDICCION_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCION.pCAT_JURISDICCION_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCIONTableAdapters.pCAT_JURISDICCION_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_JURIDICCION,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_JURIDICCION,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_JURIDICCION,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_JURIDICCION)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURIDICCIONTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_B.JURISDICCION_COLONIA_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_B.JURISDICCION_COLONIA_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_B.JURISDICCION_COLONIA_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.JURISDICCION_COLONIA_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_JURISDICCION_COLONIA_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_JURISDICCION_COLONIA_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_JURISDICCION_COLONIA_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_JURISDICCION_COLONIA_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_JURISDICCION_COLONIA_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B.pACTAS_VERIFICACION_LOTES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B.pACTAS_VERIFICACION_LOTES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B.pACTAS_VERIFICACION_LOTES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.pACTAS_VERIFICACION_LOTES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pACTAS_VERIFICACION_LOTES_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B.pCAT_ACTAS_VERIFICACION_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B.pCAT_ACTAS_VERIFICACION_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B.pCAT_ACTAS_VERIFICACION_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.pCAT_ACTAS_VERIFICACION_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.pCAT_ACTAS_VERIFICACION_TEST_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.pCAT_ACTAS_VERIFICACION_TEST_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.pCAT_ACTAS_VERIFICACION_TEST_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.pCAT_ACTAS_VERIFICACION_TEST_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_TEST_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_B.pCAT_CLAVES_SCIAN_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_B.pCAT_CLAVES_SCIAN_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_B.pCAT_CLAVES_SCIAN_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.pCAT_CLAVES_SCIAN_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_CLAVES_SCIAN_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_CLAVES_SCIAN_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_CLAVES_SCIAN_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_CLAVES_SCIAN_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_CLAVES_SCIAN_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_B.pCAT_ESTADOS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_B.pCAT_ESTADOS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_B.pCAT_ESTADOS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.pCAT_ESTADOS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_ESTADOS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_ESTADOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_ESTADOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_ESTADOS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTADOS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_B.pCAT_ESTUDIOS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_B.pCAT_ESTUDIOS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_B.pCAT_ESTUDIOS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.pCAT_ESTUDIOS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_ESTUDIOS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_ESTUDIOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_ESTUDIOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_ESTUDIOS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B.pCAT_ESTUDIOS_SUB_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B.pCAT_ESTUDIOS_SUB_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B.pCAT_ESTUDIOS_SUB_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.pCAT_ESTUDIOS_SUB_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_ESTUDIOS_SUB_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ESTUDIOS_SUB_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_B.pCAT_GIROS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_B.pCAT_GIROS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_B.pCAT_GIROS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.pCAT_GIROS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_GIROS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_GIROS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_GIROS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_GIROS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_GIROS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B.pCAT_IMPRIMIR_LOTES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B.pCAT_IMPRIMIR_LOTES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B.pCAT_IMPRIMIR_LOTES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.pCAT_IMPRIMIR_LOTES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_IMPRIMIR_LOTES_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_B.pCAT_LABORATORIOS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_B.pCAT_LABORATORIOS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_B.pCAT_LABORATORIOS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.pCAT_LABORATORIOS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_LABORATORIOS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_LABORATORIOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_LABORATORIOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_LABORATORIOS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LABORATORIOS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION.pCAT_VERIFICACION_LOTES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION.pCAT_VERIFICACION_LOTES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION.pCAT_VERIFICACION_LOTES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.pCAT_VERIFICACION_LOTES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACION)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_LOTE_ACTAS_VERIFICACIONTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_.pCAT_MUNICIPIOS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_.pCAT_MUNICIPIOS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_.pCAT_MUNICIPIOS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.pCAT_MUNICIPIOS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_MUNICIPIOS_B_,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_MUNICIPIOS_B_,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_MUNICIPIOS_B_,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_MUNICIPIOS_B_)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_MUNICIPIOS_B_TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_B.pCAT_OPERADORES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_B.pCAT_OPERADORES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_B.pCAT_OPERADORES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.pCAT_OPERADORES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_OPERADORES_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_OPERADORES_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_OPERADORES_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_OPERADORES_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_OPERADORES_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B.pCAT_ORDENES_VERIFICACION_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B.pCAT_ORDENES_VERIFICACION_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B.pCAT_ORDENES_VERIFICACION_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.pCAT_ORDENES_VERIFICACION_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ORDENES_VERIFICACION_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B.pCAT_PAQUETES_ACTAS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B.pCAT_PAQUETES_ACTAS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B.pCAT_PAQUETES_ACTAS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.pCAT_PAQUETES_ACTAS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_P">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_P.pCAT_QUEJAS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_P.pCAT_QUEJAS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_P.pCAT_QUEJAS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.pCAT_QUEJAS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_QUEJAS_P,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_QUEJAS_P,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_QUEJAS_P,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_QUEJAS_P)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_QUEJAS_PTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_B.pCAT_ROL_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_B.pCAT_ROL_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_B.pCAT_ROL_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_BTableAdapters.pCAT_ROL_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_ROL_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_ROL_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_ROL_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_ROL_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_ROL_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B.pCAT_TIPO_MUESTRAS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B.pCAT_TIPO_MUESTRAS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B.pCAT_TIPO_MUESTRAS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.pCAT_TIPO_MUESTRAS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_TIPO_MUESTRAS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_TIPO_MUESTRAS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1.pCAT_VERIFICACION_LOTES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1.pCAT_VERIFICACION_LOTES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1.pCAT_VERIFICACION_LOTES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1TableAdapters.pCAT_VERIFICACION_LOTES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet1TableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1.pCAT_VERIFICACION_LOTES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1.pCAT_VERIFICACION_LOTES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1.pCAT_VERIFICACION_LOTES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.pCAT_VERIFICACION_LOTES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pCAT_VERIFICACION_LOTES_B_1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_B.pDICTAMENES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_B.pDICTAMENES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_B.pDICTAMENES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_BTableAdapters.pDICTAMENES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pDICTAMEN_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pDICTAMEN_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pDICTAMEN_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pDICTAMEN_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pDICTAMEN_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_B.pERROR_SISTEMA_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_B.pERROR_SISTEMA_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_B.pERROR_SISTEMA_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.pERROR_SISTEMA_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pERROR_SISTEMA_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pERROR_SISTEMA_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pERROR_SISTEMA_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pERROR_SISTEMA_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pERROR_SISTEMA_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.pORDEN_VERIFICACION_ESTUDIOS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.pORDEN_VERIFICACION_ESTUDIOS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.pORDEN_VERIFICACION_ESTUDIOS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.pORDEN_VERIFICACION_ESTUDIOS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pORDEN_VERIFICACION_ESTUDIOS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_B">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_B.pPARAMETROS_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_B.pPARAMETROS_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_B.pPARAMETROS_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_BTableAdapters.pPARAMETROS_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_pPARAMETROS_B,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_pPARAMETROS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_pPARAMETROS_B,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_pPARAMETROS_B)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_pPARAMETROS_BTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexion">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexion.pCAT_SESSIONES_BDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexion.pCAT_SESSIONES_BRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexion.pCAT_SESSIONES_BRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexionTableAdapters.pCAT_SESSIONES_BTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager.UpdateUpdatedRows(DPCRS.DataSet_ultima_conexion,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager.UpdateInsertedRows(DPCRS.DataSet_ultima_conexion,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager.UpdateDeletedRows(DPCRS.DataSet_ultima_conexion,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager.UpdateAll(DPCRS.DataSet_ultima_conexion)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:DPCRS.DataSet_ultima_conexionTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="F:DPCRS.Capturar_Resultados._Head1">
+<summary>
+Head1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DPCRS.Capturar_Resultados._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DPCRS.Capturar_Resultados._ASPxGridView1">
+<summary>
+ASPxGridView1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DPCRS.Capturar_Resultados._SqlDataSource1">
+<summary>
+SqlDataSource1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DPCRS.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DPCRS.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DPCRS.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:DPCRS.My.Resources.Resources.pencil_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:DPCRS.My.Resources.Resources.trash_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="F:DPCRS.ReportView._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DPCRS.ReportView._ASPxDocumentViewer1">
+<summary>
+ASPxDocumentViewer1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:DPCRS.dllData.Configurar_Grid_Captura_Cuentas(Wisej.Web.DataGridView,Wisej.Web.BindingSource)">
+ <summary>
+ Funcion para obtener algunas configuraciones del sistema :-)
+ </summary>
+ <param name="sModulo">obtiene resultado segun el valor del parametro esperado</param>
+ <returns>Regresa un Dato tipo Object </returns>
+</member>
+<member name="M:DPCRS.dllData.fGuardar_proyectos_Almacen(System.String,System.String,System.Int32,System.String,System.String)">
+ <summary>
+ Esta funcion se utiliza para poder guardar los proyectos de los diferentes  movimientos en el almacen. 
+ </summary>
+ <param name="sCve_Proyecto">Clave del proyecto</param>
+ <param name="sOrigen">Origen del proyecto</param>
+ <param name="nAno_Ejercicio">año de ejercicio del Proyecto </param>
+ <param name="sFolio_Movimiento">Folio del Movimiento puede ser el folio de la Entrada, Salida, Cancelacion Entrada y Cancelacion Salida</param>
+ <returns>retorna un valor booleano </returns>
+ <remarks></remarks>
+ 
+</member>
+<member name="M:DPCRS.dllData.LlenarGridXDataset(System.String,System.Data.DataSet,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+ <summary>
+ Funcion que carga un dataset ligado al reporte.
+ </summary>
+ <param name="sProcedureName">sprocedure name con parametros del swhere.</param>
+ <param name="DaSet">Instancia del dataset ligado al reporte </param>
+ <param name="cParams"> Parametros adicionales para agregar al dataset</param>
+ <param name="bEsText"> true para  GridX.SelectCommand.CommandType = CommandType.Text </param>
+ <param name="bMostrarMensaje">true para Mostrar si existe algun error</param>
+</member>
+<member name="M:DPCRS.dllData.Mes_A_Numero(System.String)">
+ <summary>
+ Devuelve el represantativo del mes en entero
+ </summary>
+ <returns>returna -1 si no se puede parsear el mes</returns>
+</member>
+<member name="M:DPCRS.dllData.filtrarGrilla(System.String,System.String,System.Data.DataTable,Wisej.Web.DataGridView,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Aplica un filtro (Where) a una tabla y/o grilla
+ </summary>
+ <param name="columna">El nombre de la columna de la tabla.</param>
+ <param name="valor">El valor del filtro.</param>
+ <param name="tabla">Tabla o tabla del dataset.</param>
+ <param name="grilla">DataGridView.</param>
+ <param name="filtrarVacios">Si desea permitir que los filtrar columnas cuando estén vacias.</param>
+ <param name="isLike">Si desea permitir que los filtrar columnas cuando estén vacias.</param>
+ <remarks></remarks>
+</member>
+<member name="M:DPCRS.dllData.rellenar(System.String,System.Int32,System.Boolean)">
+ <summary>
+ Devuelve sólo los numeros de de una cadena de texto
+ </summary>
+ <param name="texto">El texto a filtrar.</param>
+ <param name="decimales">La cantidad de decimales que debe tener.</param>
+ <param name="negativo">Si permite devolver valor negativo.</param>
+ <remarks></remarks>
+</member>
+<member name="M:DPCRS.dllData.Export_To_sFiltro(Wisej.Web.Form,System.String,System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+ <summary>
+ Sirve para exportar datos con los filtros de filtrogrillasax 
+ </summary>
+<param name="Formx">Formulario de Gizmox es Me</param>
+ <param name="sProcedure">Se obtiene desde filtrogrillaSax propiedad meSprocedure </param>
+ <param name="sWhere">Se obtiene desde filtrogrillaSax propiedad me_sWhere</param>
+ <param name="sFormato">Excel</param>
+ <param name="Parameters">Parametro que sirve para agregar los filtros mandados en un Load o un Cargar por SqlClient.SqlDataAdapter </param>
+</member>
+<member name="M:DPCRS.dllData.iniciar_sesion(System.String,System.String)">
+ <summary>
+ Función para inicio de sesión.
+ </summary>
+ <param name="scve_operador"></param>
+ <param name="ssistema"></param>
+ <param name="name"></param>
+ <remarks></remarks>
+</member>
+<member name="M:DPCRS.dllData.existData(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Este método devuelve Verdadero cuando un folio existe
+ </summary>
+ <param name="sProcedureName">Especificar el nombre del procedimiento</param>
+ <param name="sParametro">El nombre del parametro que se busca en el procedimiento</param>
+ <param name="sData">El valor del dato a buscar que se pasa al procedimiento</param>
+ <param name="sReturn">El valor que devuelve la función. Es opcional y su valor por defecto es @PARAMETRO</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:DPCRS.dllData.ReportsMargins(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="sProcedureName">Nombre del procedimiento almacenado para ejecutar en la Base de Datos</param>
+ <param name="sParametro"> Parametro 1 para el procedimiento</param>
+ <param name="sData">Dato o valor del parametro 1</param>
+ <param name="sReturn">campo que retorna la funcion </param>
+ <param name="sParametro2"> Parametro 2 para el procedimiento</param>
+ <param name="sDataxx">Dato o valor del parametro 2</param>
+ <returns></returns>
+</member>
+</members>
+</doc>

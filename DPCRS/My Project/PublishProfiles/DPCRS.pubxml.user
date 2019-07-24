@@ -5,7 +5,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>C:\DCPRS</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\XDXD</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/de/DevExpress.Charts.Designer.v17.2.resources.dll">
@@ -879,22 +879,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/11/2019 14:44:02</publishTime>
     </File>
     <File Include="bin/DPCRS.dll">
-      <publishTime>07/19/2019 14:42:31</publishTime>
+      <publishTime>07/24/2019 11:31:46</publishTime>
     </File>
     <File Include="bin/DPCRS.dll.config">
       <publishTime>07/12/2019 15:52:02</publishTime>
     </File>
     <File Include="bin/DPCRS.pdb">
-      <publishTime>07/19/2019 14:42:31</publishTime>
+      <publishTime>07/24/2019 11:31:46</publishTime>
     </File>
     <File Include="bin/DPCRS.xml">
-      <publishTime>07/19/2019 14:42:31</publishTime>
+      <publishTime>07/24/2019 11:31:45</publishTime>
     </File>
     <File Include="bin/EnvDTE.dll">
       <publishTime>10/22/2009 19:51:18</publishTime>
     </File>
     <File Include="bin/es-MX/DPCRS.resources.dll">
-      <publishTime>07/19/2019 14:42:31</publishTime>
+      <publishTime>07/24/2019 11:31:46</publishTime>
     </File>
     <File Include="bin/es/DevExpress.Charts.Designer.v17.2.resources.dll">
       <publishTime>04/11/2019 14:43:18</publishTime>
@@ -1404,7 +1404,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2015 20:31:16</publishTime>
     </File>
     <File Include="bin/Microsoft.VisualStudio.VSHelp.dll">
-      <publishTime>11/19/2015 20:31:16</publishTime>
+      <publishTime>07/23/2019 16:22:59</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>04/11/2019 15:17:58</publishTime>
@@ -1521,7 +1521,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/11/2019 14:44:02</publishTime>
     </File>
     <File Include="bin/stdole.dll">
-      <publishTime>07/07/2015 00:51:38</publishTime>
+      <publishTime>07/23/2019 16:22:59</publishTime>
     </File>
     <File Include="bin/System.Drawing.dll">
       <publishTime>06/19/2015 23:14:56</publishTime>
@@ -4251,7 +4251,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/26/2019 14:49:41</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/12/2019 15:57:34</publishTime>
+      <publishTime>07/24/2019 11:31:50</publishTime>
     </File>
   </ItemGroup>
 </Project>

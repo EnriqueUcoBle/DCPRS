@@ -22,8 +22,9 @@ Partial Class Cat_juridicciones_get
     'Do not modify it using the code editor.
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Panel1 As Wisej.Web.Panel
-        Me.CheckBoxHABILITADO = New Wisej.Web.CheckBox()
+        Me.Panel1 = New Wisej.Web.Panel()
+        Me.Label7 = New Wisej.Web.Label()
+        Me.NOMBRE = New Wisej.Web.TextBox()
         Me.Label6 = New Wisej.Web.Label()
         Me.TextBoxCP = New Wisej.Web.TextBox()
         Me.Label5 = New Wisej.Web.Label()
@@ -40,14 +41,12 @@ Partial Class Cat_juridicciones_get
         Me.RibbonBarPage1 = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
         Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
         Me.RRBnuevo = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.RRBcancelar = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RRBguardar = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RRBactualizar = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RRBsalir = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.ErrorProvider1 = New Wisej.Web.ErrorProvider(Me.components)
         Me.DataSetJURIDICCIONBindingSource = New Wisej.Web.BindingSource(Me.components)
         Me.DataSet_JURIDICCION = New DPCRS.DataSet_JURIDICCION()
-        Me.FiltroGrillaSax1 = New DPCRS.filtroGrillaSax()
         Me.DataGridView1 = New Wisej.Web.DataGridView()
         Me.colJURISDICCION = New Wisej.Web.DataGridViewTextBoxColumn()
         Me.colASENTAMIENTO = New Wisej.Web.DataGridViewTextBoxColumn()
@@ -68,11 +67,10 @@ Partial Class Cat_juridicciones_get
         Me.buttonMoveLast = New Wisej.Web.Button()
         Me.separatorControl = New Wisej.Web.Line()
         Me.buttonDelete = New Wisej.Web.Button()
-        Me.NOMBRE = New Wisej.Web.TextBox()
-        Me.Label7 = New Wisej.Web.Label()
         Me.CVE = New Wisej.Web.TextBox()
-        Panel1 = New Wisej.Web.Panel()
-        Panel1.SuspendLayout()
+        Me.FiltroGrillaSax1 = New DPCRS.filtroGrillaSax()
+        Me.habilitado = New Wisej.Web.CheckBox()
+        Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetJURIDICCIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_JURIDICCION, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,35 +82,43 @@ Partial Class Cat_juridicciones_get
         '
         'Panel1
         '
-        Panel1.Controls.Add(Me.Label7)
-        Panel1.Controls.Add(Me.NOMBRE)
-        Panel1.Controls.Add(Me.CheckBoxHABILITADO)
-        Panel1.Controls.Add(Me.Label6)
-        Panel1.Controls.Add(Me.TextBoxCP)
-        Panel1.Controls.Add(Me.Label5)
-        Panel1.Controls.Add(Me.Label4)
-        Panel1.Controls.Add(Me.Label3)
-        Panel1.Controls.Add(Me.Label2)
-        Panel1.Controls.Add(Me.Label1)
-        Panel1.Controls.Add(Me.TextBoxTELEFONO)
-        Panel1.Controls.Add(Me.TextBoxCLAVE)
-        Panel1.Controls.Add(Me.TextBoxDIRECCION)
-        Panel1.Controls.Add(Me.ComboBoxCOLONIA)
-        Panel1.Controls.Add(Me.ComboBoxMUNICIPIO)
-        Panel1.Location = New System.Drawing.Point(4, 109)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New System.Drawing.Size(1129, 104)
-        Panel1.TabIndex = 17
+        Me.Panel1.Controls.Add(Me.habilitado)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.NOMBRE)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.TextBoxCP)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.TextBoxTELEFONO)
+        Me.Panel1.Controls.Add(Me.TextBoxCLAVE)
+        Me.Panel1.Controls.Add(Me.TextBoxDIRECCION)
+        Me.Panel1.Controls.Add(Me.ComboBoxCOLONIA)
+        Me.Panel1.Controls.Add(Me.ComboBoxMUNICIPIO)
+        Me.Panel1.Location = New System.Drawing.Point(4, 109)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1129, 114)
+        Me.Panel1.TabIndex = 17
+        Me.Panel1.Visible = False
         '
-        'CheckBoxHABILITADO
+        'Label7
         '
-        Me.CheckBoxHABILITADO.AutoSize = False
-        Me.CheckBoxHABILITADO.Location = New System.Drawing.Point(737, 74)
-        Me.CheckBoxHABILITADO.Name = "CheckBoxHABILITADO"
-        Me.CheckBoxHABILITADO.ReadOnly = True
-        Me.CheckBoxHABILITADO.Size = New System.Drawing.Size(225, 23)
-        Me.CheckBoxHABILITADO.TabIndex = 12
-        Me.CheckBoxHABILITADO.Text = "Disponible (habilitado)"
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("default, Arial Black", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label7.Location = New System.Drawing.Point(313, 13)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(61, 16)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Nombre:"
+        '
+        'NOMBRE
+        '
+        Me.NOMBRE.Location = New System.Drawing.Point(407, 11)
+        Me.NOMBRE.Name = "NOMBRE"
+        Me.NOMBRE.Size = New System.Drawing.Size(238, 22)
+        Me.NOMBRE.TabIndex = 10
         '
         'Label6
         '
@@ -128,7 +134,6 @@ Partial Class Cat_juridicciones_get
         '
         Me.TextBoxCP.Location = New System.Drawing.Point(113, 78)
         Me.TextBoxCP.Name = "TextBoxCP"
-        Me.TextBoxCP.ReadOnly = True
         Me.TextBoxCP.Size = New System.Drawing.Size(163, 22)
         Me.TextBoxCP.TabIndex = 10
         '
@@ -136,7 +141,7 @@ Partial Class Cat_juridicciones_get
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("default, Arial Black", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label5.Location = New System.Drawing.Point(640, 49)
+        Me.Label5.Location = New System.Drawing.Point(671, 50)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(66, 16)
         Me.Label5.TabIndex = 9
@@ -146,7 +151,7 @@ Partial Class Cat_juridicciones_get
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("default, Arial Black", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label4.Location = New System.Drawing.Point(640, 13)
+        Me.Label4.Location = New System.Drawing.Point(671, 14)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(47, 16)
         Me.Label4.TabIndex = 8
@@ -156,7 +161,7 @@ Partial Class Cat_juridicciones_get
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("default, Arial Black", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label3.Location = New System.Drawing.Point(282, 48)
+        Me.Label3.Location = New System.Drawing.Point(313, 49)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(70, 16)
         Me.Label3.TabIndex = 7
@@ -184,26 +189,23 @@ Partial Class Cat_juridicciones_get
         '
         'TextBoxTELEFONO
         '
-        Me.TextBoxTELEFONO.Location = New System.Drawing.Point(737, 46)
+        Me.TextBoxTELEFONO.Location = New System.Drawing.Point(768, 47)
         Me.TextBoxTELEFONO.Name = "TextBoxTELEFONO"
-        Me.TextBoxTELEFONO.ReadOnly = True
         Me.TextBoxTELEFONO.Size = New System.Drawing.Size(157, 22)
         Me.TextBoxTELEFONO.TabIndex = 4
         '
         'TextBoxCLAVE
         '
-        Me.TextBoxCLAVE.Location = New System.Drawing.Point(737, 10)
+        Me.TextBoxCLAVE.Location = New System.Drawing.Point(768, 11)
         Me.TextBoxCLAVE.Name = "TextBoxCLAVE"
-        Me.TextBoxCLAVE.ReadOnly = True
         Me.TextBoxCLAVE.Size = New System.Drawing.Size(157, 22)
         Me.TextBoxCLAVE.TabIndex = 3
         '
         'TextBoxDIRECCION
         '
-        Me.TextBoxDIRECCION.Location = New System.Drawing.Point(376, 35)
+        Me.TextBoxDIRECCION.Location = New System.Drawing.Point(407, 36)
         Me.TextBoxDIRECCION.Multiline = True
         Me.TextBoxDIRECCION.Name = "TextBoxDIRECCION"
-        Me.TextBoxDIRECCION.ReadOnly = True
         Me.TextBoxDIRECCION.Size = New System.Drawing.Size(238, 62)
         Me.TextBoxDIRECCION.TabIndex = 2
         '
@@ -211,7 +213,6 @@ Partial Class Cat_juridicciones_get
         '
         Me.ComboBoxCOLONIA.Location = New System.Drawing.Point(113, 44)
         Me.ComboBoxCOLONIA.Name = "ComboBoxCOLONIA"
-        Me.ComboBoxCOLONIA.ReadOnly = True
         Me.ComboBoxCOLONIA.Size = New System.Drawing.Size(163, 22)
         Me.ComboBoxCOLONIA.TabIndex = 1
         '
@@ -220,7 +221,6 @@ Partial Class Cat_juridicciones_get
         Me.ComboBoxMUNICIPIO.Items.AddRange(New Object() {"Balancán", "Cárdenas", "Centla", "Centro", "Comalcalco", "Cunduacán", "Emiliano Zapata", "Huimanguillo", "Jalapa", "Jalpa de Méndez", "Jonuta", "Macuspana", "Nacajuca", "Paraíso", "Tacotalpa", "Teapa", "Tenosique"})
         Me.ComboBoxMUNICIPIO.Location = New System.Drawing.Point(113, 9)
         Me.ComboBoxMUNICIPIO.Name = "ComboBoxMUNICIPIO"
-        Me.ComboBoxMUNICIPIO.ReadOnly = True
         Me.ComboBoxMUNICIPIO.Size = New System.Drawing.Size(163, 22)
         Me.ComboBoxMUNICIPIO.TabIndex = 0
         '
@@ -240,26 +240,19 @@ Partial Class Cat_juridicciones_get
         'RibbonBarGroup1
         '
         Me.RibbonBarGroup1.Items.Add(Me.RRBnuevo)
-        Me.RibbonBarGroup1.Items.Add(Me.RRBcancelar)
         Me.RibbonBarGroup1.Items.Add(Me.RRBguardar)
         Me.RibbonBarGroup1.Items.Add(Me.RRBactualizar)
         Me.RibbonBarGroup1.Items.Add(Me.RRBsalir)
         '
         'RRBnuevo
         '
-        Me.RRBnuevo.ImageSource = "Resources\Icons\Menu\add.png"
+        Me.RRBnuevo.ImageSource = "Resources\Icons\Menu\add-file.png"
         Me.RRBnuevo.Name = "RRBnuevo"
         Me.RRBnuevo.Text = "Nuevo"
         '
-        'RRBcancelar
-        '
-        Me.RRBcancelar.ImageSource = "Resources\Icons\Menu\error_blue.png"
-        Me.RRBcancelar.Name = "RRBcancelar"
-        Me.RRBcancelar.Text = "Cancelar"
-        '
         'RRBguardar
         '
-        Me.RRBguardar.ImageSource = "Resources\Icons\Menu\add-file.png"
+        Me.RRBguardar.ImageSource = "Resources\Icons\Menu\save.png"
         Me.RRBguardar.Name = "RRBguardar"
         Me.RRBguardar.Text = "Guardar"
         Me.RRBguardar.Visible = False
@@ -290,23 +283,6 @@ Partial Class Cat_juridicciones_get
         '
         Me.DataSet_JURIDICCION.DataSetName = "DataSet_JURIDICCION"
         Me.DataSet_JURIDICCION.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'FiltroGrillaSax1
-        '
-        Me.FiltroGrillaSax1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink
-        Me.FiltroGrillaSax1.BackColor = System.Drawing.Color.Transparent
-        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(3, 219)
-        Me.FiltroGrillaSax1.meBackcolorEtiquetas = System.Drawing.Color.AliceBlue
-        Me.FiltroGrillaSax1.meBorderStyleEtiquetas = Wisej.Web.BorderStyle.Solid
-        Me.FiltroGrillaSax1.meBorderWidthEtiquetas = 1
-        Me.FiltroGrillaSax1.meDatagrid = Nothing
-        Me.FiltroGrillaSax1.meFiltrarVacios = False
-        Me.FiltroGrillaSax1.meLanzarException = False
-        Me.FiltroGrillaSax1.meMarginEtiquetas = New Wisej.Web.Padding(1)
-        Me.FiltroGrillaSax1.mePaddingEtiquetas = New Wisej.Web.Padding(2)
-        Me.FiltroGrillaSax1.Name = "FiltroGrillaSax1"
-        Me.FiltroGrillaSax1.Size = New System.Drawing.Size(1124, 37)
-        Me.FiltroGrillaSax1.TabIndex = 15
         '
         'DataGridView1
         '
@@ -482,29 +458,42 @@ Partial Class Cat_juridicciones_get
         Me.buttonDelete.Size = New System.Drawing.Size(37, 28)
         Me.buttonDelete.TabIndex = 5
         '
-        'NOMBRE
-        '
-        Me.NOMBRE.Location = New System.Drawing.Point(376, 10)
-        Me.NOMBRE.Name = "NOMBRE"
-        Me.NOMBRE.Size = New System.Drawing.Size(238, 22)
-        Me.NOMBRE.TabIndex = 10
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("default, Arial Black", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label7.Location = New System.Drawing.Point(282, 12)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(61, 16)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Nombre:"
-        '
         'CVE
         '
         Me.CVE.Location = New System.Drawing.Point(443, 49)
         Me.CVE.Name = "CVE"
-        Me.CVE.Size = New System.Drawing.Size(100, 22)
+        Me.CVE.Size = New System.Drawing.Size(11, 22)
         Me.CVE.TabIndex = 15
+        Me.CVE.Visible = False
+        '
+        'FiltroGrillaSax1
+        '
+        Me.FiltroGrillaSax1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink
+        Me.FiltroGrillaSax1.BackColor = System.Drawing.Color.Transparent
+        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(3, 219)
+        Me.FiltroGrillaSax1.meBackcolorEtiquetas = System.Drawing.Color.AliceBlue
+        Me.FiltroGrillaSax1.meBorderStyleEtiquetas = Wisej.Web.BorderStyle.Solid
+        Me.FiltroGrillaSax1.meBorderWidthEtiquetas = 1
+        Me.FiltroGrillaSax1.meDatagrid = Nothing
+        Me.FiltroGrillaSax1.meFiltrarVacios = False
+        Me.FiltroGrillaSax1.meLanzarException = False
+        Me.FiltroGrillaSax1.meMarginEtiquetas = New Wisej.Web.Padding(1)
+        Me.FiltroGrillaSax1.mePaddingEtiquetas = New Wisej.Web.Padding(2)
+        Me.FiltroGrillaSax1.Name = "FiltroGrillaSax1"
+        Me.FiltroGrillaSax1.Size = New System.Drawing.Size(1124, 37)
+        Me.FiltroGrillaSax1.TabIndex = 15
+        '
+        'habilitado
+        '
+        Me.habilitado.AutoSize = False
+        Me.habilitado.Checked = True
+        Me.habilitado.CheckState = CType(Wisej.Web.CheckState.Checked, Wisej.Web.CheckState)
+        Me.habilitado.Location = New System.Drawing.Point(768, 81)
+        Me.habilitado.Name = "habilitado"
+        Me.habilitado.Size = New System.Drawing.Size(157, 22)
+        Me.habilitado.TabIndex = 15
+        Me.habilitado.Text = "Activo (en servicio)"
+        Me.habilitado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Cat_juridicciones_get
         '
@@ -513,14 +502,14 @@ Partial Class Cat_juridicciones_get
         Me.ClientSize = New System.Drawing.Size(1130, 678)
         Me.Controls.Add(Me.CVE)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Panel1)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.FiltroGrillaSax1)
         Me.Controls.Add(Me.RibbonBar1)
         Me.MaximizeBox = False
         Me.Name = "Cat_juridicciones_get"
         Me.Text = "Jurisdicciones"
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetJURIDICCIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet_JURIDICCION, System.ComponentModel.ISupportInitialize).EndInit()
@@ -541,9 +530,7 @@ Partial Class Cat_juridicciones_get
     Friend WithEvents RRBsalir As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents ErrorProvider1 As Wisej.Web.ErrorProvider
     Friend WithEvents RRBguardar As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
-    Friend WithEvents RRBcancelar As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents FiltroGrillaSax1 As filtroGrillaSax
-    Friend WithEvents CheckBoxHABILITADO As Wisej.Web.CheckBox
     Friend WithEvents Label6 As Wisej.Web.Label
     Friend WithEvents TextBoxCP As Wisej.Web.TextBox
     Friend WithEvents Label5 As Wisej.Web.Label
@@ -581,4 +568,6 @@ Partial Class Cat_juridicciones_get
     Friend WithEvents NOMBRE As Wisej.Web.TextBox
     Friend WithEvents Label7 As Wisej.Web.Label
     Friend WithEvents CVE As Wisej.Web.TextBox
+    Friend WithEvents Panel1 As Wisej.Web.Panel
+    Friend WithEvents habilitado As Wisej.Web.CheckBox
 End Class

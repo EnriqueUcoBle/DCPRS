@@ -22,8 +22,12 @@ Partial Class Cat_Lotes
     'Do not modify it using the code editor.
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As Wisej.Web.DataGridViewCellStyle = New Wisej.Web.DataGridViewCellStyle()
         Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
         Me.Menú = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
         Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
@@ -56,20 +60,19 @@ Partial Class Cat_Lotes
         Me.buttonDelete = New Wisej.Web.Button()
         Me.FiltroGrillaSax2 = New DPCRS.filtroGrillaSax()
         Me.DGVLotes = New Wisej.Web.DataGridView()
-        Me.Column0 = New Wisej.Web.DataGridViewImageColumn()
-        Me.Column1 = New Wisej.Web.DataGridViewImageColumn()
-        Me.colCVE_OPERADOR_3 = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.eliminar = New Wisej.Web.DataGridViewColumn()
+        Me.editar = New Wisej.Web.DataGridViewColumn()
         Me.CVE_PAQUETE = New Wisej.Web.DataGridViewTextBoxColumn()
-        Me.colNOMBRE_3 = New Wisej.Web.DataGridViewTextBoxColumn()
-        Me.colFECHA_EXPEDICION_3 = New Wisej.Web.DataGridViewDateTimePickerColumn()
-        Me.colFECHA_DICTAMINADO_3 = New Wisej.Web.DataGridViewDateTimePickerColumn()
-        Me.colFECHA_RETORNO_3 = New Wisej.Web.DataGridViewDateTimePickerColumn()
-        Me.colHABILITADO_3 = New Wisej.Web.DataGridViewCheckBoxColumn()
-        Me.colJURISDICCION_3 = New Wisej.Web.DataGridViewTextBoxColumn()
         Me.colNOMPRE_OPERADOR_3 = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.colFECHA_EXPEDICION_3 = New Wisej.Web.DataGridViewDateTimePickerColumn()
+        Me.colJURISDICCION_3 = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.ver = New Wisej.Web.DataGridViewImageColumn()
+        Me.colHABILITADO_3 = New Wisej.Web.DataGridViewCheckBoxColumn()
         Me.BindingSource1 = New Wisej.Web.BindingSource(Me.components)
         Me.DataSet_pCAT_PAQUETES_ACTAS_B = New DPCRS.DataSet_pCAT_PAQUETES_ACTAS_B()
         Me.DGVActas = New Wisej.Web.DataGridView()
+        Me.Vacta = New Wisej.Web.DataGridViewButtonColumn()
+        Me.Cacta = New Wisej.Web.DataGridViewButtonColumn()
         Me.colCVE_ACTA = New Wisej.Web.DataGridViewTextBoxColumn()
         Me.colFOLIO_ACTA = New Wisej.Web.DataGridViewTextBoxColumn()
         Me.colFOLIO_ORDEN = New Wisej.Web.DataGridViewTextBoxColumn()
@@ -132,8 +135,8 @@ Partial Class Cat_Lotes
         Me.colCVE_OPERADOR_2 = New Wisej.Web.DataGridViewTextBoxColumn()
         Me.PCAT_PAQUETES_ACTAS_BTableAdapter = New DPCRS.DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters.pCAT_PAQUETES_ACTAS_BTableAdapter()
         Me.PCAT_ACTAS_VERIFICACION_BTableAdapter = New DPCRS.DataSet_pCAT_ACTAS_VERIFICACION_BTableAdapters.pCAT_ACTAS_VERIFICACION_BTableAdapter()
-        Me.Vacta = New Wisej.Web.DataGridViewButtonColumn()
-        Me.Cacta = New Wisej.Web.DataGridViewButtonColumn()
+        Me.colCVE_PAQUETE_3 = New Wisej.Web.DataGridViewTextBoxColumn()
+        Me.imprimir = New Wisej.Web.DataGridViewImageColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.BNLotes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BNLotes.SuspendLayout()
@@ -153,7 +156,7 @@ Partial Class Cat_Lotes
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.Menú)
-        Me.RibbonBar1.Size = New System.Drawing.Size(1114, 145)
+        Me.RibbonBar1.Size = New System.Drawing.Size(1088, 114)
         '
         'Menú
         '
@@ -181,8 +184,8 @@ Partial Class Cat_Lotes
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 53.58456!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 46.41544!))
         Me.TableLayoutPanel1.Controls.Add(Me.BNLotes, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.BNActas, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.FiltroGrillaSax2, 0, 0)
@@ -190,13 +193,13 @@ Partial Class Cat_Lotes
         Me.TableLayoutPanel1.Controls.Add(Me.DGVActas, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.FiltroGrillaSax1, 1, 0)
         Me.TableLayoutPanel1.Dock = Wisej.Web.DockStyle.Top
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 145)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 114)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New Wisej.Web.RowStyle(Wisej.Web.SizeType.Absolute, 268.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New Wisej.Web.RowStyle(Wisej.Web.SizeType.Absolute, 514.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New Wisej.Web.RowStyle(Wisej.Web.SizeType.Absolute, 42.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1114, 406)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1088, 636)
         Me.TableLayoutPanel1.TabIndex = 3
         '
         'BNLotes
@@ -216,14 +219,14 @@ Partial Class Cat_Lotes
         Me.BNLotes.CountItem = Me.Label1
         Me.BNLotes.DeleteItem = Me.Button6
         Me.BNLotes.Dock = Wisej.Web.DockStyle.Fill
-        Me.BNLotes.Location = New System.Drawing.Point(3, 367)
+        Me.BNLotes.Location = New System.Drawing.Point(3, 597)
         Me.BNLotes.MoveFirstItem = Me.Button2
         Me.BNLotes.MoveLastItem = Me.Button5
         Me.BNLotes.MoveNextItem = Me.Button4
         Me.BNLotes.MovePreviousItem = Me.Button3
         Me.BNLotes.Name = "BNLotes"
         Me.BNLotes.PositionItem = Me.TextBox1
-        Me.BNLotes.Size = New System.Drawing.Size(551, 36)
+        Me.BNLotes.Size = New System.Drawing.Size(577, 36)
         Me.BNLotes.TabIndex = 7
         '
         'Button1
@@ -333,14 +336,14 @@ Partial Class Cat_Lotes
         Me.BNActas.CountItem = Me.labelCount
         Me.BNActas.DeleteItem = Me.buttonDelete
         Me.BNActas.Dock = Wisej.Web.DockStyle.Fill
-        Me.BNActas.Location = New System.Drawing.Point(560, 367)
+        Me.BNActas.Location = New System.Drawing.Point(586, 597)
         Me.BNActas.MoveFirstItem = Me.buttonMoveFirst
         Me.BNActas.MoveLastItem = Me.buttonMoveLast
         Me.BNActas.MoveNextItem = Me.buttonMoveNext
         Me.BNActas.MovePreviousItem = Me.buttonMovePrevious
         Me.BNActas.Name = "BNActas"
         Me.BNActas.PositionItem = Me.textBoxPosition
-        Me.BNActas.Size = New System.Drawing.Size(551, 36)
+        Me.BNActas.Size = New System.Drawing.Size(499, 36)
         Me.BNActas.TabIndex = 6
         '
         'buttonAddNew
@@ -448,84 +451,42 @@ Partial Class Cat_Lotes
         Me.FiltroGrillaSax2.meMarginEtiquetas = New Wisej.Web.Padding(1)
         Me.FiltroGrillaSax2.mePaddingEtiquetas = New Wisej.Web.Padding(2)
         Me.FiltroGrillaSax2.Name = "FiltroGrillaSax2"
-        Me.FiltroGrillaSax2.Size = New System.Drawing.Size(551, 90)
+        Me.FiltroGrillaSax2.Size = New System.Drawing.Size(577, 74)
         Me.FiltroGrillaSax2.TabIndex = 2
         '
         'DGVLotes
         '
-        Me.DGVLotes.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.Column0, Me.Column1, Me.colCVE_OPERADOR_3, Me.CVE_PAQUETE, Me.colNOMBRE_3, Me.colFECHA_EXPEDICION_3, Me.colFECHA_DICTAMINADO_3, Me.colFECHA_RETORNO_3, Me.colHABILITADO_3, Me.colJURISDICCION_3, Me.colNOMPRE_OPERADOR_3})
+        Me.DGVLotes.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.eliminar, Me.editar, Me.CVE_PAQUETE, Me.colNOMPRE_OPERADOR_3, Me.colFECHA_EXPEDICION_3, Me.colJURISDICCION_3, Me.ver, Me.colHABILITADO_3, Me.colCVE_PAQUETE_3, Me.imprimir})
         Me.DGVLotes.DataSource = Me.BindingSource1
         Me.DGVLotes.Dock = Wisej.Web.DockStyle.Fill
-        Me.DGVLotes.Location = New System.Drawing.Point(3, 99)
+        Me.DGVLotes.Location = New System.Drawing.Point(3, 83)
         Me.DGVLotes.Name = "DGVLotes"
         Me.DGVLotes.ShowColumnVisibilityMenu = False
-        Me.DGVLotes.Size = New System.Drawing.Size(551, 262)
+        Me.DGVLotes.Size = New System.Drawing.Size(577, 508)
         Me.DGVLotes.TabIndex = 0
         '
-        'Column0
+        'eliminar
         '
-        Me.Column0.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.NotSet
-        Me.Column0.Name = "Column0"
-        Me.Column0.Visible = False
+        DataGridViewCellStyle27.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        DataGridViewCellStyle27.BackgroundImageSource = "Resources/Icons/Menu/trash-can.png"
+        Me.eliminar.DefaultCellStyle = DataGridViewCellStyle27
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.Width = 30
         '
-        'Column1
+        'editar
         '
-        Me.Column1.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.NotSet
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
-        '
-        'colCVE_OPERADOR_3
-        '
-        Me.colCVE_OPERADOR_3.DataPropertyName = "CVE_OPERADOR"
-        Me.colCVE_OPERADOR_3.HeaderText = "CVE_OPERADOR"
-        Me.colCVE_OPERADOR_3.Name = "colCVE_OPERADOR_3"
-        Me.colCVE_OPERADOR_3.Visible = False
+        DataGridViewCellStyle28.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        DataGridViewCellStyle28.BackgroundImageSource = "Resources/Icons/Menu/edit-property.png"
+        Me.editar.DefaultCellStyle = DataGridViewCellStyle28
+        Me.editar.Name = "editar"
+        Me.editar.Width = 30
         '
         'CVE_PAQUETE
         '
-        Me.CVE_PAQUETE.DataPropertyName = "CVE_PAQUETE"
-        Me.CVE_PAQUETE.HeaderText = "Clave Paquete"
+        Me.CVE_PAQUETE.DataPropertyName = "NOMBRE"
+        Me.CVE_PAQUETE.HeaderText = "Nombre Clave"
         Me.CVE_PAQUETE.Name = "CVE_PAQUETE"
         Me.CVE_PAQUETE.ReadOnly = True
-        '
-        'colNOMBRE_3
-        '
-        Me.colNOMBRE_3.DataPropertyName = "NOMBRE"
-        Me.colNOMBRE_3.HeaderText = "Nombre"
-        Me.colNOMBRE_3.Name = "colNOMBRE_3"
-        Me.colNOMBRE_3.ReadOnly = True
-        Me.colNOMBRE_3.Visible = False
-        '
-        'colFECHA_EXPEDICION_3
-        '
-        Me.colFECHA_EXPEDICION_3.DataPropertyName = "FECHA_EXPEDICION"
-        Me.colFECHA_EXPEDICION_3.HeaderText = "Fecha Expedicion"
-        Me.colFECHA_EXPEDICION_3.Name = "colFECHA_EXPEDICION_3"
-        '
-        'colFECHA_DICTAMINADO_3
-        '
-        Me.colFECHA_DICTAMINADO_3.DataPropertyName = "FECHA_DICTAMINADO"
-        Me.colFECHA_DICTAMINADO_3.HeaderText = "Fecha Dictaminado"
-        Me.colFECHA_DICTAMINADO_3.Name = "colFECHA_DICTAMINADO_3"
-        '
-        'colFECHA_RETORNO_3
-        '
-        Me.colFECHA_RETORNO_3.DataPropertyName = "FECHA_RETORNO"
-        Me.colFECHA_RETORNO_3.HeaderText = "Fecha Retorno a Jurisdiccion"
-        Me.colFECHA_RETORNO_3.Name = "colFECHA_RETORNO_3"
-        '
-        'colHABILITADO_3
-        '
-        Me.colHABILITADO_3.DataPropertyName = "HABILITADO"
-        Me.colHABILITADO_3.HeaderText = "HABILITADO"
-        Me.colHABILITADO_3.Name = "colHABILITADO_3"
-        Me.colHABILITADO_3.Visible = False
-        '
-        'colJURISDICCION_3
-        '
-        Me.colJURISDICCION_3.DataPropertyName = "JURISDICCION"
-        Me.colJURISDICCION_3.HeaderText = "Jurisdiccion"
-        Me.colJURISDICCION_3.Name = "colJURISDICCION_3"
         '
         'colNOMPRE_OPERADOR_3
         '
@@ -533,6 +494,36 @@ Partial Class Cat_Lotes
         Me.colNOMPRE_OPERADOR_3.HeaderText = "Nombre Operador"
         Me.colNOMPRE_OPERADOR_3.Name = "colNOMPRE_OPERADOR_3"
         Me.colNOMPRE_OPERADOR_3.ReadOnly = True
+        '
+        'colFECHA_EXPEDICION_3
+        '
+        Me.colFECHA_EXPEDICION_3.DataPropertyName = "FECHA_EXPEDICION"
+        Me.colFECHA_EXPEDICION_3.HeaderText = "Fecha Expedicion"
+        Me.colFECHA_EXPEDICION_3.Name = "colFECHA_EXPEDICION_3"
+        '
+        'colJURISDICCION_3
+        '
+        Me.colJURISDICCION_3.DataPropertyName = "JURISDICCION"
+        Me.colJURISDICCION_3.HeaderText = "Jurisdiccion"
+        Me.colJURISDICCION_3.Name = "colJURISDICCION_3"
+        Me.colJURISDICCION_3.ReadOnly = True
+        '
+        'ver
+        '
+        Me.ver.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.NotSet
+        DataGridViewCellStyle29.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.BackgroundImageSource = "Resources/Images/Menu/64/paquete.png"
+        Me.ver.DefaultCellStyle = DataGridViewCellStyle29
+        Me.ver.HeaderText = "Ver Actas"
+        Me.ver.Name = "ver"
+        Me.ver.Width = 30
+        '
+        'colHABILITADO_3
+        '
+        Me.colHABILITADO_3.DataPropertyName = "Habilitado"
+        Me.colHABILITADO_3.HeaderText = "HABILITADO"
+        Me.colHABILITADO_3.Name = "colHABILITADO_3"
+        Me.colHABILITADO_3.Visible = False
         '
         'BindingSource1
         '
@@ -549,11 +540,29 @@ Partial Class Cat_Lotes
         Me.DGVActas.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.Vacta, Me.Cacta, Me.colCVE_ACTA, Me.colFOLIO_ACTA, Me.colFOLIO_ORDEN, Me.colNOM_PROPIETARIO, Me.colRAZON_SOCIAL, Me.colRAZON_SOCIALX, Me.colFECHA_VERIFICACION, Me.colHORA_VERIFICACION, Me.colFECHA_CAPTURA, Me.colFECHA_MODIFICADO, Me.colFECHA_INGRESO_EXPEDIENTE, Me.colPROGRAMA, Me.colFECHA_REPORTE_LSP, Me.colESTATUS, Me.colNOMBRE_TESTIGO_1, Me.colDOMICILIO_TESTIGO_1, Me.colTESTIGO_IDENTIFICACION_1, Me.colNOMBRE_TESTIGO_2, Me.colDOMICILIO_TESTIGO_2, Me.colTESTIGO_IDENTIFICACION_2, Me.colOBESERVACIONES, Me.colMEDIDAS_SEGURIDAD, Me.colFOLIO_ASEGURAMIENTO, Me.colFOLIO_SUSPENCION, Me.colFOLIO_REUBICACION, Me.colDOCUMENTACION, Me.colNUMERO_ANEXOS, Me.colDESCRIBIR, Me.colFIRMADO, Me.colMUNICIPIO})
         Me.DGVActas.DataSource = Me.BindingSource2
         Me.DGVActas.Dock = Wisej.Web.DockStyle.Fill
-        Me.DGVActas.Location = New System.Drawing.Point(560, 99)
+        Me.DGVActas.Location = New System.Drawing.Point(586, 83)
         Me.DGVActas.Name = "DGVActas"
         Me.DGVActas.ShowColumnVisibilityMenu = False
-        Me.DGVActas.Size = New System.Drawing.Size(551, 262)
+        Me.DGVActas.Size = New System.Drawing.Size(499, 508)
         Me.DGVActas.TabIndex = 1
+        '
+        'Vacta
+        '
+        DataGridViewCellStyle25.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.BackgroundImageLayout = Wisej.Web.ImageLayout.Center
+        DataGridViewCellStyle25.BackgroundImageSource = "Resources/Icons/Menu/approval.png"
+        Me.Vacta.DefaultCellStyle = DataGridViewCellStyle25
+        Me.Vacta.Name = "Vacta"
+        Me.Vacta.Width = 30
+        '
+        'Cacta
+        '
+        DataGridViewCellStyle26.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.BackgroundImageLayout = Wisej.Web.ImageLayout.Center
+        DataGridViewCellStyle26.BackgroundImageSource = "Resources/Icons/Menu/undo-retorno-relleno.png"
+        Me.Cacta.DefaultCellStyle = DataGridViewCellStyle26
+        Me.Cacta.Name = "Cacta"
+        Me.Cacta.Width = 30
         '
         'colCVE_ACTA
         '
@@ -632,18 +641,21 @@ Partial Class Cat_Lotes
         Me.colPROGRAMA.DataPropertyName = "PROGRAMA"
         Me.colPROGRAMA.HeaderText = "Programa"
         Me.colPROGRAMA.Name = "colPROGRAMA"
+        Me.colPROGRAMA.Visible = False
         '
         'colFECHA_REPORTE_LSP
         '
         Me.colFECHA_REPORTE_LSP.DataPropertyName = "FECHA_REPORTE_LSP"
         Me.colFECHA_REPORTE_LSP.HeaderText = "Fecha de Reporte LTS"
         Me.colFECHA_REPORTE_LSP.Name = "colFECHA_REPORTE_LSP"
+        Me.colFECHA_REPORTE_LSP.Visible = False
         '
         'colESTATUS
         '
         Me.colESTATUS.DataPropertyName = "ESTATUS"
         Me.colESTATUS.HeaderText = "Estado de Establecimiento"
         Me.colESTATUS.Name = "colESTATUS"
+        Me.colESTATUS.Visible = False
         '
         'colNOMBRE_TESTIGO_1
         '
@@ -713,6 +725,7 @@ Partial Class Cat_Lotes
         Me.colFOLIO_SUSPENCION.DataPropertyName = "FOLIO_SUSPENCION"
         Me.colFOLIO_SUSPENCION.HeaderText = "Folio Suspencion"
         Me.colFOLIO_SUSPENCION.Name = "colFOLIO_SUSPENCION"
+        Me.colFOLIO_SUSPENCION.Visible = False
         '
         'colFOLIO_REUBICACION
         '
@@ -768,7 +781,7 @@ Partial Class Cat_Lotes
         Me.FiltroGrillaSax1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink
         Me.FiltroGrillaSax1.BackColor = System.Drawing.Color.Transparent
         Me.FiltroGrillaSax1.Dock = Wisej.Web.DockStyle.Fill
-        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(560, 3)
+        Me.FiltroGrillaSax1.Location = New System.Drawing.Point(586, 3)
         Me.FiltroGrillaSax1.meBackcolorEtiquetas = System.Drawing.Color.AliceBlue
         Me.FiltroGrillaSax1.meBorderStyleEtiquetas = Wisej.Web.BorderStyle.Solid
         Me.FiltroGrillaSax1.meBorderWidthEtiquetas = 1
@@ -778,7 +791,7 @@ Partial Class Cat_Lotes
         Me.FiltroGrillaSax1.meMarginEtiquetas = New Wisej.Web.Padding(1)
         Me.FiltroGrillaSax1.mePaddingEtiquetas = New Wisej.Web.Padding(2)
         Me.FiltroGrillaSax1.Name = "FiltroGrillaSax1"
-        Me.FiltroGrillaSax1.Size = New System.Drawing.Size(551, 90)
+        Me.FiltroGrillaSax1.Size = New System.Drawing.Size(499, 74)
         Me.FiltroGrillaSax1.TabIndex = 1
         '
         'colNOMPRE_OPERADOR
@@ -963,32 +976,36 @@ Partial Class Cat_Lotes
         '
         Me.PCAT_ACTAS_VERIFICACION_BTableAdapter.ClearBeforeFill = True
         '
-        'Vacta
+        'colCVE_PAQUETE_3
         '
-        DataGridViewCellStyle1.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackgroundImageLayout = Wisej.Web.ImageLayout.Center
-        DataGridViewCellStyle1.BackgroundImageSource = "Resources/Icons/Menu/approval.png"
-        Me.Vacta.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Vacta.Name = "Vacta"
+        Me.colCVE_PAQUETE_3.DataPropertyName = "CVE_PAQUETE"
+        Me.colCVE_PAQUETE_3.HeaderText = "CVE_PAQUETE"
+        Me.colCVE_PAQUETE_3.Name = "colCVE_PAQUETE_3"
+        Me.colCVE_PAQUETE_3.ReadOnly = True
+        Me.colCVE_PAQUETE_3.Visible = False
         '
-        'Cacta
+        'imprimir
         '
-        DataGridViewCellStyle2.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackgroundImageLayout = Wisej.Web.ImageLayout.Center
-        DataGridViewCellStyle2.BackgroundImageSource = "Resources/Icons/Menu/undo-retorno-relleno.png"
-        Me.Cacta.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Cacta.Name = "Cacta"
+        Me.imprimir.CellImageAlignment = Wisej.Web.DataGridViewContentAlignment.NotSet
+        DataGridViewCellStyle30.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter
+        DataGridViewCellStyle30.BackgroundImageSource = "Resources/Images/Menu/64/041-printer .png"
+        Me.imprimir.DefaultCellStyle = DataGridViewCellStyle30
+        Me.imprimir.HeaderText = "imprimir"
+        Me.imprimir.Name = "imprimir"
+        Me.imprimir.Width = 30
         '
         'Cat_Lotes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1114, 554)
+        Me.ClientSize = New System.Drawing.Size(1088, 756)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.RibbonBar1)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(1100, 800)
+        Me.MinimumSize = New System.Drawing.Size(1100, 800)
         Me.Name = "Cat_Lotes"
         Me.Text = "Catálogo Paquetes de Actas"
-        Me.WindowState = Wisej.Web.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.BNLotes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BNLotes.ResumeLayout(False)
@@ -1010,8 +1027,6 @@ Partial Class Cat_Lotes
     Friend WithEvents TableLayoutPanel1 As Wisej.Web.TableLayoutPanel
     Friend WithEvents DGVActas As Wisej.Web.DataGridView
     Friend WithEvents DGVLotes As Wisej.Web.DataGridView
-    Friend WithEvents Column0 As Wisej.Web.DataGridViewImageColumn
-    Friend WithEvents Column1 As Wisej.Web.DataGridViewImageColumn
     Friend WithEvents FiltroGrillaSax2 As filtroGrillaSax
     Friend WithEvents BNLotes As Wisej.Web.BindingNavigator
     Friend WithEvents Button1 As Wisej.Web.Button
@@ -1065,14 +1080,9 @@ Partial Class Cat_Lotes
     Friend WithEvents colCVE_PAQUETE_2 As Wisej.Web.DataGridViewTextBoxColumn
     Friend WithEvents colCVE_OPERADOR_2 As Wisej.Web.DataGridViewTextBoxColumn
     Friend WithEvents DataSet_pCAT_PAQUETES_ACTAS_B As DataSet_pCAT_PAQUETES_ACTAS_B
-    Friend WithEvents colCVE_OPERADOR_3 As Wisej.Web.DataGridViewTextBoxColumn
     Friend WithEvents CVE_PAQUETE As Wisej.Web.DataGridViewTextBoxColumn
     Friend WithEvents colFECHA_EXPEDICION_3 As Wisej.Web.DataGridViewDateTimePickerColumn
-    Friend WithEvents colFECHA_DICTAMINADO_3 As Wisej.Web.DataGridViewDateTimePickerColumn
-    Friend WithEvents colFECHA_RETORNO_3 As Wisej.Web.DataGridViewDateTimePickerColumn
-    Friend WithEvents colHABILITADO_3 As Wisej.Web.DataGridViewCheckBoxColumn
     Friend WithEvents colJURISDICCION_3 As Wisej.Web.DataGridViewTextBoxColumn
-    Friend WithEvents colNOMBRE_3 As Wisej.Web.DataGridViewTextBoxColumn
     Friend WithEvents colNOMPRE_OPERADOR_3 As Wisej.Web.DataGridViewTextBoxColumn
     Friend WithEvents BindingSource1 As Wisej.Web.BindingSource
     Friend WithEvents colCVE_ACTA As Wisej.Web.DataGridViewTextBoxColumn
@@ -1114,4 +1124,10 @@ Partial Class Cat_Lotes
     Friend WithEvents RibbonBarItemButton2 As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents Vacta As Wisej.Web.DataGridViewButtonColumn
     Friend WithEvents Cacta As Wisej.Web.DataGridViewButtonColumn
+    Friend WithEvents ver As Wisej.Web.DataGridViewImageColumn
+    Friend WithEvents eliminar As Wisej.Web.DataGridViewColumn
+    Friend WithEvents editar As Wisej.Web.DataGridViewColumn
+    Friend WithEvents colHABILITADO_3 As Wisej.Web.DataGridViewCheckBoxColumn
+    Friend WithEvents colCVE_PAQUETE_3 As Wisej.Web.DataGridViewTextBoxColumn
+    Friend WithEvents imprimir As Wisej.Web.DataGridViewImageColumn
 End Class

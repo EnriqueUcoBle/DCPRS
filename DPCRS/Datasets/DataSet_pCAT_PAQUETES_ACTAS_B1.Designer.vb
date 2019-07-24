@@ -283,15 +283,9 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
     Partial Public Class pCAT_PAQUETES_ACTAS_BDataTable
         Inherits Global.System.Data.TypedTableBase(Of pCAT_PAQUETES_ACTAS_BRow)
         
-        Private columnCVE_OPERADOR As Global.System.Data.DataColumn
-        
         Private columnCVE_PAQUETE As Global.System.Data.DataColumn
         
         Private columnFECHA_EXPEDICION As Global.System.Data.DataColumn
-        
-        Private columnFECHA_DICTAMINADO As Global.System.Data.DataColumn
-        
-        Private columnFECHA_RETORNO As Global.System.Data.DataColumn
         
         Private columnHABILITADO As Global.System.Data.DataColumn
         
@@ -338,14 +332,6 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property CVE_OPERADORColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCVE_OPERADOR
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property CVE_PAQUETEColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnCVE_PAQUETE
@@ -357,22 +343,6 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
         Public ReadOnly Property FECHA_EXPEDICIONColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnFECHA_EXPEDICION
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property FECHA_DICTAMINADOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnFECHA_DICTAMINADO
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property FECHA_RETORNOColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnFECHA_RETORNO
             End Get
         End Property
         
@@ -445,9 +415,9 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddpCAT_PAQUETES_ACTAS_BRow(ByVal CVE_OPERADOR As Integer, ByVal FECHA_EXPEDICION As Date, ByVal FECHA_DICTAMINADO As Date, ByVal FECHA_RETORNO As Date, ByVal HABILITADO As Boolean, ByVal JURISDICCION As String, ByVal NOMBRE As String, ByVal NOMPRE_OPERADOR As String) As pCAT_PAQUETES_ACTAS_BRow
+        Public Overloads Function AddpCAT_PAQUETES_ACTAS_BRow(ByVal FECHA_EXPEDICION As Date, ByVal HABILITADO As Boolean, ByVal JURISDICCION As String, ByVal NOMBRE As String, ByVal NOMPRE_OPERADOR As String) As pCAT_PAQUETES_ACTAS_BRow
             Dim rowpCAT_PAQUETES_ACTAS_BRow As pCAT_PAQUETES_ACTAS_BRow = CType(Me.NewRow,pCAT_PAQUETES_ACTAS_BRow)
-            Dim columnValuesArray() As Object = New Object() {CVE_OPERADOR, Nothing, FECHA_EXPEDICION, FECHA_DICTAMINADO, FECHA_RETORNO, HABILITADO, JURISDICCION, NOMBRE, NOMPRE_OPERADOR}
+            Dim columnValuesArray() As Object = New Object() {Nothing, FECHA_EXPEDICION, HABILITADO, JURISDICCION, NOMBRE, NOMPRE_OPERADOR}
             rowpCAT_PAQUETES_ACTAS_BRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowpCAT_PAQUETES_ACTAS_BRow)
             Return rowpCAT_PAQUETES_ACTAS_BRow
@@ -476,11 +446,8 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnCVE_OPERADOR = MyBase.Columns("CVE_OPERADOR")
             Me.columnCVE_PAQUETE = MyBase.Columns("CVE_PAQUETE")
             Me.columnFECHA_EXPEDICION = MyBase.Columns("FECHA_EXPEDICION")
-            Me.columnFECHA_DICTAMINADO = MyBase.Columns("FECHA_DICTAMINADO")
-            Me.columnFECHA_RETORNO = MyBase.Columns("FECHA_RETORNO")
             Me.columnHABILITADO = MyBase.Columns("HABILITADO")
             Me.columnJURISDICCION = MyBase.Columns("JURISDICCION")
             Me.columnNOMBRE = MyBase.Columns("NOMBRE")
@@ -490,16 +457,10 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnCVE_OPERADOR = New Global.System.Data.DataColumn("CVE_OPERADOR", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCVE_OPERADOR)
             Me.columnCVE_PAQUETE = New Global.System.Data.DataColumn("CVE_PAQUETE", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCVE_PAQUETE)
             Me.columnFECHA_EXPEDICION = New Global.System.Data.DataColumn("FECHA_EXPEDICION", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFECHA_EXPEDICION)
-            Me.columnFECHA_DICTAMINADO = New Global.System.Data.DataColumn("FECHA_DICTAMINADO", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFECHA_DICTAMINADO)
-            Me.columnFECHA_RETORNO = New Global.System.Data.DataColumn("FECHA_RETORNO", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFECHA_RETORNO)
             Me.columnHABILITADO = New Global.System.Data.DataColumn("HABILITADO", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnHABILITADO)
             Me.columnJURISDICCION = New Global.System.Data.DataColumn("JURISDICCION", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -515,9 +476,9 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
             Me.columnCVE_PAQUETE.AllowDBNull = false
             Me.columnCVE_PAQUETE.ReadOnly = true
             Me.columnCVE_PAQUETE.Unique = true
-            Me.columnJURISDICCION.MaxLength = 45
+            Me.columnJURISDICCION.MaxLength = 50
             Me.columnNOMBRE.ReadOnly = true
-            Me.columnNOMBRE.MaxLength = 63
+            Me.columnNOMBRE.MaxLength = 68
             Me.columnNOMPRE_OPERADOR.ReadOnly = true
             Me.columnNOMPRE_OPERADOR.MaxLength = 201
         End Sub
@@ -666,21 +627,6 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property CVE_OPERADOR() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tablepCAT_PAQUETES_ACTAS_B.CVE_OPERADORColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CVE_OPERADOR' in table 'pCAT_PAQUETES_ACTAS_B' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablepCAT_PAQUETES_ACTAS_B.CVE_OPERADORColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property CVE_PAQUETE() As Integer
             Get
                 Return CType(Me(Me.tablepCAT_PAQUETES_ACTAS_B.CVE_PAQUETEColumn),Integer)
@@ -703,37 +649,6 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
             End Get
             Set
                 Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_EXPEDICIONColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property FECHA_DICTAMINADO() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_DICTAMINADOColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FECHA_DICTAMINADO' in table 'pCAT_PAQUETES_ACTAS_B' is DBNu"& _ 
-                            "ll.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_DICTAMINADOColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property FECHA_RETORNO() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_RETORNOColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FECHA_RETORNO' in table 'pCAT_PAQUETES_ACTAS_B' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_RETORNOColumn) = value
             End Set
         End Property
         
@@ -800,18 +715,6 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCVE_OPERADORNull() As Boolean
-            Return Me.IsNull(Me.tablepCAT_PAQUETES_ACTAS_B.CVE_OPERADORColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCVE_OPERADORNull()
-            Me(Me.tablepCAT_PAQUETES_ACTAS_B.CVE_OPERADORColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsFECHA_EXPEDICIONNull() As Boolean
             Return Me.IsNull(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_EXPEDICIONColumn)
         End Function
@@ -820,30 +723,6 @@ Partial Public Class DataSet_pCAT_PAQUETES_ACTAS_B
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetFECHA_EXPEDICIONNull()
             Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_EXPEDICIONColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFECHA_DICTAMINADONull() As Boolean
-            Return Me.IsNull(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_DICTAMINADOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFECHA_DICTAMINADONull()
-            Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_DICTAMINADOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFECHA_RETORNONull() As Boolean
-            Return Me.IsNull(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_RETORNOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFECHA_RETORNONull()
-            Me(Me.tablepCAT_PAQUETES_ACTAS_B.FECHA_RETORNOColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1061,11 +940,8 @@ Namespace DataSet_pCAT_PAQUETES_ACTAS_BTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "pCAT_PAQUETES_ACTAS_B"
-            tableMapping.ColumnMappings.Add("CVE_OPERADOR", "CVE_OPERADOR")
             tableMapping.ColumnMappings.Add("CVE_PAQUETE", "CVE_PAQUETE")
             tableMapping.ColumnMappings.Add("FECHA_EXPEDICION", "FECHA_EXPEDICION")
-            tableMapping.ColumnMappings.Add("FECHA_DICTAMINADO", "FECHA_DICTAMINADO")
-            tableMapping.ColumnMappings.Add("FECHA_RETORNO", "FECHA_RETORNO")
             tableMapping.ColumnMappings.Add("HABILITADO", "HABILITADO")
             tableMapping.ColumnMappings.Add("JURISDICCION", "JURISDICCION")
             tableMapping.ColumnMappings.Add("NOMBRE", "NOMBRE")
