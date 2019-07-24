@@ -190,14 +190,6 @@ Public Class Login
 
     End Sub
 
-    Private Sub cContrasena_TextChanged(sender As Object, e As EventArgs) Handles cContrasena.TextChanged
-
-    End Sub
-
-    Private Sub cUsuario_TextChanged(sender As Object, e As EventArgs) Handles cUsuario.TextChanged
-
-    End Sub
-
     Private Sub bLogin_Click(sender As Object, e As EventArgs) Handles bLogin.Click
         Login_DPCRS()
 

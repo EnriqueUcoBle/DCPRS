@@ -181,7 +181,7 @@ Partial Class Login
         Me.PictureBox2.Dock = Wisej.Web.DockStyle.Fill
         Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(1599, 627)
+        Me.PictureBox2.Size = New System.Drawing.Size(1574, 627)
         Me.PictureBox2.SizeMode = Wisej.Web.PictureBoxSizeMode.CenterImage
         Me.PictureBox2.TabIndex = 6
         '
@@ -193,7 +193,7 @@ Partial Class Login
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Name = "Login"
-        Me.Size = New System.Drawing.Size(1599, 627)
+        Me.Size = New System.Drawing.Size(1574, 627)
         Me.Text = "Inicio de Sesión"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)

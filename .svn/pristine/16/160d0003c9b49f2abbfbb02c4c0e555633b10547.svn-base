@@ -1,0 +1,83 @@
+﻿Imports System
+Imports Wisej.Web
+
+Public Class Prueba
+    Dim oFunciones As New dllData
+    Private I_TOOLTIP As New ToolTip
+    Dim a As Boolean = True
+    Dim a1 As Boolean = True
+    Private Sub Prueba_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Combosax_B1.Watermark = "SELECCIONE ALGO"
+        subLlenarCombos()
+
+    End Sub
+
+    Sub subLlenarCombos()
+        'Dim x As Integer = Combosax_B1.posi
+        Try
+            ReDim oFunciones.ParametersX_Global(0)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "Tabasco")
+            oFunciones.Llenar_CatalogosXprocedureYParams("MUNICIPIOS_B", "MUNICIPIO", "MUNICIPIO", CBSMunicipio, oFunciones.ParametersX_Global)
+            ReDim oFunciones.ParametersX_Global(0)
+            'ReDim oFunciones.ParametersX_Global(0)
+            'oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@MUNICIPIO", "Centro")
+            'oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", CBSMunicipio, oFunciones.ParametersX_Global)
+            ReDim oFunciones.ParametersX_Global(0)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "Tabasco")
+            oFunciones.Llenar_listbox("MUNICIPIOS_B", "MUNICIPIO", "MUNICIPIO", Combosax_B2, oFunciones.ParametersX_Global)
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Cargar listas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Combosax_B2.SelectedIndex = 9
+        '
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Try
+
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@MUNICIPIO", Combosax_B2.SelectedItem)
+            oFunciones.Llenar_listbox("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", Combosax_B1, oFunciones.ParametersX_Global)
+            TextBox1.Text = Combosax_B2.SelectedItem
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Cargar listas", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+
+
+
+        'Return cContrl2.DataSource.defaultview.table.Rows.Item(cContrl2.SelectedIndex).Item(sColumnaName)
+    End Sub
+
+
+
+    Private Sub CBSMunicipio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBSMunicipio.SelectedIndexChanged
+
+        If a = False Then
+            If CBSMunicipio.SelectedIndex <> -1 Then
+                oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@MUNICIPIO", CBSMunicipio.SelectedValue)
+                oFunciones.Llenar_listbox("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", Combosax_B1, oFunciones.ParametersX_Global)
+                TextBox1.Text = Combosax_B2.SelectedItem
+            End If
+        Else
+            a = False
+        End If
+
+    End Sub
+
+    Private Sub Combosax_B2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Combosax_B2.SelectedIndexChanged
+        If a1 = False Then
+            If CBSMunicipio.SelectedIndex <> -1 Then
+                oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@MUNICIPIO", CBSMunicipio.SelectedValue)
+                oFunciones.Llenar_listbox("pCAT_COLONIAS_B", "CVE_COLONIA", "ASENTAMIENTO", Combosax_B1, oFunciones.ParametersX_Global)
+                TextBox1.Text = Combosax_B2.SelectedItem
+            End If
+        Else
+            a1 = False
+        End If
+
+    End Sub
+End Class

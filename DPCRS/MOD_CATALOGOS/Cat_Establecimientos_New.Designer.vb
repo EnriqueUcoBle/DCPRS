@@ -121,7 +121,7 @@ Partial Class Cat_Establecimientos_New
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.RBBEstablecimientoNew)
-        Me.RibbonBar1.Size = New System.Drawing.Size(684, 145)
+        Me.RibbonBar1.Size = New System.Drawing.Size(695, 119)
         '
         'RBBEstablecimientoNew
         '
@@ -187,7 +187,7 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxDPropietario.Location = New System.Drawing.Point(0, 247)
         Me.GroupBoxDPropietario.Name = "GroupBoxDPropietario"
         Me.GroupBoxDPropietario.ShowCloseButton = True
-        Me.GroupBoxDPropietario.Size = New System.Drawing.Size(684, 212)
+        Me.GroupBoxDPropietario.Size = New System.Drawing.Size(695, 212)
         Me.GroupBoxDPropietario.TabIndex = 3
         Me.GroupBoxDPropietario.Text = "Datos Propietario"
         '
@@ -392,7 +392,7 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxDEstablecimiento.Location = New System.Drawing.Point(0, 0)
         Me.GroupBoxDEstablecimiento.Name = "GroupBoxDEstablecimiento"
         Me.GroupBoxDEstablecimiento.ShowCloseButton = True
-        Me.GroupBoxDEstablecimiento.Size = New System.Drawing.Size(684, 247)
+        Me.GroupBoxDEstablecimiento.Size = New System.Drawing.Size(684, 269)
         Me.GroupBoxDEstablecimiento.TabIndex = 1
         Me.GroupBoxDEstablecimiento.Text = "Datos Establecimiento"
         '
@@ -711,9 +711,9 @@ Partial Class Cat_Establecimientos_New
         Me.PanelFORM.Controls.Add(Me.GroupBoxDPropietario)
         Me.PanelFORM.Controls.Add(Me.GroupBoxDEstablecimiento)
         Me.PanelFORM.Dock = Wisej.Web.DockStyle.Fill
-        Me.PanelFORM.Location = New System.Drawing.Point(0, 145)
+        Me.PanelFORM.Location = New System.Drawing.Point(0, 119)
         Me.PanelFORM.Name = "PanelFORM"
-        Me.PanelFORM.Size = New System.Drawing.Size(684, 643)
+        Me.PanelFORM.Size = New System.Drawing.Size(695, 644)
         Me.PanelFORM.TabIndex = 5
         '
         'GroupBoxUbicacionE
@@ -732,7 +732,7 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxUbicacionE.Location = New System.Drawing.Point(0, 459)
         Me.GroupBoxUbicacionE.Name = "GroupBoxUbicacionE"
         Me.GroupBoxUbicacionE.ShowCloseButton = True
-        Me.GroupBoxUbicacionE.Size = New System.Drawing.Size(684, 162)
+        Me.GroupBoxUbicacionE.Size = New System.Drawing.Size(695, 162)
         Me.GroupBoxUbicacionE.TabIndex = 4
         Me.GroupBoxUbicacionE.Text = "Ubicacion del Establecimiento"
         '
@@ -848,7 +848,7 @@ Partial Class Cat_Establecimientos_New
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(684, 788)
+        Me.ClientSize = New System.Drawing.Size(695, 763)
         Me.Controls.Add(Me.PanelFORM)
         Me.Controls.Add(Me.RibbonBar1)
         Me.Controls.Add(Me.txtClave)

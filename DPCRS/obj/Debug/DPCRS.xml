@@ -2008,6 +2008,16 @@ To modify move field declaration from designer file to code-behind file.
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:DPCRS.My.Resources.Resources.pencil_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:DPCRS.My.Resources.Resources.trash_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="F:DPCRS.ReportView._form1">
 <summary>
 form1 control.

@@ -286,6 +286,7 @@ C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\es\DevE
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\ja\DevExpress.Web.ASPxSpellChecker.v17.2.resources.dll
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\ru\DevExpress.Web.ASPxSpellChecker.v17.2.resources.dll
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\de\Wisej.Core.resources.dll
+<<<<<<< .mine
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\es-MX\DPCRS.resources.dll
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.MyDesktop.es-MX.resources
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\es-MX\DPCRS.resources.dll
@@ -315,3 +316,103 @@ C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\D
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Add_Muestras_Tipo.resources
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Estadistica_Establecimientos.resources
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Add_Objetivos_vb.resources
+||||||| .r237
+=======
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DPCRS.dll.config
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DPCRS.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DPCRS.pdb
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DPCRS.xml
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DevExpress.Diagram.v17.2.Core.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DevExpress.XtraDiagram.v17.2.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DevExpress.Images.v17.2.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DevExpress.Web.ASPxSpellChecker.v17.2.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DevExpress.SpellChecker.v17.2.Core.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Wisej.Core.Design.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\EnvDTE.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\stdole.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Microsoft.MSXML.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DevExpress.Diagram.v17.2.Core.xml
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\DevExpress.SpellChecker.v17.2.Core.xml
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\de\DevExpress.Diagram.v17.2.Core.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\es\DevExpress.Diagram.v17.2.Core.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\ja\DevExpress.Diagram.v17.2.Core.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\ru\DevExpress.Diagram.v17.2.Core.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cambiar_Tema.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cfondo_pantalla.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.combosax.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.ComboSaxWisej.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Combosax_B.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.filtroGrillaSax.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.MessageB.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.C_contra.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Index.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Index_Menu.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Licencia.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Login.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Actas_Verificacion.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Claves_Scian.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Establecimientos.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Establecimientos_New.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Estudios.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Giros.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_juridicciones_get.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Laboratorios.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Lotes.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Lotes_Expedientes.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cambiar_Contrasena.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Accesos.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_operadores.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Cat_Rol.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Error_Sistema.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Perfil.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Prueba.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Query.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Dictamen_Capturar.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Dictamen_Paquetes.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Estadisticas_Establecimiento.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Estadistica_Capturar_Cifras.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Acta_Capturar.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Acta_Capturar_Muestras.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Acta_Capturar_Orden.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Acta_Registro_Lotes.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.ADD_LOTES.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Add_Paquestes_Actas.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Generar_Orden_Verficacion.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Imprimir_Detalles_Lotes.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Reportar_Queja.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Mostrar_Asp.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Resources.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.MyDesktop.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Page1.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Page2.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.R_ACTA_GENERAL.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.R_Acta_Registro_Lotes.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.R_Imprimir_Lotes_Salida.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Sub_Acta_General.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.vbproj.GenerateResource.Cache
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.dll.licenses
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.xml
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.pdb
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.add_Verificadores.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\es-MX\DPCRS.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.MyDesktop.es-MX.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\es-MX\DPCRS.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Wisej.Framework.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\Wisej.Framework.xml
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\de\Wisej.Framework.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\fr\Wisej.Framework.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\it\Wisej.Framework.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\bin\pt\Wisej.Framework.resources.dll
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Add_Muestra.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Add_Muestras_Tipo.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Add_Tipo_Analisis.resources
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.vbprojResolveAssemblyReference.cache
+C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRSV2.2\DPCRS\obj\Debug\DPCRS.Verificacion_Entega_Acta.resources
+>>>>>>> .r241
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Verificacion_Entega_Acta.resources
