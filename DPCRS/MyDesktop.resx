@@ -221,6 +221,9 @@
   <data name="RibbonBar1.AppButton.ImageKey" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;Hsessiones.Name" xml:space="preserve">
+    <value>Hsessiones</value>
+  </data>
   <data name="&gt;&gt;RibbonBar1.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBar, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
   </data>
@@ -296,6 +299,9 @@
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>1237, 628</value>
+  </data>
+  <data name="&gt;&gt;Hsessiones.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
   </data>
   <data name="&gt;&gt;DesktopTaskBarItem1.Type" xml:space="preserve">
     <value>Wisej.Web.DesktopTaskBarItem, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>

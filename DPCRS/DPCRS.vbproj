@@ -26,6 +26,7 @@
     <SccLocalPath>Svn</SccLocalPath>
     <SccAuxPath>Svn</SccAuxPath>
     <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +37,7 @@
     <DocumentationFile>DPCRS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,6 +47,7 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>DPCRS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -114,19 +117,17 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing">
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Core" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -135,6 +136,7 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Core.dll</HintPath>
@@ -151,7 +153,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Ext.BingWallpaper.dll</HintPath>
     </Reference>
-    <Reference Include="Wisej.Web.Ext.ChartJS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web.Ext.ChartJS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej 2\bin\Wisej.Web.Ext.ChartJS.dll</HintPath>
+    </Reference>
     <Reference Include="Wisej.Web.Ext.FullCalendar, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Wisej.Web.Ext.NavigationBar, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
     <Reference Include="Wisej.Web.Ext.Notification, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
@@ -1019,6 +1024,11 @@
     <Content Include="Datasets\DataSet_ultima_conexion.xss">
       <DependentUpon>DataSet_ultima_conexion.xsd</DependentUpon>
     </Content>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Resources\Icons\Menu\exit-sign-red.png" />
     <Content Include="Resources\Icons\Menu\fecha_horas-extras.png" />
@@ -1586,6 +1596,12 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Historial_Sessiones.Designer.vb">
+      <DependentUpon>Historial_Sessiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial_Sessiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Index.Designer.vb">
       <DependentUpon>Index.vb</DependentUpon>
     </Compile>
@@ -1814,6 +1830,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="MyDesktop.Designer.vb">
       <DependentUpon>MyDesktop.vb</DependentUpon>
     </Compile>
@@ -1925,6 +1946,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_contra.resx">
       <DependentUpon>C_contra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial_Sessiones.resx">
+      <DependentUpon>Historial_Sessiones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.vb</DependentUpon>

@@ -35,6 +35,7 @@ Partial Class MyDesktop
         Me.Usuario = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
         Me.Datos = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.session = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
+        Me.Hsessiones = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RibbonBarItemButton1 = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RibbonBarItemButton2 = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.RibbonBarItemButton3 = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
@@ -90,16 +91,25 @@ Partial Class MyDesktop
         resources.ApplyResources(Me.Usuario, "Usuario")
         Me.Usuario.Items.Add(Me.Datos)
         Me.Usuario.Items.Add(Me.session)
+        Me.Usuario.Items.Add(Me.Hsessiones)
         '
         'Datos
         '
         resources.ApplyResources(Me.Datos, "Datos")
         Me.Datos.Name = "Datos"
+        Me.Datos.Orientation = Wisej.Web.Orientation.Horizontal
         '
         'session
         '
         resources.ApplyResources(Me.session, "session")
         Me.session.Name = "session"
+        Me.session.Orientation = Wisej.Web.Orientation.Horizontal
+        '
+        'Hsessiones
+        '
+        resources.ApplyResources(Me.Hsessiones, "Hsessiones")
+        Me.Hsessiones.Name = "Hsessiones"
+        Me.Hsessiones.Orientation = Wisej.Web.Orientation.Horizontal
         '
         'RibbonBarItemButton1
         '
@@ -149,4 +159,5 @@ Partial Class MyDesktop
     Friend WithEvents session As RibbonBarItemButton
     Friend WithEvents Cfondo As RibbonBarItemButton
     Friend WithEvents DesktopTaskBarItemDateTime1 As DesktopTaskBarItemDateTime
+    Friend WithEvents Hsessiones As RibbonBarItemButton
 End Class

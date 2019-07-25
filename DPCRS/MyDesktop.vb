@@ -177,8 +177,11 @@ Public Class MyDesktop
                 Mostrar_Formulario("Cambiar_Tema")
             Case "Cambiar Fondo Pantalla"
                 Mostrar_Formulario("Cfondo_pantalla")
+            Case "Historial de Sessiones"
+                Mostrar_Formulario("Historial_Sessiones")
             Case Else
                 Mostrar_Formulario(e.Item.Name)
+
         End Select
     End Sub
 
@@ -206,34 +209,36 @@ Public Class MyDesktop
         End If
     End Sub
     Private Sub MOSTAR_ULTIMA_conexion()
-        'oFunciones.Conectar()
-        'Dim cDataReader As Data.SqlClient.SqlDataReader
-        'Try
 
-        '    oFunciones.AlertBox("Bienvenido  " & Application.Session("Nombre") & "  Su Ultimo inicio de Session fue: " & Application.Session("ULTIMA_VEZ"), MessageBoxIcon.Information)
-
-        'Catch ex As SystemException
-        '    MessageBox.Show("Error: " & ex.Message, "Aviso")
-
-        'End Try
-
-        'Dim Skin_Seleccionado As String = "Vista"
         oFunciones.Conectar()
         Dim cDataReader As Data.SqlClient.SqlDataReader
         Try
-            Dim ULTIMA
+            Dim FECHA, HORA, DIA, MES, AÑO, dia_mes
+
             oFunciones.cCommand = New SqlClient.SqlCommand("pCAT_SESSIONES_B", oFunciones.cConnect)
             oFunciones.cCommand.CommandType = CommandType.StoredProcedure
             oFunciones.cCommand.Parameters.AddWithValue("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
             cDataReader = oFunciones.cCommand.ExecuteReader(CommandBehavior.CloseConnection)
             If cDataReader.HasRows Then
                 While (cDataReader.Read)
-                    ULTIMA = cDataReader.Item("FECHA_INICIO_SESSION")
 
+                    FECHA = cDataReader.Item("FECHA_INICIO_SESSION")
+                    HORA = cDataReader.Item("HORA")
+                    DIA = cDataReader.Item("DIA")
+                    MES = cDataReader.Item("MES")
+                    AÑO = cDataReader.Item("AÑO")
+                    dia_mes = cDataReader.Item("DIA_MES")
                 End While
             End If
-            oFunciones.AlertBox("Bienvenido  " & Application.Session("Nombre") & "  Su Ultimo acceso fue : " & ULTIMA, MessageBoxIcon.Information)
 
+
+            If FECHA.ToString.Length = 0 Or HORA.ToString.Length = 0 Then
+
+                oFunciones.AlertBox("Bienvenido  " & Application.Session("Nombre") & " Es su primer inicio de session  ", MessageBoxIcon.Information)
+            Else
+                Dim subFECHA As String = Mid(FECHA, 1, 9)
+                oFunciones.AlertBox("BIENVINIDO, Usuario: " & Application.Session("Nombre") & "  Su Ultimo acceso  al sistema fue el: " & DIA & " siendo " & dia_mes & " de " & MES & " del " & AÑO & ", " & "a las: " & HORA, MessageBoxIcon.Information)
+            End If
 
         Catch ex As SystemException
             MessageBox.Show("Error: " & ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -248,8 +253,11 @@ Public Class MyDesktop
 
     End Sub
     Private Sub guardar_ultima_vez()
+        Dim HORA = DateAndTime.TimeOfDay.ToString("HH:mm:dd")
+        Dim FECHA = DateTime.Now
         ReDim oFunciones.ParametersX_Global(0)
         oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
+
 
         Dim result As Integer = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_SESSIONE_G", "@param", oFunciones.ParametersX_Global, False, SqlDbType.Int)
         If result = Nothing Then
