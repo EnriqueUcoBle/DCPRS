@@ -134,6 +134,9 @@ Public Class MyDesktop
                         End If
                     End If
                 End While
+                Historial_Sessiones.ImageSource = "Resources\Images\Menu\64\acceso.png"
+                Historial_Sessiones.Text = "Historial Sessiones"
+
             End If
         Catch ex As SystemException
             MessageBox.Show("Error: " & ex.Message, "Aviso")
@@ -177,12 +180,21 @@ Public Class MyDesktop
                 Mostrar_Formulario("Cambiar_Tema")
             Case "Cambiar Fondo Pantalla"
                 Mostrar_Formulario("Cfondo_pantalla")
-            Case "Historial de Sessiones"
+            Case "Sessiones"
                 Mostrar_Formulario("Historial_Sessiones")
             Case Else
-                Mostrar_Formulario(e.Item.Name)
+                Try
+                    Mostrar_Formulario(e.Item.Name)
+                Catch ex As Exception
+                    Select Case e.Item.Name
+                        Case Else
+                            Mostrar_Formulario(e.Item.Name)
+                    End Select
+                End Try
+
 
         End Select
+
     End Sub
 
     Private Sub CambiarTema(tema As String)
@@ -219,20 +231,26 @@ Public Class MyDesktop
             oFunciones.cCommand.CommandType = CommandType.StoredProcedure
             oFunciones.cCommand.Parameters.AddWithValue("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
             cDataReader = oFunciones.cCommand.ExecuteReader(CommandBehavior.CloseConnection)
-            If cDataReader.HasRows Then
-                While (cDataReader.Read)
+            Try
+                If cDataReader.HasRows Then
+                    While (cDataReader.Read)
 
-                    FECHA = cDataReader.Item("FECHA_INICIO_SESSION")
-                    HORA = cDataReader.Item("HORA")
-                    DIA = cDataReader.Item("DIA")
-                    MES = cDataReader.Item("MES")
-                    AÑO = cDataReader.Item("AÑO")
-                    dia_mes = cDataReader.Item("DIA_MES")
-                End While
-            End If
+                        FECHA = cDataReader.Item("FECHA_INICIO_SESSION")
+                        HORA = cDataReader.Item("HORA")
+                        DIA = cDataReader.Item("DIA")
+                        MES = cDataReader.Item("MES")
+                        AÑO = cDataReader.Item("AÑO")
+                        dia_mes = cDataReader.Item("DIA_MES")
 
 
-            If FECHA.ToString.Length = 0 Or HORA.ToString.Length = 0 Then
+                    End While
+                End If
+            Catch ex As Exception
+                FECHA = ""
+                HORA = ""
+            End Try
+
+            If HORA = Nothing Or FECHA = Nothing Then
 
                 oFunciones.AlertBox("Bienvenido  " & Application.Session("Nombre") & " Es su primer inicio de session  ", MessageBoxIcon.Information)
             Else
@@ -253,8 +271,7 @@ Public Class MyDesktop
 
     End Sub
     Private Sub guardar_ultima_vez()
-        Dim HORA = DateAndTime.TimeOfDay.ToString("HH:mm:dd")
-        Dim FECHA = DateTime.Now
+
         ReDim oFunciones.ParametersX_Global(0)
         oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
 

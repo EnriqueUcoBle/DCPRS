@@ -1016,6 +1016,17 @@
     <Content Include="Datasets\DataSet_ultima_conexion.xsc">
       <DependentUpon>DataSet_ultima_conexion.xsd</DependentUpon>
     </Content>
+    <Content Include="Datasets\DataSet_SESSIONES_B.xsc">
+      <DependentUpon>DataSet_SESSIONES_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_SESSIONES_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_SESSIONES_B.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_SESSIONES_B.xss">
+      <DependentUpon>DataSet_SESSIONES_B.xsd</DependentUpon>
+    </Content>
     <None Include="Datasets\DataSet_ultima_conexion.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1587,6 +1598,11 @@
       <DependentUpon>DataSet_pPARAMETROS_B.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_SESSIONES_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_SESSIONES_B.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\DataSet_ultima_conexion.Designer.vb">
       <AutoGen>True</AutoGen>

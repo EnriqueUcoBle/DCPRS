@@ -117,12 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;RBBhistorial.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
   <data name="pgADMIN.Text" xml:space="preserve">
     <value>Inicio</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="RibbonBar1.AppButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="&gt;&gt;RibbonBarItemSeparator2.Name" xml:space="preserve">
+    <value>RibbonBarItemSeparator2</value>
   </data>
   <data name="&gt;&gt;DesktopTaskBarItemControl1.Type" xml:space="preserve">
     <value>Wisej.Web.DesktopTaskBarItemControl, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
@@ -141,9 +147,6 @@
   </data>
   <data name="Cpass.Text" xml:space="preserve">
     <value>Cambiar Contraseña</value>
-  </data>
-  <data name="&gt;&gt;Modificar.Name" xml:space="preserve">
-    <value>Modificar</value>
   </data>
   <data name="session.ImageSource" xml:space="preserve">
     <value>Resources\Images\Menu\logout.png</value>
@@ -182,11 +185,17 @@
   <data name="&gt;&gt;Datos.Name" xml:space="preserve">
     <value>Datos</value>
   </data>
+  <data name="&gt;&gt;RibbonBarItemSeparator1.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemSeparator, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
   <data name="&gt;&gt;Cfondo.Name" xml:space="preserve">
     <value>Cfondo</value>
   </data>
-  <data name="RibbonBarItemButton1.ImageSource" xml:space="preserve">
-    <value>Resources\Images\Menu\64\layers.png</value>
+  <data name="&gt;&gt;RibbonBarItemSeparator3.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemSeparator, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
+  <data name="RibbonBar1.AppButton.ToolTipText" xml:space="preserve">
+    <value />
   </data>
   <data name="RibbonBarItemButton3.Text" xml:space="preserve">
     <value>Cambiar Skin</value>
@@ -212,11 +221,11 @@
   <data name="RibbonBar1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;DesktopTaskBarItemControl2.Type" xml:space="preserve">
-    <value>Wisej.Web.DesktopTaskBarItemControl, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
-  </data>
   <data name="&gt;&gt;Cpass.Name" xml:space="preserve">
     <value>Cpass</value>
+  </data>
+  <data name="&gt;&gt;RibbonBarItemSeparator2.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemSeparator, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
   </data>
   <data name="RibbonBar1.AppButton.ImageKey" xml:space="preserve">
     <value />
@@ -224,8 +233,11 @@
   <data name="&gt;&gt;Hsessiones.Name" xml:space="preserve">
     <value>Hsessiones</value>
   </data>
-  <data name="&gt;&gt;RibbonBar1.Type" xml:space="preserve">
-    <value>Wisej.Web.Ext.RibbonBar.RibbonBar, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  <data name="&gt;&gt;Cpass.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
+  <data name="&gt;&gt;DesktopTaskBarItemControl2.Type" xml:space="preserve">
+    <value>Wisej.Web.DesktopTaskBarItemControl, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
   </data>
   <data name="&gt;&gt;Datos.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
@@ -233,8 +245,8 @@
   <data name="&gt;&gt;Cfondo.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
   </data>
-  <data name="&gt;&gt;Cpass.Type" xml:space="preserve">
-    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  <data name="RibbonBarItemButton1.ImageSource" xml:space="preserve">
+    <value>Resources\Images\Menu\64\layers.png</value>
   </data>
   <data name="&gt;&gt;RibbonBarItemButton2.Name" xml:space="preserve">
     <value>RibbonBarItemButton2</value>
@@ -245,8 +257,14 @@
   <data name="Cfondo.Text" xml:space="preserve">
     <value>Cambiar Fondo Pantalla</value>
   </data>
+  <data name="&gt;&gt;RibbonBar1.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBar, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
   <data name="Modificar.Text" xml:space="preserve">
     <value>Modificar</value>
+  </data>
+  <data name="&gt;&gt;RBBhistorial.Name" xml:space="preserve">
+    <value>RBBhistorial</value>
   </data>
   <data name="&gt;&gt;session.Name" xml:space="preserve">
     <value>session</value>
@@ -260,8 +278,8 @@
   <data name="&gt;&gt;DesktopTaskBarItemControl2.Name" xml:space="preserve">
     <value>DesktopTaskBarItemControl2</value>
   </data>
-  <data name="&gt;&gt;dat.Type" xml:space="preserve">
-    <value>Wisej.Web.DesktopTaskBarItem, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
+  <data name="&gt;&gt;Modificar.Name" xml:space="preserve">
+    <value>Modificar</value>
   </data>
   <data name="&gt;&gt;RibbonBarItemButton2.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
@@ -282,9 +300,6 @@
   <data name="&gt;&gt;pgADMIN.Name" xml:space="preserve">
     <value>pgADMIN</value>
   </data>
-  <data name="RibbonBar1.AppButton.ToolTipText" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;session.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
   </data>
@@ -300,14 +315,29 @@
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>1237, 628</value>
   </data>
+  <data name="&gt;&gt;dat.Type" xml:space="preserve">
+    <value>Wisej.Web.DesktopTaskBarItem, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
+  </data>
   <data name="&gt;&gt;Hsessiones.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
   </data>
   <data name="&gt;&gt;DesktopTaskBarItem1.Type" xml:space="preserve">
     <value>Wisej.Web.DesktopTaskBarItem, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
   </data>
+  <data name="&gt;&gt;RRBhistorial.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
   <data name="&gt;&gt;Cskin.Type" xml:space="preserve">
     <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
+  <data name="&gt;&gt;RibbonBarItemSeparator1.Name" xml:space="preserve">
+    <value>RibbonBarItemSeparator1</value>
+  </data>
+  <data name="&gt;&gt;Historial_Sessiones.Name" xml:space="preserve">
+    <value>Historial_Sessiones</value>
+  </data>
+  <data name="&gt;&gt;RibbonBarItemSeparator3.Name" xml:space="preserve">
+    <value>RibbonBarItemSeparator3</value>
   </data>
   <data name="Cskin.ImageSource" xml:space="preserve">
     <value>Resources\Images\Menu\64\colores.png</value>
@@ -321,8 +351,14 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>Wisej.Web.Desktop, Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171</value>
   </data>
+  <data name="&gt;&gt;Historial_Sessiones.Type" xml:space="preserve">
+    <value>Wisej.Web.Ext.RibbonBar.RibbonBarItemButton, Wisej.Web.Ext.RibbonBar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259</value>
+  </data>
   <data name="RibbonBar1.AppButton.ImageIndex" type="System.Int32, mscorlib">
     <value>-1</value>
+  </data>
+  <data name="&gt;&gt;RRBhistorial.Name" xml:space="preserve">
+    <value>RRBhistorial</value>
   </data>
   <data name="RibbonBar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1237, 158</value>
