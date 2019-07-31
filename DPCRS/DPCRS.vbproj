@@ -141,6 +141,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Wisej.Ext.Geolocation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
     <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.dll</HintPath>
@@ -894,6 +895,17 @@
       <DependentUpon>DataSetOPERADOR_DATOS.xsd</DependentUpon>
     </Content>
     <Content Include="bin\es\Wisej.Core.resources.dll - Acceso directo.lnk" />
+    <Content Include="Datasets\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
     <None Include="Datasets\DataSetOPERADOR_DATOS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1453,6 +1465,11 @@
     <Compile Include="C_contra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Datasets\DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\DataSetOPERADOR_DATOS.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1634,6 +1651,12 @@
       <DependentUpon>Licencia.vb</DependentUpon>
     </Compile>
     <Compile Include="Licencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Add_Giro.Designer.vb">
+      <DependentUpon>Add_Giro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Add_Giro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MOD_CATALOGOS\Cat_Actas_Verificacion.Designer.vb">
@@ -1977,6 +2000,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Add_Giro.resx">
+      <DependentUpon>Add_Giro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MOD_CATALOGOS\Cat_Actas_Verificacion.resx">
       <DependentUpon>Cat_Actas_Verificacion.vb</DependentUpon>

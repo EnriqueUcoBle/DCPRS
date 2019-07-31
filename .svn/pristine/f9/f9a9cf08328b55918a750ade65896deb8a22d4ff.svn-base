@@ -1,0 +1,200 @@
+Imports System.Drawing
+Imports Wisej.Web
+Public Class Login
+    Dim bProcesa As Boolean
+    Dim oFunciones, oFunciones1 As New dllData
+    Dim nCuentaVeces_Fallo As Integer
+    Private Function ValidateUser(ByVal User As String, ByVal Pass As String) As Boolean
+        Try
+            If oFunciones.Login(User, Pass) Then
+                Return True
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Function
+    Private Function validar() As Boolean
+        Dim cont As Integer = 0
+        If Trim(Me.cUsuario.Text) = Nothing Then
+            Me.ErrorProvider1.SetError(Me.cUsuario, "Escriba usuario")
+            cont = +1
+        Else
+            Me.ErrorProvider1.SetError(Me.cUsuario, Nothing)
+        End If
+        If Trim(Me.cContrasena.Text) = Nothing Then
+            Me.ErrorProvider1.SetError(Me.cContrasena, "Escriba contraseña")
+            cont = +1
+        Else
+            Me.ErrorProvider1.SetError(Me.cContrasena, Nothing)
+        End If
+        If cont = 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    Sub Login_DPCRS()
+
+
+
+        If validar() Then
+            If ValidateUser(cUsuario.Text, cContrasena.Text) Then
+
+                Obtener_Datos(cUsuario.Text.ToUpper)
+                Dim cDataReader1 As Data.SqlClient.SqlDataReader
+                LabelError.Visible = False
+                Application.Session("Interfaz") = "ESCRITORIO"
+                Application.Session.IsLoggedOn = True
+                If Application.Session("Interfaz") = "MODERNA" Then
+                    Application.Session.Transfer(New Index_Menu)
+                Else
+                    Me.Dispose()
+                    Application.Desktop = New MyDesktop()
+                    Exit Sub
+
+                End If
+                Try
+
+                    Application.Session("Interfaz") = "ESCRITORIO"
+                    Application.Session.IsLoggedOn = True
+                    If Application.Session("Interfaz") = "MODERNA" Then
+                        Application.Session.Transfer(New Index_Menu)
+                    Else
+                        Me.Dispose()
+                        Application.Desktop = New MyDesktop()
+                        Exit Sub
+
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Finally
+                    If IsNothing(cDataReader1) = False Then
+                        If cDataReader1.IsClosed = False Then cDataReader1.Close()
+                    End If
+                    oFunciones1.Desconectar()
+                End Try
+
+            Else
+
+                LabelError.Visible = True
+                LabelError.Text = "Error de usuario / contraseña"
+                nCuentaVeces_Fallo = nCuentaVeces_Fallo + 1
+
+                If nCuentaVeces_Fallo = 3 Then
+                    LabelError.Text = "Ha fallado la conexión con el servidor"
+                    nCuentaVeces_Fallo = 0
+                    cUsuario.Text = ""
+                    cContrasena.Text = ""
+                End If
+
+            End If
+        End If
+
+
+
+
+    End Sub
+
+    Sub Obtener_Datos(ByVal sUsuario As String)
+
+        oFunciones.Conectar()
+        Dim cDataReader As Data.SqlClient.SqlDataReader
+        Try
+            oFunciones.cCommand = New SqlClient.SqlCommand("pCAT_OPERADORES_B", oFunciones.cConnect)
+            oFunciones.cCommand.CommandType = CommandType.StoredProcedure
+            oFunciones.cCommand.Parameters.AddWithValue("@USUARIO", sUsuario)
+            cDataReader = oFunciones.cCommand.ExecuteReader(CommandBehavior.CloseConnection)
+            If cDataReader.HasRows Then
+                While (cDataReader.Read)
+                    Application.Session("USUARIO") = cDataReader.Item("USUARIO")
+                    Application.Session("CVE_OPERADOR") = cDataReader.Item("CVE_OPERADOR")
+                    Application.Session("ROL") = "" & cDataReader.Item("ROL")
+                    Application.Session("Cve_Rol") = "" & cDataReader.Item("Cve_Rol")
+                    Application.Session("URL_Fotografia") = "" & cDataReader.Item("URL_Fotografia")
+                    Application.Session("JURIDICCION") = "" & cDataReader.Item("MUNICIPIO")
+                    Application.Session("TEMA") = cDataReader.Item("TEMA")
+                    Application.Session("Nombre") = cDataReader.Item("XNOMBRE")
+
+                End While
+            End If
+            Dim perfil As String = "" & "ADMINISTRADOR"
+            If String.Equals(Application.Session("ROL"), perfil, StringComparison.InvariantCultureIgnoreCase) Then
+                Application.Session("CVE_MUNICIPIO") = -99
+            End If
+        Catch ex As SystemException
+            MessageBox.show("Error: " & ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            If IsNothing(cDataReader) = False Then
+                If cDataReader.IsClosed = False Then cDataReader.Close()
+            End If
+            oFunciones.Desconectar()
+        End Try
+
+    End Sub
+
+
+    Private Sub bLimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        LabelError.Visible = False
+        Me.cUsuario.Text = Nothing
+        Me.cContrasena.Text = Nothing
+        cUsuario.Focus()
+    End Sub
+    Private Sub cContrasena_EnterKeyDown(sender As Object, e As KeyEventArgs) Handles cContrasena.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Login_DPCRS()
+        End If
+    End Sub
+    Private Sub Login_Click(sender As Object, e As EventArgs) Handles MyBase.Click
+        'cambio
+        Login_DPCRS()
+    End Sub
+    Private Sub cUsuario_EnterKeyDown(Sender As Object, e As KeyEventArgs) Handles cUsuario.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Login_DPCRS()
+        End If
+    End Sub
+    Private Sub Centrar(ByVal Objeto As Object)
+
+        ' Centrar un Formulario ...  
+        If TypeOf Objeto Is Form Then
+            Dim frm As Form = CType(Objeto, Form)
+            'With Screen.PrimaryScreen.WorkingArea ' Dimensiones de la pantalla sin el TaskBar  
+            '    frm.Top = (.Height - frm.Height) \ 2
+            '    frm.Left = (.Width - frm.Width) \ 2
+            'End With
+
+            ' Centrar un control dentro del contenedor  
+        Else
+            ' referencia al control  
+            Dim c As Control = CType(Objeto, Control)
+
+            'le  establece el top y el Left dentro del Parent  
+            With c
+                .Top = (.Parent.ClientSize.Height - c.Height) \ 2
+                .Left = (.Parent.ClientSize.Width - c.Width) \ 2
+            End With
+        End If
+    End Sub
+
+
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Centrar(Panel2)
+    End Sub
+
+    Private Sub Login_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
+        Centrar(Panel2)
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+    End Sub
+
+    Private Sub bLogin_Click(sender As Object, e As EventArgs) Handles bLogin.Click
+        Login_DPCRS()
+
+
+    End Sub
+
+End Class
+

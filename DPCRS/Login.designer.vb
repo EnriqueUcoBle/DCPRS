@@ -36,6 +36,7 @@ Partial Class Login
         Me.Label5 = New Wisej.Web.Label()
         Me.Label6 = New Wisej.Web.Label()
         Me.PictureBox2 = New Wisej.Web.PictureBox()
+        Me.Geolocation1 = New Wisej.Ext.Geolocation.Geolocation(Me.components)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,9 +182,14 @@ Partial Class Login
         Me.PictureBox2.Dock = Wisej.Web.DockStyle.Fill
         Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(1574, 627)
+        Me.PictureBox2.Size = New System.Drawing.Size(1599, 627)
         Me.PictureBox2.SizeMode = Wisej.Web.PictureBoxSizeMode.CenterImage
         Me.PictureBox2.TabIndex = 6
+        '
+        'Geolocation1
+        '
+        'Me.Geolocation1.MaximumAge = CType(-1, Long)
+        'Me.Geolocation1.Timeout = CType(-1, Long)
         '
         'Login
         '
@@ -193,7 +199,7 @@ Partial Class Login
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Name = "Login"
-        Me.Size = New System.Drawing.Size(1574, 627)
+        Me.Size = New System.Drawing.Size(1599, 627)
         Me.Text = "Inicio de Sesión"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
@@ -216,4 +222,5 @@ Partial Class Login
     Friend WithEvents Label6 As Wisej.Web.Label
     Friend WithEvents cContrasena As Wisej.Web.TextBox
     Friend WithEvents cUsuario As Wisej.Web.TextBox
+    Friend WithEvents Geolocation1 As Wisej.Ext.Geolocation.Geolocation
 End Class

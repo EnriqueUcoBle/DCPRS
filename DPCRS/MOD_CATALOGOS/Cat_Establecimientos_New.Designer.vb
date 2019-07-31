@@ -55,6 +55,7 @@ Partial Class Cat_Establecimientos_New
         Me.Label5 = New Wisej.Web.Label()
         Me.Label13 = New Wisej.Web.Label()
         Me.GroupBoxDEstablecimiento = New Wisej.Web.GroupBox()
+        Me.Add_giro = New Wisej.Web.Button()
         Me.CBSgiro = New DPCRS.Combosax_B()
         Me.CBscian = New DPCRS.Combosax_B()
         Me.GroupDias = New Wisej.Web.GroupBox()
@@ -121,7 +122,7 @@ Partial Class Cat_Establecimientos_New
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.RBBEstablecimientoNew)
-        Me.RibbonBar1.Size = New System.Drawing.Size(695, 119)
+        Me.RibbonBar1.Size = New System.Drawing.Size(694, 119)
         '
         'RBBEstablecimientoNew
         '
@@ -184,10 +185,10 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxDPropietario.Controls.Add(Me.TBnombre_propietario)
         Me.GroupBoxDPropietario.Controls.Add(Me.Label5)
         Me.GroupBoxDPropietario.Dock = Wisej.Web.DockStyle.Top
-        Me.GroupBoxDPropietario.Location = New System.Drawing.Point(0, 247)
+        Me.GroupBoxDPropietario.Location = New System.Drawing.Point(0, 269)
         Me.GroupBoxDPropietario.Name = "GroupBoxDPropietario"
         Me.GroupBoxDPropietario.ShowCloseButton = True
-        Me.GroupBoxDPropietario.Size = New System.Drawing.Size(695, 212)
+        Me.GroupBoxDPropietario.Size = New System.Drawing.Size(694, 212)
         Me.GroupBoxDPropietario.TabIndex = 3
         Me.GroupBoxDPropietario.Text = "Datos Propietario"
         '
@@ -370,6 +371,7 @@ Partial Class Cat_Establecimientos_New
         '
         'GroupBoxDEstablecimiento
         '
+        Me.GroupBoxDEstablecimiento.Controls.Add(Me.Add_giro)
         Me.GroupBoxDEstablecimiento.Controls.Add(Me.CBSgiro)
         Me.GroupBoxDEstablecimiento.Controls.Add(Me.CBscian)
         Me.GroupBoxDEstablecimiento.Controls.Add(Me.GroupDias)
@@ -392,9 +394,18 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxDEstablecimiento.Location = New System.Drawing.Point(0, 0)
         Me.GroupBoxDEstablecimiento.Name = "GroupBoxDEstablecimiento"
         Me.GroupBoxDEstablecimiento.ShowCloseButton = True
-        Me.GroupBoxDEstablecimiento.Size = New System.Drawing.Size(684, 269)
+        Me.GroupBoxDEstablecimiento.Size = New System.Drawing.Size(694, 269)
         Me.GroupBoxDEstablecimiento.TabIndex = 1
         Me.GroupBoxDEstablecimiento.Text = "Datos Establecimiento"
+        '
+        'Add_giro
+        '
+        Me.Add_giro.BackgroundImageLayout = Wisej.Web.ImageLayout.Stretch
+        Me.Add_giro.BackgroundImageSource = "Resources/Icons/Menu/add.png"
+        Me.Add_giro.Location = New System.Drawing.Point(639, 70)
+        Me.Add_giro.Name = "Add_giro"
+        Me.Add_giro.Size = New System.Drawing.Size(25, 25)
+        Me.Add_giro.TabIndex = 33
         '
         'CBSgiro
         '
@@ -403,7 +414,6 @@ Partial Class Cat_Establecimientos_New
         Me.CBSgiro.BackColor = System.Drawing.Color.FromName("@window")
         Me.CBSgiro.ColorAtras = System.Drawing.Color.Empty
         Me.CBSgiro.Count = 0
-        Me.CBSgiro.DataSource = Nothing
         Me.CBSgiro.DataSourceSelect = Nothing
         Me.CBSgiro.gris = False
         Me.CBSgiro.Letra = Nothing
@@ -418,7 +428,7 @@ Partial Class Cat_Establecimientos_New
         Me.CBSgiro.SelectedIndex = -1
         Me.CBSgiro.SelectedItem = ""
         Me.CBSgiro.SelectedValue = Nothing
-        Me.CBSgiro.Size = New System.Drawing.Size(226, 22)
+        Me.CBSgiro.Size = New System.Drawing.Size(193, 22)
         Me.CBSgiro.TabIndex = 32
         Me.CBSgiro.TODOSS = False
         Me.CBSgiro.Watermark = Nothing
@@ -430,7 +440,6 @@ Partial Class Cat_Establecimientos_New
         Me.CBscian.BackColor = System.Drawing.Color.FromName("@window")
         Me.CBscian.ColorAtras = System.Drawing.Color.Empty
         Me.CBscian.Count = 0
-        Me.CBscian.DataSource = Nothing
         Me.CBscian.DataSourceSelect = Nothing
         Me.CBscian.gris = False
         Me.CBscian.Letra = Nothing
@@ -713,7 +722,7 @@ Partial Class Cat_Establecimientos_New
         Me.PanelFORM.Dock = Wisej.Web.DockStyle.Fill
         Me.PanelFORM.Location = New System.Drawing.Point(0, 119)
         Me.PanelFORM.Name = "PanelFORM"
-        Me.PanelFORM.Size = New System.Drawing.Size(695, 644)
+        Me.PanelFORM.Size = New System.Drawing.Size(694, 674)
         Me.PanelFORM.TabIndex = 5
         '
         'GroupBoxUbicacionE
@@ -729,10 +738,10 @@ Partial Class Cat_Establecimientos_New
         Me.GroupBoxUbicacionE.Controls.Add(Me.Label25)
         Me.GroupBoxUbicacionE.Controls.Add(Me.Label13)
         Me.GroupBoxUbicacionE.Dock = Wisej.Web.DockStyle.Top
-        Me.GroupBoxUbicacionE.Location = New System.Drawing.Point(0, 459)
+        Me.GroupBoxUbicacionE.Location = New System.Drawing.Point(0, 481)
         Me.GroupBoxUbicacionE.Name = "GroupBoxUbicacionE"
         Me.GroupBoxUbicacionE.ShowCloseButton = True
-        Me.GroupBoxUbicacionE.Size = New System.Drawing.Size(695, 162)
+        Me.GroupBoxUbicacionE.Size = New System.Drawing.Size(694, 162)
         Me.GroupBoxUbicacionE.TabIndex = 4
         Me.GroupBoxUbicacionE.Text = "Ubicacion del Establecimiento"
         '
@@ -848,7 +857,7 @@ Partial Class Cat_Establecimientos_New
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = Wisej.Web.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(695, 763)
+        Me.ClientSize = New System.Drawing.Size(694, 793)
         Me.Controls.Add(Me.PanelFORM)
         Me.Controls.Add(Me.RibbonBar1)
         Me.Controls.Add(Me.txtClave)
@@ -859,7 +868,7 @@ Partial Class Cat_Establecimientos_New
         Me.MinimumSize = New System.Drawing.Size(696, 832)
         Me.Name = "Cat_Establecimientos_New"
         Me.StartPosition = Wisej.Web.FormStartPosition.CenterScreen
-        Me.Text = "Datos del Establecimiento"
+        Me.Text = "  "
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxDPropietario.ResumeLayout(False)
         Me.GroupBoxDPropietario.PerformLayout()
@@ -957,4 +966,5 @@ Partial Class Cat_Establecimientos_New
     Friend WithEvents Combosax1 As combosax
     Friend WithEvents CBcolonia_propietario As Combosax_B
     Friend WithEvents CBcolonia As Combosax_B
+    Friend WithEvents Add_giro As Wisej.Web.Button
 End Class

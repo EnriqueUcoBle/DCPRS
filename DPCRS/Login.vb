@@ -113,7 +113,8 @@ Public Class Login
                     Application.Session("URL_Fotografia") = "" & cDataReader.Item("URL_Fotografia")
                     Application.Session("JURIDICCION") = "" & cDataReader.Item("MUNICIPIO")
                     Application.Session("TEMA") = cDataReader.Item("TEMA")
-                    Application.Session("Nombre") = cDataReader.Item("Nombre")
+                    Application.Session("Nombre") = cDataReader.Item("XNOMBRE")
+
 
                 End While
             End If
@@ -131,7 +132,6 @@ Public Class Login
         End Try
 
     End Sub
-
 
     Private Sub bLimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         LabelError.Visible = False

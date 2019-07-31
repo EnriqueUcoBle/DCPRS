@@ -8,6 +8,7 @@ Public Class MyDesktop
     Dim ParametersX() As SqlClient.SqlParameter
     Public alternateSucursal As String
     Private Sub MyDesktop_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         Dim sPath = ConfigurationManager.AppSettings("Images").ToString & "Fondo02.jpeg"
         Me.Wallpaper = sPath
         CargarDatos()
@@ -255,7 +256,7 @@ Public Class MyDesktop
                 oFunciones.AlertBox("Bienvenido  " & Application.Session("Nombre") & " Es su primer inicio de session  ", MessageBoxIcon.Information)
             Else
                 Dim subFECHA As String = Mid(FECHA, 1, 9)
-                oFunciones.AlertBox("BIENVINIDO, Usuario: " & Application.Session("Nombre") & "  Su Ultimo acceso  al sistema fue el: " & DIA & " siendo " & dia_mes & " de " & MES & " del " & AÑO & ", " & "a las: " & HORA, MessageBoxIcon.Information)
+                oFunciones.AlertBox("BIENVINIDO, Usuario: " & Application.Session("Nombre") & "  Su Ultimo acceso  al sistema fue el: " & DIA & " siendo " & dia_mes & " de " & MES & " del " & AÑO & ", " & "a las: " & HORA, MessageBoxIcon.None)
             End If
 
         Catch ex As SystemException

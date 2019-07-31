@@ -27,9 +27,7 @@ Partial Class Generar_Orden_Verficacion
         Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
         Me.NUEVO = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.GUARDAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.CANCELAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.SALIR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
-        Me.ACTUALIZAR = New Wisej.Web.Ext.RibbonBar.RibbonBarItemButton()
         Me.Panel1 = New Wisej.Web.Panel()
         Me.Panel4 = New Wisej.Web.Panel()
         Me.ComboBoxIDENTIFIACION = New Wisej.Web.ComboBox()
@@ -82,7 +80,7 @@ Partial Class Generar_Orden_Verficacion
         Me.sig_pag1 = New Wisej.Web.Button()
         Me.TabPage2 = New Wisej.Web.TabPage()
         Me.Panel8 = New Wisej.Web.Panel()
-        Me.DataGridView2 = New Wisej.Web.DataGridView()
+        Me.MUESTRAS_GRID = New Wisej.Web.DataGridView()
         Me.cenum = New Wisej.Web.DataGridViewImageColumn()
         Me.CVE_TIPO_MUESTRA = New Wisej.Web.DataGridViewColumn()
         Me.CVE_TIPO_ANALISIS = New Wisej.Web.DataGridViewColumn()
@@ -96,7 +94,7 @@ Partial Class Generar_Orden_Verficacion
         Me.Label27 = New Wisej.Web.Label()
         Me.Label26 = New Wisej.Web.Label()
         Me.JURISDICCION_VERIFICADORES = New Wisej.Web.ComboBox()
-        Me.DataGridView1 = New Wisej.Web.DataGridView()
+        Me.VERIFICADORES_GRID = New Wisej.Web.DataGridView()
         Me.Eliminar = New Wisej.Web.DataGridViewImageColumn()
         Me.Nombre = New Wisej.Web.DataGridViewColumn()
         Me.Jurisdiccion = New Wisej.Web.DataGridViewColumn()
@@ -146,9 +144,9 @@ Partial Class Generar_Orden_Verficacion
         Me.RB_medidas_seguridad_no = New Wisej.Web.RadioButton()
         Me.RB_medidas_seguridad_si = New Wisej.Web.RadioButton()
         Me.txtNumeroAnexos = New Wisej.Web.TextBox()
-        Me.txtSellosReubicados = New Wisej.Web.TextBox()
-        Me.txtSellosSuspendidos = New Wisej.Web.TextBox()
-        Me.txtSellosAsegurados = New Wisej.Web.TextBox()
+        Me.FOLIO__REUBICACION = New Wisej.Web.TextBox()
+        Me.FOLIO_SUSPENCION = New Wisej.Web.TextBox()
+        Me.FOLIO_ASEGURAMIENTO = New Wisej.Web.TextBox()
         Me.Label38 = New Wisej.Web.Label()
         Me.Label37 = New Wisej.Web.Label()
         Me.Label36 = New Wisej.Web.Label()
@@ -161,14 +159,17 @@ Partial Class Generar_Orden_Verficacion
         Me.sig_pag3 = New Wisej.Web.Button()
         Me.ant_pag3 = New Wisej.Web.Button()
         Me.TabPage4 = New Wisej.Web.TabPage()
+        Me.Panel5 = New Wisej.Web.Panel()
         Me.Panel15 = New Wisej.Web.Panel()
+        Me.HORA_VERIFICACION = New Wisej.Web.DateTimePicker()
+        Me.Label20 = New Wisej.Web.Label()
         Me.Label7 = New Wisej.Web.Label()
         Me.FOLIO_ACTA_VERIFICACION = New Wisej.Web.TextBox()
         Me.Label39 = New Wisej.Web.Label()
-        Me.txtDescribir = New Wisej.Web.TextBox()
+        Me.OBSERVACIONES_GENERALES = New Wisej.Web.TextBox()
         Me.ComboBoxPROGRAMA = New Wisej.Web.ComboBox()
         Me.Label23 = New Wisej.Web.Label()
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE = New Wisej.Web.DateTimePicker()
+        Me.FECHA_VERIFICACION = New Wisej.Web.DateTimePicker()
         Me.Label22 = New Wisej.Web.Label()
         Me.FECHA_ORDEN = New Wisej.Web.DateTimePicker()
         Me.Label21 = New Wisej.Web.Label()
@@ -177,6 +178,10 @@ Partial Class Generar_Orden_Verficacion
         Me.finalizar = New Wisej.Web.Button()
         Me.ant_pag4 = New Wisej.Web.Button()
         Me.ErrorProvider1 = New Wisej.Web.ErrorProvider(Me.components)
+        Me.Label25 = New Wisej.Web.Label()
+        Me.PROGRAMA_ = New Wisej.Web.ComboBox()
+        Me.Label28 = New Wisej.Web.Label()
+        Me.MOTIVO = New Wisej.Web.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -185,9 +190,9 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel8.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DataGridView2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MUESTRAS_GRID, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MUESTRAS_GRID.SuspendLayout()
+        CType(Me.VERIFICADORES_GRID, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -206,7 +211,7 @@ Partial Class Generar_Orden_Verficacion
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.RibbonBarPage1)
-        Me.RibbonBar1.Size = New System.Drawing.Size(1187, 141)
+        Me.RibbonBar1.Size = New System.Drawing.Size(1197, 141)
         '
         'RibbonBarPage1
         '
@@ -217,14 +222,12 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.RibbonBarGroup1.Items.Add(Me.NUEVO)
         Me.RibbonBarGroup1.Items.Add(Me.GUARDAR)
-        Me.RibbonBarGroup1.Items.Add(Me.CANCELAR)
         Me.RibbonBarGroup1.Items.Add(Me.SALIR)
-        Me.RibbonBarGroup1.Items.Add(Me.ACTUALIZAR)
         Me.RibbonBarGroup1.Text = "Acta"
         '
         'NUEVO
         '
-        Me.NUEVO.ImageSource = "ribbon-add-file"
+        Me.NUEVO.ImageSource = "Resources\Images\Menu\64\doc .png"
         Me.NUEVO.Name = "NUEVO"
         Me.NUEVO.Text = "Nuevo"
         '
@@ -232,25 +235,13 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.GUARDAR.ImageSource = "ribbon-save"
         Me.GUARDAR.Name = "GUARDAR"
-        Me.GUARDAR.Text = "Guardar Acta"
-        '
-        'CANCELAR
-        '
-        Me.CANCELAR.ImageSource = "ribbon-delete"
-        Me.CANCELAR.Name = "CANCELAR"
-        Me.CANCELAR.Text = "Cancelar"
+        Me.GUARDAR.Text = "Guardar"
         '
         'SALIR
         '
         Me.SALIR.ImageSource = "Resources\Images\Menu\30\exit-sign-red.png"
         Me.SALIR.Name = "SALIR"
         Me.SALIR.Text = "Salir"
-        '
-        'ACTUALIZAR
-        '
-        Me.ACTUALIZAR.ImageSource = "Resources\Icons\Menu\refresh.png"
-        Me.ACTUALIZAR.Name = "ACTUALIZAR"
-        Me.ACTUALIZAR.Text = "Actualizar Listas"
         '
         'Panel1
         '
@@ -829,8 +820,8 @@ Partial Class Generar_Orden_Verficacion
         Me.TabControl1.Dock = Wisej.Web.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 141)
         Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.PageInsets = New Wisej.Web.Padding(1, 35, 1, 1)
-        Me.TabControl1.Size = New System.Drawing.Size(1187, 655)
+        Me.TabControl1.PageInsets = New Wisej.Web.Padding(1, 30, 1, 1)
+        Me.TabControl1.Size = New System.Drawing.Size(1197, 660)
         Me.TabControl1.TabIndex = 10
         '
         'TabPage1
@@ -838,7 +829,7 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage1.Controls.Add(Me.sig_pag1)
         Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.ImageSource = "Resources\Images\Menu\64\establecimiento1.png"
-        Me.TabPage1.Location = New System.Drawing.Point(1, 35)
+        Me.TabPage1.Location = New System.Drawing.Point(1, 30)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Text = "Establecimiento & Propietario"
         '
@@ -857,18 +848,18 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage2.Controls.Add(Me.sig_pag2)
         Me.TabPage2.Controls.Add(Me.ant_pag2)
         Me.TabPage2.ImageSource = "Resources\Images\Menu\64\certificate .png"
-        Me.TabPage2.Location = New System.Drawing.Point(1, 35)
+        Me.TabPage2.Location = New System.Drawing.Point(1, 30)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Text = "Verificadores & Muestreo"
         '
         'Panel8
         '
         Me.Panel8.BorderStyle = Wisej.Web.BorderStyle.Solid
-        Me.Panel8.Controls.Add(Me.DataGridView2)
+        Me.Panel8.Controls.Add(Me.MUESTRAS_GRID)
         Me.Panel8.Controls.Add(Me.Label27)
         Me.Panel8.Controls.Add(Me.Label26)
         Me.Panel8.Controls.Add(Me.JURISDICCION_VERIFICADORES)
-        Me.Panel8.Controls.Add(Me.DataGridView1)
+        Me.Panel8.Controls.Add(Me.VERIFICADORES_GRID)
         Me.Panel8.Controls.Add(Me.AddVerificador)
         Me.Panel8.Controls.Add(Me.VERIFICADORES)
         Me.Panel8.Location = New System.Drawing.Point(3, 3)
@@ -879,14 +870,14 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel8.TabIndex = 61
         Me.Panel8.Text = "Recoleccion de Muestras & Verificadores"
         '
-        'DataGridView2
+        'MUESTRAS_GRID
         '
-        Me.DataGridView2.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.cenum, Me.CVE_TIPO_MUESTRA, Me.CVE_TIPO_ANALISIS, Me.DESCRIPCION, Me.CLAVE_VS, Me.MARCA, Me.LOTE, Me.FECHA, Me.CANTIDAD})
-        Me.DataGridView2.Controls.Add(Me.Button1)
-        Me.DataGridView2.Location = New System.Drawing.Point(18, 285)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1138, 203)
-        Me.DataGridView2.TabIndex = 99
+        Me.MUESTRAS_GRID.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.cenum, Me.CVE_TIPO_MUESTRA, Me.CVE_TIPO_ANALISIS, Me.DESCRIPCION, Me.CLAVE_VS, Me.MARCA, Me.LOTE, Me.FECHA, Me.CANTIDAD})
+        Me.MUESTRAS_GRID.Controls.Add(Me.Button1)
+        Me.MUESTRAS_GRID.Location = New System.Drawing.Point(18, 285)
+        Me.MUESTRAS_GRID.Name = "MUESTRAS_GRID"
+        Me.MUESTRAS_GRID.Size = New System.Drawing.Size(1138, 203)
+        Me.MUESTRAS_GRID.TabIndex = 99
         '
         'cenum
         '
@@ -983,13 +974,13 @@ Partial Class Generar_Orden_Verficacion
         Me.JURISDICCION_VERIFICADORES.Size = New System.Drawing.Size(305, 22)
         Me.JURISDICCION_VERIFICADORES.TabIndex = 10
         '
-        'DataGridView1
+        'VERIFICADORES_GRID
         '
-        Me.DataGridView1.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.Eliminar, Me.Nombre, Me.Jurisdiccion, Me.Correo, Me.Sexo, Me.Clave_Trabajador})
-        Me.DataGridView1.Location = New System.Drawing.Point(18, 56)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1138, 189)
-        Me.DataGridView1.TabIndex = 62
+        Me.VERIFICADORES_GRID.Columns.AddRange(New Wisej.Web.DataGridViewColumn() {Me.Eliminar, Me.Nombre, Me.Jurisdiccion, Me.Correo, Me.Sexo, Me.Clave_Trabajador})
+        Me.VERIFICADORES_GRID.Location = New System.Drawing.Point(18, 56)
+        Me.VERIFICADORES_GRID.Name = "VERIFICADORES_GRID"
+        Me.VERIFICADORES_GRID.Size = New System.Drawing.Size(1138, 189)
+        Me.VERIFICADORES_GRID.TabIndex = 62
         '
         'Eliminar
         '
@@ -1091,13 +1082,17 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage3.Controls.Add(Me.sig_pag3)
         Me.TabPage3.Controls.Add(Me.ant_pag3)
         Me.TabPage3.ImageSource = "Resources\Images\Menu\64\learning .png"
-        Me.TabPage3.Location = New System.Drawing.Point(1, 35)
+        Me.TabPage3.Location = New System.Drawing.Point(1, 30)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Text = "Datos del Acta"
         '
         'Panel9
         '
         Me.Panel9.BorderStyle = Wisej.Web.BorderStyle.Solid
+        Me.Panel9.Controls.Add(Me.Label28)
+        Me.Panel9.Controls.Add(Me.MOTIVO)
+        Me.Panel9.Controls.Add(Me.Label25)
+        Me.Panel9.Controls.Add(Me.PROGRAMA_)
         Me.Panel9.Controls.Add(Me.GroupBox1)
         Me.Panel9.Controls.Add(Me.CARGO_PUESTO)
         Me.Panel9.Controls.Add(Me.Label18)
@@ -1125,9 +1120,9 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel9.Controls.Add(Me.RB_medidas_seguridad_no)
         Me.Panel9.Controls.Add(Me.RB_medidas_seguridad_si)
         Me.Panel9.Controls.Add(Me.txtNumeroAnexos)
-        Me.Panel9.Controls.Add(Me.txtSellosReubicados)
-        Me.Panel9.Controls.Add(Me.txtSellosSuspendidos)
-        Me.Panel9.Controls.Add(Me.txtSellosAsegurados)
+        Me.Panel9.Controls.Add(Me.FOLIO__REUBICACION)
+        Me.Panel9.Controls.Add(Me.FOLIO_SUSPENCION)
+        Me.Panel9.Controls.Add(Me.FOLIO_ASEGURAMIENTO)
         Me.Panel9.Controls.Add(Me.Label38)
         Me.Panel9.Controls.Add(Me.Label37)
         Me.Panel9.Controls.Add(Me.Label36)
@@ -1141,7 +1136,7 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel9.Name = "Panel9"
         Me.Panel9.ShowCloseButton = False
         Me.Panel9.ShowHeader = True
-        Me.Panel9.Size = New System.Drawing.Size(1169, 556)
+        Me.Panel9.Size = New System.Drawing.Size(1179, 556)
         Me.Panel9.TabIndex = 2
         Me.Panel9.Text = "Observaciones"
         '
@@ -1149,7 +1144,7 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(792, 3)
+        Me.GroupBox1.Location = New System.Drawing.Point(792, 16)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(356, 45)
         Me.GroupBox1.TabIndex = 2
@@ -1504,33 +1499,33 @@ Partial Class Generar_Orden_Verficacion
         Me.txtNumeroAnexos.TabIndex = 42
         Me.txtNumeroAnexos.Watermark = "Cantidad de Anexos"
         '
-        'txtSellosReubicados
+        'FOLIO__REUBICACION
         '
-        Me.txtSellosReubicados.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtSellosReubicados.Location = New System.Drawing.Point(48, 344)
-        Me.txtSellosReubicados.Name = "txtSellosReubicados"
-        Me.txtSellosReubicados.Size = New System.Drawing.Size(301, 22)
-        Me.txtSellosReubicados.TabIndex = 41
-        Me.txtSellosReubicados.Watermark = "R-46SG56DF"
+        Me.FOLIO__REUBICACION.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.FOLIO__REUBICACION.Location = New System.Drawing.Point(48, 344)
+        Me.FOLIO__REUBICACION.Name = "FOLIO__REUBICACION"
+        Me.FOLIO__REUBICACION.Size = New System.Drawing.Size(301, 22)
+        Me.FOLIO__REUBICACION.TabIndex = 41
+        Me.FOLIO__REUBICACION.Watermark = "R-46SG56DF"
         '
-        'txtSellosSuspendidos
+        'FOLIO_SUSPENCION
         '
-        Me.txtSellosSuspendidos.Enabled = False
-        Me.txtSellosSuspendidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtSellosSuspendidos.Location = New System.Drawing.Point(48, 240)
-        Me.txtSellosSuspendidos.Name = "txtSellosSuspendidos"
-        Me.txtSellosSuspendidos.Size = New System.Drawing.Size(301, 22)
-        Me.txtSellosSuspendidos.TabIndex = 40
-        Me.txtSellosSuspendidos.Watermark = "R-46SG56DF"
+        Me.FOLIO_SUSPENCION.Enabled = False
+        Me.FOLIO_SUSPENCION.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.FOLIO_SUSPENCION.Location = New System.Drawing.Point(48, 240)
+        Me.FOLIO_SUSPENCION.Name = "FOLIO_SUSPENCION"
+        Me.FOLIO_SUSPENCION.Size = New System.Drawing.Size(301, 22)
+        Me.FOLIO_SUSPENCION.TabIndex = 40
+        Me.FOLIO_SUSPENCION.Watermark = "R-46SG56DF"
         '
-        'txtSellosAsegurados
+        'FOLIO_ASEGURAMIENTO
         '
-        Me.txtSellosAsegurados.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtSellosAsegurados.Location = New System.Drawing.Point(48, 140)
-        Me.txtSellosAsegurados.Name = "txtSellosAsegurados"
-        Me.txtSellosAsegurados.Size = New System.Drawing.Size(301, 22)
-        Me.txtSellosAsegurados.TabIndex = 39
-        Me.txtSellosAsegurados.Watermark = "R-46SG56DF"
+        Me.FOLIO_ASEGURAMIENTO.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.FOLIO_ASEGURAMIENTO.Location = New System.Drawing.Point(48, 140)
+        Me.FOLIO_ASEGURAMIENTO.Name = "FOLIO_ASEGURAMIENTO"
+        Me.FOLIO_ASEGURAMIENTO.Size = New System.Drawing.Size(301, 22)
+        Me.FOLIO_ASEGURAMIENTO.TabIndex = 39
+        Me.FOLIO_ASEGURAMIENTO.Watermark = "R-46SG56DF"
         '
         'Label38
         '
@@ -1649,24 +1644,37 @@ Partial Class Generar_Orden_Verficacion
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.Panel5)
         Me.TabPage4.Controls.Add(Me.Panel15)
         Me.TabPage4.Controls.Add(Me.finalizar)
         Me.TabPage4.Controls.Add(Me.ant_pag4)
         Me.TabPage4.ImageSource = "Resources\Icons\Menu\PDF.png"
-        Me.TabPage4.Location = New System.Drawing.Point(1, 35)
+        Me.TabPage4.Location = New System.Drawing.Point(1, 30)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Text = "Acta Escaneada"
+        '
+        'Panel5
+        '
+        Me.Panel5.Location = New System.Drawing.Point(408, 3)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.ShowCloseButton = False
+        Me.Panel5.ShowHeader = True
+        Me.Panel5.Size = New System.Drawing.Size(774, 556)
+        Me.Panel5.TabIndex = 51
+        Me.Panel5.Text = "Datos extra"
         '
         'Panel15
         '
         Me.Panel15.BorderStyle = Wisej.Web.BorderStyle.Solid
+        Me.Panel15.Controls.Add(Me.HORA_VERIFICACION)
+        Me.Panel15.Controls.Add(Me.Label20)
         Me.Panel15.Controls.Add(Me.Label7)
         Me.Panel15.Controls.Add(Me.FOLIO_ACTA_VERIFICACION)
         Me.Panel15.Controls.Add(Me.Label39)
-        Me.Panel15.Controls.Add(Me.txtDescribir)
+        Me.Panel15.Controls.Add(Me.OBSERVACIONES_GENERALES)
         Me.Panel15.Controls.Add(Me.ComboBoxPROGRAMA)
         Me.Panel15.Controls.Add(Me.Label23)
-        Me.Panel15.Controls.Add(Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE)
+        Me.Panel15.Controls.Add(Me.FECHA_VERIFICACION)
         Me.Panel15.Controls.Add(Me.Label22)
         Me.Panel15.Controls.Add(Me.FECHA_ORDEN)
         Me.Panel15.Controls.Add(Me.Label21)
@@ -1679,6 +1687,26 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel15.Size = New System.Drawing.Size(399, 556)
         Me.Panel15.TabIndex = 5
         Me.Panel15.Text = "Datos del Acta"
+        '
+        'HORA_VERIFICACION
+        '
+        Me.HORA_VERIFICACION.CustomFormat = "hh:mm tt"
+        Me.HORA_VERIFICACION.Format = Wisej.Web.DateTimePickerFormat.Time
+        Me.HORA_VERIFICACION.Location = New System.Drawing.Point(42, 291)
+        Me.HORA_VERIFICACION.Name = "HORA_VERIFICACION"
+        Me.HORA_VERIFICACION.Size = New System.Drawing.Size(305, 22)
+        Me.HORA_VERIFICACION.TabIndex = 50
+        Me.HORA_VERIFICACION.Value = New Date(2018, 6, 5, 8, 0, 0, 0)
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label20.Location = New System.Drawing.Point(41, 265)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(142, 16)
+        Me.Label20.TabIndex = 49
+        Me.Label20.Text = "Hora de Verificacion:"
         '
         'Label7
         '
@@ -1704,22 +1732,22 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("default", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label39.Location = New System.Drawing.Point(42, 265)
+        Me.Label39.Location = New System.Drawing.Point(41, 319)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(168, 16)
         Me.Label39.TabIndex = 44
         Me.Label39.Text = "Obsevaciones Generales:"
         Me.Label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'txtDescribir
+        'OBSERVACIONES_GENERALES
         '
-        Me.txtDescribir.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtDescribir.Location = New System.Drawing.Point(41, 287)
-        Me.txtDescribir.Multiline = True
-        Me.txtDescribir.Name = "txtDescribir"
-        Me.txtDescribir.Size = New System.Drawing.Size(301, 167)
-        Me.txtDescribir.TabIndex = 45
-        Me.txtDescribir.Watermark = "Observaciones durante la visita sanitaria en el Establecimiento"
+        Me.OBSERVACIONES_GENERALES.Font = New System.Drawing.Font("default, Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.OBSERVACIONES_GENERALES.Location = New System.Drawing.Point(40, 341)
+        Me.OBSERVACIONES_GENERALES.Multiline = True
+        Me.OBSERVACIONES_GENERALES.Name = "OBSERVACIONES_GENERALES"
+        Me.OBSERVACIONES_GENERALES.Size = New System.Drawing.Size(301, 167)
+        Me.OBSERVACIONES_GENERALES.TabIndex = 45
+        Me.OBSERVACIONES_GENERALES.Watermark = "Observaciones durante la visita sanitaria en el Establecimiento"
         '
         'ComboBoxPROGRAMA
         '
@@ -1729,6 +1757,7 @@ Partial Class Generar_Orden_Verficacion
         Me.ComboBoxPROGRAMA.Name = "ComboBoxPROGRAMA"
         Me.ComboBoxPROGRAMA.Size = New System.Drawing.Size(306, 22)
         Me.ComboBoxPROGRAMA.TabIndex = 32
+        Me.ComboBoxPROGRAMA.Watermark = "programa al que esta inscrito "
         '
         'Label23
         '
@@ -1740,15 +1769,15 @@ Partial Class Generar_Orden_Verficacion
         Me.Label23.TabIndex = 31
         Me.Label23.Text = "Programa:"
         '
-        'DateTimePickerFECHA_CAPTURA_EXPEDIENTE
+        'FECHA_VERIFICACION
         '
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE.Format = Wisej.Web.DateTimePickerFormat.[Short]
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE.Location = New System.Drawing.Point(42, 237)
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE.Name = "DateTimePickerFECHA_CAPTURA_EXPEDIENTE"
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE.Size = New System.Drawing.Size(306, 22)
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE.TabIndex = 30
-        Me.DateTimePickerFECHA_CAPTURA_EXPEDIENTE.Value = New Date(CType(0, Long))
+        Me.FECHA_VERIFICACION.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.FECHA_VERIFICACION.Format = Wisej.Web.DateTimePickerFormat.[Short]
+        Me.FECHA_VERIFICACION.Location = New System.Drawing.Point(42, 237)
+        Me.FECHA_VERIFICACION.Name = "FECHA_VERIFICACION"
+        Me.FECHA_VERIFICACION.Size = New System.Drawing.Size(306, 22)
+        Me.FECHA_VERIFICACION.TabIndex = 30
+        Me.FECHA_VERIFICACION.Value = New Date(CType(0, Long))
         '
         'Label22
         '
@@ -1823,18 +1852,54 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label25.Location = New System.Drawing.Point(792, 240)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(188, 16)
+        Me.Label25.TabIndex = 119
+        Me.Label25.Text = "Programa al que esta inscrito"
+        '
+        'PROGRAMA_
+        '
+        Me.PROGRAMA_.Items.AddRange(New Object() {"FEDERAL", "ESTATAL", "MUNICIPAL"})
+        Me.PROGRAMA_.Location = New System.Drawing.Point(792, 268)
+        Me.PROGRAMA_.Name = "PROGRAMA_"
+        Me.PROGRAMA_.Size = New System.Drawing.Size(327, 22)
+        Me.PROGRAMA_.TabIndex = 118
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label28.Location = New System.Drawing.Point(792, 333)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(159, 16)
+        Me.Label28.TabIndex = 121
+        Me.Label28.Text = "Motivo de la Verificacion"
+        '
+        'MOTIVO
+        '
+        Me.MOTIVO.Items.AddRange(New Object() {"Solicitud del propietario", "Queja / Denuncia", "Verificacion sanitaria de rutina"})
+        Me.MOTIVO.Location = New System.Drawing.Point(792, 361)
+        Me.MOTIVO.Name = "MOTIVO"
+        Me.MOTIVO.Size = New System.Drawing.Size(327, 22)
+        Me.MOTIVO.TabIndex = 120
+        '
         'Generar_Orden_Verficacion
         '
         Me.AutoScaleMode = Wisej.Web.AutoScaleMode.None
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1187, 796)
+        Me.ClientSize = New System.Drawing.Size(1197, 801)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.RibbonBar1)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1199, 840)
         Me.MinimumSize = New System.Drawing.Size(1199, 840)
         Me.Name = "Generar_Orden_Verficacion"
-        Me.Text = "Alta de Actas de Verificacion"
+        Me.Text = "      "
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
@@ -1849,9 +1914,9 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage2.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DataGridView2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MUESTRAS_GRID, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MUESTRAS_GRID.ResumeLayout(False)
+        CType(Me.VERIFICADORES_GRID, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
@@ -1878,7 +1943,6 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents RibbonBarGroup1 As Wisej.Web.Ext.RibbonBar.RibbonBarGroup
     Friend WithEvents NUEVO As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents GUARDAR As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
-    Friend WithEvents CANCELAR As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents SALIR As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents Label9 As Wisej.Web.Label
     Friend WithEvents TextBoxDOMICILIO_PROPIETARIO As Wisej.Web.TextBox
@@ -1908,7 +1972,6 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents Label14 As Wisej.Web.Label
     Friend WithEvents Fecha_creacion_LOTE As Wisej.Web.TextBox
     Friend WithEvents Label13 As Wisej.Web.Label
-    Friend WithEvents ACTUALIZAR As Wisej.Web.Ext.RibbonBar.RibbonBarItemButton
     Friend WithEvents Panel4 As Wisej.Web.Panel
     Friend WithEvents CambiarPropietario As Wisej.Web.CheckBox
     Friend WithEvents TabControl1 As Wisej.Web.TabControl
@@ -1940,9 +2003,9 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents RB_medidas_seguridad_no As Wisej.Web.RadioButton
     Friend WithEvents RB_medidas_seguridad_si As Wisej.Web.RadioButton
     Friend WithEvents txtNumeroAnexos As Wisej.Web.TextBox
-    Friend WithEvents txtSellosReubicados As Wisej.Web.TextBox
-    Friend WithEvents txtSellosSuspendidos As Wisej.Web.TextBox
-    Friend WithEvents txtSellosAsegurados As Wisej.Web.TextBox
+    Friend WithEvents FOLIO__REUBICACION As Wisej.Web.TextBox
+    Friend WithEvents FOLIO_SUSPENCION As Wisej.Web.TextBox
+    Friend WithEvents FOLIO_ASEGURAMIENTO As Wisej.Web.TextBox
     Friend WithEvents Label38 As Wisej.Web.Label
     Friend WithEvents Label37 As Wisej.Web.Label
     Friend WithEvents Label36 As Wisej.Web.Label
@@ -1971,7 +2034,7 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents Button4 As Button
     Friend WithEvents VERIFICADORES As Combosax_B
     Friend WithEvents AddVerificador As Wisej.Web.Button
-    Friend WithEvents DataGridView1 As Wisej.Web.DataGridView
+    Friend WithEvents VERIFICADORES_GRID As Wisej.Web.DataGridView
     Friend WithEvents JURISDICCION_VERIFICADORES As Wisej.Web.ComboBox
     Friend WithEvents Label27 As Wisej.Web.Label
     Friend WithEvents Label26 As Wisej.Web.Label
@@ -1984,7 +2047,7 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents Clave_Trabajador As Wisej.Web.DataGridViewColumn
     Friend WithEvents Label44 As Wisej.Web.Label
     Friend WithEvents ULTIMOS_PAQUETES As Wisej.Web.ComboBox
-    Friend WithEvents DataGridView2 As Wisej.Web.DataGridView
+    Friend WithEvents MUESTRAS_GRID As Wisej.Web.DataGridView
     Friend WithEvents CVE_TIPO_MUESTRA As Wisej.Web.DataGridViewColumn
     Friend WithEvents CVE_TIPO_ANALISIS As Wisej.Web.DataGridViewColumn
     Friend WithEvents DESCRIPCION As Wisej.Web.DataGridViewColumn
@@ -2018,10 +2081,10 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents Label7 As Wisej.Web.Label
     Friend WithEvents FOLIO_ACTA_VERIFICACION As Wisej.Web.TextBox
     Friend WithEvents Label39 As Wisej.Web.Label
-    Friend WithEvents txtDescribir As Wisej.Web.TextBox
+    Friend WithEvents OBSERVACIONES_GENERALES As Wisej.Web.TextBox
     Friend WithEvents ComboBoxPROGRAMA As Wisej.Web.ComboBox
     Friend WithEvents Label23 As Wisej.Web.Label
-    Friend WithEvents DateTimePickerFECHA_CAPTURA_EXPEDIENTE As Wisej.Web.DateTimePicker
+    Friend WithEvents FECHA_VERIFICACION As Wisej.Web.DateTimePicker
     Friend WithEvents Label22 As Wisej.Web.Label
     Friend WithEvents FECHA_ORDEN As Wisej.Web.DateTimePicker
     Friend WithEvents Label21 As Wisej.Web.Label
@@ -2030,4 +2093,11 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents GroupBox1 As Wisej.Web.GroupBox
     Friend WithEvents RadioButton2 As Wisej.Web.RadioButton
     Friend WithEvents RadioButton1 As Wisej.Web.RadioButton
+    Friend WithEvents Label20 As Wisej.Web.Label
+    Friend WithEvents HORA_VERIFICACION As Wisej.Web.DateTimePicker
+    Friend WithEvents Panel5 As Wisej.Web.Panel
+    Friend WithEvents Label25 As Wisej.Web.Label
+    Friend WithEvents PROGRAMA_ As Wisej.Web.ComboBox
+    Friend WithEvents Label28 As Wisej.Web.Label
+    Friend WithEvents MOTIVO As Wisej.Web.ComboBox
 End Class
