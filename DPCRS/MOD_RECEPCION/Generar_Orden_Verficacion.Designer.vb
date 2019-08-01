@@ -22,6 +22,7 @@ Partial Class Generar_Orden_Verficacion
     'Do not modify it using the code editor.
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Generar_Orden_Verficacion))
         Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
         Me.RibbonBarPage1 = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
         Me.RibbonBarGroup1 = New Wisej.Web.Ext.RibbonBar.RibbonBarGroup()
@@ -42,8 +43,6 @@ Partial Class Generar_Orden_Verficacion
         Me.TextBoxCARGO = New Wisej.Web.TextBox()
         Me.Label11 = New Wisej.Web.Label()
         Me.Panel2 = New Wisej.Web.Panel()
-        Me.ESTABLECIMIENTO = New DPCRS.Combosax_B()
-        Me.COLONIA_ESTABLECIMIENTOS = New DPCRS.Combosax_B()
         Me.Label51 = New Wisej.Web.Label()
         Me.MUNICIPIOS_ESTABLECIMIENTOS = New Wisej.Web.ComboBox()
         Me.Label50 = New Wisej.Web.Label()
@@ -65,7 +64,6 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel3 = New Wisej.Web.Panel()
         Me.Label44 = New Wisej.Web.Label()
         Me.ULTIMOS_PAQUETES = New Wisej.Web.ComboBox()
-        Me.PAQUETES_ACTAS = New DPCRS.Combosax_B()
         Me.AddPaquete = New Wisej.Web.Button()
         Me.Jurisdiccion_LOTE = New Wisej.Web.TextBox()
         Me.Label17 = New Wisej.Web.Label()
@@ -102,7 +100,6 @@ Partial Class Generar_Orden_Verficacion
         Me.Sexo = New Wisej.Web.DataGridViewColumn()
         Me.Clave_Trabajador = New Wisej.Web.DataGridViewColumn()
         Me.AddVerificador = New Wisej.Web.Button()
-        Me.VERIFICADORES = New DPCRS.Combosax_B()
         Me.sig_pag2 = New Wisej.Web.Button()
         Me.ant_pag2 = New Wisej.Web.Button()
         Me.TabPage3 = New Wisej.Web.TabPage()
@@ -126,7 +123,6 @@ Partial Class Generar_Orden_Verficacion
         Me.OBSERVACIONES_MUESTRAS = New Wisej.Web.TextBox()
         Me.Label54 = New Wisej.Web.Label()
         Me.MUESTRA_RESPONSABILIDAD = New Wisej.Web.ComboBox()
-        Me.TIPO_OBJETIVO = New DPCRS.Combosax_B()
         Me.Label29 = New Wisej.Web.Label()
         Me.AddObjetivoVerificacion = New Wisej.Web.Button()
         Me.Panel10 = New Wisej.Web.Panel()
@@ -182,6 +178,11 @@ Partial Class Generar_Orden_Verficacion
         Me.PROGRAMA_ = New Wisej.Web.ComboBox()
         Me.Label28 = New Wisej.Web.Label()
         Me.MOTIVO = New Wisej.Web.ComboBox()
+        Me.ESTABLECIMIENTO = New DPCRS.Combosax_B()
+        Me.COLONIA_ESTABLECIMIENTOS = New DPCRS.Combosax_B()
+        Me.PAQUETES_ACTAS = New DPCRS.Combosax_B()
+        Me.VERIFICADORES = New DPCRS.Combosax_B()
+        Me.TIPO_OBJETIVO = New DPCRS.Combosax_B()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -421,60 +422,6 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel2.TabIndex = 8
         Me.Panel2.Text = "Verifique o Actualice Datos del Establecimiento"
         '
-        'ESTABLECIMIENTO
-        '
-        Me.ESTABLECIMIENTO.amarillo = False
-        Me.ESTABLECIMIENTO.Ancho = Nothing
-        Me.ESTABLECIMIENTO.BackColor = System.Drawing.Color.FromName("@window")
-        Me.ESTABLECIMIENTO.ColorAtras = System.Drawing.Color.Empty
-        Me.ESTABLECIMIENTO.Count = 0
-        Me.ESTABLECIMIENTO.DataSource = Nothing
-        Me.ESTABLECIMIENTO.DataSourceSelect = Nothing
-        Me.ESTABLECIMIENTO.gris = False
-        Me.ESTABLECIMIENTO.Letra = Nothing
-        Me.ESTABLECIMIENTO.Limitar = False
-        Me.ESTABLECIMIENTO.Location = New System.Drawing.Point(24, 28)
-        Me.ESTABLECIMIENTO.MensajeAgua = Nothing
-        Me.ESTABLECIMIENTO.mostrarMensaje = False
-        Me.ESTABLECIMIENTO.Name = "ESTABLECIMIENTO"
-        Me.ESTABLECIMIENTO.Negritas = False
-        Me.ESTABLECIMIENTO.OBTENERLISTLLENADO = Nothing
-        Me.ESTABLECIMIENTO.procedure = Nothing
-        Me.ESTABLECIMIENTO.SelectedIndex = -1
-        Me.ESTABLECIMIENTO.SelectedItem = ""
-        Me.ESTABLECIMIENTO.SelectedValue = Nothing
-        Me.ESTABLECIMIENTO.Size = New System.Drawing.Size(316, 22)
-        Me.ESTABLECIMIENTO.TabIndex = 26
-        Me.ESTABLECIMIENTO.TODOSS = False
-        Me.ESTABLECIMIENTO.Watermark = Nothing
-        '
-        'COLONIA_ESTABLECIMIENTOS
-        '
-        Me.COLONIA_ESTABLECIMIENTOS.amarillo = False
-        Me.COLONIA_ESTABLECIMIENTOS.Ancho = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.BackColor = System.Drawing.Color.FromName("@window")
-        Me.COLONIA_ESTABLECIMIENTOS.ColorAtras = System.Drawing.Color.Empty
-        Me.COLONIA_ESTABLECIMIENTOS.Count = 0
-        Me.COLONIA_ESTABLECIMIENTOS.DataSource = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.DataSourceSelect = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.gris = False
-        Me.COLONIA_ESTABLECIMIENTOS.Letra = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.Limitar = False
-        Me.COLONIA_ESTABLECIMIENTOS.Location = New System.Drawing.Point(24, 361)
-        Me.COLONIA_ESTABLECIMIENTOS.MensajeAgua = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.mostrarMensaje = False
-        Me.COLONIA_ESTABLECIMIENTOS.Name = "COLONIA_ESTABLECIMIENTOS"
-        Me.COLONIA_ESTABLECIMIENTOS.Negritas = False
-        Me.COLONIA_ESTABLECIMIENTOS.OBTENERLISTLLENADO = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.procedure = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.SelectedIndex = -1
-        Me.COLONIA_ESTABLECIMIENTOS.SelectedItem = ""
-        Me.COLONIA_ESTABLECIMIENTOS.SelectedValue = Nothing
-        Me.COLONIA_ESTABLECIMIENTOS.Size = New System.Drawing.Size(277, 22)
-        Me.COLONIA_ESTABLECIMIENTOS.TabIndex = 25
-        Me.COLONIA_ESTABLECIMIENTOS.TODOSS = False
-        Me.COLONIA_ESTABLECIMIENTOS.Watermark = Nothing
-        '
         'Label51
         '
         Me.Label51.AutoSize = True
@@ -696,33 +643,6 @@ Partial Class Generar_Orden_Verficacion
         Me.ULTIMOS_PAQUETES.Name = "ULTIMOS_PAQUETES"
         Me.ULTIMOS_PAQUETES.Size = New System.Drawing.Size(200, 22)
         Me.ULTIMOS_PAQUETES.TabIndex = 10
-        '
-        'PAQUETES_ACTAS
-        '
-        Me.PAQUETES_ACTAS.amarillo = False
-        Me.PAQUETES_ACTAS.Ancho = Nothing
-        Me.PAQUETES_ACTAS.BackColor = System.Drawing.Color.FromName("@window")
-        Me.PAQUETES_ACTAS.ColorAtras = System.Drawing.Color.Empty
-        Me.PAQUETES_ACTAS.Count = 0
-        Me.PAQUETES_ACTAS.DataSource = Nothing
-        Me.PAQUETES_ACTAS.DataSourceSelect = Nothing
-        Me.PAQUETES_ACTAS.gris = False
-        Me.PAQUETES_ACTAS.Letra = Nothing
-        Me.PAQUETES_ACTAS.Limitar = False
-        Me.PAQUETES_ACTAS.Location = New System.Drawing.Point(13, 56)
-        Me.PAQUETES_ACTAS.MensajeAgua = Nothing
-        Me.PAQUETES_ACTAS.mostrarMensaje = False
-        Me.PAQUETES_ACTAS.Name = "PAQUETES_ACTAS"
-        Me.PAQUETES_ACTAS.Negritas = False
-        Me.PAQUETES_ACTAS.OBTENERLISTLLENADO = Nothing
-        Me.PAQUETES_ACTAS.procedure = Nothing
-        Me.PAQUETES_ACTAS.SelectedIndex = -1
-        Me.PAQUETES_ACTAS.SelectedItem = ""
-        Me.PAQUETES_ACTAS.SelectedValue = Nothing
-        Me.PAQUETES_ACTAS.Size = New System.Drawing.Size(293, 22)
-        Me.PAQUETES_ACTAS.TabIndex = 9
-        Me.PAQUETES_ACTAS.TODOSS = False
-        Me.PAQUETES_ACTAS.Watermark = Nothing
         '
         'AddPaquete
         '
@@ -1033,33 +953,6 @@ Partial Class Generar_Orden_Verficacion
         Me.AddVerificador.TabIndex = 64
         Me.AddVerificador.Text = "Nuevo Verificador"
         '
-        'VERIFICADORES
-        '
-        Me.VERIFICADORES.amarillo = False
-        Me.VERIFICADORES.Ancho = Nothing
-        Me.VERIFICADORES.BackColor = System.Drawing.Color.FromName("@window")
-        Me.VERIFICADORES.ColorAtras = System.Drawing.Color.Empty
-        Me.VERIFICADORES.Count = 0
-        Me.VERIFICADORES.DataSource = Nothing
-        Me.VERIFICADORES.DataSourceSelect = Nothing
-        Me.VERIFICADORES.gris = False
-        Me.VERIFICADORES.Letra = Nothing
-        Me.VERIFICADORES.Limitar = False
-        Me.VERIFICADORES.Location = New System.Drawing.Point(329, 25)
-        Me.VERIFICADORES.MensajeAgua = Nothing
-        Me.VERIFICADORES.mostrarMensaje = False
-        Me.VERIFICADORES.Name = "VERIFICADORES"
-        Me.VERIFICADORES.Negritas = False
-        Me.VERIFICADORES.OBTENERLISTLLENADO = Nothing
-        Me.VERIFICADORES.procedure = Nothing
-        Me.VERIFICADORES.SelectedIndex = -1
-        Me.VERIFICADORES.SelectedItem = ""
-        Me.VERIFICADORES.SelectedValue = Nothing
-        Me.VERIFICADORES.Size = New System.Drawing.Size(301, 22)
-        Me.VERIFICADORES.TabIndex = 0
-        Me.VERIFICADORES.TODOSS = False
-        Me.VERIFICADORES.Watermark = Nothing
-        '
         'sig_pag2
         '
         Me.sig_pag2.Location = New System.Drawing.Point(1072, 565)
@@ -1316,33 +1209,6 @@ Partial Class Generar_Orden_Verficacion
         Me.MUESTRA_RESPONSABILIDAD.Name = "MUESTRA_RESPONSABILIDAD"
         Me.MUESTRA_RESPONSABILIDAD.Size = New System.Drawing.Size(327, 22)
         Me.MUESTRA_RESPONSABILIDAD.TabIndex = 102
-        '
-        'TIPO_OBJETIVO
-        '
-        Me.TIPO_OBJETIVO.amarillo = False
-        Me.TIPO_OBJETIVO.Ancho = Nothing
-        Me.TIPO_OBJETIVO.BackColor = System.Drawing.Color.FromName("@window")
-        Me.TIPO_OBJETIVO.ColorAtras = System.Drawing.Color.Empty
-        Me.TIPO_OBJETIVO.Count = 0
-        Me.TIPO_OBJETIVO.DataSource = Nothing
-        Me.TIPO_OBJETIVO.DataSourceSelect = Nothing
-        Me.TIPO_OBJETIVO.gris = False
-        Me.TIPO_OBJETIVO.Letra = Nothing
-        Me.TIPO_OBJETIVO.Limitar = False
-        Me.TIPO_OBJETIVO.Location = New System.Drawing.Point(382, 143)
-        Me.TIPO_OBJETIVO.MensajeAgua = Nothing
-        Me.TIPO_OBJETIVO.mostrarMensaje = False
-        Me.TIPO_OBJETIVO.Name = "TIPO_OBJETIVO"
-        Me.TIPO_OBJETIVO.Negritas = False
-        Me.TIPO_OBJETIVO.OBTENERLISTLLENADO = Nothing
-        Me.TIPO_OBJETIVO.procedure = Nothing
-        Me.TIPO_OBJETIVO.SelectedIndex = -1
-        Me.TIPO_OBJETIVO.SelectedItem = ""
-        Me.TIPO_OBJETIVO.SelectedValue = Nothing
-        Me.TIPO_OBJETIVO.Size = New System.Drawing.Size(266, 22)
-        Me.TIPO_OBJETIVO.TabIndex = 101
-        Me.TIPO_OBJETIVO.TODOSS = False
-        Me.TIPO_OBJETIVO.Watermark = Nothing
         '
         'Label29
         '
@@ -1723,7 +1589,6 @@ Partial Class Generar_Orden_Verficacion
         Me.FOLIO_ACTA_VERIFICACION.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.FOLIO_ACTA_VERIFICACION.Location = New System.Drawing.Point(41, 35)
         Me.FOLIO_ACTA_VERIFICACION.Name = "FOLIO_ACTA_VERIFICACION"
-        Me.FOLIO_ACTA_VERIFICACION.ReadOnly = True
         Me.FOLIO_ACTA_VERIFICACION.Size = New System.Drawing.Size(307, 22)
         Me.FOLIO_ACTA_VERIFICACION.TabIndex = 46
         Me.FOLIO_ACTA_VERIFICACION.Watermark = "R-46SG56DF"
@@ -1825,7 +1690,6 @@ Partial Class Generar_Orden_Verficacion
         Me.FOLIO_ORDEN.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.FOLIO_ORDEN.Location = New System.Drawing.Point(41, 86)
         Me.FOLIO_ORDEN.Name = "FOLIO_ORDEN"
-        Me.FOLIO_ORDEN.ReadOnly = True
         Me.FOLIO_ORDEN.Size = New System.Drawing.Size(307, 22)
         Me.FOLIO_ORDEN.TabIndex = 22
         Me.FOLIO_ORDEN.Watermark = "R-46SG56DF"
@@ -1887,6 +1751,136 @@ Partial Class Generar_Orden_Verficacion
         Me.MOTIVO.Name = "MOTIVO"
         Me.MOTIVO.Size = New System.Drawing.Size(327, 22)
         Me.MOTIVO.TabIndex = 120
+        '
+        'ESTABLECIMIENTO
+        '
+        Me.ESTABLECIMIENTO.amarillo = False
+        Me.ESTABLECIMIENTO.Ancho = Nothing
+        Me.ESTABLECIMIENTO.BackColor = System.Drawing.Color.FromName("@window")
+        Me.ESTABLECIMIENTO.ColorAtras = System.Drawing.Color.Empty
+        Me.ESTABLECIMIENTO.Count = 0
+        Me.ESTABLECIMIENTO.DataSourceSelect = Nothing
+        Me.ESTABLECIMIENTO.gris = False
+        Me.ESTABLECIMIENTO.Letra = Nothing
+        Me.ESTABLECIMIENTO.Limitar = False
+        Me.ESTABLECIMIENTO.Location = New System.Drawing.Point(24, 28)
+        Me.ESTABLECIMIENTO.MensajeAgua = Nothing
+        Me.ESTABLECIMIENTO.mostrarMensaje = False
+        Me.ESTABLECIMIENTO.Name = "ESTABLECIMIENTO"
+        Me.ESTABLECIMIENTO.Negritas = False
+        Me.ESTABLECIMIENTO.OBTENERLISTLLENADO = Nothing
+        Me.ESTABLECIMIENTO.procedure = Nothing
+        Me.ESTABLECIMIENTO.SelectedIndex = -1
+        Me.ESTABLECIMIENTO.SelectedItem = ""
+        Me.ESTABLECIMIENTO.SelectedValue = Nothing
+        Me.ESTABLECIMIENTO.Size = New System.Drawing.Size(316, 22)
+        Me.ESTABLECIMIENTO.TabIndex = 26
+        Me.ESTABLECIMIENTO.TODOSS = False
+        Me.ESTABLECIMIENTO.Watermark = Nothing
+        '
+        'COLONIA_ESTABLECIMIENTOS
+        '
+        Me.COLONIA_ESTABLECIMIENTOS.amarillo = False
+        Me.COLONIA_ESTABLECIMIENTOS.Ancho = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.BackColor = System.Drawing.Color.FromName("@window")
+        Me.COLONIA_ESTABLECIMIENTOS.ColorAtras = System.Drawing.Color.Empty
+        Me.COLONIA_ESTABLECIMIENTOS.Count = 0
+        Me.COLONIA_ESTABLECIMIENTOS.DataSourceSelect = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.gris = False
+        Me.COLONIA_ESTABLECIMIENTOS.Letra = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.Limitar = False
+        Me.COLONIA_ESTABLECIMIENTOS.Location = New System.Drawing.Point(24, 361)
+        Me.COLONIA_ESTABLECIMIENTOS.MensajeAgua = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.mostrarMensaje = False
+        Me.COLONIA_ESTABLECIMIENTOS.Name = "COLONIA_ESTABLECIMIENTOS"
+        Me.COLONIA_ESTABLECIMIENTOS.Negritas = False
+        Me.COLONIA_ESTABLECIMIENTOS.OBTENERLISTLLENADO = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.procedure = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.SelectedIndex = -1
+        Me.COLONIA_ESTABLECIMIENTOS.SelectedItem = ""
+        Me.COLONIA_ESTABLECIMIENTOS.SelectedValue = Nothing
+        Me.COLONIA_ESTABLECIMIENTOS.Size = New System.Drawing.Size(277, 22)
+        Me.COLONIA_ESTABLECIMIENTOS.TabIndex = 25
+        Me.COLONIA_ESTABLECIMIENTOS.TODOSS = False
+        Me.COLONIA_ESTABLECIMIENTOS.Watermark = Nothing
+        '
+        'PAQUETES_ACTAS
+        '
+        Me.PAQUETES_ACTAS.amarillo = False
+        Me.PAQUETES_ACTAS.Ancho = Nothing
+        Me.PAQUETES_ACTAS.BackColor = System.Drawing.Color.FromName("@window")
+        Me.PAQUETES_ACTAS.ColorAtras = System.Drawing.Color.Empty
+        Me.PAQUETES_ACTAS.Count = 0
+        Me.PAQUETES_ACTAS.DataSourceSelect = Nothing
+        Me.PAQUETES_ACTAS.gris = False
+        Me.PAQUETES_ACTAS.Letra = Nothing
+        Me.PAQUETES_ACTAS.Limitar = False
+        Me.PAQUETES_ACTAS.Location = New System.Drawing.Point(13, 56)
+        Me.PAQUETES_ACTAS.MensajeAgua = Nothing
+        Me.PAQUETES_ACTAS.mostrarMensaje = False
+        Me.PAQUETES_ACTAS.Name = "PAQUETES_ACTAS"
+        Me.PAQUETES_ACTAS.Negritas = False
+        Me.PAQUETES_ACTAS.OBTENERLISTLLENADO = Nothing
+        Me.PAQUETES_ACTAS.procedure = Nothing
+        Me.PAQUETES_ACTAS.SelectedIndex = -1
+        Me.PAQUETES_ACTAS.SelectedItem = ""
+        Me.PAQUETES_ACTAS.SelectedValue = Nothing
+        Me.PAQUETES_ACTAS.Size = New System.Drawing.Size(293, 22)
+        Me.PAQUETES_ACTAS.TabIndex = 9
+        Me.PAQUETES_ACTAS.TODOSS = False
+        Me.PAQUETES_ACTAS.Watermark = Nothing
+        '
+        'VERIFICADORES
+        '
+        Me.VERIFICADORES.amarillo = False
+        Me.VERIFICADORES.Ancho = Nothing
+        Me.VERIFICADORES.BackColor = System.Drawing.Color.FromName("@window")
+        Me.VERIFICADORES.ColorAtras = System.Drawing.Color.Empty
+        Me.VERIFICADORES.Count = 0
+        Me.VERIFICADORES.DataSourceSelect = Nothing
+        Me.VERIFICADORES.gris = False
+        Me.VERIFICADORES.Letra = Nothing
+        Me.VERIFICADORES.Limitar = False
+        Me.VERIFICADORES.Location = New System.Drawing.Point(329, 25)
+        Me.VERIFICADORES.MensajeAgua = Nothing
+        Me.VERIFICADORES.mostrarMensaje = False
+        Me.VERIFICADORES.Name = "VERIFICADORES"
+        Me.VERIFICADORES.Negritas = False
+        Me.VERIFICADORES.OBTENERLISTLLENADO = Nothing
+        Me.VERIFICADORES.procedure = Nothing
+        Me.VERIFICADORES.SelectedIndex = -1
+        Me.VERIFICADORES.SelectedItem = ""
+        Me.VERIFICADORES.SelectedValue = Nothing
+        Me.VERIFICADORES.Size = New System.Drawing.Size(301, 22)
+        Me.VERIFICADORES.TabIndex = 0
+        Me.VERIFICADORES.TODOSS = False
+        Me.VERIFICADORES.Watermark = Nothing
+        '
+        'TIPO_OBJETIVO
+        '
+        Me.TIPO_OBJETIVO.amarillo = False
+        Me.TIPO_OBJETIVO.Ancho = Nothing
+        Me.TIPO_OBJETIVO.BackColor = System.Drawing.Color.FromName("@window")
+        Me.TIPO_OBJETIVO.ColorAtras = System.Drawing.Color.Empty
+        Me.TIPO_OBJETIVO.Count = 0
+        Me.TIPO_OBJETIVO.DataSourceSelect = Nothing
+        Me.TIPO_OBJETIVO.gris = False
+        Me.TIPO_OBJETIVO.Letra = Nothing
+        Me.TIPO_OBJETIVO.Limitar = False
+        Me.TIPO_OBJETIVO.Location = New System.Drawing.Point(382, 143)
+        Me.TIPO_OBJETIVO.MensajeAgua = Nothing
+        Me.TIPO_OBJETIVO.mostrarMensaje = False
+        Me.TIPO_OBJETIVO.Name = "TIPO_OBJETIVO"
+        Me.TIPO_OBJETIVO.Negritas = False
+        Me.TIPO_OBJETIVO.OBTENERLISTLLENADO = Nothing
+        Me.TIPO_OBJETIVO.procedure = Nothing
+        Me.TIPO_OBJETIVO.SelectedIndex = -1
+        Me.TIPO_OBJETIVO.SelectedItem = ""
+        Me.TIPO_OBJETIVO.SelectedValue = Nothing
+        Me.TIPO_OBJETIVO.Size = New System.Drawing.Size(266, 22)
+        Me.TIPO_OBJETIVO.TabIndex = 101
+        Me.TIPO_OBJETIVO.TODOSS = False
+        Me.TIPO_OBJETIVO.Watermark = Nothing
         '
         'Generar_Orden_Verficacion
         '

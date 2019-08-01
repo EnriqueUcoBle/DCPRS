@@ -16,7 +16,7 @@ Public Class Generar_Orden_Verficacion
             Case "NUEVO"
                 LimpiarFormCompleto()
             Case "GUARDAR"
-                'guardar_acta()
+                guardar_todo()
             Case "ACTUALIZAR"
                 llenarCombos()
                 oFunciones.AlertBox("Listas Actualizadas ", Wisej.Web.MessageBoxIcon.Information)
@@ -396,7 +396,7 @@ Public Class Generar_Orden_Verficacion
     End Sub
     Private Function guardarActaA() As Integer
         Try
-            ReDim oFunciones.ParametersX_Global(20)
+            ReDim oFunciones.ParametersX_Global(29)
             oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@folio_orden", FOLIO_ORDEN.Text)
             oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@cve_establecimiento", ESTABLECIMIENTO.SelectedValue)
             oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@fecha_verificacion", FECHA_ORDEN.Value)
@@ -467,19 +467,20 @@ Public Class Generar_Orden_Verficacion
             For Each COLUM As DataGridViewRow In MUESTRAS_GRID.Rows
 
                 Try
-                    ReDim oFunciones.ParametersX_Global(1)
-                    oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_TIPO_MUESTRA", COLUM.Item("Correo").Value)
+                    ReDim oFunciones.ParametersX_Global(7)
+                    oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_TIPO_MUESTRA", COLUM.Item("CVE_TIPO_MUESTRA").Value)
                     oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_ACTA", cve_acta)
-                    oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_TIPO_ANALISIS", cve_acta)
-                    oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@DESCRIPCION", cve_acta)
-                    oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CLAVE_VS", cve_acta)
-                    oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@MARCA", cve_acta)
-
-                    result = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_VERIFICADORES_ACTAS_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.Int)
+                    oFunciones.ParametersX_Global(2) = New SqlClient.SqlParameter("@CVE_TIPO_ANALISIS", COLUM.Item("CVE_TIPO_ANALISIS").Value)
+                    oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@DESCRIPCION", COLUM.Item("DESCRIPCION").Value)
+                    oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@CLAVE_VS", COLUM.Item("CLAVE_VS").Value)
+                    oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@MARCA", COLUM.Item("MARCA").Value)
+                    oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@FECHA_CADUCIDA", COLUM.Item("CADUCIDAD").Value)
+                    oFunciones.ParametersX_Global(7) = New SqlClient.SqlParameter("@CANTIDAD", COLUM.Item("CANTIDAD").Value)
+                    result = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_TIPO_MUESTRAS_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.Int)
                     If result = 200 Then
-                        oFunciones.AlertBox("Verificador Vinculado a el acta: " & COLUM.Item("Nombre").Value, MessageBoxIcon.Information)
+                        oFunciones.AlertBox("Muestras Vinculado a el acta con id: " & result, MessageBoxIcon.Information)
                     Else
-                        oFunciones.AlertBox("Error al vincular el verificador:  " & COLUM.Item("Nombre").Value & "con el acta", MessageBoxIcon.Information)
+                        oFunciones.AlertBox("Error al vincular las Muestras", MessageBoxIcon.Information)
                     End If
                 Catch ex As Exception
                     Wisej.Web.MessageBox.Show("Error al guardar, ERROR: " & ex.Message, "Guardar  :Exception:", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
@@ -488,5 +489,29 @@ Public Class Generar_Orden_Verficacion
             Next
         End If
     End Sub
+    Private Sub guardarOrdenVerificacion()
+        Try
+            ReDim oFunciones.ParametersX_Global(1)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@FOLIO", FOLIO_ORDEN.Text)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@URL", FOLIO_ORDEN.Text)
 
+            Dim result As String = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ORDEN_VERIFICACION_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.VarChar, 50)
+            If result = FOLIO_ORDEN.Text Then
+                oFunciones.AlertBox("orden almacenada " & result, MessageBoxIcon.Information)
+            Else
+                oFunciones.AlertBox("Error al guardar la orden  ", MessageBoxIcon.Information)
+            End If
+        Catch ex As Exception
+            Wisej.Web.MessageBox.Show("Error al guardar, ERROR: " & ex.Message, "Guardar  :Exception:", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub guardar_todo()
+        guardarActaA()
+        guardar_Verificadores()
+        guardar_muestras()
+        guardarOrdenVerificacion()
+
+
+    End Sub
 End Class
