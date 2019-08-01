@@ -778,7 +778,7 @@ Partial Public Class DataSet_pCAT_OPERADORES_B
             Me.columnCORREO.MaxLength = 50
             Me.columnSEXO.MaxLength = 20
             Me.columnFECHA_NACIMIENTO.AllowDBNull = false
-            Me.columnGRADO_ESTUDIO.MaxLength = 50
+            Me.columnGRADO_ESTUDIO.MaxLength = 60
             Me.columnCLAVE_TRABAJADOR.MaxLength = 30
             Me.columnFecha_Alta.AllowDBNull = false
             Me.columnCVE_OPERADOR.AutoIncrement = true

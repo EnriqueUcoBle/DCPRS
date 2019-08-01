@@ -123,7 +123,7 @@
               <xs:element name="GRADO_ESTUDIO" msprop:Generator_ColumnVarNameInTable="columnGRADO_ESTUDIO" msprop:Generator_ColumnPropNameInRow="GRADO_ESTUDIO" msprop:Generator_ColumnPropNameInTable="GRADO_ESTUDIOColumn" msprop:Generator_UserColumnName="GRADO_ESTUDIO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="60" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

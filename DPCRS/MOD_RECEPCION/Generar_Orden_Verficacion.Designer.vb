@@ -104,6 +104,13 @@ Partial Class Generar_Orden_Verficacion
         Me.ant_pag2 = New Wisej.Web.Button()
         Me.TabPage3 = New Wisej.Web.TabPage()
         Me.Panel9 = New Wisej.Web.Panel()
+        Me.CVE_ACTA_V = New Wisej.Web.TextBox()
+        Me.Label40 = New Wisej.Web.Label()
+        Me.TIPO_ACTA = New Wisej.Web.ComboBox()
+        Me.Label28 = New Wisej.Web.Label()
+        Me.MOTIVO = New Wisej.Web.ComboBox()
+        Me.Label25 = New Wisej.Web.Label()
+        Me.PROGRAMA_ = New Wisej.Web.ComboBox()
         Me.GroupBox1 = New Wisej.Web.GroupBox()
         Me.RadioButton2 = New Wisej.Web.RadioButton()
         Me.RadioButton1 = New Wisej.Web.RadioButton()
@@ -174,10 +181,6 @@ Partial Class Generar_Orden_Verficacion
         Me.finalizar = New Wisej.Web.Button()
         Me.ant_pag4 = New Wisej.Web.Button()
         Me.ErrorProvider1 = New Wisej.Web.ErrorProvider(Me.components)
-        Me.Label25 = New Wisej.Web.Label()
-        Me.PROGRAMA_ = New Wisej.Web.ComboBox()
-        Me.Label28 = New Wisej.Web.Label()
-        Me.MOTIVO = New Wisej.Web.ComboBox()
         Me.ESTABLECIMIENTO = New DPCRS.Combosax_B()
         Me.COLONIA_ESTABLECIMIENTOS = New DPCRS.Combosax_B()
         Me.PAQUETES_ACTAS = New DPCRS.Combosax_B()
@@ -212,7 +215,7 @@ Partial Class Generar_Orden_Verficacion
         Me.RibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonBar1.Name = "RibbonBar1"
         Me.RibbonBar1.Pages.Add(Me.RibbonBarPage1)
-        Me.RibbonBar1.Size = New System.Drawing.Size(1197, 141)
+        Me.RibbonBar1.Size = New System.Drawing.Size(1187, 141)
         '
         'RibbonBarPage1
         '
@@ -740,8 +743,8 @@ Partial Class Generar_Orden_Verficacion
         Me.TabControl1.Dock = Wisej.Web.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 141)
         Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.PageInsets = New Wisej.Web.Padding(1, 30, 1, 1)
-        Me.TabControl1.Size = New System.Drawing.Size(1197, 660)
+        Me.TabControl1.PageInsets = New Wisej.Web.Padding(1, 35, 1, 1)
+        Me.TabControl1.Size = New System.Drawing.Size(1187, 655)
         Me.TabControl1.TabIndex = 10
         '
         'TabPage1
@@ -749,7 +752,7 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage1.Controls.Add(Me.sig_pag1)
         Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.ImageSource = "Resources\Images\Menu\64\establecimiento1.png"
-        Me.TabPage1.Location = New System.Drawing.Point(1, 30)
+        Me.TabPage1.Location = New System.Drawing.Point(1, 35)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Text = "Establecimiento & Propietario"
         '
@@ -768,7 +771,7 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage2.Controls.Add(Me.sig_pag2)
         Me.TabPage2.Controls.Add(Me.ant_pag2)
         Me.TabPage2.ImageSource = "Resources\Images\Menu\64\certificate .png"
-        Me.TabPage2.Location = New System.Drawing.Point(1, 30)
+        Me.TabPage2.Location = New System.Drawing.Point(1, 35)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Text = "Verificadores & Muestreo"
         '
@@ -975,13 +978,16 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage3.Controls.Add(Me.sig_pag3)
         Me.TabPage3.Controls.Add(Me.ant_pag3)
         Me.TabPage3.ImageSource = "Resources\Images\Menu\64\learning .png"
-        Me.TabPage3.Location = New System.Drawing.Point(1, 30)
+        Me.TabPage3.Location = New System.Drawing.Point(1, 35)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Text = "Datos del Acta"
         '
         'Panel9
         '
         Me.Panel9.BorderStyle = Wisej.Web.BorderStyle.Solid
+        Me.Panel9.Controls.Add(Me.CVE_ACTA_V)
+        Me.Panel9.Controls.Add(Me.Label40)
+        Me.Panel9.Controls.Add(Me.TIPO_ACTA)
         Me.Panel9.Controls.Add(Me.Label28)
         Me.Panel9.Controls.Add(Me.MOTIVO)
         Me.Panel9.Controls.Add(Me.Label25)
@@ -1032,6 +1038,69 @@ Partial Class Generar_Orden_Verficacion
         Me.Panel9.Size = New System.Drawing.Size(1179, 556)
         Me.Panel9.TabIndex = 2
         Me.Panel9.Text = "Observaciones"
+        '
+        'CVE_ACTA_V
+        '
+        Me.CVE_ACTA_V.Location = New System.Drawing.Point(792, 382)
+        Me.CVE_ACTA_V.Name = "CVE_ACTA_V"
+        Me.CVE_ACTA_V.Size = New System.Drawing.Size(327, 22)
+        Me.CVE_ACTA_V.TabIndex = 124
+        Me.CVE_ACTA_V.Text = "0"
+        Me.CVE_ACTA_V.Visible = False
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label40.Location = New System.Drawing.Point(792, 322)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(177, 16)
+        Me.Label40.TabIndex = 123
+        Me.Label40.Text = "Tipo de acta de verificacion"
+        '
+        'TIPO_ACTA
+        '
+        Me.TIPO_ACTA.Items.AddRange(New Object() {"Solicitud del propietario", "Queja / Denuncia", "Verificacion sanitaria de rutina", "No especificado"})
+        Me.TIPO_ACTA.Location = New System.Drawing.Point(792, 341)
+        Me.TIPO_ACTA.Name = "TIPO_ACTA"
+        Me.TIPO_ACTA.Size = New System.Drawing.Size(327, 22)
+        Me.TIPO_ACTA.TabIndex = 122
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label28.Location = New System.Drawing.Point(792, 268)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(163, 16)
+        Me.Label28.TabIndex = 121
+        Me.Label28.Text = "Motivo de la Verificacion:"
+        '
+        'MOTIVO
+        '
+        Me.MOTIVO.Items.AddRange(New Object() {"Solicitud del propietario", "Queja / Denuncia", "Verificacion sanitaria de rutina", "No especificado"})
+        Me.MOTIVO.Location = New System.Drawing.Point(792, 287)
+        Me.MOTIVO.Name = "MOTIVO"
+        Me.MOTIVO.Size = New System.Drawing.Size(327, 22)
+        Me.MOTIVO.TabIndex = 120
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.Label25.Location = New System.Drawing.Point(792, 218)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(73, 16)
+        Me.Label25.TabIndex = 119
+        Me.Label25.Text = "Programa:"
+        '
+        'PROGRAMA_
+        '
+        Me.PROGRAMA_.Items.AddRange(New Object() {"Federal", "Estatal", "Municipal", "No especificado"})
+        Me.PROGRAMA_.Location = New System.Drawing.Point(792, 239)
+        Me.PROGRAMA_.Name = "PROGRAMA_"
+        Me.PROGRAMA_.Size = New System.Drawing.Size(327, 22)
+        Me.PROGRAMA_.TabIndex = 118
         '
         'GroupBox1
         '
@@ -1120,11 +1189,9 @@ Partial Class Generar_Orden_Verficacion
         '
         'id_testigo1
         '
-        Me.id_testigo1.Enabled = False
         Me.id_testigo1.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
         Me.id_testigo1.Location = New System.Drawing.Point(13, 476)
         Me.id_testigo1.Name = "id_testigo1"
-        Me.id_testigo1.ReadOnly = True
         Me.id_testigo1.Size = New System.Drawing.Size(356, 22)
         Me.id_testigo1.TabIndex = 111
         Me.id_testigo1.Watermark = "Doc con el que valida su identidad"
@@ -1147,11 +1214,9 @@ Partial Class Generar_Orden_Verficacion
         '
         'id_testigo2
         '
-        Me.id_testigo2.Enabled = False
         Me.id_testigo2.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
         Me.id_testigo2.Location = New System.Drawing.Point(375, 476)
         Me.id_testigo2.Name = "id_testigo2"
-        Me.id_testigo2.ReadOnly = True
         Me.id_testigo2.Size = New System.Drawing.Size(356, 22)
         Me.id_testigo2.TabIndex = 108
         Me.id_testigo2.Watermark = "Doc con el que valida su identidad"
@@ -1515,7 +1580,7 @@ Partial Class Generar_Orden_Verficacion
         Me.TabPage4.Controls.Add(Me.finalizar)
         Me.TabPage4.Controls.Add(Me.ant_pag4)
         Me.TabPage4.ImageSource = "Resources\Icons\Menu\PDF.png"
-        Me.TabPage4.Location = New System.Drawing.Point(1, 30)
+        Me.TabPage4.Location = New System.Drawing.Point(1, 35)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Text = "Acta Escaneada"
         '
@@ -1716,42 +1781,6 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label25.Location = New System.Drawing.Point(792, 240)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(188, 16)
-        Me.Label25.TabIndex = 119
-        Me.Label25.Text = "Programa al que esta inscrito"
-        '
-        'PROGRAMA_
-        '
-        Me.PROGRAMA_.Items.AddRange(New Object() {"FEDERAL", "ESTATAL", "MUNICIPAL"})
-        Me.PROGRAMA_.Location = New System.Drawing.Point(792, 268)
-        Me.PROGRAMA_.Name = "PROGRAMA_"
-        Me.PROGRAMA_.Size = New System.Drawing.Size(327, 22)
-        Me.PROGRAMA_.TabIndex = 118
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label28.Location = New System.Drawing.Point(792, 333)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(159, 16)
-        Me.Label28.TabIndex = 121
-        Me.Label28.Text = "Motivo de la Verificacion"
-        '
-        'MOTIVO
-        '
-        Me.MOTIVO.Items.AddRange(New Object() {"Solicitud del propietario", "Queja / Denuncia", "Verificacion sanitaria de rutina"})
-        Me.MOTIVO.Location = New System.Drawing.Point(792, 361)
-        Me.MOTIVO.Name = "MOTIVO"
-        Me.MOTIVO.Size = New System.Drawing.Size(327, 22)
-        Me.MOTIVO.TabIndex = 120
-        '
         'ESTABLECIMIENTO
         '
         Me.ESTABLECIMIENTO.amarillo = False
@@ -1886,7 +1915,7 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.AutoScaleMode = Wisej.Web.AutoScaleMode.None
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1197, 801)
+        Me.ClientSize = New System.Drawing.Size(1187, 796)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.RibbonBar1)
         Me.MaximizeBox = False
@@ -2094,4 +2123,7 @@ Partial Class Generar_Orden_Verficacion
     Friend WithEvents PROGRAMA_ As Wisej.Web.ComboBox
     Friend WithEvents Label28 As Wisej.Web.Label
     Friend WithEvents MOTIVO As Wisej.Web.ComboBox
+    Friend WithEvents Label40 As Wisej.Web.Label
+    Friend WithEvents TIPO_ACTA As Wisej.Web.ComboBox
+    Friend WithEvents CVE_ACTA_V As Wisej.Web.TextBox
 End Class

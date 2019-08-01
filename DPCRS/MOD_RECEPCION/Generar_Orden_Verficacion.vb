@@ -396,37 +396,39 @@ Public Class Generar_Orden_Verficacion
     End Sub
     Private Function guardarActaA() As Integer
         Try
-            ReDim oFunciones.ParametersX_Global(29)
-            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@folio_orden", FOLIO_ORDEN.Text)
-            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@cve_establecimiento", ESTABLECIMIENTO.SelectedValue)
-            oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@fecha_verificacion", FECHA_ORDEN.Value)
-            oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@hora_verificacion", HORA_VERIFICACION.Value)
-            oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@programa", PROGRAMA_.SelectedItem)
-            oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@nom_testigo1", txtTestigo1.Text)
-            oFunciones.ParametersX_Global(7) = New SqlClient.SqlParameter("@nom_testigo2", txtTestigo2.Text)
-            oFunciones.ParametersX_Global(8) = New SqlClient.SqlParameter("@dom_testigo1", txtTestigo_Domicilio1.Text)
-            oFunciones.ParametersX_Global(9) = New SqlClient.SqlParameter("@dom_testigo2", txtTestigo_Domicilio2.Text)
-            oFunciones.ParametersX_Global(10) = New SqlClient.SqlParameter("@id_testigo1", id_testigo1.SelectedItem)
-            oFunciones.ParametersX_Global(11) = New SqlClient.SqlParameter("@id_testigo2", id_testigo2.SelectedItem)
-            oFunciones.ParametersX_Global(12) = New SqlClient.SqlParameter("@observaciones", OBSERVACIONES_GENERALES.Text)
-            oFunciones.ParametersX_Global(13) = New SqlClient.SqlParameter("@medida_seguridad", RB_medidas_seguridad_si.Checked)
-            oFunciones.ParametersX_Global(14) = New SqlClient.SqlParameter("@folio_aseguramiento", FOLIO_ASEGURAMIENTO.Text)
-            oFunciones.ParametersX_Global(15) = New SqlClient.SqlParameter("@folio_suspecion", FOLIO_SUSPENCION.Text)
-            oFunciones.ParametersX_Global(16) = New SqlClient.SqlParameter("@folio_reubicacion", FOLIO__REUBICACION.Text)
-            oFunciones.ParametersX_Global(17) = New SqlClient.SqlParameter("@documentacion", RB_anexa_doc_si.Checked)
-            oFunciones.ParametersX_Global(18) = New SqlClient.SqlParameter("@numero_anexos", txtNumeroAnexos.Text)
-            oFunciones.ParametersX_Global(19) = New SqlClient.SqlParameter("@numero_anexos", txtNumeroAnexos.Text)
-            oFunciones.ParametersX_Global(20) = New SqlClient.SqlParameter("@folio_acta", FOLIO_ACTA_VERIFICACION.Text)
-            oFunciones.ParametersX_Global(21) = New SqlClient.SqlParameter("@cve_operador", Application.Session("CVE_OPERADOR"))
-            oFunciones.ParametersX_Global(22) = New SqlClient.SqlParameter("@cve_objetivo", TIPO_OBJETIVO.SelectedValue)
-            oFunciones.ParametersX_Global(23) = New SqlClient.SqlParameter("@nombre_encargardo", NOMBRE_ENCARGADO.Text)
-            oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@identificacion_encargado", IDENTIDAD_ENCARGADO.SelectedItem)
-            oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@domicilio_encargado", DETALLE_DOMICILIO_ENCARGADO.Text)
-            oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@cargo_encargado", CARGO_PUESTO.Text)
-            oFunciones.ParametersX_Global(27) = New SqlClient.SqlParameter("@cve_establecimiento", ESTABLECIMIENTO.SelectedValue)
-            oFunciones.ParametersX_Global(28) = New SqlClient.SqlParameter("@fecha_orden", FECHA_ORDEN.Text)
-            oFunciones.ParametersX_Global(29) = New SqlClient.SqlParameter("@motivo", MOTIVO.SelectedItem)
-            cve_acta = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ACTAS_VERIFICACION_G", "@parametro", oFunciones.ParametersX_Global, False, SqlDbType.VarChar, 50)
+            ReDim oFunciones.ParametersX_Global(30)
+            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@FOLIO_ORDEN", FOLIO_ORDEN.Text)
+            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_ESTABLECIMIENTO", ESTABLECIMIENTO.SelectedValue)
+            oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@FECHA_VERIFICACION", FECHA_ORDEN.Value)
+            oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@HORA_VERIFICACION", HORA_VERIFICACION.Value)
+            oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@PROGRAMA", PROGRAMA_.SelectedItem)
+            oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@NOM_TESTIGO1", txtTestigo1.Text)
+            oFunciones.ParametersX_Global(7) = New SqlClient.SqlParameter("@NOM_TESTIGO2", txtTestigo2.Text)
+            oFunciones.ParametersX_Global(8) = New SqlClient.SqlParameter("@DOM_TESTIGO1", txtTestigo_Domicilio1.Text)
+            oFunciones.ParametersX_Global(9) = New SqlClient.SqlParameter("@DOM_TESTIGO2", txtTestigo_Domicilio2.Text)
+            oFunciones.ParametersX_Global(10) = New SqlClient.SqlParameter("@ID_TESTIGO1", id_testigo1.SelectedItem)
+            oFunciones.ParametersX_Global(11) = New SqlClient.SqlParameter("@ID_TESTIGO2", id_testigo2.SelectedItem)
+            oFunciones.ParametersX_Global(12) = New SqlClient.SqlParameter("@OBSERVACIONES_GENARALES", OBSERVACIONES_GENERALES.Text)
+            oFunciones.ParametersX_Global(13) = New SqlClient.SqlParameter("@MEDIDAS_SEGURIAD", RB_medidas_seguridad_si.Checked)
+            oFunciones.ParametersX_Global(14) = New SqlClient.SqlParameter("@FOLIO_ASEGURAMIENTO", FOLIO_ASEGURAMIENTO.Text)
+            oFunciones.ParametersX_Global(15) = New SqlClient.SqlParameter("@FOLIO_SUSPENCION", FOLIO_SUSPENCION.Text)
+            oFunciones.ParametersX_Global(16) = New SqlClient.SqlParameter("@FOLIO_REUBICACION", FOLIO__REUBICACION.Text)
+            oFunciones.ParametersX_Global(17) = New SqlClient.SqlParameter("@DOCUMENTACION", RB_anexa_doc_si.Checked)
+            oFunciones.ParametersX_Global(18) = New SqlClient.SqlParameter("@NUM_ANEXOS", txtNumeroAnexos.Text)
+            oFunciones.ParametersX_Global(19) = New SqlClient.SqlParameter("@FOLIO_ACTA", FOLIO_ACTA_VERIFICACION.Text)
+            oFunciones.ParametersX_Global(20) = New SqlClient.SqlParameter("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
+            oFunciones.ParametersX_Global(21) = New SqlClient.SqlParameter("@CVE_OBJETIVO", TIPO_OBJETIVO.SelectedValue)
+            oFunciones.ParametersX_Global(22) = New SqlClient.SqlParameter("@NOMBRE_ENCARGADO", NOMBRE_ENCARGADO.Text)
+            oFunciones.ParametersX_Global(23) = New SqlClient.SqlParameter("@ID_ENCARGADO", IDENTIDAD_ENCARGADO.SelectedItem)
+            oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@DOM_ENCARGADO", DETALLE_DOMICILIO_ENCARGADO.Text)
+            oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@CARGO_ENCARGADO", CARGO_PUESTO.Text)
+            oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@MOTIVO", MOTIVO.SelectedItem)
+            oFunciones.ParametersX_Global(27) = New SqlClient.SqlParameter("@CVE_PAQUETE", PAQUETES_ACTAS.SelectedValue)
+            oFunciones.ParametersX_Global(28) = New SqlClient.SqlParameter("@OBSERVACIONES_MUESTRAS", OBSERVACIONES_MUESTRAS.Text)
+            oFunciones.ParametersX_Global(29) = New SqlClient.SqlParameter("@CVE_ACTA", CVE_ACTA_V.Text)
+            oFunciones.ParametersX_Global(30) = New SqlClient.SqlParameter("@TIPO_ACTA", TIPO_ACTA.SelectedItem)
+
+            cve_acta = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ACTAS_VERIFICACION_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.Int)
             If cve_acta <> Nothing Or cve_acta <> 0 Then
                 Wisej.Web.MessageBox.Show("Acta con folio : " & cve_acta & "ha sido almacenada correctamente", "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Information)
             End If
@@ -491,9 +493,9 @@ Public Class Generar_Orden_Verficacion
     End Sub
     Private Sub guardarOrdenVerificacion()
         Try
-            ReDim oFunciones.ParametersX_Global(1)
+            ReDim oFunciones.ParametersX_Global(0)
             oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@FOLIO", FOLIO_ORDEN.Text)
-            oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@URL", FOLIO_ORDEN.Text)
+
 
             Dim result As String = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ORDEN_VERIFICACION_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.VarChar, 50)
             If result = FOLIO_ORDEN.Text Then
@@ -507,11 +509,12 @@ Public Class Generar_Orden_Verficacion
     End Sub
 
     Private Sub guardar_todo()
-        guardarActaA()
-        guardar_Verificadores()
-        guardar_muestras()
         guardarOrdenVerificacion()
 
+
+        guardar_Verificadores()
+        guardar_muestras()
+        guardarActaA()
 
     End Sub
 End Class

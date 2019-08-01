@@ -1,0 +1,2444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{025F486B-3209-4386-9F25-5B388F7A3A4C}</ProjectGuid>
+    <ProjectTypeGuids>{563295b5-8906-4a76-be2d-ff8e711c1204};{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DPCRS</RootNamespace>
+    <AssemblyName>DPCRS</AssemblyName>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DPCRS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DPCRS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.74.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.2.UI, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Extensions, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Wizard, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.2.Web, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Ext.Geolocation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Web.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Web.Ext.BingWallpaper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Ext.BingWallpaper.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Web.Ext.ChartJS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej 2\bin\Wisej.Web.Ext.ChartJS.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Web.Ext.FullCalendar, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web.Ext.NavigationBar, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web.Ext.Notification, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Ext.Notification.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Web.Ext.RibbonBar, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\IceTeaGroup\Wisej\bin\Wisej.Web.Ext.RibbonBar.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\DevExpress.AspNetCore.Reporting.v17.2.xml" />
+    <Content Include="bin\DevExpress.Charts.Designer.v17.2.xml" />
+    <Content Include="bin\DevExpress.Charts.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.CodeParser.v17.2.dll" />
+    <Content Include="bin\DevExpress.Dashboard.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Dashboard.v17.2.Web.Mvc.xml" />
+    <Content Include="bin\DevExpress.Dashboard.v17.2.Web.xml" />
+    <Content Include="bin\DevExpress.Dashboard.v17.2.Win.xml" />
+    <Content Include="bin\DevExpress.Dashboard.v17.2.Wpf.xml" />
+    <Content Include="bin\DevExpress.Data.v17.2.dll" />
+    <Content Include="bin\DevExpress.Data.v17.2.resources.dll" />
+    <Content Include="bin\DevExpress.Data.v17.2.xml" />
+    <Content Include="bin\DevExpress.DataAccess.v17.2.dll" />
+    <Content Include="bin\DevExpress.DataAccess.v17.2.UI.dll" />
+    <Content Include="bin\DevExpress.DataAccess.v17.2.UI.xml" />
+    <Content Include="bin\DevExpress.DataAccess.v17.2.xml" />
+    <Content Include="bin\DevExpress.Diagram.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.Diagram.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Docs.v17.2.xml" />
+    <Content Include="bin\DevExpress.EasyTest.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.AuditTrail.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Chart.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Chart.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Chart.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.CloneObject.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ConditionalAppearance.v17.2 - Copy.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ConditionalAppearance.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Dashboards.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Dashboards.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Dashboards.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.EF.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.FileAttachment.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.FileAttachment.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.HtmlPropertyEditor.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.HtmlPropertyEditor.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Kpi.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Maps.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Notifications.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Notifications.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Notifications.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.PivotChart.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.PivotChart.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.PivotChart.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.PivotGrid.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.PivotGrid.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.PivotGrid.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Reports.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Reports.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Reports.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ReportsV2.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ReportsV2.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ReportsV2.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Scheduler.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Scheduler.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Scheduler.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ScriptRecorder.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ScriptRecorder.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ScriptRecorder.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Security.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.StateMachine.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.TreeListEditors.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.TreeListEditors.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.TreeListEditors.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Validation.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Validation.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Validation.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.ViewVariantsModule.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Workflow.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Workflow.Win.v17.2.xml" />
+    <Content Include="bin\DevExpress.ExpressApp.Xpo.v17.2.xml" />
+    <Content Include="bin\DevExpress.Images.v17.2.dll" />
+    <Content Include="bin\DevExpress.Map.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Mvvm.v17.2.DataModel.EF6.xml" />
+    <Content Include="bin\DevExpress.Mvvm.v17.2.DataModel.WCF.xml" />
+    <Content Include="bin\DevExpress.Mvvm.v17.2.ViewModel.xml" />
+    <Content Include="bin\DevExpress.Mvvm.v17.2.xml" />
+    <Content Include="bin\DevExpress.Office.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.Office.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Pdf.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.Pdf.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Pdf.v17.2.Drawing.xml" />
+    <Content Include="bin\DevExpress.Persistent.Base.v17.2.xml" />
+    <Content Include="bin\DevExpress.Persistent.BaseImpl.EF.v17.2.xml" />
+    <Content Include="bin\DevExpress.Persistent.BaseImpl.v17.2.xml" />
+    <Content Include="bin\DevExpress.PivotGrid.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.PivotGrid.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Printing.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.Printing.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.RichEdit.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.RichEdit.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.RichEdit.v17.2.Export.dll" />
+    <Content Include="bin\DevExpress.Snap.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Snap.v17.2.Extensions.xml" />
+    <Content Include="bin\DevExpress.Snap.v17.2.xml" />
+    <Content Include="bin\DevExpress.Sparkline.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.Sparkline.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.SpellChecker.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.SpellChecker.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Spreadsheet.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.TreeMap.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Utils.v17.2.dll" />
+    <Content Include="bin\DevExpress.Utils.v17.2.UI.dll" />
+    <Content Include="bin\DevExpress.Utils.v17.2.UI.xml" />
+    <Content Include="bin\DevExpress.Utils.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxGauges.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxHtmlEditor.v17.2.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxHtmlEditor.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxPivotGrid.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxRichEdit.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxScheduler.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxSpellChecker.v17.2.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxSpellChecker.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxSpreadsheet.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxThemes.v17.2.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxTreeList.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.Mvc.v17.2.xml" />
+    <Content Include="bin\DevExpress.Web.Resources.v17.2.dll" />
+    <Content Include="bin\DevExpress.Web.v17.2.dll" />
+    <Content Include="bin\DevExpress.Web.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Accordion.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Carousel.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Charts.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Controls.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Core.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Dashboard.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Diagram.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Docking.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.DocumentViewer.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Xpf.Gauges.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Grid.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Xpf.Grid.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Layout.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.Xpf.LayoutControl.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Map.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.NavBar.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.PdfViewer.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.PivotGrid.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Printing.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.PropertyGrid.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.ReportDesigner.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Ribbon.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.RichEdit.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Scheduler.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Scheduling.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.SpellChecker.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.Spreadsheet.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpf.TreeMap.v17.2.xml" />
+    <Content Include="bin\DevExpress.Xpo.v17.2.dll" />
+    <Content Include="bin\DevExpress.Xpo.v17.2.Extensions.xml" />
+    <Content Include="bin\DevExpress.Xpo.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraBars.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraBars.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.2.Extensions.dll" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.2.UI.xml" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.2.Web.xml" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.2.Wizard.dll" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.2.Wizard.xml" />
+    <Content Include="bin\DevExpress.XtraCharts.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraDiagram.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraDiagram.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraEditors.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraEditors.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.2.Core.dll" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.2.Presets.xml" />
+    <Content Include="bin\DevExpress.XtraGauges.v17.2.Win.xml" />
+    <Content Include="bin\DevExpress.XtraGrid.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraGrid.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraLayout.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraLayout.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraMap.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraNavBar.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraNavBar.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraPdfViewer.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraPivotGrid.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraPivotGrid.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraPrinting.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraPrinting.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.Extensions.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.Extensions.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.Service.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.Web.Azure.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.Web.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.Web.xml" />
+    <Content Include="bin\DevExpress.XtraReports.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraRichEdit.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraRichEdit.v17.2.Extensions.xml" />
+    <Content Include="bin\DevExpress.XtraRichEdit.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraScheduler.v17.2.Core.xml" />
+    <Content Include="bin\DevExpress.XtraScheduler.v17.2.Extensions.xml" />
+    <Content Include="bin\DevExpress.XtraScheduler.v17.2.Reporting.Extensions.xml" />
+    <Content Include="bin\DevExpress.XtraScheduler.v17.2.Reporting.xml" />
+    <Content Include="bin\DevExpress.XtraScheduler.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraSpellChecker.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraSpreadsheet.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraTreeList.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraTreeList.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraTreeMap.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraVerticalGrid.v17.2.dll" />
+    <Content Include="bin\DevExpress.XtraVerticalGrid.v17.2.xml" />
+    <Content Include="bin\DevExpress.XtraWizard.v17.2.xml" />
+    <Content Include="bin\de\DevExpress.Charts.Designer.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Dashboard.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Dashboard.v17.2.Web.resources.dll" />
+    <Content Include="bin\de\DevExpress.Dashboard.v17.2.Win.resources.dll" />
+    <Content Include="bin\de\DevExpress.Data.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.DataAccess.v17.2.dll" />
+    <Content Include="bin\de\DevExpress.DataAccess.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.DataAccess.v17.2.UI.resources.dll" />
+    <Content Include="bin\de\DevExpress.Diagram.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.AuditTrail.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Chart.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.CloneObject.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Dashboards.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Dashboards.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Dashboards.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Demos.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.FileAttachment.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.FileAttachment.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.HtmlPropertyEditor.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Kpi.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Maps.Mobile.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Maps.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Mobile.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Notifications.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Objects.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.PivotChart.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.PivotChart.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.PivotChart.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.PivotGrid.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Reports.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Reports.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Reports.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.ReportsV2.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.ReportsV2.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.ReportsV2.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Scheduler.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Scheduler.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Scheduler.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.ScriptRecorder.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.ScriptRecorder.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Security.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.StateMachine.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Validation.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Validation.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.ViewVariantsModule.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Workflow.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.ExpressApp.Workflow.Win.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Map.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Office.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Pdf.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.PivotGrid.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Printing.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.RichEdit.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Snap.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Snap.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\de\DevExpress.Snap.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Sparkline.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Spreadsheet.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Utils.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Utils.v17.2.UI.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.ASPxHtmlEditor.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.ASPxRichEdit.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.ASPxScheduler.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.ASPxSpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.ASPxSpreadsheet.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.ASPxTreeList.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.Resources.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Web.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Charts.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Controls.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Core.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Docking.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.DocumentViewer.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Gauges.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Grid.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.LayoutControl.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.NavBar.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.PdfViewer.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Printing.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.PropertyGrid.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Ribbon.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.RichEdit.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Scheduler.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.SpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpf.Spreadsheet.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.Xpo.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraBars.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraCharts.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraCharts.v17.2.Wizard.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraEditors.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraGauges.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraGauges.v17.2.Presets.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraGrid.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraLayout.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraNavBar.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraPdfViewer.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraPivotGrid.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraPrinting.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraReports.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraReports.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraReports.v17.2.Web.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraRichEdit.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraRichEdit.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraScheduler.v17.2.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraScheduler.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraScheduler.v17.2.Reporting.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraScheduler.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraSpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraSpreadsheet.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraTreeList.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraVerticalGrid.v17.2.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraWizard.v17.2.resources.dll" />
+    <Content Include="bin\de\Wisej.Core.resources.dll" />
+    <Content Include="bin\de\Wisej.Framework.resources.dll" />
+    <Content Include="bin\de\Wisej.Web.resources.dll" />
+    <Content Include="bin\DPCRS.xml" />
+    <Content Include="bin\EnvDTE.dll" />
+    <Content Include="bin\es-MX\DPCRS.resources.dll" />
+    <Content Include="bin\es\DevExpress.Charts.Designer.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Dashboard.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Dashboard.v17.2.Web.resources.dll" />
+    <Content Include="bin\es\DevExpress.Dashboard.v17.2.Win.resources.dll" />
+    <Content Include="bin\es\DevExpress.Data.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.DataAccess.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.DataAccess.v17.2.UI.resources.dll" />
+    <Content Include="bin\es\DevExpress.Diagram.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.CloneObject.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Dashboards.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Dashboards.Web.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Dashboards.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.FileAttachment.Web.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.FileAttachment.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.HtmlPropertyEditor.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Objects.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.PivotChart.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.PivotChart.Web.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.PivotChart.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Reports.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Reports.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.ReportsV2.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.ReportsV2.Web.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.ReportsV2.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Scheduler.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Scheduler.Web.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Scheduler.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.ScriptRecorder.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.ScriptRecorder.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Security.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Validation.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Validation.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.ViewVariantsModule.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Web.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.ExpressApp.Win.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Map.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Office.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Pdf.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.PivotGrid.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Printing.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.RichEdit.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Snap.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Snap.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\es\DevExpress.Snap.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Sparkline.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Spreadsheet.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Utils.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Utils.v17.2.UI.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.ASPxHtmlEditor.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.ASPxRichEdit.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.ASPxScheduler.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.ASPxSpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.ASPxSpreadsheet.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.ASPxTreeList.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.Resources.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Web.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Charts.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Controls.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Core.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Docking.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.DocumentViewer.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Gauges.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Grid.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.LayoutControl.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.NavBar.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.PdfViewer.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Printing.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.PropertyGrid.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Ribbon.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.RichEdit.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Scheduler.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.SpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpf.Spreadsheet.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.Xpo.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraBars.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraCharts.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraCharts.v17.2.Wizard.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraEditors.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraGauges.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraGauges.v17.2.Presets.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraGrid.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraLayout.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraNavBar.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraPdfViewer.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraPivotGrid.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraPrinting.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraReports.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraReports.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraReports.v17.2.Web.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraRichEdit.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraRichEdit.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraScheduler.v17.2.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraScheduler.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraScheduler.v17.2.Reporting.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraScheduler.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraSpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraSpreadsheet.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraTreeList.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraVerticalGrid.v17.2.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraWizard.v17.2.resources.dll" />
+    <Content Include="bin\fr\Wisej.Core.resources.dll" />
+    <Content Include="bin\fr\Wisej.Framework.resources.dll" />
+    <Content Include="bin\fr\Wisej.Web.resources.dll" />
+    <Content Include="bin\it\Wisej.Core.resources.dll" />
+    <Content Include="bin\it\Wisej.Framework.resources.dll" />
+    <Content Include="bin\it\Wisej.Web.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Data.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.DataAccess.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.DataAccess.v17.2.UI.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Diagram.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Office.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Pdf.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.PivotGrid.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Printing.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.RichEdit.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Sparkline.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Utils.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Utils.v17.2.UI.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Web.ASPxHtmlEditor.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Web.ASPxSpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Web.Resources.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Web.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Xpo.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraBars.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraCharts.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraCharts.v17.2.Wizard.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraEditors.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraGauges.v17.2.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraGrid.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraLayout.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraNavBar.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraPivotGrid.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraPrinting.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraReports.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraReports.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraReports.v17.2.Web.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraRichEdit.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraTreeList.v17.2.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraVerticalGrid.v17.2.resources.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.MSXML.dll" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.ComponentModelHost.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.CoreUtility.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.CoreUtility.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Designer.Interfaces.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Designer.Interfaces.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.GraphModel.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.ImageCatalog.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.ImageCatalog.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Imaging.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Imaging.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.OLE.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.OLE.Interop.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.ProjectAggregator.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.ProjectAggregator.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.14.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.14.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Design.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Design.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.10.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.10.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.11.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.11.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.12.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.12.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.14.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Immutable.14.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.8.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.9.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.TemplateWizardInterface.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TemplateWizardInterface.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.8.0.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Threading.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Threading.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.Utilities.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Utilities.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.VSHelp.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\pt\Wisej.Core.resources.dll" />
+    <Content Include="bin\pt\Wisej.Framework.resources.dll" />
+    <Content Include="bin\pt\Wisej.Web.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Data.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.DataAccess.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.DataAccess.v17.2.UI.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Diagram.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Office.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Pdf.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.PivotGrid.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Printing.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.RichEdit.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Sparkline.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Utils.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Utils.v17.2.UI.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Web.ASPxHtmlEditor.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Web.ASPxSpellChecker.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Web.Resources.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Web.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Xpo.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraBars.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraCharts.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraCharts.v17.2.Wizard.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraEditors.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraGauges.v17.2.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraGrid.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraLayout.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraNavBar.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraPivotGrid.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraPrinting.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraReports.v17.2.Extensions.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraReports.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraReports.v17.2.Web.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraRichEdit.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraTreeList.v17.2.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraVerticalGrid.v17.2.resources.dll" />
+    <Content Include="bin\stdole.dll" />
+    <Content Include="bin\System.Drawing.dll" />
+    <Content Include="bin\System.Windows.Interactivity.xml" />
+    <Content Include="bin\Wisej.Core.Design.dll" />
+    <Content Include="bin\Wisej.Core.dll" />
+    <Content Include="bin\Wisej.Core.xml" />
+    <Content Include="bin\Wisej.Framework.dll" />
+    <Content Include="bin\Wisej.Framework.xml" />
+    <Content Include="bin\Wisej.Web.Design.dll" />
+    <Content Include="bin\Wisej.Web.dll" />
+    <Content Include="bin\Wisej.Web.Ext.BingWallpaper.dll" />
+    <Content Include="bin\Wisej.Web.Ext.BingWallpaper.xml" />
+    <Content Include="bin\Wisej.Web.Ext.ChartJS.dll" />
+    <Content Include="bin\Wisej.Web.Ext.ChartJS.xml" />
+    <Content Include="bin\Wisej.Web.Ext.FullCalendar.dll" />
+    <Content Include="bin\Wisej.Web.Ext.FullCalendar.xml" />
+    <Content Include="bin\Wisej.Web.Ext.NavigationBar.dll" />
+    <Content Include="bin\Wisej.Web.Ext.NavigationBar.xml" />
+    <Content Include="bin\Wisej.Web.Ext.Notification.dll" />
+    <Content Include="bin\Wisej.Web.Ext.Notification.xml" />
+    <Content Include="bin\Wisej.Web.Ext.RibbonBar.dll" />
+    <Content Include="bin\Wisej.Web.Ext.RibbonBar.xml" />
+    <Content Include="bin\Wisej.Web.xml" />
+    <Content Include="bin\ZedGraph.dll" />
+    <Content Include="css\StyleDPCRS.css" />
+    <Content Include="Datasets\DataSet_JURISDICCION_COLONIA_B.xsc">
+      <DependentUpon>DataSet_JURISDICCION_COLONIA_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_JURISDICCION_COLONIA_B.xss">
+      <DependentUpon>DataSet_JURISDICCION_COLONIA_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_CLAVES_SCIAN_B.xsc">
+      <DependentUpon>DataSet_pCAT_CLAVES_SCIAN_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_CLAVES_SCIAN_B.xss">
+      <DependentUpon>DataSet_pCAT_CLAVES_SCIAN_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ESTADOS_B.xsc">
+      <DependentUpon>DataSet_pCAT_ESTADOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ESTADOS_B.xss">
+      <DependentUpon>DataSet_pCAT_ESTADOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ESTUDIOS_B.xsc">
+      <DependentUpon>DataSet_pCAT_ESTUDIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ESTUDIOS_B.xss">
+      <DependentUpon>DataSet_pCAT_ESTUDIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ESTUDIOS_SUB_B.xsc">
+      <DependentUpon>DataSet_pCAT_ESTUDIOS_SUB_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ESTUDIOS_SUB_B.xss">
+      <DependentUpon>DataSet_pCAT_ESTUDIOS_SUB_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_GIROS_B.xsc">
+      <DependentUpon>DataSet_pCAT_GIROS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_GIROS_B.xss">
+      <DependentUpon>DataSet_pCAT_GIROS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_LABORATORIOS_B.xsc">
+      <DependentUpon>DataSet_pCAT_LABORATORIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_LABORATORIOS_B.xss">
+      <DependentUpon>DataSet_pCAT_LABORATORIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_MUNICIPIOS_B.xsc">
+      <DependentUpon>DataSet_pCAT_MUNICIPIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_MUNICIPIOS_B.xss">
+      <DependentUpon>DataSet_pCAT_MUNICIPIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_OPERADORES_B.xsc">
+      <DependentUpon>DataSet_pCAT_OPERADORES_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_OPERADORES_B.xss">
+      <DependentUpon>DataSet_pCAT_OPERADORES_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_PAQUETES_ACTAS_B.xsc">
+      <DependentUpon>DataSet_pCAT_PAQUETES_ACTAS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_PAQUETES_ACTAS_B.xss">
+      <DependentUpon>DataSet_pCAT_PAQUETES_ACTAS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ROL_B.xsc">
+      <DependentUpon>DataSet_pCAT_ROL_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ROL_B.xss">
+      <DependentUpon>DataSet_pCAT_ROL_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_TIPO_MUESTRAS_B.xsc">
+      <DependentUpon>DataSet_pCAT_TIPO_MUESTRAS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_TIPO_MUESTRAS_B.xss">
+      <DependentUpon>DataSet_pCAT_TIPO_MUESTRAS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B_1.xsc">
+      <DependentUpon>DataSet_pCAT_VERIFICACION_LOTES_B_1.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B_1.xss">
+      <DependentUpon>DataSet_pCAT_VERIFICACION_LOTES_B_1.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pERROR_SISTEMA_B.xsc">
+      <DependentUpon>DataSet_pERROR_SISTEMA_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pERROR_SISTEMA_B.xss">
+      <DependentUpon>DataSet_pERROR_SISTEMA_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.xsc">
+      <DependentUpon>DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.xss">
+      <DependentUpon>DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pPARAMETROS_B.xsc">
+      <DependentUpon>DataSet_pPARAMETROS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pPARAMETROS_B.xss">
+      <DependentUpon>DataSet_pPARAMETROS_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Default.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="MOD_RECEPCION\Capturar_Resultados.aspx" />
+    <Content Include="ReportView.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Datasets\DataSet_pACTAS_VERIFICACION_LOTES_B.xsc">
+      <DependentUpon>DataSet_pACTAS_VERIFICACION_LOTES_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_JURIDICCION.xsc">
+      <DependentUpon>DataSet_JURIDICCION.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_ESTABLECIMIENTOS.xsc">
+      <DependentUpon>DataSet_ESTABLECIMIENTOS.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSetOPERADOR_DATOS.xsc">
+      <DependentUpon>DataSetOPERADOR_DATOS.xsd</DependentUpon>
+    </Content>
+    <Content Include="bin\es\Wisej.Core.resources.dll - Acceso directo.lnk" />
+    <Content Include="Datasets\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSetOPERADOR_DATOS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOPERADOR_DATOS.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSetOPERADOR_DATOS.xss">
+      <DependentUpon>DataSetOPERADOR_DATOS.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_CAT_ESTABLECIMIENTOS_B1.xsc">
+      <DependentUpon>DataSet_CAT_ESTABLECIMIENTOS_B1.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_CAT_ESTABLECIMIENTOS_B1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_CAT_ESTABLECIMIENTOS_B1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Datasets\DataSet_CAT_ESTABLECIMIENTOS_B1.xss">
+      <DependentUpon>DataSet_CAT_ESTABLECIMIENTOS_B1.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_ESTABLECIMIENTOS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ESTABLECIMIENTOS.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_ESTABLECIMIENTOS.xss">
+      <DependentUpon>DataSet_ESTABLECIMIENTOS.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_JURIDICCION.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_JURIDICCION.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_JURIDICCION.xss">
+      <DependentUpon>DataSet_JURIDICCION.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_JURISDICCION_COLONIA_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_JURISDICCION_COLONIA_B1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pACTAS_VERIFICACION_LOTES_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pACTAS_VERIFICACION_LOTES_B.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_pACTAS_VERIFICACION_LOTES_B.xss">
+      <DependentUpon>DataSet_pACTAS_VERIFICACION_LOTES_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Default.json" />
+    <Content Include="Resources\ArchivosPDF\Ordenes\Orden.pdf" />
+    <Content Include="Resources\ArchivosPDF\Ordenes\pepe.rtf" />
+    <Content Include="Resources\ArchivosPDF\Ordenes\Presentación1%281%29.pdf" />
+    <Content Include="Resources\ArchivosPDF\Ordenes\procedimiento.pdf" />
+    <Content Include="Resources\ArchivosPDF\SCIAN_completo.pdf" />
+    <Content Include="Datasets\DataSet_pDICTAMEN_B.xsc">
+      <DependentUpon>DataSet_pDICTAMEN_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_QUEJAS_P.xsc">
+      <DependentUpon>DataSet_pCAT_QUEJAS_P.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_IMPRIMIR_LOTES_B.xsc">
+      <DependentUpon>DataSet_pCAT_IMPRIMIR_LOTES_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_IMPRIMIR_LOTES_B.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_IMPRIMIR_LOTES_B.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_IMPRIMIR_LOTES_B.xss">
+      <DependentUpon>DataSet_pCAT_IMPRIMIR_LOTES_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_LOTE_ACTAS_VERIFICACION.xsc">
+      <DependentUpon>DataSet_pCAT_LOTE_ACTAS_VERIFICACION.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_LOTE_ACTAS_VERIFICACION.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_LOTE_ACTAS_VERIFICACION.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_LOTE_ACTAS_VERIFICACION.xss">
+      <DependentUpon>DataSet_pCAT_LOTE_ACTAS_VERIFICACION.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_PAQUETES_ACTAS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_PAQUETES_ACTAS_B1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_QUEJAS_P.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_QUEJAS_P.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_QUEJAS_P.xss">
+      <DependentUpon>DataSet_pCAT_QUEJAS_P.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B.xsc">
+      <DependentUpon>DataSet_pCAT_VERIFICACION_LOTES_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_VERIFICACION_LOTES_B.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B.xss">
+      <DependentUpon>DataSet_pCAT_VERIFICACION_LOTES_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B_1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_VERIFICACION_LOTES_B_11.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pDICTAMEN_B.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pDICTAMEN_B.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Datasets\DataSet_pDICTAMEN_B.xss">
+      <DependentUpon>DataSet_pDICTAMEN_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_ultima_conexion.xsc">
+      <DependentUpon>DataSet_ultima_conexion.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_SESSIONES_B.xsc">
+      <DependentUpon>DataSet_SESSIONES_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_SESSIONES_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_SESSIONES_B.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_SESSIONES_B.xss">
+      <DependentUpon>DataSet_SESSIONES_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_ultima_conexion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ultima_conexion.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_ultima_conexion.xss">
+      <DependentUpon>DataSet_ultima_conexion.xsd</DependentUpon>
+    </Content>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Resources\Icons\Menu\exit-sign-red.png" />
+    <Content Include="Resources\Icons\Menu\fecha_horas-extras.png" />
+    <Content Include="Resources\Icons\Menu\fecha_mas.png" />
+    <Content Include="Resources\Icons\Menu\firma.png" />
+    <Content Include="Resources\Icons\Menu\impresora.png" />
+    <Content Include="Resources\Icons\Menu\jeringa.png" />
+    <Content Include="Resources\Icons\Menu\martillo.png" />
+    <Content Include="Resources\Icons\Menu\PDF.png" />
+    <Content Include="Resources\Icons\Menu\print.png" />
+    <Content Include="Resources\Icons\Menu\testigos.png" />
+    <Content Include="Resources\Images\ES-CAPTURADO.png" />
+    <Content Include="Resources\Images\ES-NOTHING.png" />
+    <Content Include="Resources\Images\ES-PENDIENTE.png" />
+    <Content Include="Resources\Images\E_CANCELADO.png" />
+    <Content Include="Resources\Images\E_EDICION.png" />
+    <Content Include="Resources\Images\E_Pendiente.png" />
+    <Content Include="Resources\Images\E_SOLICITUD.png" />
+    <Content Include="Resources\Images\E_VALIDACION.png" />
+    <Content Include="Resources\Images\Fondo07.png" />
+    <Content Include="Resources\Images\Fotografias\2598-75772.png" />
+    <Content Include="Resources\Images\Fotografias\fondo01.jpg" />
+    <Content Include="Resources\Images\Fotografias\User.png" />
+    <Content Include="Resources\Images\Menu\18\001-security.png" />
+    <Content Include="Resources\Images\Menu\18\002-diskette.png" />
+    <Content Include="Resources\Images\Menu\18\005-statistics.png" />
+    <Content Include="Resources\Images\Menu\18\013-browser.png" />
+    <Content Include="Resources\Images\Menu\18\015-pipette.png" />
+    <Content Include="Resources\Images\Menu\18\019-pixelated.png" />
+    <Content Include="Resources\Images\Menu\18\033-pie-charts.png" />
+    <Content Include="Resources\Images\Menu\18\036-laptop.png" />
+    <Content Include="Resources\Images\Menu\18\041-printer.png" />
+    <Content Include="Resources\Images\Menu\18\043-ipad.png" />
+    <Content Include="Resources\Images\Menu\18\044-folder.png" />
+    <Content Include="Resources\Images\Menu\18\050-monitor.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-1.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-10.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-11.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-12.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-13.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-14.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-15.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-16.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-2.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-3.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-4.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-5.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-6.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-7.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-8.png" />
+    <Content Include="Resources\Images\Menu\18\analytics-9.png" />
+    <Content Include="Resources\Images\Menu\18\analytics.png" />
+    <Content Include="Resources\Images\Menu\18\announcement.png" />
+    <Content Include="Resources\Images\Menu\18\auction.png" />
+    <Content Include="Resources\Images\Menu\18\calendar %282%29.png" />
+    <Content Include="Resources\Images\Menu\18\calendar-20.png" />
+    <Content Include="Resources\Images\Menu\18\calendar-22.png" />
+    <Content Include="Resources\Images\Menu\18\calendar-23.png" />
+    <Content Include="Resources\Images\Menu\18\calendar.png" />
+    <Content Include="Resources\Images\Menu\18\certificate.png" />
+    <Content Include="Resources\Images\Menu\18\checklist.png" />
+    <Content Include="Resources\Images\Menu\18\chemistry.png" />
+    <Content Include="Resources\Images\Menu\18\clipboard.png" />
+    <Content Include="Resources\Images\Menu\18\coding.png" />
+    <Content Include="Resources\Images\Menu\18\diagram-1.png" />
+    <Content Include="Resources\Images\Menu\18\diploma-1.png" />
+    <Content Include="Resources\Images\Menu\18\doc.png" />
+    <Content Include="Resources\Images\Menu\18\error.png" />
+    <Content Include="Resources\Images\Menu\18\estadistica.png" />
+    <Content Include="Resources\Images\Menu\18\hourglass.png" />
+    <Content Include="Resources\Images\Menu\18\institucion.png" />
+    <Content Include="Resources\Images\Menu\18\jpg.png" />
+    <Content Include="Resources\Images\Menu\18\learning.png" />
+    <Content Include="Resources\Images\Menu\18\location.png" />
+    <Content Include="Resources\Images\Menu\18\notebook-1.png" />
+    <Content Include="Resources\Images\Menu\18\notebook-2.png" />
+    <Content Include="Resources\Images\Menu\18\notebook-3.png" />
+    <Content Include="Resources\Images\Menu\18\notebook.png" />
+    <Content Include="Resources\Images\Menu\18\notepad-1.png" />
+    <Content Include="Resources\Images\Menu\18\notepad-2.png" />
+    <Content Include="Resources\Images\Menu\18\notepad-3.png" />
+    <Content Include="Resources\Images\Menu\18\notepad.png" />
+    <Content Include="Resources\Images\Menu\18\password_black.png" />
+    <Content Include="Resources\Images\Menu\18\pdf.png" />
+    <Content Include="Resources\Images\Menu\18\pencil.png" />
+    <Content Include="Resources\Images\Menu\18\placeholder-2.png" />
+    <Content Include="Resources\Images\Menu\18\placeholder-3.png" />
+    <Content Include="Resources\Images\Menu\18\placeholder-4.png" />
+    <Content Include="Resources\Images\Menu\18\png.png" />
+    <Content Include="Resources\Images\Menu\18\ppt.png" />
+    <Content Include="Resources\Images\Menu\18\push-pin-1.png" />
+    <Content Include="Resources\Images\Menu\18\push-pin.png" />
+    <Content Include="Resources\Images\Menu\18\school-bell.png" />
+    <Content Include="Resources\Images\Menu\18\search.png" />
+    <Content Include="Resources\Images\Menu\18\statistics-2.png" />
+    <Content Include="Resources\Images\Menu\18\statistics-3.png" />
+    <Content Include="Resources\Images\Menu\18\statistics.png" />
+    <Content Include="Resources\Images\Menu\18\store-1.png" />
+    <Content Include="Resources\Images\Menu\18\store-2.png" />
+    <Content Include="Resources\Images\Menu\18\store-3.png" />
+    <Content Include="Resources\Images\Menu\18\store.png" />
+    <Content Include="Resources\Images\Menu\18\suguridad.png" />
+    <Content Include="Resources\Images\Menu\18\trash.png" />
+    <Content Include="Resources\Images\Menu\18\txt.png" />
+    <Content Include="Resources\Images\Menu\18\user-20.png" />
+    <Content Include="Resources\Images\Menu\18\user-21.png" />
+    <Content Include="Resources\Images\Menu\18\user-22.png" />
+    <Content Include="Resources\Images\Menu\18\user-23.png" />
+    <Content Include="Resources\Images\Menu\18\user-24.png" />
+    <Content Include="Resources\Images\Menu\18\user-29.png" />
+    <Content Include="Resources\Images\Menu\18\user-31.png" />
+    <Content Include="Resources\Images\Menu\18\user-32.png" />
+    <Content Include="Resources\Images\Menu\18\user-40.png" />
+    <Content Include="Resources\Images\Menu\18\user-41.png" />
+    <Content Include="Resources\Images\Menu\18\user-42.png" />
+    <Content Include="Resources\Images\Menu\18\user-43.png" />
+    <Content Include="Resources\Images\Menu\18\user-44.png" />
+    <Content Include="Resources\Images\Menu\18\user-49.png" />
+    <Content Include="Resources\Images\Menu\18\user-51.png" />
+    <Content Include="Resources\Images\Menu\18\user-52.png" />
+    <Content Include="Resources\Images\Menu\18\user_black.png" />
+    <Content Include="Resources\Images\Menu\18\xls.png" />
+    <Content Include="Resources\Images\Menu\18\zip.png" />
+    <Content Include="Resources\Images\Menu\30\001-security .png" />
+    <Content Include="Resources\Images\Menu\30\002-diskette .png" />
+    <Content Include="Resources\Images\Menu\30\005-statistics .png" />
+    <Content Include="Resources\Images\Menu\30\013-browser .png" />
+    <Content Include="Resources\Images\Menu\30\015-pipette .png" />
+    <Content Include="Resources\Images\Menu\30\019-pixelated .png" />
+    <Content Include="Resources\Images\Menu\30\033-pie-charts .png" />
+    <Content Include="Resources\Images\Menu\30\036-laptop .png" />
+    <Content Include="Resources\Images\Menu\30\041-printer .png" />
+    <Content Include="Resources\Images\Menu\30\043-ipad .png" />
+    <Content Include="Resources\Images\Menu\30\044-folder .png" />
+    <Content Include="Resources\Images\Menu\30\050-monitor .png" />
+    <Content Include="Resources\Images\Menu\30\analytics .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-1 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-10 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-11 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-12 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-13 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-14 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-15 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-16 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-2 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-3 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-4 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-5 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-6 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-7 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-8 .png" />
+    <Content Include="Resources\Images\Menu\30\analytics-9 .png" />
+    <Content Include="Resources\Images\Menu\30\announcement .png" />
+    <Content Include="Resources\Images\Menu\30\auction .png" />
+    <Content Include="Resources\Images\Menu\30\calendar %282%29 .png" />
+    <Content Include="Resources\Images\Menu\30\calendar .png" />
+    <Content Include="Resources\Images\Menu\30\calendar-20 .png" />
+    <Content Include="Resources\Images\Menu\30\calendar-22 .png" />
+    <Content Include="Resources\Images\Menu\30\calendar-23 .png" />
+    <Content Include="Resources\Images\Menu\30\certificate .png" />
+    <Content Include="Resources\Images\Menu\30\checklist .png" />
+    <Content Include="Resources\Images\Menu\30\chemistry .png" />
+    <Content Include="Resources\Images\Menu\30\clipboard .png" />
+    <Content Include="Resources\Images\Menu\30\coding .png" />
+    <Content Include="Resources\Images\Menu\30\diagram-1 .png" />
+    <Content Include="Resources\Images\Menu\30\diploma-1 .png" />
+    <Content Include="Resources\Images\Menu\30\doc .png" />
+    <Content Include="Resources\Images\Menu\30\error .png" />
+    <Content Include="Resources\Images\Menu\30\exit-sign-red.png" />
+    <Content Include="Resources\Images\Menu\30\hourglass .png" />
+    <Content Include="Resources\Images\Menu\30\institucion .png" />
+    <Content Include="Resources\Images\Menu\30\jpg .png" />
+    <Content Include="Resources\Images\Menu\30\learning .png" />
+    <Content Include="Resources\Images\Menu\30\location .png" />
+    <Content Include="Resources\Images\Menu\30\notebook .png" />
+    <Content Include="Resources\Images\Menu\30\notebook-1 .png" />
+    <Content Include="Resources\Images\Menu\30\notebook-2 .png" />
+    <Content Include="Resources\Images\Menu\30\notebook-3 .png" />
+    <Content Include="Resources\Images\Menu\30\notepad .png" />
+    <Content Include="Resources\Images\Menu\30\notepad-1 .png" />
+    <Content Include="Resources\Images\Menu\30\notepad-2 .png" />
+    <Content Include="Resources\Images\Menu\30\notepad-3 .png" />
+    <Content Include="Resources\Images\Menu\30\pdf .png" />
+    <Content Include="Resources\Images\Menu\30\pencil .png" />
+    <Content Include="Resources\Images\Menu\30\placeholder-2 .png" />
+    <Content Include="Resources\Images\Menu\30\placeholder-3 .png" />
+    <Content Include="Resources\Images\Menu\30\placeholder-4 .png" />
+    <Content Include="Resources\Images\Menu\30\png .png" />
+    <Content Include="Resources\Images\Menu\30\ppt .png" />
+    <Content Include="Resources\Images\Menu\30\push-pin .png" />
+    <Content Include="Resources\Images\Menu\30\push-pin-1 .png" />
+    <Content Include="Resources\Images\Menu\30\school-bell .png" />
+    <Content Include="Resources\Images\Menu\30\search .png" />
+    <Content Include="Resources\Images\Menu\30\statistics.png" />
+    <Content Include="Resources\Images\Menu\30\store .png" />
+    <Content Include="Resources\Images\Menu\30\store-1 .png" />
+    <Content Include="Resources\Images\Menu\30\store-1.png" />
+    <Content Include="Resources\Images\Menu\30\store-2 .png" />
+    <Content Include="Resources\Images\Menu\30\store-2.png" />
+    <Content Include="Resources\Images\Menu\30\store-3 .png" />
+    <Content Include="Resources\Images\Menu\30\store-3.png" />
+    <Content Include="Resources\Images\Menu\30\store.png" />
+    <Content Include="Resources\Images\Menu\30\suguridad .png" />
+    <Content Include="Resources\Images\Menu\30\trash .png" />
+    <Content Include="Resources\Images\Menu\30\txt .png" />
+    <Content Include="Resources\Images\Menu\30\user-20 .png" />
+    <Content Include="Resources\Images\Menu\30\user-21 .png" />
+    <Content Include="Resources\Images\Menu\30\user-22 .png" />
+    <Content Include="Resources\Images\Menu\30\user-23 .png" />
+    <Content Include="Resources\Images\Menu\30\user-24 .png" />
+    <Content Include="Resources\Images\Menu\30\user-29 .png" />
+    <Content Include="Resources\Images\Menu\30\user-31 .png" />
+    <Content Include="Resources\Images\Menu\30\user-32 .png" />
+    <Content Include="Resources\Images\Menu\30\user-40 .png" />
+    <Content Include="Resources\Images\Menu\30\user-41 .png" />
+    <Content Include="Resources\Images\Menu\30\user-42 .png" />
+    <Content Include="Resources\Images\Menu\30\user-43 .png" />
+    <Content Include="Resources\Images\Menu\30\user-44 .png" />
+    <Content Include="Resources\Images\Menu\30\user-49 .png" />
+    <Content Include="Resources\Images\Menu\30\user-51 .png" />
+    <Content Include="Resources\Images\Menu\30\user-52 .png" />
+    <Content Include="Resources\Images\Menu\30\xls .png" />
+    <Content Include="Resources\Images\Menu\30\zip .png" />
+    <Content Include="Resources\Images\Menu\64\001-security .png" />
+    <Content Include="Resources\Images\Menu\64\002-diskette .png" />
+    <Content Include="Resources\Images\Menu\64\005-statistics .png" />
+    <Content Include="Resources\Images\Menu\64\015-pipette .png" />
+    <Content Include="Resources\Images\Menu\64\019-pixelated .png" />
+    <Content Include="Resources\Images\Menu\64\033-pie-charts .png" />
+    <Content Include="Resources\Images\Menu\64\036-laptop .png" />
+    <Content Include="Resources\Images\Menu\64\041-printer .png" />
+    <Content Include="Resources\Images\Menu\64\050-monitor .png" />
+    <Content Include="Resources\Images\Menu\64\acceso.png" />
+    <Content Include="Resources\Images\Menu\64\access.png" />
+    <Content Include="Resources\Images\Menu\64\alta_acta.png" />
+    <Content Include="Resources\Images\Menu\64\analytics .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-1 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-10 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-11 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-12 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-13 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-14 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-15 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-16 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-2 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-3 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-4 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-6 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-7 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-8 .png" />
+    <Content Include="Resources\Images\Menu\64\analytics-9 .png" />
+    <Content Include="Resources\Images\Menu\64\announcement .png" />
+    <Content Include="Resources\Images\Menu\64\auction .png" />
+    <Content Include="Resources\Images\Menu\64\calendar %282%29 .png" />
+    <Content Include="Resources\Images\Menu\64\calendar .png" />
+    <Content Include="Resources\Images\Menu\64\calendar-22 .png" />
+    <Content Include="Resources\Images\Menu\64\calendar-23 .png" />
+    <Content Include="Resources\Images\Menu\64\calendario.png" />
+    <Content Include="Resources\Images\Menu\64\certificate .png" />
+    <Content Include="Resources\Images\Menu\64\checklist .png" />
+    <Content Include="Resources\Images\Menu\64\chemistry .png" />
+    <Content Include="Resources\Images\Menu\64\clipboard .png" />
+    <Content Include="Resources\Images\Menu\64\coding .png" />
+    <Content Include="Resources\Images\Menu\64\colores.png" />
+    <Content Include="Resources\Images\Menu\64\database.png" />
+    <Content Include="Resources\Images\Menu\64\descargar.png" />
+    <Content Include="Resources\Images\Menu\64\desing.png" />
+    <Content Include="Resources\Images\Menu\64\dictamen_listo.png" />
+    <Content Include="Resources\Images\Menu\64\diploma-1 .png" />
+    <Content Include="Resources\Images\Menu\64\doc .png" />
+    <Content Include="Resources\Images\Menu\64\ENTREGADO.png" />
+    <Content Include="Resources\Images\Menu\64\error .png" />
+    <Content Include="Resources\Images\Menu\64\error2.png" />
+    <Content Include="Resources\Images\Menu\64\establecimiento1.png" />
+    <Content Include="Resources\Images\Menu\64\estadisticas.png" />
+    <Content Include="Resources\Images\Menu\64\expediente.png" />
+    <Content Include="Resources\Images\Menu\64\expediente2.png" />
+    <Content Include="Resources\Images\Menu\64\folder .png" />
+    <Content Include="Resources\Images\Menu\64\giros.png" />
+    <Content Include="Resources\Images\Menu\64\hourglass .png" />
+    <Content Include="Resources\Images\Menu\64\ipad.png" />
+    <Content Include="Resources\Images\Menu\64\jpg .png" />
+    <Content Include="Resources\Images\Menu\64\jurisdiccion.png" />
+    <Content Include="Resources\Images\Menu\64\learning .png" />
+    <Content Include="Resources\Images\Menu\64\list.png" />
+    <Content Include="Resources\Images\Menu\64\location .png" />
+    <Content Include="Resources\Images\Menu\64\notebook .png" />
+    <Content Include="Resources\Images\Menu\64\notebook-1 .png" />
+    <Content Include="Resources\Images\Menu\64\notebook-2 .png" />
+    <Content Include="Resources\Images\Menu\64\notebook-3 .png" />
+    <Content Include="Resources\Images\Menu\64\notepad .png" />
+    <Content Include="Resources\Images\Menu\64\notepad-1 .png" />
+    <Content Include="Resources\Images\Menu\64\notepad-2 .png" />
+    <Content Include="Resources\Images\Menu\64\notepad-3 .png" />
+    <Content Include="Resources\Images\Menu\64\pantalla.png" />
+    <Content Include="Resources\Images\Menu\64\paquete.png" />
+    <Content Include="Resources\Images\Menu\64\pdf .png" />
+    <Content Include="Resources\Images\Menu\64\person.png" />
+    <Content Include="Resources\Images\Menu\64\placeholder-2 .png" />
+    <Content Include="Resources\Images\Menu\64\placeholder-3 .png" />
+    <Content Include="Resources\Images\Menu\64\placeholder-4 .png" />
+    <Content Include="Resources\Images\Menu\64\png .png" />
+    <Content Include="Resources\Images\Menu\64\ppt .png" />
+    <Content Include="Resources\Images\Menu\64\push-pin .png" />
+    <Content Include="Resources\Images\Menu\64\push-pin-1 .png" />
+    <Content Include="Resources\Images\Menu\64\recepcion_documentos.png" />
+    <Content Include="Resources\Images\Menu\64\rellenar.png" />
+    <Content Include="Resources\Images\Menu\64\reporte.png" />
+    <Content Include="Resources\Images\Menu\64\resultados.png" />
+    <Content Include="Resources\Images\Menu\64\school-bell .png" />
+    <Content Include="Resources\Images\Menu\64\search .png" />
+    <Content Include="Resources\Images\Menu\64\seguridad.png" />
+    <Content Include="Resources\Images\Menu\64\seguridad2.png" />
+    <Content Include="Resources\Images\Menu\64\seguridad3.png" />
+    <Content Include="Resources\Images\Menu\64\store .png" />
+    <Content Include="Resources\Images\Menu\64\store-1 .png" />
+    <Content Include="Resources\Images\Menu\64\store-3 .png" />
+    <Content Include="Resources\Images\Menu\64\test.png" />
+    <Content Include="Resources\Images\Menu\64\trash .png" />
+    <Content Include="Resources\Images\Menu\64\txt .png" />
+    <Content Include="Resources\Images\Menu\64\user-20 .png" />
+    <Content Include="Resources\Images\Menu\64\user-21 .png" />
+    <Content Include="Resources\Images\Menu\64\user-22 .png" />
+    <Content Include="Resources\Images\Menu\64\user-23 .png" />
+    <Content Include="Resources\Images\Menu\64\user-24 .png" />
+    <Content Include="Resources\Images\Menu\64\user-29 .png" />
+    <Content Include="Resources\Images\Menu\64\user-31 .png" />
+    <Content Include="Resources\Images\Menu\64\user-32 .png" />
+    <Content Include="Resources\Images\Menu\64\user-40 .png" />
+    <Content Include="Resources\Images\Menu\64\user-41 .png" />
+    <Content Include="Resources\Images\Menu\64\user-42 .png" />
+    <Content Include="Resources\Images\Menu\64\user-43 .png" />
+    <Content Include="Resources\Images\Menu\64\user-44 .png" />
+    <Content Include="Resources\Images\Menu\64\user-49 .png" />
+    <Content Include="Resources\Images\Menu\64\user-51 .png" />
+    <Content Include="Resources\Images\Menu\64\user-52 .png" />
+    <Content Include="Resources\Images\Menu\64\xls .png" />
+    <Content Include="Resources\Images\Menu\64\zip .png" />
+    <Content Include="Resources\Images\Menu\logout.png" />
+    <Content Include="Resources\Images\Menu\logo_salud.jpg" />
+    <Content Include="Resources\Images\Menu\logo_SFS.jpg" />
+    <Content Include="Resources\Images\Menu\logo_tabasco.png" />
+    <Content Include="Resources\Images\Menu\secretaria de salud.png" />
+    <Content Include="Resources\Images\Skin\Blue-1.png" />
+    <Content Include="Resources\Images\Skin\Blue-2.png" />
+    <Content Include="Resources\Images\Skin\Blue-3.png" />
+    <Content Include="Resources\Images\Skin\Classic-1.png" />
+    <Content Include="Resources\Images\Skin\Clear-1.png" />
+    <Content Include="Resources\Images\Skin\Clear-2.png" />
+    <Content Include="Resources\Images\Skin\Clear-3.png" />
+    <Content Include="Resources\Images\Skin\Default.png" />
+    <Content Include="Resources\Images\Skin\Material-2.png" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cambiar_Tema.Designer.vb">
+      <DependentUpon>Cambiar_Tema.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cambiar_Tema.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cfondo_pantalla.Designer.vb">
+      <DependentUpon>Cfondo_pantalla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cfondo_pantalla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\Notification.vb" />
+    <Compile Include="Class\Startup.vb" />
+    <Compile Include="Controles\combosax.Designer.vb">
+      <DependentUpon>combosax.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\combosax.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ComboSaxWisej.Designer.vb">
+      <DependentUpon>ComboSaxWisej.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ComboSaxWisej.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combosax_B.Designer.vb">
+      <DependentUpon>Combosax_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combosax_B.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\filtroGrillaSax.Designer.vb">
+      <DependentUpon>filtroGrillaSax.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\filtroGrillaSax.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MessageB.Designer.vb">
+      <DependentUpon>MessageB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MessageB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_contra.Designer.vb">
+      <DependentUpon>C_contra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="C_contra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datasets\DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSetOPERADOR_DATOS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOPERADOR_DATOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_CAT_ESTABLECIMIENTOS_B1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_CAT_ESTABLECIMIENTOS_B1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_ESTABLECIMIENTOS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ESTABLECIMIENTOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_JURIDICCION.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_JURIDICCION.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_JURISDICCION_COLONIA_B1.Designer.vb">
+      <DependentUpon>DataSet_JURISDICCION_COLONIA_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pACTAS_VERIFICACION_LOTES_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pACTAS_VERIFICACION_LOTES_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pCAT_ACTAS_VERIFICACION_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_CLAVES_SCIAN_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_CLAVES_SCIAN_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_ESTABLECIMIENTOS_B.vb" />
+    <Compile Include="Datasets\DataSet_pCAT_ESTADOS_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_ESTADOS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_ESTUDIOS_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_ESTUDIOS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_ESTUDIOS_SUB_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_ESTUDIOS_SUB_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_GIROS_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_GIROS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_IMPRIMIR_LOTES_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pCAT_IMPRIMIR_LOTES_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_LABORATORIOS_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_LABORATORIOS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_LOTE_ACTAS_VERIFICACION.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pCAT_LOTE_ACTAS_VERIFICACION.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_MUNICIPIOS_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_MUNICIPIOS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_OPERADORES_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_OPERADORES_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_ORDENES_VERIFICACION_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pCAT_ORDENES_VERIFICACION_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_PAQUETES_ACTAS_B1.Designer.vb">
+      <DependentUpon>DataSet_pCAT_PAQUETES_ACTAS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_QUEJAS_P.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pCAT_QUEJAS_P.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_ROL_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_ROL_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_TIPO_MUESTRAS_B.Designer.vb">
+      <DependentUpon>DataSet_pCAT_TIPO_MUESTRAS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pCAT_VERIFICACION_LOTES_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pCAT_VERIFICACION_LOTES_B_11.Designer.vb">
+      <DependentUpon>DataSet_pCAT_VERIFICACION_LOTES_B_1.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pDICTAMEN_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_pDICTAMEN_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pERROR_SISTEMA_B.Designer.vb">
+      <DependentUpon>DataSet_pERROR_SISTEMA_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.Designer.vb">
+      <DependentUpon>DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_pPARAMETROS_B.Designer.vb">
+      <DependentUpon>DataSet_pPARAMETROS_B.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Datasets\DataSet_SESSIONES_B.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_SESSIONES_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DataSet_ultima_conexion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ultima_conexion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DPCRS_Logs.Designer.vb">
+      <DependentUpon>DPCRS_Logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DPCRS_Logs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Historial_Sessiones.Designer.vb">
+      <DependentUpon>Historial_Sessiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial_Sessiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index.Designer.vb">
+      <DependentUpon>Index.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Index.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index_Menu.Designer.vb">
+      <DependentUpon>Index_Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Index_Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licencia.Designer.vb">
+      <DependentUpon>Licencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Licencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Add_Giro.Designer.vb">
+      <DependentUpon>Add_Giro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Add_Giro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Actas_Verificacion.Designer.vb">
+      <DependentUpon>Cat_Actas_Verificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Actas_Verificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Establecimientos_New.Designer.vb">
+      <DependentUpon>Cat_Establecimientos_New.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Establecimientos_New.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Estudios.Designer.vb">
+      <DependentUpon>Cat_Estudios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Estudios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_juridicciones_get.Designer.vb">
+      <DependentUpon>Cat_juridicciones_get.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_juridicciones_get.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Laboratorios.Designer.vb">
+      <DependentUpon>Cat_Laboratorios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Laboratorios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Lotes.Designer.vb">
+      <DependentUpon>Cat_Lotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Lotes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Lotes_Expedientes.Designer.vb">
+      <DependentUpon>Cat_Lotes_Expedientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Lotes_Expedientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cambiar_Contrasena.Designer.vb">
+      <DependentUpon>Cambiar_Contrasena.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cambiar_Contrasena.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cat_Accesos.Designer.vb">
+      <DependentUpon>Cat_Accesos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cat_Accesos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Error_Sistema.Designer.vb">
+      <DependentUpon>Error_Sistema.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Error_Sistema.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Perfil.Designer.vb">
+      <DependentUpon>Perfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Perfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Prueba.Designer.vb">
+      <DependentUpon>Prueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Query.Designer.vb">
+      <DependentUpon>Query.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Query.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_DICTAMEN\Dictamen_Capturar.Designer.vb">
+      <DependentUpon>Dictamen_Capturar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_DICTAMEN\Dictamen_Capturar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_DICTAMEN\Dictamen_Paquetes.Designer.vb">
+      <DependentUpon>Dictamen_Paquetes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_DICTAMEN\Dictamen_Paquetes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_DICTAMEN\Verificacion_Entega_Acta.Designer.vb">
+      <DependentUpon>Verificacion_Entega_Acta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_DICTAMEN\Verificacion_Entega_Acta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_ESTADISTICA\Estadisticas_Establecimiento.Designer.vb">
+      <DependentUpon>Estadisticas_Establecimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_ESTADISTICA\Estadisticas_Establecimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_ESTADISTICA\Estadistica_Capturar_Cifras.Designer.vb">
+      <DependentUpon>Estadistica_Capturar_Cifras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_ESTADISTICA\Estadistica_Capturar_Cifras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Capturar.Designer.vb">
+      <DependentUpon>Acta_Capturar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Capturar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Capturar_Muestras.Designer.vb">
+      <DependentUpon>Acta_Capturar_Muestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Capturar_Muestras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Capturar_Orden.Designer.vb">
+      <DependentUpon>Acta_Capturar_Orden.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Capturar_Orden.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Registro_Lotes.Designer.vb">
+      <DependentUpon>Acta_Registro_Lotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Acta_Registro_Lotes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\ADD_LOTES.Designer.vb">
+      <DependentUpon>ADD_LOTES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\ADD_LOTES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Muestra.Designer.vb">
+      <DependentUpon>Add_Muestra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Muestra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Muestras_Tipo.Designer.vb">
+      <DependentUpon>Add_Muestras_Tipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Muestras_Tipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Objetivos+vb.Designer.vb">
+      <DependentUpon>Add_Objetivos+vb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Objetivos+vb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Paquestes_Actas.Designer.vb">
+      <DependentUpon>Add_Paquestes_Actas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Paquestes_Actas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Tipo_Analisis.Designer.vb">
+      <DependentUpon>Add_Tipo_Analisis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Add_Tipo_Analisis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\add_Verificadores.Designer.vb">
+      <DependentUpon>add_Verificadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\add_Verificadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Capturar_Resultados.aspx.designer.vb">
+      <DependentUpon>Capturar_Resultados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Capturar_Resultados.aspx.vb">
+      <DependentUpon>Capturar_Resultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Generar_Orden_Verficacion.Designer.vb">
+      <DependentUpon>Generar_Orden_Verficacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Generar_Orden_Verficacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Imprimir_Detalles_Lotes.Designer.vb">
+      <DependentUpon>Imprimir_Detalles_Lotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Imprimir_Detalles_Lotes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Reportar_Queja.Designer.vb">
+      <DependentUpon>Reportar_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_RECEPCION\Reportar_Queja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mostrar_Asp.Designer.vb">
+      <DependentUpon>Mostrar_Asp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mostrar_Asp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="MyDesktop.Designer.vb">
+      <DependentUpon>MyDesktop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyDesktop.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page1.Designer.vb">
+      <DependentUpon>Page1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Page1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page2.Designer.vb">
+      <DependentUpon>Page2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Page2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.vb" />
+    <Compile Include="REPORTES\R_ACTA_GENERAL.Designer.vb">
+      <DependentUpon>R_ACTA_GENERAL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\R_ACTA_GENERAL.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\R_Acta_Registro_Lotes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\R_Imprimir_Lotes_Salida.Designer.vb">
+      <DependentUpon>R_Imprimir_Lotes_Salida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\R_Imprimir_Lotes_Salida.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\SubReportes_Actas\Sub_Acta_General.Designer.vb">
+      <DependentUpon>Sub_Acta_General.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\SubReportes_Actas\Sub_Acta_General.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportView.aspx.designer.vb">
+      <DependentUpon>ReportView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportView.aspx.vb">
+      <DependentUpon>ReportView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\UserData\Carga_Masiva.vb" />
+    <Compile Include="Resources\UserData\dllData.vb" />
+    <Compile Include="Login.designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Claves_Scian.Designer.vb">
+      <DependentUpon>Cat_Claves_Scian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Claves_Scian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Establecimientos.Designer.vb">
+      <DependentUpon>Cat_Establecimientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Establecimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Giros.Designer.vb">
+      <DependentUpon>Cat_Giros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CATALOGOS\Cat_Giros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cat_operadores.Designer.vb">
+      <DependentUpon>Cat_operadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cat_operadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cat_Rol.Designer.vb">
+      <DependentUpon>Cat_Rol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MOD_CONFIGURACION\Cat_Rol.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="Cambiar_Tema.resx">
+      <DependentUpon>Cambiar_Tema.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cfondo_pantalla.resx">
+      <DependentUpon>Cfondo_pantalla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\combosax.resx">
+      <DependentUpon>combosax.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ComboSaxWisej.resx">
+      <DependentUpon>ComboSaxWisej.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Combosax_B.resx">
+      <DependentUpon>Combosax_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\filtroGrillaSax.resx">
+      <DependentUpon>filtroGrillaSax.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MessageB.resx">
+      <DependentUpon>MessageB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_contra.resx">
+      <DependentUpon>C_contra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPCRS_Logs.resx">
+      <DependentUpon>DPCRS_Logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial_Sessiones.resx">
+      <DependentUpon>Historial_Sessiones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index.resx">
+      <DependentUpon>Index.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index_Menu.resx">
+      <DependentUpon>Index_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licencia.resx">
+      <DependentUpon>Licencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Add_Giro.resx">
+      <DependentUpon>Add_Giro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Actas_Verificacion.resx">
+      <DependentUpon>Cat_Actas_Verificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Claves_Scian.resx">
+      <DependentUpon>Cat_Claves_Scian.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Establecimientos.resx">
+      <DependentUpon>Cat_Establecimientos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Establecimientos_New.resx">
+      <DependentUpon>Cat_Establecimientos_New.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Estudios.resx">
+      <DependentUpon>Cat_Estudios.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Giros.resx">
+      <DependentUpon>Cat_Giros.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_juridicciones_get.resx">
+      <DependentUpon>Cat_juridicciones_get.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Laboratorios.resx">
+      <DependentUpon>Cat_Laboratorios.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Lotes.resx">
+      <DependentUpon>Cat_Lotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CATALOGOS\Cat_Lotes_Expedientes.resx">
+      <DependentUpon>Cat_Lotes_Expedientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Cambiar_Contrasena.resx">
+      <DependentUpon>Cambiar_Contrasena.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Cat_Accesos.resx">
+      <DependentUpon>Cat_Accesos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Cat_operadores.resx">
+      <DependentUpon>Cat_operadores.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Cat_Rol.resx">
+      <DependentUpon>Cat_Rol.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Error_Sistema.resx">
+      <DependentUpon>Error_Sistema.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Perfil.resx">
+      <DependentUpon>Perfil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Prueba.resx">
+      <DependentUpon>Prueba.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_CONFIGURACION\Query.resx">
+      <DependentUpon>Query.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_DICTAMEN\Dictamen_Capturar.resx">
+      <DependentUpon>Dictamen_Capturar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_DICTAMEN\Dictamen_Paquetes.resx">
+      <DependentUpon>Dictamen_Paquetes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_DICTAMEN\Verificacion_Entega_Acta.resx">
+      <DependentUpon>Verificacion_Entega_Acta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_ESTADISTICA\Estadisticas_Establecimiento.resx">
+      <DependentUpon>Estadisticas_Establecimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_ESTADISTICA\Estadistica_Capturar_Cifras.resx">
+      <DependentUpon>Estadistica_Capturar_Cifras.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_ESTADISTICA\Estadistica_Establecimientos.resx" />
+    <EmbeddedResource Include="MOD_RECEPCION\Acta_Capturar.resx">
+      <DependentUpon>Acta_Capturar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Acta_Capturar_Muestras.resx">
+      <DependentUpon>Acta_Capturar_Muestras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Acta_Capturar_Orden.resx">
+      <DependentUpon>Acta_Capturar_Orden.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Acta_Registro_Lotes.resx">
+      <DependentUpon>Acta_Registro_Lotes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\ADD_LOTES.resx">
+      <DependentUpon>ADD_LOTES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Add_Muestra.resx">
+      <DependentUpon>Add_Muestra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Add_Muestras_Tipo.resx">
+      <DependentUpon>Add_Muestras_Tipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Add_Objetivos+vb.resx">
+      <DependentUpon>Add_Objetivos+vb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Add_Paquestes_Actas.resx">
+      <DependentUpon>Add_Paquestes_Actas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Add_Tipo_Analisis.resx">
+      <DependentUpon>Add_Tipo_Analisis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\add_Verificadores.resx">
+      <DependentUpon>add_Verificadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Generar_Orden_Verficacion.resx">
+      <DependentUpon>Generar_Orden_Verficacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Imprimir_Detalles_Lotes.resx">
+      <DependentUpon>Imprimir_Detalles_Lotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MOD_RECEPCION\Reportar_Queja.resx">
+      <DependentUpon>Reportar_Queja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mostrar_Asp.resx">
+      <DependentUpon>Mostrar_Asp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDesktop.es-MX.resx">
+      <DependentUpon>MyDesktop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDesktop.resx">
+      <DependentUpon>MyDesktop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page1.resx">
+      <DependentUpon>Page1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page2.resx">
+      <DependentUpon>Page2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\R_ACTA_GENERAL.resx">
+      <DependentUpon>R_ACTA_GENERAL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\R_Acta_Registro_Lotes.resx">
+      <DependentUpon>R_Acta_Registro_Lotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\R_Imprimir_Lotes_Salida.resx">
+      <DependentUpon>R_Imprimir_Lotes_Salida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\SubReportes_Actas\Sub_Acta_General.resx">
+      <DependentUpon>Sub_Acta_General.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_B.xsc">
+      <DependentUpon>DataSet_pCAT_ACTAS_VERIFICACION_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_ACTAS_VERIFICACION_B.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_B.xss">
+      <DependentUpon>DataSet_pCAT_ACTAS_VERIFICACION_B.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.xsc">
+      <DependentUpon>DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.xss">
+      <DependentUpon>DataSet_pCAT_ACTAS_VERIFICACION_TEST_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_CLAVES_SCIAN_B.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_CLAVES_SCIAN_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_ESTADOS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_ESTADOS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_ESTUDIOS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_ESTUDIOS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_ESTUDIOS_SUB_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_ESTUDIOS_SUB_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_GIROS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_GIROS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_LABORATORIOS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_LABORATORIOS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_MUNICIPIOS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_MUNICIPIOS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_OPERADORES_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_OPERADORES_B.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_ORDENES_VERIFICACION_B.xsc">
+      <DependentUpon>DataSet_pCAT_ORDENES_VERIFICACION_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_ORDENES_VERIFICACION_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_ORDENES_VERIFICACION_B.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Datasets\DataSet_pCAT_ORDENES_VERIFICACION_B.xss">
+      <DependentUpon>DataSet_pCAT_ORDENES_VERIFICACION_B.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\DataSet_pCAT_ROL_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_ROL_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pCAT_TIPO_MUESTRAS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pCAT_TIPO_MUESTRAS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pERROR_SISTEMA_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pERROR_SISTEMA_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pORDEN_VERIFICACION_ESTUDIOS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datasets\DataSet_pPARAMETROS_B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_pPARAMETROS_B.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\DPCRS.pubxml" />
+    <Content Include="Resources\Icons\Menu\015-close.png" />
+    <Content Include="Resources\Icons\Menu\018-checked.png" />
+    <Content Include="Resources\Icons\Menu\add-file.png" />
+    <Content Include="Resources\Icons\Menu\add.png" />
+    <Content Include="Resources\Icons\Menu\adjuntar-attach.png" />
+    <Content Include="Resources\Icons\Menu\alert_color.png" />
+    <Content Include="Resources\Icons\Menu\analyze.png" />
+    <Content Include="Resources\Icons\Menu\approval.png" />
+    <Content Include="Resources\Icons\Menu\available-updates.png" />
+    <Content Include="Resources\Icons\Menu\back.png" />
+    <Content Include="Resources\Icons\Menu\cancel.png" />
+    <Content Include="Resources\Icons\Menu\checked-checkbox.png" />
+    <Content Include="Resources\Icons\Menu\checklist.png" />
+    <Content Include="Resources\Icons\Menu\checkmark.png" />
+    <Content Include="Resources\Icons\Menu\clear-filters-filled.png" />
+    <Content Include="Resources\Icons\Menu\clear-filters.png" />
+    <Content Include="Resources\Icons\Menu\clear-symbol.png" />
+    <Content Include="Resources\Icons\Menu\close-pane.png" />
+    <Content Include="Resources\Icons\Menu\close.png" />
+    <Content Include="Resources\Icons\Menu\delete-bin.png" />
+    <Content Include="Resources\Icons\Menu\download.png" />
+    <Content Include="Resources\Icons\Menu\edit-file.png" />
+    <Content Include="Resources\Icons\Menu\edit-property.png" />
+    <Content Include="Resources\Icons\Menu\edit.png" />
+    <Content Include="Resources\Icons\Menu\error_blue.png" />
+    <Content Include="Resources\Icons\Menu\error_color.png" />
+    <Content Include="Resources\Icons\Menu\exit-sign.png" />
+    <Content Include="Resources\Icons\Menu\export-csv.png" />
+    <Content Include="Resources\Icons\Menu\export-pdf.png" />
+    <Content Include="Resources\Icons\Menu\export.png" />
+    <Content Include="Resources\Icons\Menu\find-and-replace.png" />
+    <Content Include="Resources\Icons\Menu\help.png" />
+    <Content Include="Resources\Icons\Menu\image-file.png" />
+    <Content Include="Resources\Icons\Menu\import.png" />
+    <Content Include="Resources\Icons\Menu\info-squared.png" />
+    <Content Include="Resources\Icons\Menu\info.png" />
+    <Content Include="Resources\Icons\Menu\information.png" />
+    <Content Include="Resources\Icons\Menu\list.png" />
+    <Content Include="Resources\Icons\Menu\menu.png" />
+    <Content Include="Resources\Icons\Menu\new-file.png" />
+    <Content Include="Resources\Icons\Menu\ok.png" />
+    <Content Include="Resources\Icons\Menu\open-pane.png" />
+    <Content Include="Resources\Icons\Menu\priority-high.png" />
+    <Content Include="Resources\Icons\Menu\priority-low.png" />
+    <Content Include="Resources\Icons\Menu\priority-medium.png" />
+    <Content Include="Resources\Icons\Menu\refresh.png" />
+    <Content Include="Resources\Icons\Menu\return-relleno.png" />
+    <Content Include="Resources\Icons\Menu\return.png" />
+    <Content Include="Resources\Icons\Menu\save.png" />
+    <Content Include="Resources\Icons\Menu\search-binoculars.png" />
+    <Content Include="Resources\Icons\Menu\search-property.png" />
+    <Content Include="Resources\Icons\Menu\search.png" />
+    <Content Include="Resources\Icons\Menu\send.png" />
+    <Content Include="Resources\Icons\Menu\settings.png" />
+    <Content Include="Resources\Icons\Menu\support.png" />
+    <Content Include="Resources\Icons\Menu\trash-can.png" />
+    <Content Include="Resources\Icons\Menu\unchecked-checkbox.png" />
+    <Content Include="Resources\Icons\Menu\undo-retorno-relleno.png" />
+    <Content Include="Resources\Icons\Menu\undo-retorno.png" />
+    <Content Include="Resources\Icons\Menu\upload.png" />
+    <Content Include="Resources\Images\Combo\BOTON.jpg" />
+    <Content Include="Resources\Images\Combo\BOTON40.jpg" />
+    <Content Include="Resources\Images\Combo\BOTONELIMINAR.jpg" />
+    <Content Include="Resources\Images\Combo\BOTONELIMINAR40.jpg" />
+    <Content Include="Resources\Images\Combo\Combobox.jpg" />
+    <Content Include="Resources\Images\consultar.png" />
+    <Content Include="Resources\Images\consultar2.png" />
+    <Content Include="Resources\Images\filtro grilla\delete.png" />
+    <Content Include="Resources\Images\filtro grilla\icono_buscar.png" />
+    <Content Include="Resources\Images\filtro grilla\icono_limpiar.png" />
+    <Content Include="Resources\Images\fondo01.jpg" />
+    <Content Include="Resources\Images\Fondo02.jpeg" />
+    <Content Include="Resources\Images\Fondo03.jpg" />
+    <Content Include="Resources\Images\Fotografias\image.jpg" />
+    <Content Include="Resources\Images\imagen01.jpg" />
+    <Content Include="Resources\Images\imagen02.jpeg" />
+    <Content Include="Resources\Images\imagen04.jpg" />
+    <Content Include="Resources\Images\Logo-1.png" />
+    <Content Include="Resources\Images\Logo-2.png" />
+    <Content Include="Resources\Images\Menu\18\catalog.png" />
+    <Content Include="Resources\Images\Menu\18\circle.png" />
+    <Content Include="Resources\Images\Menu\18\password.png" />
+    <Content Include="Resources\Images\Menu\18\password2.png" />
+    <Content Include="Resources\Images\Menu\18\services.png" />
+    <Content Include="Resources\Images\Menu\18\user.png" />
+    <Content Include="Resources\Images\Menu\64\catalog.png" />
+    <Content Include="Resources\Images\Menu\64\circle.png" />
+    <Content Include="Resources\Images\Menu\64\services.png" />
+    <Content Include="Resources\Images\registrar.png" />
+    <Content Include="Resources\Images\User.png" />
+    <Content Include="Resources\Images\User2.png" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\bin\es-MX\" />
+    <Folder Include="obj\" />
+    <Folder Include="Resources\Generated\" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomReference Include="DPCRS">
+      <HintPath>C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\DPCRS.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+    <CustomReference Include="Wisej.Web.Themes">
+      <HintPath>C:\Users\END USER\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Wisej.Web.Themes.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v14.0\Net4.6\Gizmox.VWGApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2316</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2316/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

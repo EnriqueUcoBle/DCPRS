@@ -50,6 +50,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.74.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -86,6 +90,10 @@
     <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
@@ -1626,6 +1634,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_ultima_conexion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DPCRS_Logs.Designer.vb">
+      <DependentUpon>DPCRS_Logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DPCRS_Logs.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1921,6 +1935,7 @@
       <DependentUpon>ReportView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Resources\UserData\Carga_Masiva.vb" />
     <Compile Include="Resources\UserData\dllData.vb" />
     <Compile Include="Login.designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
@@ -1985,6 +2000,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C_contra.resx">
       <DependentUpon>C_contra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DPCRS_Logs.resx">
+      <DependentUpon>DPCRS_Logs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Historial_Sessiones.resx">
       <DependentUpon>Historial_Sessiones.vb</DependentUpon>
@@ -2063,6 +2081,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MOD_CONFIGURACION\Prueba.resx">
       <DependentUpon>Prueba.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MOD_CONFIGURACION\Query.resx">
       <DependentUpon>Query.vb</DependentUpon>
