@@ -29,19 +29,21 @@ Public Class Generar_Orden_Verficacion
     End Sub
     Public Sub llenarCombos()
         Try
+
             oFunciones.Llenar_listbox("pCAT_ESTABLECIMIENTOS_B", "CVE_ESTABLECIMIENTO", "RAZON_SOCIAL", ESTABLECIMIENTO)
 
             oFunciones.Llenar_listbox("pCAT_OBJETIVOS_VERIFICACION_B", "CVE_OBJETIVO", "INFO", TIPO_OBJETIVO)
-            oFunciones.Llenar_CatalogosXprocedureYParams("pCAT_JURISDICCION_B", "CVE_JURISDICCION", "JURISDICCION", JURISDICCION_VERIFICADORES)
+
             ReDim oFunciones.ParametersX_Global(0)
-            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "TABASCO")
-            oFunciones.Llenar_CatalogosXprocedureYParams("MUNICIPIOS_B", "MUNICIPIO", "MUNICIPIO", MUNICIPIOS_ESTABLECIMIENTOS, oFunciones.ParametersX_Global)
+                oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ESTADO", "TABASCO")
+                oFunciones.Llenar_CatalogosXprocedureYParams("MUNICIPIOS_B", "MUNICIPIO", "MUNICIPIO", MUNICIPIOS_ESTABLECIMIENTOS, oFunciones.ParametersX_Global)
 
 
         Catch ex As Exception
             oFunciones.AlertBox("error al precargar la informacion: " & ex.Message, Wisej.Web.MessageBoxIcon.Information)
         End Try
     End Sub
+
     Private Sub Generar_Orden_Verficacion_Load(sender As Object, e As EventArgs) Handles Me.Load
         llenarCombos()
         PAQUETES_ACTAS.SelectedIndex = -1
@@ -68,7 +70,7 @@ Public Class Generar_Orden_Verficacion
         If CambiarPropietario.Checked Then
             TextBoxRFC.ReadOnly = True
             TextBoxNOMBRE.ReadOnly = True
-            TextBoxCARGO.ReadOnly = True
+
             TextBoxDOMICILIO_PROPIETARIO.ReadOnly = True
             ComboBoxIDENTIFIACION.ReadOnly = True
 
@@ -76,7 +78,7 @@ Public Class Generar_Orden_Verficacion
 
             TextBoxRFC.ReadOnly = False
             TextBoxNOMBRE.ReadOnly = False
-            TextBoxCARGO.ReadOnly = False
+
             TextBoxDOMICILIO_PROPIETARIO.ReadOnly = False
             ComboBoxIDENTIFIACION.ReadOnly = False
         End If
@@ -88,14 +90,14 @@ Public Class Generar_Orden_Verficacion
         Operador_LOTE.Text = ""
         TextBoxRFC.Text = ""
         TextBoxNOMBRE.Text = ""
-        TextBoxCARGO.Text = ""
+
         TextBoxDOMICILIO_PROPIETARIO.Text = ""
         ComboBoxIDENTIFIACION.Text = ""
         TextBoxMUNICIPIO.Text = ""
         TextBoxRAZON_SOCIAL.Text = ""
         TextBoxGIRO.Text = ""
         TextBoxDIRECCION.Text = ""
-        ComboBoxPROGRAMA.Text = ""
+
 
     End Sub
     '------------------------------------> Funciones para guardar y actulizar datos <-------------------------------------------
@@ -243,9 +245,12 @@ Public Class Generar_Orden_Verficacion
                     'TextBoxCARGO.Text = oFunciones.obetenerDescripcion4(ESTABLECIMIENTO, "IDENTIFICACION")
                     TextBoxCP.Text = oFunciones.obetenerDescripcion4(ESTABLECIMIENTO, "CODIGO_POSTAL")
                     ComboBoxIDENTIFIACION.Text = oFunciones.obetenerDescripcion4(ESTABLECIMIENTO, "IDENTIFICACION")
-                    'TextBoxPROGRAMA.Text = oFunciones.obetenerDescripcion4(ESTABLECIMIENTO, "PROGRAMA")
+                    Dim CVE_JURISDICCION = oFunciones.obetenerDescripcion4(ESTABLECIMIENTO, "CVE_JURISDICCION")
                     ELEGIDOestablecimeinto = True
                     llenar_Datos_encargado()
+                    ReDim oFunciones.ParametersX_Global(0)
+                    oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_JURISDICCION", CVE_JURISDICCION)
+                    oFunciones.Llenar_listbox("pCAT_VERIFICADORES_B", "CVE_VERIFICADOR", "NOMB", VERIFICADORES, oFunciones.ParametersX_Global)
                 End If
             Catch ex As Exception
                 Wisej.Web.MessageBox.Show("rellenar la informacion, ERROR: " & ex.Message, "llenar datos del establecimiento", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
@@ -257,26 +262,15 @@ Public Class Generar_Orden_Verficacion
         form_verficadores.Visible = True
         AddHandler form_verficadores.FormClosed, AddressOf llenarCombos
     End Sub
-    Private Sub JURISDICCION_VERIFICADORES_SelectedIndexChanged(sender As Object, e As EventArgs) Handles JURISDICCION_VERIFICADORES.SelectedIndexChanged
-        If JURISDICCION_VERIFICADORES.SelectedIndex = -1 Then Exit Sub
-        If CONTROLV Then
-            ReDim oFunciones.ParametersX_Global(0)
-            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_JURISDICCION", JURISDICCION_VERIFICADORES.SelectedValue)
-            VERIFICADORES.Clear()
-            oFunciones.Llenar_listbox("pCAT_VERIFICADORES_B", "CVE_VERIFICADOR", "NOMB", VERIFICADORES, oFunciones.ParametersX_Global)
-            VERIFICADORES.Mostrar_lista()
-        Else
-            CONTROLV = True
-        End If
-    End Sub
-    Private Sub RB_suspencion_trabajo_si_CheckedChanged(sender As Object, e As EventArgs) Handles RB_suspencion_trabajo_si.CheckedChanged
+
+    Private Sub RB_suspencion_trabajo_si_CheckedChanged(sender As Object, e As EventArgs)
         FOLIO_SUSPENCION.Enabled = True
     End Sub
-    Private Sub RB_aseguramiento_objetos_si_CheckedChanged(sender As Object, e As EventArgs) Handles RB_aseguramiento_objetos_si.CheckedChanged
+    Private Sub RB_aseguramiento_objetos_si_CheckedChanged(sender As Object, e As EventArgs)
         FOLIO_ASEGURAMIENTO.Enabled = True
     End Sub
-    Private Sub RB_reubicacion_sellos_si_CheckedChanged(sender As Object, e As EventArgs) Handles RB_reubicacion_sellos_si.CheckedChanged
-        FOLIO__REUBICACION.Enabled = True
+    Private Sub RB_reubicacion_sellos_si_CheckedChanged(sender As Object, e As EventArgs)
+        FOLIO_REUBICACION.Enabled = True
     End Sub
     Private Sub VERIFICADORES_SelectedIndexChanged(sender As Object, e As EventArgs) Handles VERIFICADORES.SelectedIndexChanged
         If VERIFICADORES.SelectedIndex = -1 Then Exit Sub
@@ -303,9 +297,7 @@ Public Class Generar_Orden_Verficacion
             Wisej.Web.MessageBox.Show("ya existe el varificador en la tabla   ", "VALIDACIO DE VERIFICADOR", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Information)
         End If
     End Sub
-    Private Function validarVerificadores() As Boolean
 
-    End Function
     Private Sub TablaVerifacadores_CellClick(sender As Object, e As Wisej.Web.DataGridViewCellEventArgs) Handles VERIFICADORES_GRID.CellClick
         If e.ColumnIndex = 0 Then
             If (Wisej.Web.MessageBox.Show("¿Esta segur@ de eliminar el Verficador seleccionado?", "Eliminar", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
@@ -315,15 +307,13 @@ Public Class Generar_Orden_Verficacion
         End If
     End Sub
 
-    Private Sub ULTIMOS_PAQUETES_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ULTIMOS_PAQUETES.SelectedIndexChanged
-        If ULTIMOS_PAQUETES.SelectedIndex = -1 Then Exit Sub
-        If ULTIMOS_PAQUETES.SelectedItem = "TODOS" Then
-            oFunciones.Llenar_listbox("pCAT_PAQUETES_ACTAS_B", "CVE_PAQUETE", "NOMBRE", PAQUETES_ACTAS)
-        Else
-            ReDim oFunciones.ParametersX_Global(0)
-            oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@TOP", ULTIMOS_PAQUETES.SelectedItem)
-            oFunciones.Llenar_listbox("pCAT_PAQUETES_ACTAS_B", "CVE_PAQUETE", "NOMBRE", PAQUETES_ACTAS, oFunciones.ParametersX_Global)
-        End If
+    Private Sub ULTIMOS_PAQUETES()
+
+        ReDim oFunciones.ParametersX_Global(1)
+        oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ASENDENTE", Not DESC.Checked)
+        oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
+        oFunciones.Llenar_listbox("pCAT_PAQUETES_ACTAS_B", "CVE_PAQUETE", "NOMBRE", PAQUETES_ACTAS, oFunciones.ParametersX_Global)
+
     End Sub
     Private Sub añadir_item(sender As Object, e As EventArgs)
         Dim form As Add_Muestra = sender.Parent.Parent
@@ -349,48 +339,44 @@ Public Class Generar_Orden_Verficacion
         End If
     End Sub
 
-    Private Sub AddObjetivoVerificacion_Click(sender As Object, e As EventArgs) Handles AddObjetivoVerificacion.Click
+    Private Sub AddObjetivoVerificacion_Click(sender As Object, e As EventArgs)
         Dim form = New Add_Objetivos_vb
         form.Visible = True
         AddHandler form.FormClosed, AddressOf llenarCombos
     End Sub
 
-    Private Sub Panel9_PanelCollapsed(sender As Object, e As EventArgs) Handles Panel9.PanelCollapsed
 
-    End Sub
 
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-        llenar_Datos_encargado()
-    End Sub
+
     Private Sub llenar_Datos_encargado()
-        If RadioButton1.Checked Then
-            NOMBRE_ENCARGADO.Enabled = False
-            DETALLE_DOMICILIO_ENCARGADO.Enabled = False
-            IDENTIDAD_ENCARGADO.Enabled = False
-            CARGO_PUESTO.Enabled = False
+        If RadioButton4.Checked Then
+            NOMBRE_RESPONSABLE.Enabled = False
+            DOMICILIO_RESPONSABLE.Enabled = False
+            ID_RESPONSABLE.Enabled = False
+            CARGO_RESPONSABLE.Enabled = False
             If TextBoxNOMBRE.Text.Length = 0 Then
-                Wisej.Web.MessageBox.Show("Debes seleccionar establecimiento  ", "Datos faltante", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+                Wisej.Web.MessageBox.Show("Debes seleccionar establecimiento", "Datos faltante", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
             End If
-            NOMBRE_ENCARGADO.Text = TextBoxNOMBRE.Text
-            DETALLE_DOMICILIO_ENCARGADO.Text = TextBoxDOMICILIO_PROPIETARIO.Text
-            IDENTIDAD_ENCARGADO.Text = ComboBoxIDENTIFIACION.Text
-            CARGO_PUESTO.Text = "Jefe y/o Dueño"
+            NOMBRE_RESPONSABLE.Text = TextBoxNOMBRE.Text
+            DOMICILIO_RESPONSABLE.Text = TextBoxDOMICILIO_PROPIETARIO.Text
+            ID_RESPONSABLE.Text = ComboBoxIDENTIFIACION.Text
+            CARGO_RESPONSABLE.Text = "Jefe y/o Dueño"
 
         Else
-            NOMBRE_ENCARGADO.Enabled = True
-            DETALLE_DOMICILIO_ENCARGADO.Enabled = True
-            IDENTIDAD_ENCARGADO.Enabled = True
-            CARGO_PUESTO.Enabled = True
-            NOMBRE_ENCARGADO.Text = ""
-            DETALLE_DOMICILIO_ENCARGADO.Text = ""
-            IDENTIDAD_ENCARGADO.Text = ""
-            CARGO_PUESTO.Text = ""
+            NOMBRE_RESPONSABLE.Enabled = True
+            DOMICILIO_RESPONSABLE.Enabled = True
+            ID_RESPONSABLE.Enabled = True
+            CARGO_RESPONSABLE.Enabled = True
+            NOMBRE_RESPONSABLE.Text = ""
+            DOMICILIO_RESPONSABLE.Text = ""
+            ID_RESPONSABLE.Text = ""
+            CARGO_RESPONSABLE.Text = ""
         End If
     End Sub
     Private Sub LimpiarFormCompleto()
         oFunciones.LimpiarPanel(Panel1, Me.Tag)
         oFunciones.LimpiarPanel(Panel8, Me.Tag)
-        oFunciones.LimpiarPanel(Panel9, Me.Tag)
+
         oFunciones.LimpiarPanel(Panel15, Me.Tag)
 
     End Sub
@@ -401,31 +387,35 @@ Public Class Generar_Orden_Verficacion
             oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_ESTABLECIMIENTO", ESTABLECIMIENTO.SelectedValue)
             oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@FECHA_VERIFICACION", FECHA_ORDEN.Value)
             oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@HORA_VERIFICACION", HORA_VERIFICACION.Value)
-            oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@PROGRAMA", PROGRAMA_.SelectedItem)
-            oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@NOM_TESTIGO1", txtTestigo1.Text)
-            oFunciones.ParametersX_Global(7) = New SqlClient.SqlParameter("@NOM_TESTIGO2", txtTestigo2.Text)
-            oFunciones.ParametersX_Global(8) = New SqlClient.SqlParameter("@DOM_TESTIGO1", txtTestigo_Domicilio1.Text)
-            oFunciones.ParametersX_Global(9) = New SqlClient.SqlParameter("@DOM_TESTIGO2", txtTestigo_Domicilio2.Text)
-            oFunciones.ParametersX_Global(10) = New SqlClient.SqlParameter("@ID_TESTIGO1", id_testigo1.SelectedItem)
-            oFunciones.ParametersX_Global(11) = New SqlClient.SqlParameter("@ID_TESTIGO2", id_testigo2.SelectedItem)
+            oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@PROGRAMA", PROGRAMA.SelectedItem)
+            If TESTIGO1.Checked Then
+                oFunciones.ParametersX_Global(6) = New SqlClient.SqlParameter("@NOM_TESTIGO1", NOMBRE_TESTIGO1.Text)
+                oFunciones.ParametersX_Global(8) = New SqlClient.SqlParameter("@DOM_TESTIGO1", DOM_TESTIGO1.Text)
+                oFunciones.ParametersX_Global(10) = New SqlClient.SqlParameter("@ID_TESTIGO1", ID_TESTIGO1.SelectedItem)
+            End If
+            If TESTIGO2.Checked Then
+                oFunciones.ParametersX_Global(7) = New SqlClient.SqlParameter("@NOM_TESTIGO2", NOMBRE_TESTIGO2.Text)
+                oFunciones.ParametersX_Global(9) = New SqlClient.SqlParameter("@DOM_TESTIGO2", DOM_TESTIGO2.Text)
+                oFunciones.ParametersX_Global(11) = New SqlClient.SqlParameter("@ID_TESTIGO2", ID_TESTIGO2.SelectedItem)
+            End If
             oFunciones.ParametersX_Global(12) = New SqlClient.SqlParameter("@OBSERVACIONES_GENARALES", OBSERVACIONES_GENERALES.Text)
-            oFunciones.ParametersX_Global(13) = New SqlClient.SqlParameter("@MEDIDAS_SEGURIAD", RB_medidas_seguridad_si.Checked)
+            oFunciones.ParametersX_Global(13) = New SqlClient.SqlParameter("@MEDIDAS_SEGURIAD", MEDIDAS_SEGURIDAD.Checked)
             oFunciones.ParametersX_Global(14) = New SqlClient.SqlParameter("@FOLIO_ASEGURAMIENTO", FOLIO_ASEGURAMIENTO.Text)
             oFunciones.ParametersX_Global(15) = New SqlClient.SqlParameter("@FOLIO_SUSPENCION", FOLIO_SUSPENCION.Text)
-            oFunciones.ParametersX_Global(16) = New SqlClient.SqlParameter("@FOLIO_REUBICACION", FOLIO__REUBICACION.Text)
-            oFunciones.ParametersX_Global(17) = New SqlClient.SqlParameter("@DOCUMENTACION", RB_anexa_doc_si.Checked)
-            oFunciones.ParametersX_Global(18) = New SqlClient.SqlParameter("@NUM_ANEXOS", txtNumeroAnexos.Text)
+            oFunciones.ParametersX_Global(16) = New SqlClient.SqlParameter("@FOLIO_REUBICACION", FOLIO_REUBICACION.Text)
+            oFunciones.ParametersX_Global(17) = New SqlClient.SqlParameter("@DOCUMENTACION", ANEXO.Checked)
+            oFunciones.ParametersX_Global(18) = New SqlClient.SqlParameter("@NUM_ANEXOS", NUM_ANEXOS.Text)
             oFunciones.ParametersX_Global(19) = New SqlClient.SqlParameter("@FOLIO_ACTA", FOLIO_ACTA_VERIFICACION.Text)
             oFunciones.ParametersX_Global(20) = New SqlClient.SqlParameter("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
             oFunciones.ParametersX_Global(21) = New SqlClient.SqlParameter("@CVE_OBJETIVO", TIPO_OBJETIVO.SelectedValue)
-            oFunciones.ParametersX_Global(22) = New SqlClient.SqlParameter("@NOMBRE_ENCARGADO", NOMBRE_ENCARGADO.Text)
-            oFunciones.ParametersX_Global(23) = New SqlClient.SqlParameter("@ID_ENCARGADO", IDENTIDAD_ENCARGADO.SelectedItem)
-            oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@DOM_ENCARGADO", DETALLE_DOMICILIO_ENCARGADO.Text)
-            oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@CARGO_ENCARGADO", CARGO_PUESTO.Text)
+            oFunciones.ParametersX_Global(22) = New SqlClient.SqlParameter("@NOMBRE_ENCARGADO", NOMBRE_RESPONSABLE.Text)
+            oFunciones.ParametersX_Global(23) = New SqlClient.SqlParameter("@ID_ENCARGADO", ID_RESPONSABLE.SelectedItem)
+            oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@DOM_ENCARGADO", DOMICILIO_RESPONSABLE.Text)
+            oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@CARGO_ENCARGADO", CARGO_RESPONSABLE.Text)
             oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@MOTIVO", MOTIVO.SelectedItem)
             oFunciones.ParametersX_Global(27) = New SqlClient.SqlParameter("@CVE_PAQUETE", PAQUETES_ACTAS.SelectedValue)
             oFunciones.ParametersX_Global(28) = New SqlClient.SqlParameter("@OBSERVACIONES_MUESTRAS", OBSERVACIONES_MUESTRAS.Text)
-            oFunciones.ParametersX_Global(29) = New SqlClient.SqlParameter("@CVE_ACTA", CVE_ACTA_V.Text)
+            oFunciones.ParametersX_Global(29) = New SqlClient.SqlParameter("@CVE_ACTA", CVE_ACTA_TEXT.Text)
             oFunciones.ParametersX_Global(30) = New SqlClient.SqlParameter("@TIPO_ACTA", TIPO_ACTA.SelectedItem)
 
             cve_acta = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ACTAS_VERIFICACION_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.Int)
@@ -508,6 +498,40 @@ Public Class Generar_Orden_Verficacion
         End Try
     End Sub
 
+    Private Sub TESTIGO1_CheckedChanged(sender As Object, e As EventArgs)
+        If TESTIGO1.Checked Then
+            NOMBRE_TESTIGO1.Enabled = True
+            ID_TESTIGO1.Enabled = True
+            DOM_TESTIGO1.Enabled = True
+
+        Else
+            NOMBRE_TESTIGO1.Enabled = False
+            ID_TESTIGO1.Enabled = False
+            DOM_TESTIGO1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub TESTIGO2_CheckedChanged(sender As Object, e As EventArgs)
+        If TESTIGO2.Checked Then
+            NOMBRE_TESTIGO2.Enabled = True
+            ID_TESTIGO2.Enabled = True
+            DOM_TESTIGO2.Enabled = True
+
+        Else
+            NOMBRE_TESTIGO2.Enabled = False
+            ID_TESTIGO2.Enabled = False
+            DOM_TESTIGO2.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RadioButton16_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton16.CheckedChanged
+        ULTIMOS_PAQUETES()
+    End Sub
+
+    Private Sub DESC_CheckedChanged(sender As Object, e As EventArgs) Handles DESC.CheckedChanged
+        ULTIMOS_PAQUETES()
+    End Sub
+
     Private Sub guardar_todo()
         guardarOrdenVerificacion()
 
@@ -515,6 +539,134 @@ Public Class Generar_Orden_Verficacion
         guardar_Verificadores()
         guardar_muestras()
         guardarActaA()
+
+    End Sub
+
+    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs)
+        llenar_Datos_encargado()
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs)
+        llenar_Datos_encargado()
+    End Sub
+
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        For i As Integer = 0 To 10
+            Dim panel As New Panel
+            With panel
+                .AutoSize = False
+
+                .Height = 200
+
+                .Visible = True
+                .ShowHeader = True
+                .Text = "panel " & i
+                .Dock = DockStyle.Top
+                .BorderStyle = BorderStyle.Solid
+                Dim label As New Label
+                With label
+                    .Text = "pregunta  " & i
+                    .AutoSize = True
+                    .Visible = True
+
+                    .Location = New Drawing.Point(20, 10)
+                End With
+                Dim textbox As New TextBox
+                With textbox
+                    .Watermark = "aqui va la respuesta"
+                    .AutoSize = False
+                    .Visible = True
+                    .Height = 100
+                    .Width = 700
+                    .Location = New Drawing.Point(20, 50)
+                End With
+                panel.Controls.Add(label)
+                panel.Controls.Add(textbox)
+            End With
+
+            Panel5.Controls.Add(panel)
+        Next
+    End Sub
+
+    Private Sub Validar_Campos()
+        Dim E As Integer = 0
+        If PAQUETES_ACTAS.SelectedIndex = -1 Then
+            ErrorProvider1.SetError(Fecha_creacion_LOTE, "no ha seleccionado un Paquete de actas")
+            ErrorProvider1.SetError(Jurisdiccion_LOTE, "no ha seleccionado un Paquete de actas")
+            ErrorProvider1.SetError(Operador_LOTE, "no ha seleccionado un Paquete de actas")
+            E = E + 1
+
+        Else
+            ErrorProvider1.SetError(Fecha_creacion_LOTE, Nothing)
+            ErrorProvider1.SetError(Jurisdiccion_LOTE, Nothing)
+            ErrorProvider1.SetError(Operador_LOTE, Nothing)
+        End If
+        If ESTABLECIMIENTO.SelectedIndex = -1 Then
+            ErrorProvider1.SetError(TextBoxMUNICIPIO, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(TextBoxRAZON_SOCIAL, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(TextBoxGIRO, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(TextBoxPROGRAMA, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(MUNICIPIOS_ESTABLECIMIENTOS, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(COLONIA_ESTABLECIMIENTOS, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(TextBoxDIRECCION, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(ComboBoxIDENTIFIACION, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(TextBoxNOMBRE, "no se ha seleccionado un establecimiento")
+            ErrorProvider1.SetError(TextBoxRFC, "no se ha seleccionado un establecimiento")
+            E = E + 1
+        Else
+            ErrorProvider1.SetError(TextBoxMUNICIPIO, Nothing)
+            ErrorProvider1.SetError(TextBoxRAZON_SOCIAL, Nothing)
+            ErrorProvider1.SetError(TextBoxGIRO, Nothing)
+            ErrorProvider1.SetError(TextBoxPROGRAMA, Nothing)
+            ErrorProvider1.SetError(MUNICIPIOS_ESTABLECIMIENTOS, Nothing)
+            ErrorProvider1.SetError(COLONIA_ESTABLECIMIENTOS, Nothing)
+            ErrorProvider1.SetError(TextBoxDIRECCION, Nothing)
+            ErrorProvider1.SetError(ComboBoxIDENTIFIACION, Nothing)
+            ErrorProvider1.SetError(TextBoxNOMBRE, Nothing)
+            ErrorProvider1.SetError(TextBoxRFC, Nothing)
+        End If
+        If VERIFICADORES_GRID.RowCount = 0 Then
+            ErrorProvider1.SetError(VERIFICADORES_GRID, "No se ha seleccionado verificadores")
+            E = E + 1
+        Else
+            ErrorProvider1.SetError(VERIFICADORES_GRID, Nothing)
+        End If
+        If MUESTRAS_GRID.RowCount = 0 Then
+            ErrorProvider1.SetError(MUESTRAS_GRID, "No se ha seleccionado verificadores")
+            E = E + 1
+        Else
+            ErrorProvider1.SetError(MUESTRAS_GRID, Nothing)
+        End If
+    End Sub
+
+    Private Sub RadioButton12_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton12.CheckedChanged
+        If RadioButton12.Checked Then
+            RadioButton12.ReadOnly = False
+        Else
+            RadioButton12.ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub RadioButton10_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton10.CheckedChanged
+        If RadioButton10.Checked Then
+            FOLIO_SUSPENCION.ReadOnly = False
+        Else
+            FOLIO_SUSPENCION.ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub RadioButton8_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton8.CheckedChanged
+        If RadioButton8.Checked Then
+            FOLIO_REUBICACION.ReadOnly = False
+        Else
+            FOLIO_REUBICACION.ReadOnly = True
+
+
+        End If
+    End Sub
+
+    Private Sub cargar_preguntas()
 
     End Sub
 End Class

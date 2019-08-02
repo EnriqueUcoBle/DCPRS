@@ -320,3 +320,4 @@ C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\D
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.Add_Giro.resources
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Wisej.Ext.Geolocation.dll
 C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\bin\Wisej.Ext.Geolocation.xml
+C:\Users\UCOBLE-PC\Documents\Visual Studio 2015\Projects\DPCRS\DPCRS\obj\Debug\DPCRS.DPCRS_Logs.resources
