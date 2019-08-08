@@ -115,35 +115,31 @@ Public Class Paquetes_Entrada
 
     End Sub
     Private Sub añadir_item(sender As Object, e As EventArgs)
-        Dim form As Generar_Orden_Verficacion = sender.Parent.Parent
+        Dim form As Generar_Orden_Verficacion = sender.Parent.Parent.Parent
         If form.Validar_Campos() = True Then
-            add_actas(form.cve_acta, form.TextBoxRAZON_SOCIAL.Text, form.TextBoxNOMBRE.Text, form.TextBoxDIRECCION.Text, form.NOMBRE_RESPONSABLE.Text, form.TextBoxRFC.Text, form.FECHA_VERIFICACION.Value, form.TIPO_OBJETIVO.SelectedItem.ToString)
-
+            add_actas(form.cve_acta, form.TextBoxMUNICIPIO.Text, form.TextBoxNOMBRE.Text, form.TextBoxRAZON_SOCIAL.Text, form.TextBoxGIRO.Text, form.TextBoxDIRECCION.Text, form.FOLIO_ACTA_VERIFICACION.Text, form.TIPO_VERIFICACION.SelectedItem.ToString, form.FECHA_VERIFICACION.Value)
+        Else
+            MessageBox.Show("No se puede guardar el acta de verificacion, favor de validar los datos de los campos nesesarios", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-    Public Function add_actas(ByVal cve_acta As Integer, ByVal razon_social As String, ByVal nombre_propietario As String, ByVal rfc As String, ByVal domicilio_establecimiento As String, ByVal nombre_responsable As String, ByVal fecha_capturado As Date, ByVal objetivo_alcance As String) As Boolean
-        Dim valido As Boolean = False
+    Public Function add_actas(ByVal cve_acta As Integer, ByVal jurisdiccion As String, ByVal propietario As String, ByVal razon_social As String, ByVal giro As String, ByVal domicilio As String, ByVal folio_acta As String, ByVal tipo_verificacion As String, ByVal fecha_entrega As Date) As Boolean
         Try
             ACTAS_VERIFICACION.Rows.Add()
             Dim FILA As Integer = ACTAS_VERIFICACION.Rows.Count - 1
             ACTAS_VERIFICACION.Item("CVE_ACTA", FILA).Value = cve_acta
-            ACTAS_VERIFICACION.Item("PROPIETARIO", FILA).Value = nombre_propietario
-            ACTAS_VERIFICACION.Item("RFC", FILA).Value = rfc
-            ACTAS_VERIFICACION.Item("DOMICLIO", FILA).Value = domicilio_establecimiento
-            ACTAS_VERIFICACION.Item("VERIFICACION", FILA).Value = fecha_capturado
-            ACTAS_VERIFICACION.Item("RESPONSABLE", FILA).Value = nombre_responsable
+            ACTAS_VERIFICACION.Item("JURISDICCION_", FILA).Value = jurisdiccion
+            ACTAS_VERIFICACION.Item("PROPIETARIO", FILA).Value = propietario
             ACTAS_VERIFICACION.Item("RAZON_SOCIAL", FILA).Value = razon_social
-            ACTAS_VERIFICACION.Item("OBJETIVO", FILA).Value = objetivo_alcance
+            ACTAS_VERIFICACION.Item("GIRO", FILA).Value = giro
+            ACTAS_VERIFICACION.Item("DOMICILIO", FILA).Value = domicilio
+            ACTAS_VERIFICACION.Item("FOLIO_ACTA", FILA).Value = folio_acta
+            ACTAS_VERIFICACION.Item("TIPO_VERIFICACION", FILA).Value = tipo_verificacion
+            ACTAS_VERIFICACION.Item("FECHA_ENTREGA", FILA).Value = fecha_entrega
         Catch ex As Exception
             Wisej.Web.MessageBox.Show("Error al guardar, ERROR: " & ex.Message, "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
             Return False
         End Try
         Return True
-
-
-
-        Return valido
-
     End Function
 
     Private Sub GENERAR_REPORTE_Click(sender As Object, e As EventArgs) Handles GENERAR_REPORTE.Click

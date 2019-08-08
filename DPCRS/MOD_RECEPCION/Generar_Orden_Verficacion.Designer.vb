@@ -973,7 +973,7 @@ Partial Class Generar_Orden_Verficacion
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.Label10.Location = New System.Drawing.Point(792, 426)
+        Me.Label10.Location = New System.Drawing.Point(792, 369)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(133, 16)
         Me.Label10.TabIndex = 128
@@ -982,7 +982,7 @@ Partial Class Generar_Orden_Verficacion
         'TIPO_ACTA
         '
         Me.TIPO_ACTA.Items.AddRange(New Object() {"Solicitud del propietario", "Queja / Denuncia", "Verificacion sanitaria de rutina", "No especificado"})
-        Me.TIPO_ACTA.Location = New System.Drawing.Point(792, 445)
+        Me.TIPO_ACTA.Location = New System.Drawing.Point(792, 388)
         Me.TIPO_ACTA.Name = "TIPO_ACTA"
         Me.TIPO_ACTA.Size = New System.Drawing.Size(327, 22)
         Me.TIPO_ACTA.TabIndex = 127
@@ -1005,7 +1005,7 @@ Partial Class Generar_Orden_Verficacion
         '
         'CVE_ACTA_TEXT
         '
-        Me.CVE_ACTA_TEXT.Location = New System.Drawing.Point(792, 382)
+        Me.CVE_ACTA_TEXT.Location = New System.Drawing.Point(382, 240)
         Me.CVE_ACTA_TEXT.Name = "CVE_ACTA_TEXT"
         Me.CVE_ACTA_TEXT.Size = New System.Drawing.Size(327, 22)
         Me.CVE_ACTA_TEXT.TabIndex = 124
@@ -1116,7 +1116,6 @@ Partial Class Generar_Orden_Verficacion
         '
         'ID_RESPONSABLE
         '
-        Me.ID_RESPONSABLE.Enabled = False
         Me.ID_RESPONSABLE.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
         Me.ID_RESPONSABLE.Location = New System.Drawing.Point(792, 159)
         Me.ID_RESPONSABLE.Name = "ID_RESPONSABLE"
@@ -1153,6 +1152,7 @@ Partial Class Generar_Orden_Verficacion
         '
         'ID_TESTIGO1
         '
+        Me.ID_TESTIGO1.Enabled = False
         Me.ID_TESTIGO1.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
         Me.ID_TESTIGO1.Location = New System.Drawing.Point(13, 486)
         Me.ID_TESTIGO1.Name = "ID_TESTIGO1"
@@ -1162,6 +1162,7 @@ Partial Class Generar_Orden_Verficacion
         '
         'DOM_TESTIGO1
         '
+        Me.DOM_TESTIGO1.Enabled = False
         Me.DOM_TESTIGO1.Location = New System.Drawing.Point(13, 454)
         Me.DOM_TESTIGO1.Name = "DOM_TESTIGO1"
         Me.DOM_TESTIGO1.Size = New System.Drawing.Size(356, 22)
@@ -1170,6 +1171,7 @@ Partial Class Generar_Orden_Verficacion
         '
         'NOMBRE_TESTIGO1
         '
+        Me.NOMBRE_TESTIGO1.Enabled = False
         Me.NOMBRE_TESTIGO1.Location = New System.Drawing.Point(13, 426)
         Me.NOMBRE_TESTIGO1.Name = "NOMBRE_TESTIGO1"
         Me.NOMBRE_TESTIGO1.Size = New System.Drawing.Size(356, 22)
@@ -1178,6 +1180,7 @@ Partial Class Generar_Orden_Verficacion
         '
         'ID_TESTIGO2
         '
+        Me.ID_TESTIGO2.Enabled = False
         Me.ID_TESTIGO2.Items.AddRange(New Object() {"INE o IFE", "Pasaporte", "Licencia de Conducir", "Cartilla Militar", "Otro.."})
         Me.ID_TESTIGO2.Location = New System.Drawing.Point(375, 486)
         Me.ID_TESTIGO2.Name = "ID_TESTIGO2"
@@ -1187,6 +1190,7 @@ Partial Class Generar_Orden_Verficacion
         '
         'DOM_TESTIGO2
         '
+        Me.DOM_TESTIGO2.Enabled = False
         Me.DOM_TESTIGO2.Location = New System.Drawing.Point(375, 458)
         Me.DOM_TESTIGO2.Name = "DOM_TESTIGO2"
         Me.DOM_TESTIGO2.Size = New System.Drawing.Size(356, 22)
@@ -1195,6 +1199,7 @@ Partial Class Generar_Orden_Verficacion
         '
         'NOMBRE_TESTIGO2
         '
+        Me.NOMBRE_TESTIGO2.Enabled = False
         Me.NOMBRE_TESTIGO2.Location = New System.Drawing.Point(375, 426)
         Me.NOMBRE_TESTIGO2.Name = "NOMBRE_TESTIGO2"
         Me.NOMBRE_TESTIGO2.Size = New System.Drawing.Size(356, 22)

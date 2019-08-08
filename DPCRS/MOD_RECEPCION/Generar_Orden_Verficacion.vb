@@ -677,6 +677,59 @@ Public Class Generar_Orden_Verficacion
         End If
     End Sub
 
+    Private Sub RadioButton4_CheckedChanged_1(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
+        If RadioButton4.Checked Then
+            NOMBRE_RESPONSABLE.Enabled = False
+            DOMICILIO_RESPONSABLE.Enabled = False
+            ID_RESPONSABLE.Enabled = False
+            CARGO_RESPONSABLE.Enabled = False
+            If TextBoxNOMBRE.Text.Length = 0 Then
+                Wisej.Web.MessageBox.Show("Debes seleccionar establecimiento", "Datos faltante", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+            End If
+            NOMBRE_RESPONSABLE.Text = TextBoxNOMBRE.Text
+            DOMICILIO_RESPONSABLE.Text = TextBoxDOMICILIO_PROPIETARIO.Text
+            ID_RESPONSABLE.Text = ComboBoxIDENTIFIACION.Text
+            CARGO_RESPONSABLE.Text = "Jefe y/o Dueño"
+
+        Else
+            NOMBRE_RESPONSABLE.Enabled = True
+            DOMICILIO_RESPONSABLE.Enabled = True
+            ID_RESPONSABLE.Enabled = True
+            CARGO_RESPONSABLE.Enabled = True
+            NOMBRE_RESPONSABLE.Text = ""
+            DOMICILIO_RESPONSABLE.Text = ""
+            ID_RESPONSABLE.Text = ""
+            CARGO_RESPONSABLE.Text = ""
+        End If
+    End Sub
+
+    Private Sub TESTIGO1_CheckedChanged_1(sender As Object, e As EventArgs) Handles TESTIGO1.CheckedChanged
+        If TESTIGO1.Checked Then
+            NOMBRE_TESTIGO1.Enabled = True
+            DOM_TESTIGO1.Enabled = True
+            ID_TESTIGO1.Enabled = True
+        Else
+            NOMBRE_TESTIGO1.Enabled = False
+            DOM_TESTIGO1.Enabled = False
+            ID_TESTIGO1.Enabled = False
+        End If
+
+    End Sub
+
+    Private Sub TESTIGO2_CheckedChanged_1(sender As Object, e As EventArgs) Handles TESTIGO2.CheckedChanged
+        If TESTIGO2.Checked Then
+            NOMBRE_TESTIGO2.Enabled = True
+            DOM_TESTIGO2.Enabled = True
+            ID_TESTIGO2.Enabled = True
+        Else
+            NOMBRE_TESTIGO2.Enabled = False
+            DOM_TESTIGO2.Enabled = False
+            ID_TESTIGO2.Enabled = False
+        End If
+
+
+    End Sub
+
     Public Sub si_data()
 
     End Sub
