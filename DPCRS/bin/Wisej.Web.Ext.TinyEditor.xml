@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.TinyEditor</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.TinyEditor.TinyEditor">
+            <summary>
+            TinyEditor is a simple JavaScript WYSIWYG editor that is both lightweight (8KB) and standalone
+            from: https://github.com/jessegreathouse/TinyEditor.
+            
+            It can easily be customized to integrate with any website through CSS and the multitude of parameters. 
+            It handles most of the basic formatting needs and has some functionality built in to help keep the 
+            rendered markup as clean as possible. 
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.Text">
+            <summary>
+            Returns or sets the HTML text associated with this control.
+            </summary>
+            <returns>The HTML text associated with this control.</returns>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.ShowToolbar">
+            <summary>
+            Shows or hides the toolbar panel.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.ShowFooter">
+            <summary>
+            Shows or hides the footer panel.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.SourceText">
+            <summary>
+            Returns or sets the text to use in the SOURCE button in the footer panel.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.WysiwygText">
+            <summary>
+            Returns or sets the text to use in the WYSIWYG button in the footer panel.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.Toolbar">
+            <summary>
+            Returns or sets the buttons to show in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.DefaultToolbar">
+            <summary>
+            Returns the default buttons to show in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.FontNames">
+            <summary>
+            Returns or sets the font names to display in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.DefaultFontNames">
+            <summary>
+            Returns the default buttons to show in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.StyleSheetSource">
+            <summary>
+            Returns or sets the custom css file used by the editor.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyEditor.TinyEditor.ExecCommand(System.String,System.Boolean,System.String)">
+            <summary>
+            Executes commands to manipulate the contents of the editable region. 
+            </summary>
+            <param name="command">The name of the command to execute. See https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand for a list of commands.</param>
+            <param name="showDefaultUI">Indicates whether the default user interface should be shown. This is not implemented in Mozilla.</param>
+            <param name="argument">For commands which require an input argument (such as insertImage, for which this is the URL of the image to insert), this is a string providing that information. Specify null if no argument is needed.</param>
+            <remarks>
+            Most commands affect the document's selection (bold, italics, etc.), while others insert new elements (adding a link) or 
+            affect an entire line (indenting). When using contentEditable, calling execCommand() will affect the 
+            currently active editable element.
+            </remarks>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyEditor.TinyEditor.ExecCommand(System.String,System.String)">
+            <summary>
+            Executes commands to manipulate the contents of the editable region. 
+            </summary>
+            <param name="command">The name of the command to execute. See https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand for a list of commands.</param>
+            <param name="argument">For commands which require an input argument (such as insertImage, for which this is the URL of the image to insert), this is a string providing that information. Specify null if no argument is needed.</param>
+            <remarks>
+            Most commands affect the document's selection (bold, italics, etc.), while others insert new elements (adding a link) or 
+            affect an entire line (indenting). When using contentEditable, calling execCommand() will affect the 
+            currently active editable element.
+            </remarks>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.Wisej#Core#IWisejControl#AppearanceKey">
+            <summary>
+            Returns the theme appearance key for this control.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.InitScript">
+            <summary>
+            Overridden to create our initialization script.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyEditor.TinyEditor.Packages">
+            <summary>
+            Overridden to return our list of script resources.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyEditor.TinyEditor.OnWebUpdate(System.Object)">
+            <summary>
+            Updates the client component using the state information.
+            </summary>
+            <param name="state">Dynamic state object.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyEditor.TinyEditor.OnWidgetEvent(Wisej.Web.WidgetEventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Control.WidgetEvent" /> event.
+            </summary>
+            <param name="e">A <see cref="T:Wisej.Web.WidgetEventArgs" /> that contains the event data. </param>
+        </member>
+    </members>
+</doc>

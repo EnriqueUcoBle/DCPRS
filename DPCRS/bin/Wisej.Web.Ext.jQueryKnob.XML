@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.jQueryKnob</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.jQueryKnob.KnobType">
+            <summary>
+            Type of the knob.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.jQueryKnob.LineCapType">
+            <summary>
+            Type of the gauge line endings.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.jQueryKnob.Knob">
+            <summary>
+            Nice, downward compatible, touchable, jQuery dial from https://github.com/aterrien/jQuery-Knob.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.jQueryKnob.Knob.#ctor">
+            <summary>
+            Constructs a new <see cref="T: Wisej.Web.Ext.jQueryKnob.Knob"/> control.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.jQueryKnob.Knob.ValueChanged">
+            <summary>
+            Fired when the user changes the value of the knob.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.jQueryKnob.Knob.OnValueChanged(System.EventArgs)">
+            <summary>
+            Fires the ValueChanged event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.DisplayPrevious">
+            <summary>
+            Returns or sets the DisplayPrevious property.
+            When it's set to true, the widget briefly shows the previous
+            value when the user is dragging the knob.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.ShowInput">
+            <summary>
+            Shows or hides the input field.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.Value">
+            <summary>
+            Returns or sets the value.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.MinValue">
+            <summary>
+            Returns or sets the minimum value.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.MaxValue">
+            <summary>
+            Returns or sets the maximum value.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.LineCapStyle">
+            <summary>
+            Returns or sets the skin used to render the jQueryKnob.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.KnobType">
+            <summary>
+            Returns or sets the type of knob.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.CursorSize">
+            <summary>
+            Returns or sets the size of the cursor. Valid only when Type = KnobType.Cursor.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.ReadOnly">
+            <summary>
+            Returns or sets the read only property.
+            When set to true, the value of the knob cannot be changed by the user.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.Step">
+            <summary>
+            Returns or sets the step size.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.Thickness">
+            <summary>
+            Returns or sets the thickness of the gage.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.AngleArc">
+            <summary>
+            Returns or sets the arc size in degrees.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.AngleOffset">
+            <summary>
+            Returns or sets the starting angle in degrees.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.InitScript">
+            <summary>
+            Overridden to create our initialization script.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.ForeColor">
+            <summary>
+            Returns or sets the color of 
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.jQueryKnob.Knob.Packages">
+            <summary>
+            Overridden to return our list of script resources.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.jQueryKnob.Knob.OnWidgetEvent(Wisej.Web.WidgetEventArgs)">
+            <summary>
+            Handles events fired by the widget.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:Wisej.Web.Ext.jQueryKnob.NamespaceDoc">
+            <summary>
+            <para>
+            jQueryKnob component. Implements the open-source jQueryKnowb control in Wisej.
+            </para>
+            </summary>
+        </member>
+    </members>
+</doc>

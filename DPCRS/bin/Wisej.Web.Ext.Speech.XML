@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.Speech</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.Speech.NamespaceDoc">
+            <summary>
+            <para>
+            Speech extender. Adds speech synthesis and recognition capabilities to Wisej components.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechRecognitionResult">
+             <summary>
+             Represents an entry in the list of speech recognition results.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognitionResult.Confidence">
+            <summary>
+            Returns a numeric estimate of how confident the speech recognition system is that the recognition is correct.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognitionResult.IsFinal">
+            <summary>
+            Returns if this result is final (true) or not (false) — if so, then this is the final time this result will be returned; if not, then this result is an interim result, and may be updated later on.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognitionResult.Transcript">
+            <summary>
+            Returns a string containing the transcript of the recognised word.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechRecognitionEventHandler">
+             <summary>
+             Represents the method that will handle the <see cref="E:Wisej.Web.Ext.Speech.SpeechRecognition.Result"/> event.
+            </summary>
+             <param name="sender">The source of the event. </param>
+             <param name="e">A <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs" /> that contains the event data. </param>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs">
+             <summary>
+             Provides data for the <see cref="E:Wisej.Web.Ext.Speech.SpeechRecognition.Result" /> events.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs.#ctor(System.Object,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs" /> class.
+            </summary>
+             <param name="results">The speech recognition results.</param>
+             <param name="error">The speech recognition error message.</param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs.Results">
+            <summary>
+            Returns the list of speech recognition results.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs.Error">
+             <summary>
+             Returns the error message from the speech recognition object.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechRecognition">
+            <summary>
+            The SpeechRecognition interface of Web Speech API allows JavaScript to have access to a browser's audio stream and convert it to text.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.Speech.SpeechRecognition.Result">
+            <summary>
+            Fired when the speech recognition service returns a result — a word or phrase has been positively recognized and this has been communicated back to the app (when the result event fires.)
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.Speech.SpeechRecognition.NoMatch">
+            <summary>
+            Occurs when the speech recognition service returns a final result with no significant recognition (when the nomatch event fires.)
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.Speech.SpeechRecognition.Error">
+            <summary>
+            Occurs when a speech recognition error is detected.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.Speech.SpeechRecognition.SpeechStart">
+            <summary>
+            Occurs when sound recognised by the speech recognition service as speech has been detected.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.Speech.SpeechRecognition.SpeechEnd">
+            <summary>
+            Occurs when speech recognised by the speech recognition service has stopped being detected (when the speechend event fires.)
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.OnResult(Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs)">
+            <summary>
+            Fires the Result event.
+            </summary>
+            <param name="e">A <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs" /> that contains the event data. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.OnError(Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs)">
+            <summary>
+            Fires the Error event.
+            </summary>
+            <param name="e">A <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs" /> that contains the event data. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.OnNoMatch(System.EventArgs)">
+            <summary>
+            Fires the NoMatch event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.OnSpeechStart(System.EventArgs)">
+            <summary>
+            Fires the SpeechStart event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.OnSpeechEnd(System.EventArgs)">
+            <summary>
+            Fires the SpeechEnd event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.Continuous">
+            <summary>
+            Controls whether continuous results are returned for each recognition, or only a single result.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.Language">
+            <summary>
+            Returns and sets the language of the current SpeechRecognition. 
+            If not specified, this defaults to the HTML lang attribute value, or the user agent's language setting if that isn't set either.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.MaxAlternatives">
+            <summary>
+            Returns and sets the maximum number of alternatives provided per each speech recognition result.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.InterimResults">
+            <summary>
+            Controls whether interim results should be returned (true) or not (false.)
+            Interim results are results that are not yet final (e.g. the SpeechRecognitionResult.isFinal property is false.)
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.Enabled">
+            <summary>
+            Enables or disables the this <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognition" /> extender.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.Grammars">
+            <summary>
+            Returns and sets a collection of grammar definitions - using the JSpeech Grammar Format (JSGF) https://www.w3.org/TR/jsgf/.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Start">
+            <summary>
+            Starts the speech recognition service listening to incoming audio.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Stop">
+            <summary>
+            Stops the speech recognition service from listening to incoming audio, and attempts to return a result using the audio captured so far.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Abort">
+            <summary>
+            Stops the speech recognition service from listening to incoming audio, and doesn't attempt to return a result.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.CanExtend(System.Object)">
+            <summary>
+            Returns true if <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognition" /> can offer an extender property to the specified target component.
+            </summary>
+            <returns>true if the <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognition" /> class can offer one or more extender properties; otherwise, false.</returns>
+            <param name="target">The target object to add an extender property to. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.GetSpeechRecognition(Wisej.Web.Control)">
+            <summary>
+            SpeechRecognition properties.
+            </summary>
+            <returns>A <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognition.Properties" /> instance with the SpeechRecognition properties.</returns>
+            <param name="control">The <see cref="T:Wisej.Web.Control" /> for which to retrieve the speech properties. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Clear">
+            <summary>
+            Removes all speech extenders.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Update(Wisej.Web.Control)">
+            <summary>
+            Updates the component on the client.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.SetSpeechRecognition(Wisej.Web.Control,Wisej.Web.Ext.Speech.SpeechRecognition.Properties)">
+            <summary>
+            Assigns the speech recognition properties to the control.
+            </summary>
+            <param name="control">The control to rotate.</param>
+            <param name="properties">An instance of <see cref="T:Wisej.Web.SpeechRecognition.Properties"/> defining the speech listeners.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.HasSpeechRecognitionProperties(Wisej.Web.Control)">
+            <summary>
+            Returns if the control has defined the speech recognition properties.
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.GetSpeechRecognitionProperties(Wisej.Web.Control)">
+            <summary>
+            Creates or retrieves the speech recognition properties associated with the control.
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.ProcessListeners(Wisej.Web.Ext.Speech.SpeechRecognitionEventArgs)">
+            <summary>
+            Assigns the speech result to one the speech enabled controls.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechRecognition.RecognitionMode">
+            <summary>
+            Determines how the <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognition" /> extender applies to the extended control.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechRecognition.RecognitionMode.WhenFocused">
+            <summary>
+            Speech recognition is activated every time the control is focused.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechRecognition.RecognitionMode.WhenFocusedOnce">
+            <summary>
+            Speech recognition is activated when the control is focused and disabled after the first final recognition.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechRecognition.Properties">
+            <summary>
+            Represents the set of speech properties added to the extended controls.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Properties.#ctor">
+            <summary>
+            Creates a new instance of the speech recognition properties.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Properties.#ctor(Wisej.Web.Ext.Speech.SpeechRecognition,Wisej.Web.Control)">
+            <summary>
+            Creates a new instance of the rotation properties connected to the specified control.
+            </summary>
+            <param name="owner"></param>
+            <param name="control"></param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.Properties.RecognitionMode">
+            <summary>
+            Determines how the <see cref="T:Wisej.Web.Ext.Speech.SpeechRecognition" /> extender applies to the extended control.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechRecognition.Properties.Enabled">
+            <summary>
+            Enables or disables speech recognition on the control.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.Properties.ProcessResults(Wisej.Web.Ext.Speech.SpeechRecognitionResult[])">
+            <summary>
+            Process the speech recognition results in relation to the
+            speech enabled control.
+            </summary>
+            <param name="results"></param>
+            <returns>True if the result was applied to the control.</returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.OnWebEvent(Wisej.Core.WisejEventArgs)">
+            <summary>
+            Processes the event from the client.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechRecognition.OnWebRender(System.Object)">
+            <summary>
+            Renders the client component.
+            </summary>
+            <param name="config">Dynamic configuration object.</param>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechSynthesis">
+            <summary>
+            The SpeechSynthesis interface of the Web Speech API is the controller interface for the speech service; this can be used to retrieve 
+            information about the synthesis voices available on the device, start and pause speech, and other commands besides.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Web.Ext.Speech"/> class.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Voice">
+            <summary>
+            Returns or sets the voice that will be used to speak the utterance.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Language">
+            <summary>
+            Returns or sets the language of the utterance.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Volume">
+            <summary>
+            Returns or sets the volume that the utterance will be spoken at. The default is 1 (maximum).
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Rate">
+            <summary>
+            Returns and sets the speed at which the utterance will be spoken at.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Pitch">
+            <summary>
+            Returns and sets the pitch at which the utterance will be spoken at.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Enabled">
+            <summary>
+            Enables or disables the this <see cref="T:Wisej.Web.Ext.Speech.SpeechSynthesis" /> extender.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.Pause">
+            <summary>
+            Puts the SpeechSynthesis object into a paused state.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.Speak(System.String)">
+            <summary>
+            Adds an utterance to the utterance queue; it will be spoken when any other utterances queued before it have been spoken.
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.Resume">
+            <summary>
+            Resumes speaking if the SpeechSynthesis object was already paused.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.Cancel">
+            <summary>
+            Removes all utterances from the utterance queue.
+            If an utterance is currently being spoken, speaking will stop immediately.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.CanExtend(System.Object)">
+            <summary>
+            Returns true if <see cref="T:Wisej.Web.Ext.Speech.SpeechSynthesis" /> can offer an extender property to the specified target component.
+            </summary>
+            <returns>true if the <see cref="T:Wisej.Web.Ext.Speech.SpeechSynthesis" /> class can offer one or more extender properties; otherwise, false.</returns>
+            <param name="target">The target object to add an extender property to. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.GetSpeechSynthesis(Wisej.Web.Control)">
+            <summary>
+            SpeechSynthesis properties.
+            </summary>
+            <returns>A <see cref="T:Wisej.Web.Ext.Speech.SpeechSynthesis.Properties" /> instance with the SpeechSynthesis properties.</returns>
+            <param name="control">The <see cref="T:Wisej.Web.Control" /> for which to retrieve the speech properties. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.RemoveAll">
+            <summary>
+            Removes all speech extenders.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.Update(Wisej.Web.Control)">
+            <summary>
+            Updates the component on the client.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.HasSpeechSynthesisProperties(Wisej.Web.Control)">
+            <summary>
+            Returns if the control has defined the speech synthesis properties.
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.GetSpeechSynthesisProperties(Wisej.Web.Control)">
+            <summary>
+            Returns of creates the speech synthesis properties associated with the control.
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode">
+            <summary>
+            Determines how the <see cref="T:Wisej.Web.Ext.Speech.SpeechSynthesis" /> extender applies to the extended control.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.Never">
+            <summary>
+            Speech is disabled for this control.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.TextOnEnter">
+            <summary>
+            Speaks the specified text when the control is activated.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.TextOnLeave">
+            <summary>
+            Speaks the specified text when the control is deactivated.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.ValueOnEnter">
+            <summary>
+            Speaks the value of the control when it is activated.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.ValueOnLeave">
+            <summary>
+            Speaks the value of the control when it is deactivated.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.TextOnEnterOnce">
+            <summary>
+            Speaks the specified text when the control is activated the first time only.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.TextOnLeaveOnce">
+            <summary>
+            Speaks the specified text when the control is deactivated the first time only.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.ValueOnEnterOnce">
+            <summary>
+            Speaks the value of the control when it is activated the first time only.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Speech.SpeechSynthesis.SpeakMode.ValueOnLeaveOnce">
+            <summary>
+            Speaks the value of the control when it is deactivated the first time only.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Speech.SpeechSynthesis.Properties">
+            <summary>
+            Represents the set of speech properties added to the extended controls.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.Properties.#ctor(Wisej.Web.Ext.Speech.SpeechSynthesis,Wisej.Web.Control)">
+            <summary>
+            Creates a new instance of the rotation properties connected to the specified control.
+            </summary>
+            <param name="owner"></param>
+            <param name="control"></param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Properties.SpeakMode">
+            <summary>
+            Determines how the <see cref="T:Wisej.Web.Ext.Speech.SpeechSynthesis" /> extender applies to the extended control.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.Speech.SpeechSynthesis.Properties.TextToSpeak">
+            <summary>
+            Returns or sets the text to speak.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Speech.SpeechSynthesis.OnWebRender(System.Object)">
+            <summary>
+            Renders the client component.
+            </summary>
+            <param name="config">Dynamic configuration object.</param>
+        </member>
+    </members>
+</doc>

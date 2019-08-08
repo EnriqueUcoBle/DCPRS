@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.TinyMCE</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.TinyMCE.CommandEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Wisej.Web.Ext.TinyMCE.TinyMCE.Command"/> event of 
+            a <see cref="T:Wisej.Web.Ext.TinyMCE.TinyMCE" /> control.
+            </summary>
+            <param name="sender">The source of the event. </param>
+            <param name="e">A <see cref="T:Wisej.Web.Ext.TinyMCE.CommandEventArgs" /> that contains the event data. </param>
+        </member>
+        <member name="T:Wisej.Web.Ext.TinyMCE.CommandEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Wisej.Web.Ext.TinyMCE.TinyMCE.Command" /> event.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.CommandEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes an instance of the <see cref="T:Wisej.Web.Ext.TinyMCE.CommandEventArgs" /> class.
+            </summary>
+            <param name="command">The event data from the client.</param>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.CommandEventArgs.Command">
+            <summary>
+            Returns the name of the command that was executed by the <see cref="T:Wisej.Web.Ext.TinyMCE.TinyMCE" /> control.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.TinyMCE.ExternalPlugin">
+            <summary>
+            Represents a local plugin that can be used with a CDN installation of the TinyMCE or
+            a local installation, although for local installations, it is not necessary to register
+            local plugins.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.ExternalPlugin.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Wisej.Web.Ext.TinyMCE.ExternalPlugin"/>.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.ExternalPlugin.Name">
+            <summary>
+            The name of the plugin. This is the name used in "plugins".
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.ExternalPlugin.Url">
+            <summary>
+            The local URL of the plugin.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.ExternalPlugin.FileName">
+            <summary>
+            The name of the javascript file of the plugin, using it's "plugin.js".
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.TinyMCE.NamespaceDoc">
+            <summary>
+            <para>
+            TinyMCE (Tiny Moxiecode Content Editor) is a platform-independent, browser-based WYSIWYG editor control, written 
+            in JavaScript and released as open-source software under the LGPL by Ephox.
+            It has the ability to convert HTML textarea fields or other HTML elements to editor instances.
+            
+            from: https://www.tinymce.com/
+            </para>
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.TinyMCE.TinyMCE">
+            <summary>
+            TinyMCE (Tiny Moxiecode Content Editor) is a platform-independent, browser-based WYSIWYG editor control, written 
+            in JavaScript and released as open-source software under the LGPL by Ephox.
+            It has the ability to convert HTML textarea fields or other HTML elements to editor instances.
+            
+            from: https://www.tinymce.com/
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.TinyMCE.TinyMCE.Command">
+            <summary>
+            Fired after the editor executes a command.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.TinyMCE.OnCommand(Wisej.Web.Ext.TinyMCE.CommandEventArgs)">
+            <summary>
+            Fires the Command event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.Text">
+            <summary>
+            Returns or sets the HTML text associated with this control.
+            </summary>
+            <returns>The HTML text associated with this control.</returns>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.ShowMenuBar">
+            <summary>
+            Shows or hides the menu panel.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.ShowToolbar">
+            <summary>
+            Shows or hides the toolbar panel.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.ShowFooter">
+            <summary>
+            Shows or hides the footer panel.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.Options">
+            <summary>
+            Returns or sets the configuration to use for this instance of the editor: https://www.tinymce.com/docs/configure/.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.FontNames">
+            <summary>
+            Returns or sets the font names to display in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.DefaultFontNames">
+            <summary>
+            Returns the default buttons to show in the toolbar.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.ExternalPlugins">
+            <summary>
+            Collection of external (local) plugins to register with the TinyMCE control.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.TinyMCE.ExecCommand(System.String,System.Boolean,System.String)">
+            <summary>
+            Executes commands to manipulate the contents of the editable region. 
+            </summary>
+            <param name="command">The name of the command to execute. See https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand and http://archive.tinymce.com/wiki.php/TinyMCE3x:Command_identifiers for a list of commands.</param>
+            <param name="showDefaultUI">Indicates whether the default user interface should be shown. This is not implemented in Mozilla.</param>
+            <param name="argument">For commands which require an input argument (such as insertImage, for which this is the URL of the image to insert), this is a string providing that information. Specify null if no argument is needed.</param>
+            <remarks>
+            Most commands affect the document's selection (bold, italics, etc.), while others insert new elements (adding a link) or 
+            affect an entire line (indenting). When using contentEditable, calling execCommand() will affect the 
+            currently active editable element.
+            </remarks>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.TinyMCE.ExecCommand(System.String,System.String)">
+            <summary>
+            Executes commands to manipulate the contents of the editable region. 
+            </summary>
+            <param name="command">The name of the command to execute. See https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand and http://archive.tinymce.com/wiki.php/TinyMCE3x:Command_identifiers for a list of commands.</param>
+            <param name="argument">For commands which require an input argument (such as insertImage, for which this is the URL of the image to insert), this is a string providing that information. Specify null if no argument is needed.</param>
+            <remarks>
+            Most commands affect the document's selection (bold, italics, etc.), while others insert new elements (adding a link) or 
+            affect an entire line (indenting). When using contentEditable, calling execCommand() will affect the 
+            currently active editable element.
+            </remarks>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.TinyMCE.EnableCommand(System.String)">
+            <summary>
+            Enables the specified command on the toolbar.
+            </summary>
+            <param name="command">The name of the command to enable: i.e. "save", "bold", ...</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.TinyMCE.DisableCommand(System.String)">
+            <summary>
+            Disables the specified command on the toolbar.
+            </summary>
+            <param name="command">The name of the command to disable: i.e. "save", "bold", ...</param>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.Wisej#Core#IWisejControl#DesignerTimeout">
+            <summary>
+            Returns the designer timeout for rendering this control.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.Wisej#Core#IWisejControl#AppearanceKey">
+            <summary>
+            Returns the theme appearance key for this control.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.InitScript">
+            <summary>
+            Overridden to create our initialization script.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.BaseUrl">
+            <summary>
+            Returns or sets the base url for the TinyMCE installation
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.TinyMCE.TinyMCE.Packages">
+            <summary>
+            Overridden to return our list of script resources.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.TinyMCE.OnWebUpdate(System.Object)">
+            <summary>
+            Updates the client component using the state information.
+            </summary>
+            <param name="state">Dynamic state object.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.TinyMCE.TinyMCE.OnWidgetEvent(Wisej.Web.WidgetEventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Control.WidgetEvent" /> event.
+            </summary>
+            <param name="e">A <see cref="T:Wisej.Web.WidgetEventArgs" /> that contains the event data. </param>
+        </member>
+    </members>
+</doc>

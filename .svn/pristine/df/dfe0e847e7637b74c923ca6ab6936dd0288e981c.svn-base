@@ -1,0 +1,129 @@
+﻿Imports System
+Imports Wisej.Web
+Imports Wisej.Web.Ext.RibbonBar
+
+Public Class Paquetes_Entrada
+    Dim oFunciones As New dllData
+    Private Sub RibbonBar1_ItemClick(sender As Object, e As RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
+        Select Case e.Item.Name
+            Case "RRB_NUEVO"
+                nuevo()
+
+            Case "RRB_GUARDAR"
+                Relacionar_Actas_paquetes()
+
+            Case "RRB_LIMPIAR"
+                limpiar_form()
+            Case "RRB_IMPRIMIR"
+
+            Case "RRB_REIMPRIMIR"
+
+            Case "RRB_SALIR"
+
+                Me.Close()
+        End Select
+    End Sub
+    Private Sub llenarComboJurisdiccion()
+        oFunciones.Llenar_listbox("pCAT_JURISDICCION_B", "CVE_JURISDICCION", "JURISDICCION", JURISDICCION)
+    End Sub
+    Private Sub limpiar_form()
+
+        JURISDICCION.SelectedIndex = -1
+        FECHA_RECEPCION.Value = Nothing
+        FECHA_RECEPCION.Text = Nothing
+        si.Checked = False
+        For Each r As DataGridViewRow In ACTAS_VERIFICACION.SelectedRows
+            ACTAS_VERIFICACION.Rows.Remove(r)
+        Next
+        JURISDICCION.Enabled = False
+        FECHA_RECEPCION.Enabled = False
+        ACTAS_VERIFICACION.Enabled = False
+
+    End Sub
+    Private Sub Relacionar_Actas_paquetes()
+        If validarCampos() Then
+            MessageBox.Show("campos validos")
+            'insertar cve de paquete para relacionarlo con las actas
+
+        Else
+            MessageBox.Show("campos no validos")
+            'j
+        End If
+    End Sub
+    Private Sub imprimir()
+
+    End Sub
+    Private Sub reimprimir()
+
+    End Sub
+    Private Sub nuevo()
+        limpiar_form()
+        JURISDICCION.Enabled = True
+        FECHA_RECEPCION.Enabled = True
+        ACTAS_VERIFICACION.Enabled = True
+    End Sub
+
+    Private Function validarCampos() As Boolean
+        Dim e As Integer = 0
+        If JURISDICCION.SelectedIndex = -1 Then
+            ERROR_.SetError(JURISDICCION, "No se ha seleccionado una jurisdiccion")
+            e = e + 1
+        Else
+            ERROR_.SetError(JURISDICCION, Nothing)
+        End If
+        If FECHA_RECEPCION.Value = Nothing Then
+            ERROR_.SetError(FECHA_RECEPCION, "No ha seleccionado una fecha")
+            e = e + 1
+        Else
+            ERROR_.SetError(FECHA_RECEPCION, Nothing)
+        End If
+        If ACTAS_VERIFICACION.RowCount = 0 Then
+            ERROR_.SetError(ACTAS_VERIFICACION, "no hay actas de verificacion")
+            e = e + 1
+        Else
+            ERROR_.SetError(ACTAS_VERIFICACION, Nothing)
+        End If
+        If e <> 0 Then
+            Return False
+        Else
+            Return True
+
+        End If
+    End Function
+
+    Private Sub Paquetes_Entrada_Load(sender As Object, e As EventArgs) Handles Me.Load
+        llenarComboJurisdiccion()
+    End Sub
+
+
+    Private Sub añadir_item(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim form As Generar_Orden_Verficacion = sender.Parent.Parent
+        add_actas(form.cve_acta, form.TextBoxRAZON_SOCIAL.Text, form.TextBoxNOMBRE.Text, form.TextBoxDIRECCION.Text, form.NOMBRE_RESPONSABLE.Text, form.TextBoxRFC.Text, form.FECHA_VERIFICACION.Value, form.TIPO_OBJETIVO.SelectedItem.ToString)
+
+
+    End Sub
+    Public Function add_actas(ByVal cve_acta As Integer, ByVal razon_social As String, ByVal nombre_propietario As String, ByVal rfc As String, ByVal domicilio_establecimiento As String, ByVal nombre_responsable As String, ByVal fecha_capturado As Date, ByVal objetivo_alcance As String) As Boolean
+        Dim valido As Boolean = False
+        Try
+            ACTAS_VERIFICACION.Rows.Add()
+            Dim FILA As Integer = ACTAS_VERIFICACION.Rows.Count - 1
+            ACTAS_VERIFICACION.Item("CVE_ACTA", FILA).Value = cve_acta
+            ACTAS_VERIFICACION.Item("PROPIETARIO", FILA).Value = nombre_propietario
+            ACTAS_VERIFICACION.Item("RFC", FILA).Value = rfc
+            ACTAS_VERIFICACION.Item("DOMICLIO", FILA).Value = domicilio_establecimiento
+            ACTAS_VERIFICACION.Item("VERIFICACION", FILA).Value = fecha_capturado
+            ACTAS_VERIFICACION.Item("RESPONSABLE", FILA).Value = nombre_responsable
+            ACTAS_VERIFICACION.Item("RAZON_SOCIAL", FILA).Value = razon_social
+            ACTAS_VERIFICACION.Item("OBJETIVO", FILA).Value = objetivo_alcance
+        Catch ex As Exception
+            Wisej.Web.MessageBox.Show("Error al guardar, ERROR: " & ex.Message, "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+            Return False
+        End Try
+        Return True
+
+
+
+        Return valido
+
+    End Function
+End Class

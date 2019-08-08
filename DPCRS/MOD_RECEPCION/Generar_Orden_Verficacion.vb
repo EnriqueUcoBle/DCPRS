@@ -9,7 +9,7 @@ Public Class Generar_Orden_Verficacion
     Dim CONTROL As Integer = 0
     Dim CONTROLV As Boolean = False
     Dim CONTROLVT As Boolean = False
-    Dim cve_acta As Integer = Nothing
+    Public cve_acta As Integer = Nothing
 
     Private Sub RibbonBar1_ButtonClick(ByVal sender As Object, ByVal e As Ext.RibbonBar.RibbonBarItemEventArgs) Handles RibbonBar1.ItemClick
         Select Case e.Item.Name
@@ -46,11 +46,11 @@ Public Class Generar_Orden_Verficacion
 
     Private Sub Generar_Orden_Verficacion_Load(sender As Object, e As EventArgs) Handles Me.Load
         llenarCombos()
-        PAQUETES_ACTAS.SelectedIndex = -1
-        ESTABLECIMIENTO.SelectedIndex = -1
+        'PAQUETES_ACTAS.SelectedIndex = -1
+        'ESTABLECIMIENTO.SelectedIndex = -1
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles AddPaquete.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Dim agregar = New ADD_LOTES
         agregar.Show()
         AddHandler agregar.FormClosed, AddressOf llenarCombos
@@ -85,9 +85,9 @@ Public Class Generar_Orden_Verficacion
     End Sub
 
     Private Sub Limpiar()
-        Fecha_creacion_LOTE.Text = ""
-        Jurisdiccion_LOTE.Text = ""
-        Operador_LOTE.Text = ""
+        'Fecha_creacion_LOTE.Text = ""
+        'Jurisdiccion_LOTE.Text = ""
+        'Operador_LOTE.Text = ""
         TextBoxRFC.Text = ""
         TextBoxNOMBRE.Text = ""
 
@@ -214,16 +214,16 @@ Public Class Generar_Orden_Verficacion
     End Sub
 
 
-    Private Sub ComboBoxLOTE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles PAQUETES_ACTAS.SelectedIndexChanged
-        If PAQUETES_ACTAS.SelectedIndex = -1 Then Exit Sub
-        Try
-            Fecha_creacion_LOTE.Text = oFunciones.obetenerDescripcion4(PAQUETES_ACTAS, "FECHA_EXPEDICION")
-            Operador_LOTE.Text = oFunciones.obetenerDescripcion4(PAQUETES_ACTAS, "NOMPRE_OPERADOR")
-            Jurisdiccion_LOTE.Text = oFunciones.obetenerDescripcion4(PAQUETES_ACTAS, "JURISDICCION")
-        Catch ex As Exception
-            Wisej.Web.MessageBox.Show("cargar datos de los paquetes , ERROR: " & ex.Message, "llenar datos de los paquetes de actas", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
-        End Try
-    End Sub
+    'Private Sub ComboBoxLOTE_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    If PAQUETES_ACTAS.SelectedIndex = -1 Then Exit Sub
+    '    Try
+    '        Fecha_creacion_LOTE.Text = oFunciones.obetenerDescripcion4(PAQUETES_ACTAS, "FECHA_EXPEDICION")
+    '        Operador_LOTE.Text = oFunciones.obetenerDescripcion4(PAQUETES_ACTAS, "NOMPRE_OPERADOR")
+    '        Jurisdiccion_LOTE.Text = oFunciones.obetenerDescripcion4(PAQUETES_ACTAS, "JURISDICCION")
+    '    Catch ex As Exception
+    '        Wisej.Web.MessageBox.Show("cargar datos de los paquetes , ERROR: " & ex.Message, "llenar datos de los paquetes de actas", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
+    '    End Try
+    'End Sub
 
     Private Sub Combosax_B1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ESTABLECIMIENTO.SelectedIndexChanged
         If ELEGIDOestablecimeinto <> True Then
@@ -307,14 +307,14 @@ Public Class Generar_Orden_Verficacion
         End If
     End Sub
 
-    Private Sub ULTIMOS_PAQUETES()
+    'Private Sub ULTIMOS_PAQUETES()
 
-        ReDim oFunciones.ParametersX_Global(1)
-        oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ASENDENTE", Not DESC.Checked)
-        oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
-        oFunciones.Llenar_listbox("pCAT_PAQUETES_ACTAS_B", "CVE_PAQUETE", "NOMBRE", PAQUETES_ACTAS, oFunciones.ParametersX_Global)
+    '    ReDim oFunciones.ParametersX_Global(1)
+    '    oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@ASENDENTE", Not DESC.Checked)
+    '    oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_OPERADOR", Application.Session("CVE_OPERADOR"))
+    '    oFunciones.Llenar_listbox("pCAT_PAQUETES_ACTAS_B", "CVE_PAQUETE", "NOMBRE", PAQUETES_ACTAS, oFunciones.ParametersX_Global)
 
-    End Sub
+    'End Sub
     Private Sub añadir_item(sender As Object, e As EventArgs)
         Dim form As Add_Muestra = sender.Parent.Parent
         If form._Validar = True Then
@@ -413,7 +413,7 @@ Public Class Generar_Orden_Verficacion
             oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@DOM_ENCARGADO", DOMICILIO_RESPONSABLE.Text)
             oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@CARGO_ENCARGADO", CARGO_RESPONSABLE.Text)
             oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@MOTIVO", MOTIVO.SelectedItem)
-            oFunciones.ParametersX_Global(27) = New SqlClient.SqlParameter("@CVE_PAQUETE", PAQUETES_ACTAS.SelectedValue)
+            'oFunciones.ParametersX_Global(27) = New SqlClient.SqlParameter("@CVE_PAQUETE", PAQUETES_ACTAS.SelectedValue)
             oFunciones.ParametersX_Global(28) = New SqlClient.SqlParameter("@OBSERVACIONES_MUESTRAS", OBSERVACIONES_MUESTRAS.Text)
             oFunciones.ParametersX_Global(29) = New SqlClient.SqlParameter("@CVE_ACTA", CVE_ACTA_TEXT.Text)
             oFunciones.ParametersX_Global(30) = New SqlClient.SqlParameter("@TIPO_ACTA", TIPO_ACTA.SelectedItem)
@@ -421,6 +421,8 @@ Public Class Generar_Orden_Verficacion
             cve_acta = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ACTAS_VERIFICACION_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.Int)
             If cve_acta <> Nothing Or cve_acta <> 0 Then
                 Wisej.Web.MessageBox.Show("Acta con folio : " & cve_acta & "ha sido almacenada correctamente", "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Information)
+                si_data()
+
             End If
         Catch ex As Exception
             Wisej.Web.MessageBox.Show("Error al guardar, ERROR: " & ex.Message, "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
@@ -524,21 +526,25 @@ Public Class Generar_Orden_Verficacion
         End If
     End Sub
 
-    Private Sub RadioButton16_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton16.CheckedChanged
-        ULTIMOS_PAQUETES()
-    End Sub
+    'Private Sub RadioButton16_CheckedChanged(sender As Object, e As EventArgs)
+    '    ULTIMOS_PAQUETES()
+    'End Sub
 
-    Private Sub DESC_CheckedChanged(sender As Object, e As EventArgs) Handles DESC.CheckedChanged
-        ULTIMOS_PAQUETES()
-    End Sub
+    'Private Sub DESC_CheckedChanged(sender As Object, e As EventArgs)
+    '    ULTIMOS_PAQUETES()
+    'End Sub
 
+    'validacion d  que datos de entasda  asi como deberia entrar en la base d edeatos adiciconr las claves de encripcion 
     Private Sub guardar_todo()
-        guardarOrdenVerificacion()
+        If Validar_Campos() Then
+            guardarOrdenVerificacion()
+            guardar_Verificadores()
+            guardar_muestras()
+            guardarActaA()
+        Else
+            oFunciones.AlertBox("verifique quw todos los campos nesesarios esten llenos  ", MessageBoxIcon.Information)
+        End If
 
-
-        guardar_Verificadores()
-        guardar_muestras()
-        guardarActaA()
 
     End Sub
 
@@ -589,19 +595,19 @@ Public Class Generar_Orden_Verficacion
         Next
     End Sub
 
-    Private Sub Validar_Campos()
+    Public Function Validar_Campos() As Boolean
         Dim E As Integer = 0
-        If PAQUETES_ACTAS.SelectedIndex = -1 Then
-            ErrorProvider1.SetError(Fecha_creacion_LOTE, "no ha seleccionado un Paquete de actas")
-            ErrorProvider1.SetError(Jurisdiccion_LOTE, "no ha seleccionado un Paquete de actas")
-            ErrorProvider1.SetError(Operador_LOTE, "no ha seleccionado un Paquete de actas")
-            E = E + 1
+        'If PAQUETES_ACTAS.SelectedIndex = -1 Then
+        '    ErrorProvider1.SetError(Fecha_creacion_LOTE, "no ha seleccionado un Paquete de actas")
+        '    ErrorProvider1.SetError(Jurisdiccion_LOTE, "no ha seleccionado un Paquete de actas")
+        '    ErrorProvider1.SetError(Operador_LOTE, "no ha seleccionado un Paquete de actas")
+        '    E = E + 1
 
-        Else
-            ErrorProvider1.SetError(Fecha_creacion_LOTE, Nothing)
-            ErrorProvider1.SetError(Jurisdiccion_LOTE, Nothing)
-            ErrorProvider1.SetError(Operador_LOTE, Nothing)
-        End If
+        'Else
+        '    ErrorProvider1.SetError(Fecha_creacion_LOTE, Nothing)
+        '    ErrorProvider1.SetError(Jurisdiccion_LOTE, Nothing)
+        '    ErrorProvider1.SetError(Operador_LOTE, Nothing)
+        'End If
         If ESTABLECIMIENTO.SelectedIndex = -1 Then
             ErrorProvider1.SetError(TextBoxMUNICIPIO, "no se ha seleccionado un establecimiento")
             ErrorProvider1.SetError(TextBoxRAZON_SOCIAL, "no se ha seleccionado un establecimiento")
@@ -638,7 +644,12 @@ Public Class Generar_Orden_Verficacion
         Else
             ErrorProvider1.SetError(MUESTRAS_GRID, Nothing)
         End If
-    End Sub
+        If E <= 1 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
     Private Sub RadioButton12_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton12.CheckedChanged
         If RadioButton12.Checked Then
@@ -666,7 +677,7 @@ Public Class Generar_Orden_Verficacion
         End If
     End Sub
 
-    Private Sub cargar_preguntas()
+    Public Sub si_data()
 
     End Sub
 End Class

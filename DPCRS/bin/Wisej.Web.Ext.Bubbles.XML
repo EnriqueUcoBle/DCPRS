@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.Bubbles</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.Bubbles.BubbleNotification">
+            <summary>
+            Represents a numeric notification bubble that can be displayed next to any control.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Web.Ext.Bubbles.BubbleNotification" /> without a specified container.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Web.Ext.Bubbles.BubbleNotification" /> class with a specified container.
+            </summary>
+            <param name="container">An <see cref="T:System.ComponentModel.IContainer" />container. </param>
+        </member>
+        <member name="E:Wisej.Web.Ext.Bubbles.BubbleNotification.Click">
+            <summary>
+            Fired when the user clicks on a bubble notification.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.OnClick(Wisej.Web.Ext.Bubbles.BubbleEventArgs)">
+            <summary>
+            Fires the Click event.
+            </summary>
+            <param name="e">A <see cref="T:Wisej.Web.Ext.Bubbles.BubbleEventArgs" /> that contains the event data. </param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Bubbles.BubbleNotification.Tag">
+            <summary>
+            Returns or sets the object that contains programmer-supplied data associated with this component.
+            </summary>
+            <returns>An <see cref="T:System.Object" /> that contains user data. The default is null.</returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.CanExtend(System.Object)">
+            <summary>
+            Returns true if <see cref="T:Wisej.Web.Ext.Bubbles.BubbleNotification" /> can offer an extender property to the specified target component.
+            </summary>
+            <returns>true if the <see cref="T:Wisej.Web.Ext.Bubbles.BubbleNotification" /> class can offer one or more extender properties; otherwise, false.</returns>
+            <param name="target">The target object to add an extender property to. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.Clear">
+            <summary>
+            Removes all bubbles.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.GetBubbleValue(Wisej.Web.Control)">
+            <summary>
+            Returns the notification value associated with the specified control.
+            </summary>
+            <returns>A <see cref="T:System.Int32" /> containing the value to display in the bubble; when 0, the bubble is hidden.</returns>
+            <param name="control">The <see cref="T:Wisej.Web.Control" /> for which to retrieve the <see cref="T:Wisej.Web.Ext.Bubbles.BubbleNotification" /> value. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.SetBubbleValue(Wisej.Web.Control,System.Int32)">
+            <summary>
+            Shows the bubble notification value with the specified control.
+            </summary>
+            <param name="control">The <see cref="T:Wisej.Web.Control" /> to associate the JavaScript with. </param>
+            <param name="value">The value to show in the bubble notification; 0 hides the bubble.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.GetBubbleStyle(Wisej.Web.Control)">
+            <summary>
+            Returns the notification value associated with the specified control.
+            </summary>
+            <returns>A <see cref="T:System.Int32" /> containing the value to display in the bubble; when 0, the bubble is hidden.</returns>
+            <param name="control">The <see cref="T:Wisej.Web.Control" /> for which to retrieve the <see cref="T:Wisej.Web.Ext.Bubbles.BubbleNotification" /> value. </param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.SetBubbleStyle(Wisej.Web.Control,Wisej.Web.Ext.Bubbles.BubbleStyle)">
+            <summary>
+            Shows the bubble notification value with the specified control.
+            </summary>
+            <param name="control">The <see cref="T:Wisej.Web.Control" /> to associate the JavaScript with. </param>
+            <param name="style">The value to show in the bubble notification; 0 hides the bubble.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.HasBubbleEntry(Wisej.Web.Control)">
+            <summary>
+            Returns if the control is associated to the extender.
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.GetBubble(Wisej.Web.Control)">
+            <summary>
+            Creates or retrieves the extender data entry associated with the control.
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.ToString">
+            <summary>
+            Returns a string representation for this control.
+            </summary>
+            <returns>A <see cref="T:System.String" /> containing a description of the <see cref="T:Wisej.Web.Ext.Bubbles.BubbleNotification" />.</returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.OnWebEvent(Wisej.Core.WisejEventArgs)">
+            <summary>
+            Processes the event from the client.
+            </summary>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleNotification.OnWebRender(System.Object)">
+            <summary>
+            Renders the client component.
+            </summary>
+            <param name="config">Dynamic configuration object.</param>
+        </member>
+        <member name="T:Wisej.Web.Ext.Bubbles.BubbleNotification.Bubble">
+            <summary>
+            Represents a bubble component.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Bubbles.BubbleEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Wisej.Web.Ext.Bubbles.BubbleNotification.Click"/> event.
+            </summary>
+            <param name="sender">The source of the event. </param>
+            <param name="e">A <see cref="T:Wisej.Web.Ext.Bubbles.BubbleEventArgs" /> that contains the event data. </param>
+        </member>
+        <member name="T:Wisej.Web.Ext.Bubbles.BubbleEventArgs">
+             <summary>
+             Provides data for the <see cref="E:Wisej.Web.Ext.Bubbles.BubbleNotification.Click" /> events.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleEventArgs.#ctor(Wisej.Web.Control,System.Int32)">
+             <summary>
+             Initializes a new instance of the <see cref="T:Wisej.Web.Ext.Bubbles.BubbleEventArgs" /> class.
+            </summary>
+             <param name="control">The control associated with the clicked bubble.</param>
+             <param name="value">The value in the bubble.</param>
+        </member>
+        <member name="P:Wisej.Web.Ext.Bubbles.BubbleEventArgs.Control">
+             <summary>
+             Returns the control associated with the bubble notification.
+            </summary>
+             <returns>The <see cref="T:Wisej.Web.Control" /> associated with the bubble.</returns>
+        </member>
+        <member name="P:Wisej.Web.Ext.Bubbles.BubbleEventArgs.Value">
+             <summary>
+             Returns the value displayed in the clicked bubble notification.
+            </summary>
+             <returns>an integer value.</returns>
+        </member>
+        <member name="M:Wisej.Web.Ext.Bubbles.BubbleEventArgs.ToString">
+            <summary>
+            Returns a string that represents the current <see cref="T:Wisej.Web.Ext.Bubbles.BubbleEventArgs" /> value.
+            </summary>
+            <returns>A string that states the control type and the state of the <see cref="P:Wisej.Web.Ext.Bubbles.BubbleEventArgs" /> properties.</returns>
+        </member>
+        <member name="T:Wisej.Web.Ext.Bubbles.BubbleStyle">
+            <summary>
+            Bubble styles. Corresponds to states in the theme.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Bubbles.BubbleStyle.Alert">
+            <summary>
+            Uses the alert state in the theme.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Bubbles.BubbleStyle.Warning">
+            <summary>
+            Uses the warning state in the theme.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.Bubbles.BubbleStyle.Critical">
+            <summary>
+            Uses the critical state in the theme.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.Bubbles.NamespaceDoc">
+            <summary>
+            <para>
+            BubbleNotification extender. Adds bubble notifications to any Wisej control.
+            </para>
+            </summary>
+        </member>
+    </members>
+</doc>

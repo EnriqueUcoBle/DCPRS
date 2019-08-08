@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.JustGage</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.JustGage.CustomSector">
+            <summary>
+            Represents custom sectors as used by JustGauge
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.CustomSector.Lo">
+            <summary>
+            The low boundary of this sector
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.CustomSector.Hi">
+            <summary>
+            The high boundary of this sector
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.CustomSector.Color">
+            <summary>
+            The color this sector should be drawn in
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.JustGage.JustGage">
+            <summary>
+            Represents a JustGage (http://justgage.com/) control.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.ValueChanged">
+            <summary>
+            Fired when the value changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.AutoSizeChanged">
+            <summary>
+            Fired when the value of the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.AutoSize" /> property changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.BackgroundImageChanged">
+            <summary>
+            Fired when the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.BackgroundImage" /> property changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.BackgroundImageLayoutChanged">
+            <summary>
+            Fired when the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.BackgroundImageLayout" /> property changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.FontChanged">
+            <summary>
+            Fired when the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.Font" /> property changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.ForeColorChanged">
+            <summary>
+            Fired when the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.ForeColor" /> property changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.ImeModeChanged">
+            <summary>
+            Fired when the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.ImeMode" /> property changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.PaddingChanged">
+            <summary>
+            Fired when the value of the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.Padding" /> property changes.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.JustGage.JustGage.TextChanged">
+            <summary>
+            Fired when the <see cref="P:Wisej.Web.Ext.JustGage.JustGage.Text" /> property changes.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.JustGage.JustGage.OnValueChanged(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.JustGage.JustGage.ValueChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Value">
+            <summary>
+            Returns or sets a numeric value that represents the current position of the JustGage widget.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Minimum">
+            <summary>
+            Returns or sets the lower limit of the range.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Maximum">
+            <summary>
+            Returns or sets the upper limit of the range.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Text">
+            <summary>
+            Returns or sets the title of the JustGage control.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.TitlePosition">
+            <summary>
+            Returns or sets a value that indicates whether the title should be above or below the gauge.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.JustGage.JustGage.JustGageTitlePosition">
+            <summary>
+            Defines the title position - above or below the gauge.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.JustGage.JustGage.JustGageTitlePosition.Above">
+            <summary>
+            Title appears above gauge
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.JustGage.JustGage.JustGageTitlePosition.Below">
+            <summary>
+            Title appears below gauge
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.ShowMinMax">
+            <summary>
+            Returns or sets a value that indicates whether the min and max labels should be displayed.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.ShowPointer">
+            <summary>
+            Returns or sets a value that indicates whether the pointer should be displayed.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Reverse">
+            <summary>
+            Returns or sets a value that indicates whether the gauge display should be reversed.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.ShowValue">
+            <summary>
+            Returns or sets a value that indicates whether the value should display under the gauge.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Donut">
+            <summary>
+            Returns or sets a value that indicates whether the gauge should display as a donut.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Gradient">
+            <summary>
+            Returns or sets a value that indicates whether the gauge sectors should change with a gradient.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.HumanFriendly">
+            <summary>
+            Returns or sets a value that indicates whether large numbers are displayed in a human friendly fashion for min/max and value.
+            ie. 1234567 -> 1.2M
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Decimals">
+            <summary>
+            Returns or sets the number of decimal places to display.
+            Ignored (by JustGage) if humanFriendly is true.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.FormatNumber">
+            <summary>
+            Returns or sets a value that indicates whether the number should be displayed with thousand separators.
+            (Ignored if humanFriendly is true)
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Counter">
+            <summary>
+            Returns or sets a value that indicates whether the value change should be animated.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.StartAnimationType">
+            <summary>
+            Returns or sets a value that indicates the type of animation used by the gage.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.RefreshAnimationType">
+            <summary>
+            Returns or sets a value that indicates the type of animation used when the value is refreshed.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.JustGage.JustGage.JustGageAnimationType">
+            <summary>
+            Defines how the gauge should be animated.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.JustGage.JustGage.JustGageAnimationType.Linear">
+            <summary>
+            Same speed for whole of value.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.JustGage.JustGage.JustGageAnimationType.EaseOut">
+            <summary>
+            Speeds up as gets towards value.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.JustGage.JustGage.JustGageAnimationType.EaseIn">
+            <summary>
+            Slows down as gets towards value.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.JustGage.JustGage.JustGageAnimationType.EaseInOut">
+            <summary>
+             Speeds up towards middle of value then slows down towards value.
+            </summary>
+        </member>
+        <member name="F:Wisej.Web.Ext.JustGage.JustGage.JustGageAnimationType.Bounce">
+            <summary>
+            Goes over the actual value and "bounces" back.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.JustGage.JustGage.ConvertAnimationType(Wisej.Web.Ext.JustGage.JustGage.JustGageAnimationType)">
+            <summary>
+            Convert the enum to the string needed by the gage control
+            </summary>
+            <param name="AnimationType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.CustomSectors">
+            <summary>
+            Gets or sets custom sectors for the gauge.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Label">
+            <summary>
+            Returns or sets the label to display below the gage.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Symbol">
+            <summary>
+            Returns or sets the symbol to display with the value.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.LabelColor">
+            <summary>
+            Returns or sets the label color.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.ValueColor">
+            <summary>
+            Returns or sets the value color.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.BorderStyle">
+            <summary>
+            Indicates the border style for the control.
+            </summary>
+            <returns>One of the <see cref="T:Wisej.Web.BorderStyle" /> values. The default is BorderStyle.None.</returns>
+        </member>
+        <member name="P:Wisej.Web.Ext.JustGage.JustGage.Wisej#Core#IWisejControl#AppearanceKey">
+            <summary>
+            Returns the theme appearance key for this control.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.JustGage.JustGage.OnWebRender(System.Object)">
+            <summary>
+            Renders the client component.
+            </summary>
+            <param name="config">Dynamic configuration object.</param>
+        </member>
+        <member name="T:Wisej.Web.Ext.JustGage.NamespaceDoc">
+            <summary>
+            <para>
+            JustGage component. Implements the JustGage open source widget in Wisej.
+            </para>
+            </summary>
+        </member>
+    </members>
+</doc>

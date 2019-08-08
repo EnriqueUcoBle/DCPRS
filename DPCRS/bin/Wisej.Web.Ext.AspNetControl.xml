@@ -1,0 +1,325 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.AspNetControl</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.AspNetControl.AspNetWrapper`1">
+            <summary>
+            The AspNetWrapperBase is the base class of all wrapped ASP.NET controls.
+            </summary>
+            <remarks>
+            When you using a wrapped ASP.NET control  you must add the <see cref="T:Wisej.Web.Ext.AspNetControl.HttpModule"/> to
+            Web.config, like this:
+            <code lang="xml">
+            <![CDATA[
+            
+            <system.webServer>
+            	<modules>
+            		<add name = "WisejAspNetControl" type="Wisej.Web.Ext.AspNetControl.HttpModule, Wisej.Web.Ext.AspNetControl" />
+            		...
+            ]]>
+            </code>
+            </remarks>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapper`1.WrappedControl">
+            <summary>
+            Returns the instance of the wrapped ASP.NET control.
+            It is valid only during the processing of the Init or the Load events.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapper`1.Url">
+            <summary>
+            Returns source Url of the IFrame.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapper`1.CreateHostedControl">
+            <summary>
+            Creates the wrapped control.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase">
+            <summary>
+            Base non-generic class for <see cref="T:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase"/>.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Wisej.Web.Ext.AspNetControl.AspNetWrapper"/>.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreInit">
+            <summary>
+            Corresponds to the Page.PreInit event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Init">
+            <summary>
+            Corresponds to the Page.Init event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.InitComplete">
+            <summary>
+            Corresponds to the Page.InitComplete event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreLoad">
+            <summary>
+            Corresponds to the Page.PreLoad event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Load">
+            <summary>
+            Corresponds to the Page.Load event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.LoadComplete">
+            <summary>
+            Corresponds to the Page.LoadComplete event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreRender">
+            <summary>
+            Corresponds to the Page.PreRender event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreRenderComplete">
+            <summary>
+            Corresponds to the Page.PreRenderComplete event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Unload">
+            <summary>
+            Corresponds to the Page.Unload event in the ASP.NET page life cycle.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.AbortTransaction">
+            <summary>
+            Corresponds to the Page.AbortTransaction event.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.CommitTransaction">
+            <summary>
+            Corresponds to the Page.CommitTransaction event.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.DataBinding">
+            <summary>
+            Corresponds to the Page.DataBinding event.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Error">
+            <summary>
+            Corresponds to the Page.Error event.
+            </summary>
+        </member>
+        <member name="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.SaveStateComplete">
+            <summary>
+            Corresponds to the Page.SaveStateComplete event.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnPreInit(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreInit"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnInit(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Init"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnInitComplete(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.InitComplete"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnPreLoad(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreLoad"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnLoad(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Load"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnLoadComplete(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.LoadComplete"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnPreRender(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreRender"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnPreRenderComplete(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.PreRenderComplete"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnUnload(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Unload"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnError(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Error"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnCommitTransaction(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.CommitTransaction"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnAbortTransaction(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.AbortTransaction"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnDataBinding(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.DataBinding"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnSaveStateComplete(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.SaveStateComplete"/> event.
+            </summary>
+            <param name="e">The event data.</param>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.UseSessionViewState">
+            <summary>
+            Determines whether Wisej saves the VIEWSTATE in memory. The default is true.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.WrappedControl">
+            <summary>
+            Returns the instance of the wrapped ASP.NET control.
+            It is valid only during the processing of the Init or the Load events.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.IsPostBack">
+            <summary>
+            Returns whether the current request is a postback.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.IsCallback">
+            <summary>
+            Returns whether the current request is a callback.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.IsAsync">
+            <summary>
+            Returns whether the current request is an asynchronous postback.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Page">
+            <summary>
+            Returns the instance of the internal page used to wrap the ASP.NET control.
+            It is valid only during the processing of the Init or the Load events.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.ViewState">
+            <summary>
+            VIEWSTATE saved using Wisej sessions.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.ScriptManager">
+            <summary>
+            Returns the instance of the <see cref="T:System.Web.UI.ScriptManager"/> in the AspNetHost.asp page
+            used to wrap AspNet controls.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.AspNetHostUrl">
+            <summary>
+            Returns the postback url.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.OnPagePreInitCallback(System.Web.UI.Page,System.Web.UI.HtmlControls.HtmlForm)">
+            <summary>
+            Page.PreInit callback. Call comes from Wisej.AspNetHost.aspx.
+            </summary>
+            <param name="page">The <see cref="T:System.Web.UI.Page"/> that is processing OnPreInit.</param>
+            <param name="container">The container form to add the wrapped control to.</param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.Update">
+            <summary>
+            Causes the control to update the corresponding client side widget.
+            When in design mode, causes the rendered control to update its
+            entire surface in the designer.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.AspNetWrapperBase.CreateHostedControl">
+            <summary>
+            Creates the wrapped control.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Wisej.Web.Ext.AspNetControl.HttpModuleStartup">
+            <summary>
+            Self registration for <see cref="T:Wisej.Web.Ext.AspNetControl.HttpModule"/>.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.HttpModuleStartup.Start">
+            <summary>
+            Registers the module.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="T:Wisej.Web.Ext.AspNetControl.HttpModule">
+            <summary>
+            Custom module that installs a virtual path provider for the AspNetControl wrapper.
+            </summary>
+            <remarks>
+            The virtual path provider is used to "feed" a blank ASP.NET page that
+            hosts the ASP.NET control that we are wrapping.
+            </remarks>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.HttpModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Initializes the AspNetControl module.
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:Wisej.Web.Ext.AspNetControl.HttpModule.Dispose">
+            <summary>
+            Disposes resources associated with the module.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.AspNetControl.HttpModule.WisejVirtualPathProvider">
+            <summary>
+            Our VirtualPathProvider, used to return the embedded AspNetHost page instead of using
+            a temporary file or wrapping the default aspx handler.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.AspNetControl.HttpModule.WisejVirtualFile">
+            <summary>
+            Our VirtualFile override, returns the embedded AspBetHost stream.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.AspNetControl.NamespaceDoc">
+            <summary>
+            <para>
+            AspNetControl extension. Adds the AspNetWrapper&lt;T&gt; generic class, able to wrap any ASP.NET control class.
+            </para>
+            </summary>
+        </member>
+    </members>
+</doc>

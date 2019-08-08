@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Ext.Translation</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Ext.Translation.NamespaceDoc">
+            <summary>
+            <para>
+            Translation component. Adds language translation features to Wisej applications.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Wisej.Ext.Translation.TranslationProviderYandex">
+            <summary>
+            Yandex translation provider.
+            </summary>
+            <remarks>
+            See https://tech.yandex.com/translate/.
+            </remarks>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationProviderYandex.ClientID">
+            <summary>
+            Yandex only needs the api-key.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationProviderYandex.ClientSecret">
+            <summary>
+            The secret client-key or api-key for the provider.
+            </summary>
+        </member>
+        <member name="M:Wisej.Ext.Translation.TranslationProviderYandex.Translate(System.String,System.String,System.String)">
+            <summary>
+            Invokes the translation service provider and returns the result of the request in an instance
+            of the <see cref="T:Wisej.Ext.Translation.TranslationResult"/> class.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="from">The source language ("en", "de", ...) or null/empty to ask the provider to auto detect the source language.</param>
+            <param name="to">The target language ("en", "de", ...)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wisej.Ext.Translation.TranslationProviderYandex.TranslateAsync(System.String,System.String,System.String,System.Action{Wisej.Ext.Translation.TranslationResult})">
+            <summary>
+            Invokes the translation service provider asynchronously and returns the result of the request in an instance
+            of the <see cref="T:Wisej.Ext.Translation.TranslationResult"/> class.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="from">The source language ("en", "de", ...) or null/empty to ask the provider to auto detect the source language.</param>
+            <param name="to">The target language ("en", "de", ...)</param>
+            <param name="resultCallback">Callback method that will receive the TranslationResult when ready.</param>
+        </member>
+        <member name="T:Wisej.Ext.Translation.TranslationResult">
+            <summary>
+            Represents the result of a translation request. 
+            </summary>
+        </member>
+        <member name="M:Wisej.Ext.Translation.TranslationResult.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:Wisej.Ext.Translation.TranslationResult"/>.
+            </summary>
+            <param name="originalText">The original text.</param>
+            <param name="translatedText">The translated text - or null if an error occurred.</param>
+            <param name="from">The language of the original text.</param>
+            <param name="to">The language of the translated text.</param>
+            <param name="errorCode">The error code returned by the translatation service, or -1 if the service returned an error message without an error code. Zero if the request was successful.</param>
+            <param name="errorMessage">The error messsage returned by the translation service, or null if the request was successful.</param>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationResult.ErrorCode">
+            <summary>
+            The error code returned by the translatation service, or -1 if the service returned an error message without an error code. Zero if the request was successful.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationResult.ErrorMessage">
+            <summary>
+            The error messsage returned by the translation service, or null if the request was successful.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationResult.OriginalText">
+            <summary>
+            The original text.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationResult.TranslatedText">
+            <summary>
+            The translated text - or null if an error occurred.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationResult.OriginalLanguage">
+            <summary>
+            Returns the language of the original text.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationResult.TargetLanguage">
+            <summary>
+            Returns the language of the translated text.
+            </summary>
+        </member>
+        <member name="T:Wisej.Ext.Translation.TranslationProviderBase">
+            <summary>
+            Base class for the translation providers.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationProviderBase.ClientID">
+            <summary>
+            The client-id for the provider.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.TranslationProviderBase.ClientSecret">
+            <summary>
+            The secret client-key or api-key for the provider.
+            </summary>
+        </member>
+        <member name="M:Wisej.Ext.Translation.TranslationProviderBase.Translate(System.String,System.String,System.String)">
+            <summary>
+            Invokes the translation service provider and returns the result of the request in an instance
+            of the <see cref="T:Wisej.Ext.Translation.TranslationResult"/> class.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="from">The source language ("en", "de", ...) or null/empty to ask the provider to autodetect the source language.</param>
+            <param name="to">The target language ("en", "de", ...)</param>
+            <returns>An instance of <see cref="T:Wisej.Ext.Translation.TranslationResult"/>.</returns>
+        </member>
+        <member name="M:Wisej.Ext.Translation.TranslationProviderBase.TranslateAsync(System.String,System.String,System.String,System.Action{Wisej.Ext.Translation.TranslationResult})">
+            <summary>
+            Invokes the translation service provider asynchronously and returns the result of the request in an instance
+            of the <see cref="T:Wisej.Ext.Translation.TranslationResult"/> class.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="from">The source language ("en", "de", ...) or null/empty to ask the provider to autodetect the source language.</param>
+            <param name="to">The target language ("en", "de", ...)</param>
+            <param name="resultCallback">Callback method that will receive the TranslationResult when ready.</param>
+        </member>
+        <member name="T:Wisej.Ext.Translation.Translation">
+            <summary>
+            The Translation component interfaces with several third party translation providers to provide
+            language translation services to the application.
+            </summary>
+        </member>
+        <member name="M:Wisej.Ext.Translation.Translation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Ext.Translation" /> class.
+            </summary>
+        </member>
+        <member name="M:Wisej.Ext.Translation.Translation.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Wisej.Ext.Translation" /> class together with the specified container.
+            </summary>
+            <param name="container">A <see cref="T:System.ComponentModel.IContainer" /> that represents the container for the component. </param>
+        </member>
+        <member name="P:Wisej.Ext.Translation.Translation.ClientID">
+            <summary>
+            The client-id for the provider.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.Translation.ClientSecret">
+            <summary>
+            The secret client-key or api-key for the provider.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.Translation.ProviderType">
+            <summary>
+            Returns or sets the type of the translation provider.
+            </summary>
+        </member>
+        <member name="P:Wisej.Ext.Translation.Translation.Provider">
+            <summary>
+            Returns or sets the translation provider implementation.
+            </summary>
+        </member>
+        <member name="M:Wisej.Ext.Translation.Translation.Translate(System.String,System.String,System.String)">
+            <summary>
+            Translates the text to the requested language.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="from">The source language ("en", "de", ...) or null/empty to ask the provider to autodetect the source language.</param>
+            <param name="to">The target language ("en", "de", ...)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wisej.Ext.Translation.Translation.TranslateAsync(System.String,System.String,System.String,System.Action{Wisej.Ext.Translation.TranslationResult})">
+            <summary>
+            Invokes the translation service provider asynchronously and returns the result of the request in an instance
+            of the <see cref="T:Wisej.Ext.Translation.TranslationResult"/> class.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="from">The source language ("en", "de", ...) or null/empty to ask the provider to auto detect the source language.</param>
+            <param name="to">The target language ("en", "de", ...)</param>
+            <param name="resultCallback">Callback method that will receive the TranslationResult when ready.</param>
+        </member>
+    </members>
+</doc>

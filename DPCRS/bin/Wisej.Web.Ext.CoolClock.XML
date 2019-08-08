@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Web.Ext.CoolClock</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Web.Ext.CoolClock.CoolClockType">
+            <summary>
+            CoolClock clock types.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.CoolClock.CoolClockSkin">
+            <summary>
+            CoolClock available skins.
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.CoolClock.NamespaceDoc">
+            <summary>
+            <para>
+            CoolClock component. Uses the http://randomibis.com/coolclock widget as Wisej control.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Wisej.Web.Ext.CoolClock.CoolClock">
+            <summary>
+            CoolClock is a customizable javascript analog clock from http://randomibis.com/coolclock.
+            </summary>
+        </member>
+        <member name="M:Wisej.Web.Ext.CoolClock.CoolClock.#ctor">
+            <summary>
+            Constructs a new instance of the <see cref="T:Wisej.Web.Ext.CoolClock.CoolClock"/> control.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.TabStop">
+            <summary>
+            This property is not relevant to this class.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.Focusable">
+            <summary>
+            This property is not relevant to this class.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.TabIndex">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+            <exclude/>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.TickDelay">
+            <summary>
+            Returns or sets the tick delay.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.LongTickDelay">
+            <summary>
+            Returns or sets the long tick delay.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.ShowSecondHand">
+            <summary>
+            Shows or hides the second hand.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.Skin">
+            <summary>
+            Returns or sets the skin used to render the CoolClock.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.ClockType">
+            <summary>
+            Returns or sets the type of clock to render.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.ShowDigital">
+            <summary>
+            Shows the digital clock.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.GmtOffset">
+            <summary>
+            Returns or sets the GMT offset.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.InitScript">
+            <summary>
+            Overridden to create our initialization script.
+            </summary>
+        </member>
+        <member name="P:Wisej.Web.Ext.CoolClock.CoolClock.Packages">
+            <summary>
+            Overridden to return our list of script resources.
+            </summary>
+        </member>
+    </members>
+</doc>

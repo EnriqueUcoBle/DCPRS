@@ -30,6 +30,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
@@ -58,7 +59,6 @@ Partial Public Class R_Imprimir_Lotes_Salida
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.CLAVE_LOTE = New DevExpress.XtraReports.Parameters.Parameter()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
-        Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_pCAT_IMPRIMIR_LOTES_B1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +78,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(89.12473!, 0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(46.41635!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
         Me.XrTable2.SizeF = New System.Drawing.SizeF(941.3337!, 25.0!)
@@ -147,6 +147,18 @@ Partial Public Class R_Imprimir_Lotes_Salida
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
+        'XrPageInfo2
+        '
+        Me.XrPageInfo2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.XrPageInfo2.LocationFloat = New DevExpress.Utils.PointFloat(849.0833!, 0!)
+        Me.XrPageInfo2.Name = "XrPageInfo2"
+        Me.XrPageInfo2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrPageInfo2.SizeF = New System.Drawing.SizeF(160.9166!, 23.0!)
+        Me.XrPageInfo2.StylePriority.UseFont = False
+        Me.XrPageInfo2.StylePriority.UseTextAlignment = False
+        Me.XrPageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrPageInfo2.TextFormatString = "Pagina {0} de {1}"
+        '
         'ReportHeader
         '
         Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel3, Me.XrPictureBox1})
@@ -156,7 +168,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
         'XrLabel3
         '
         Me.XrLabel3.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(660.7292!, 26.45833!)
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(618.0208!, 26.45833!)
         Me.XrLabel3.Multiline = True
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -188,7 +200,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(89.12476!, 0!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(46.41635!, 0!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(941.3337!, 25.0!)
@@ -255,7 +267,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
         '
         'XrLabel8
         '
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(829.1293!, 51.00506!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(785.3794!, 51.00505!)
         Me.XrLabel8.Multiline = True
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -288,7 +300,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
         '
         'XrLabel10
         '
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(690.7286!, 84.13004!)
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(648.02!, 84.13004!)
         Me.XrLabel10.Multiline = True
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -307,7 +319,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
         '
         Me.XrLabel12.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CVE_LOTE]")})
         Me.XrLabel12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(974.6707!, 51.99508!)
+        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(931.9622!, 51.99509!)
         Me.XrLabel12.Multiline = True
         Me.XrLabel12.Name = "XrLabel12"
         Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -320,7 +332,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
         'XrLabel11
         '
         Me.XrLabel11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(918.8829!, 51.99508!)
+        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(869.5418!, 51.99509!)
         Me.XrLabel11.Multiline = True
         Me.XrLabel11.Name = "XrLabel11"
         Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -403,18 +415,6 @@ Partial Public Class R_Imprimir_Lotes_Salida
         Me.PageFooter.HeightF = 31.25!
         Me.PageFooter.Name = "PageFooter"
         '
-        'XrPageInfo2
-        '
-        Me.XrPageInfo2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.XrPageInfo2.LocationFloat = New DevExpress.Utils.PointFloat(869.5419!, 0!)
-        Me.XrPageInfo2.Name = "XrPageInfo2"
-        Me.XrPageInfo2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrPageInfo2.SizeF = New System.Drawing.SizeF(160.9166!, 23.0!)
-        Me.XrPageInfo2.StylePriority.UseFont = False
-        Me.XrPageInfo2.StylePriority.UseTextAlignment = False
-        Me.XrPageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrPageInfo2.TextFormatString = "Pagina {0} de {1}"
-        '
         'R_Imprimir_Lotes_Salida
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.GroupHeader1, Me.ReportFooter, Me.PageHeader, Me.PageFooter})
@@ -423,7 +423,7 @@ Partial Public Class R_Imprimir_Lotes_Salida
         Me.DataMember = "pCAT_IMPRIMIR_LOTES_B"
         Me.DataSource = Me.DataSet_pCAT_IMPRIMIR_LOTES_B1
         Me.Landscape = True
-        Me.Margins = New System.Drawing.Printing.Margins(3, 9, 93, 56)
+        Me.Margins = New System.Drawing.Printing.Margins(41, 39, 93, 56)
         Me.PageHeight = 850
         Me.PageWidth = 1100
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.CLAVE_LOTE})
