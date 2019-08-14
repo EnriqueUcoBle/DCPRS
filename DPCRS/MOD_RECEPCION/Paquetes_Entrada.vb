@@ -116,8 +116,8 @@ Public Class Paquetes_Entrada
     End Sub
     Private Sub añadir_item(sender As Object, e As EventArgs)
         Dim form As Generar_Orden_Verficacion = sender.Parent.Parent.Parent
-        If form.Validar_Campos() = True Then
-            add_actas(form.cve_acta, form.TextBoxMUNICIPIO.Text, form.TextBoxNOMBRE.Text, form.TextBoxRAZON_SOCIAL.Text, form.TextBoxGIRO.Text, form.TextBoxDIRECCION.Text, form.FOLIO_ACTA_VERIFICACION.Text, form.TIPO_VERIFICACION.SelectedItem.ToString, form.FECHA_VERIFICACION.Value)
+        If form.validar_todo = True Then
+            add_actas(form.cve_acta, form.JURISDICCION_EST.Text, form.NOMBRE_PROPIETARIO.Text, form.RAZON_SOCIAL_EST.Text, form.GIRO_EST.Text, form.DOMICILIO_EST.Text, form.FOLIO_ACTA_VERIFICACION.Text, form.TIPO_ACTA.SelectedItem.ToString, form.FECHA_VERIFICACION.Value)
         Else
             MessageBox.Show("No se puede guardar el acta de verificacion, favor de validar los datos de los campos nesesarios", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If

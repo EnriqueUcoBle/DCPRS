@@ -24,7 +24,6 @@ Partial Class Cat_Establecimientos_New
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ComponentTool2 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cat_Establecimientos_New))
         Dim ComponentTool1 As Wisej.Web.ComponentTool = New Wisej.Web.ComponentTool()
         Me.RibbonBar1 = New Wisej.Web.Ext.RibbonBar.RibbonBar()
         Me.RBBEstablecimientoNew = New Wisej.Web.Ext.RibbonBar.RibbonBarPage()
@@ -208,6 +207,7 @@ Partial Class Cat_Establecimientos_New
         Me.CBcolonia_propietario.BackColor = System.Drawing.Color.FromName("@window")
         Me.CBcolonia_propietario.ColorAtras = System.Drawing.Color.Empty
         Me.CBcolonia_propietario.Count = 0
+        Me.CBcolonia_propietario.DataSource = Nothing
         Me.CBcolonia_propietario.DataSourceSelect = Nothing
         Me.CBcolonia_propietario.gris = False
         Me.CBcolonia_propietario.Letra = Nothing
@@ -414,6 +414,7 @@ Partial Class Cat_Establecimientos_New
         Me.CBSgiro.BackColor = System.Drawing.Color.FromName("@window")
         Me.CBSgiro.ColorAtras = System.Drawing.Color.Empty
         Me.CBSgiro.Count = 0
+        Me.CBSgiro.DataSource = Nothing
         Me.CBSgiro.DataSourceSelect = Nothing
         Me.CBSgiro.gris = False
         Me.CBSgiro.Letra = Nothing
@@ -440,6 +441,7 @@ Partial Class Cat_Establecimientos_New
         Me.CBscian.BackColor = System.Drawing.Color.FromName("@window")
         Me.CBscian.ColorAtras = System.Drawing.Color.Empty
         Me.CBscian.Count = 0
+        Me.CBscian.DataSource = Nothing
         Me.CBscian.DataSourceSelect = Nothing
         Me.CBscian.gris = False
         Me.CBscian.Letra = Nothing
@@ -615,6 +617,8 @@ Partial Class Cat_Establecimientos_New
         Me.txtHoraFin.Format = Wisej.Web.DateTimePickerFormat.Time
         Me.txtHoraFin.Location = New System.Drawing.Point(150, 118)
         Me.txtHoraFin.Name = "txtHoraFin"
+        Me.txtHoraFin.ShowCalendar = False
+        Me.txtHoraFin.ShowUpDown = True
         Me.txtHoraFin.Size = New System.Drawing.Size(165, 22)
         Me.txtHoraFin.TabIndex = 8
         Me.txtHoraFin.Value = New Date(2018, 6, 5, 17, 0, 0, 0)
@@ -625,6 +629,8 @@ Partial Class Cat_Establecimientos_New
         Me.txtHoraInicio.Format = Wisej.Web.DateTimePickerFormat.Time
         Me.txtHoraInicio.Location = New System.Drawing.Point(150, 89)
         Me.txtHoraInicio.Name = "txtHoraInicio"
+        Me.txtHoraInicio.ShowCalendar = False
+        Me.txtHoraInicio.ShowUpDown = True
         Me.txtHoraInicio.Size = New System.Drawing.Size(165, 22)
         Me.txtHoraInicio.TabIndex = 7
         Me.txtHoraInicio.Value = New Date(2018, 6, 5, 8, 0, 0, 0)
@@ -752,6 +758,7 @@ Partial Class Cat_Establecimientos_New
         Me.CBcolonia.BackColor = System.Drawing.Color.FromName("@window")
         Me.CBcolonia.ColorAtras = System.Drawing.Color.Empty
         Me.CBcolonia.Count = 0
+        Me.CBcolonia.DataSource = Nothing
         Me.CBcolonia.DataSourceSelect = Nothing
         Me.CBcolonia.gris = False
         Me.CBcolonia.Letra = Nothing
