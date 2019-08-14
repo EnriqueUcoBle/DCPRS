@@ -27,6 +27,7 @@ Public Class Add_Muestra
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles AÑADIR_ITEM.Click
         If _Validar() Then
 
+
         End If
     End Sub
 
@@ -38,7 +39,7 @@ Public Class Add_Muestra
 
     Private Sub Add_Muestra_Load(sender As Object, e As EventArgs) Handles Me.Load
         llenarCombo()
-
+        FECHA_CADUCIDAD.Value = Nothing
     End Sub
 
 

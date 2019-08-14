@@ -86,7 +86,7 @@ Public Class Generar_Orden_Verficacion
     '------------------------------------> Funciones para guardar y actulizar datos <-------------------------------------------
 
 
-    Public Function Add_Muestra_On_TABLA_MUESTRAS(ByVal CVE_TIPO_MUESTRA As Integer, ByVal CVE_TIPO_ANALISIS As Integer, ByVal DESCRIPCION As String, ByVal CLAVE_VS As String, ByVal LOTE As String, ByVal MARCA As String, ByVal FECHA_CADUCIDAD As Date, ByVal CANTIDAD As Integer) As Boolean
+    Public Function Add_Muestra_On_TABLA_MUESTRAS(ByVal CVE_TIPO_MUESTRA As Integer, ByVal CVE_TIPO_ANALISIS As Integer, ByVal DESCRIPCION As String, ByVal CLAVE_VS As String, ByVal LOTE As String, ByVal MARCA As String, ByVal FECHA_CADUCIDAD As String, ByVal CANTIDAD As Integer) As Boolean
         Try
             MUESTRAS_GRID.Rows.Add()
             Dim FILA As Integer = MUESTRAS_GRID.Rows.Count - 1
@@ -252,34 +252,62 @@ Public Class Generar_Orden_Verficacion
 
     Private Sub TablaVerifacadores_CellClick(sender As Object, e As Wisej.Web.DataGridViewCellEventArgs) Handles VERIFICADORES_GRID.CellClick
         If e.ColumnIndex = 0 Then
-            If (Wisej.Web.MessageBox.Show("¿Esta segur@ de eliminar el Verficador seleccionado?", "Eliminar", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
-                VERIFICADORES_GRID.Rows.Remove(VERIFICADORES_GRID.CurrentRow)
+            If e.RowIndex <> -1 Then
+                If (Wisej.Web.MessageBox.Show("¿Esta segur@ de eliminar el Verficador seleccionado?", "Eliminar", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
+                    VERIFICADORES_GRID.Rows.Remove(VERIFICADORES_GRID.CurrentRow)
+                End If
             End If
+
+
         ElseIf e.ColumnIndex = 1 Then
         End If
     End Sub
 
 
     Private Sub añadir_item(sender As Object, e As EventArgs) Handles Add_Muestras.Click
-        Dim form As Add_Muestra = sender.Parent.Parent.Parent.Parent
+        Dim form = New Add_Muestra
+        form.Show()
+        AddHandler form.AÑADIR_ITEM.Click, AddressOf add_fila
+    End Sub
+
+    Private Sub add_fila(sender As Object, e As EventArgs)
+        Dim form As Add_Muestra = sender.Parent.Parent
         If form._Validar = True Then
-            Add_Muestra_On_TABLA_MUESTRAS(form.TIPO_MUESTRA.SelectedValue, form.TIPO_ANALISIS.SelectedValue, form.DESCRIPCION.Text, form.CLAVE_VS.Text, form.LOTE.Text, form.MARCA.Text, form.FECHA_CADUCIDAD.Value, form.CANTIDAD.Value)
+            Dim fecha As String
+            If form.FECHA_CADUCIDAD.Value = Nothing Then
+                fecha = "sin fecha de caducidad"
+            Else
+                fecha = form.FECHA_CADUCIDAD.Value
+            End If
+            If form.MARCA.Text.Length = 0 Then
+                form.MARCA.Text = "no asignado"
+            End If
+            If form.LOTE.Text.Length = 0 Then
+                form.LOTE.Text = "no asignado"
+            End If
+            If form.CLAVE_VS.Text.Length = 0 Then
+                form.CLAVE_VS.Text = "no asignado"
+            End If
+            Add_Muestra_On_TABLA_MUESTRAS(form.TIPO_MUESTRA.SelectedValue, form.TIPO_ANALISIS.SelectedValue, form.DESCRIPCION.Text, form.CLAVE_VS.Text, form.LOTE.Text, form.MARCA.Text, fecha, form.CANTIDAD.Value)
             form.limpiar()
             form.AÑADIR_ITEM.Enabled = False
         End If
     End Sub
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs)
-        Dim form = New Add_Muestra
-        form.Show()
-        AddHandler form.AÑADIR_ITEM.Click, AddressOf añadir_item
+        'Dim form = New Add_Muestra
+        'form.Show()
+        'AddHandler form.AÑADIR_ITEM.Click, AddressOf añadir_item
     End Sub
 
     Private Sub DataGridView2_CellClick(sender As Object, e As Wisej.Web.DataGridViewCellEventArgs) Handles MUESTRAS_GRID.CellClick
         If e.ColumnIndex = 0 Then
-            If (Wisej.Web.MessageBox.Show("¿Esta segur@ de eliminar la muestra seleccionada?", "Eliminar", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
-                MUESTRAS_GRID.Rows.Remove(MUESTRAS_GRID.CurrentRow)
+            If e.RowIndex <> -1 Then
+                If (Wisej.Web.MessageBox.Show("¿Esta segur@ de eliminar la muestra seleccionada?", "Eliminar", Wisej.Web.MessageBoxButtons.YesNo, Wisej.Web.MessageBoxIcon.Question) = DialogResult.Yes) Then
+                    MUESTRAS_GRID.Rows.Remove(MUESTRAS_GRID.CurrentRow)
+                End If
             End If
+
         ElseIf e.ColumnIndex = 1 Then
         End If
     End Sub
@@ -339,10 +367,11 @@ Public Class Generar_Orden_Verficacion
     End Sub
     Private Function guardarActaA() As Integer
         Try
-            ReDim oFunciones.ParametersX_Global(28)
+            ReDim oFunciones.ParametersX_Global(29)
             oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@FOLIO_ORDEN", FOLIO_ORDEN.Text)
+            oFunciones.ParametersX_Global(29) = New SqlClient.SqlParameter("@FECHA_ORDEN", FECHA_ORDEN.Value)
             oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_ESTABLECIMIENTO", ESTABLECIMIENTO.SelectedValue)
-            oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@FECHA_VERIFICACION", FECHA_ORDEN.Value)
+            oFunciones.ParametersX_Global(3) = New SqlClient.SqlParameter("@FECHA_VERIFICACION", FECHA_VERIFICACION.Value)
             oFunciones.ParametersX_Global(4) = New SqlClient.SqlParameter("@HORA_VERIFICACION", HORA.Value)
             oFunciones.ParametersX_Global(5) = New SqlClient.SqlParameter("@PROGRAMA", PROGRAMA.SelectedItem)
             If TESTIGO1.Checked Then
@@ -366,6 +395,9 @@ Public Class Generar_Orden_Verficacion
             If F_suspencion_si.Checked Then
                 oFunciones.ParametersX_Global(15) = New SqlClient.SqlParameter("@FOLIO_SUSPENCION", FOLIO_SUSPENCION.Text)
             End If
+            If NO_MUESTRAS.Checked Then
+                oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@OBSERVACIONES_MUESTRAS", OBSERVACIONES_MUESTRAS.Text)
+            End If
             oFunciones.ParametersX_Global(17) = New SqlClient.SqlParameter("@DOCUMENTACION", ANEXO.Checked)
             oFunciones.ParametersX_Global(18) = New SqlClient.SqlParameter("@NUM_ANEXOS", NUM_ANEXOS.Text)
             oFunciones.ParametersX_Global(19) = New SqlClient.SqlParameter("@FOLIO_ACTA", FOLIO_ACTA_VERIFICACION.Text)
@@ -375,12 +407,12 @@ Public Class Generar_Orden_Verficacion
             oFunciones.ParametersX_Global(23) = New SqlClient.SqlParameter("@DOM_RESPONSABLE", DOMICILIO_RESPONSABLE.Text)
             oFunciones.ParametersX_Global(24) = New SqlClient.SqlParameter("@CARGO_RESPONSABLE", CARGO_RESPONSABLE.Text)
             oFunciones.ParametersX_Global(25) = New SqlClient.SqlParameter("@OBJETIVO_ALCANCE", TIPO_OBJETIVO.SelectedItem)
-            oFunciones.ParametersX_Global(26) = New SqlClient.SqlParameter("@OBSERVACIONES_MUESTRAS", OBSERVACIONES_MUESTRAS.Text)
+
             oFunciones.ParametersX_Global(27) = New SqlClient.SqlParameter("@TIPO_ACTA", TIPO_ACTA.SelectedItem)
             oFunciones.ParametersX_Global(28) = New SqlClient.SqlParameter("@URL", "ARCHIVO DIGITAL NO ASIGNADO")
 
             cve_acta = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_ACTAS_VERIFICACION_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.Int)
-            If cve_acta = -99 Then
+            If cve_acta = -99 Or cve_acta = Nothing Then
                 Wisej.Web.MessageBox.Show("Error al guardar", "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Warning)
             Else
                 Wisej.Web.MessageBox.Show("Acta con folio : " & cve_acta & "ha sido almacenada correctamente", "Guardar", Wisej.Web.MessageBoxButtons.OK, Wisej.Web.MessageBoxIcon.Information)
@@ -396,7 +428,7 @@ Public Class Generar_Orden_Verficacion
         For Each COLUM As DataGridViewRow In VERIFICADORES_GRID.Rows
             Try
                 ReDim oFunciones.ParametersX_Global(1)
-                oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_VERIFCADOR", COLUM.Item("CVE_VEFIRICADOR").Value)
+                oFunciones.ParametersX_Global(0) = New SqlClient.SqlParameter("@CVE_VERIFICADOR", COLUM.Item("CVE_VERIFICADOR").Value)
                 oFunciones.ParametersX_Global(1) = New SqlClient.SqlParameter("@CVE_ACTA", cve_acta)
                 result = oFunciones.fGuardar_O_EliminarXProcedure_DevuelveId("pCAT_VERIFICADORES_ACTAS_G", "@PARAM", oFunciones.ParametersX_Global, False, SqlDbType.Int)
                 If result = 200 Then
@@ -442,20 +474,16 @@ Public Class Generar_Orden_Verficacion
 
     Private Sub guardar_todo()
         If validar_todo() Then
-
             guardarActaA()
-            If cve_acta <> -99 Or cve_acta = Nothing Then
+            If cve_acta = -99 Or cve_acta = Nothing Then ' SI NO SE GUARDA EL ACTA O DEVUELVE CODIGO DE ERROR ENTONCES NO SE EJECUTA LOS SUB DE GUARDAR VERIFICADORES NI MUESTRAS
+                oFunciones.AlertBox("Error al obtene el CVE_ACTA", MessageBoxIcon.Information)
+            Else
                 guardar_Verificadores()
                 If NO_MUESTRAS.Checked Then
                 Else
                     guardar_muestras()
                 End If
-
-            Else
-                oFunciones.AlertBox("Error al obtene el CVE_ACTA", MessageBoxIcon.Information)
             End If
-
-
         Else
             oFunciones.AlertBox("verifique que todos los campos nesesarios esten llenos  ", MessageBoxIcon.Information)
         End If
@@ -819,12 +847,7 @@ Public Class Generar_Orden_Verficacion
         Else
             ErrorProvider1.SetError(PROGRAMA, Nothing)
         End If
-        If MOTIVO.SelectedIndex = -1 Then
-            ErrorProvider1.SetError(MOTIVO, "seleccione un motivo de verificacion")
-            E = E + 1
-        Else
-            ErrorProvider1.SetError(MOTIVO, Nothing)
-        End If
+
 
         If TIPO_ACTA.SelectedIndex = -1 Then
             ErrorProvider1.SetError(TIPO_ACTA, "seleccione tipo de acta")
@@ -906,5 +929,10 @@ Public Class Generar_Orden_Verficacion
                 e.Cancel = True
             End If
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        guardar_todo()
+
     End Sub
 End Class
